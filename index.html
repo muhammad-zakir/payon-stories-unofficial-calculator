@@ -9,45 +9,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- <link rel="shortcut icon" href="images/icon.gif" type="image/x-icon"> -->
-  <link rel="canonical" href="https://rocalc.com" />
+  <link rel="canonical" href="https://oathcalc.jaludev.com" />
   <link rel="stylesheet" type="text/css" href="style.css">
   <base target="_blank">
-  <title>Ragnarok Online Classic Calc</title>
+  <title>Oath Calc</title>
 
-  <!--<script type="text/javascript">
-window.onerror=function(){
-	alert('Wild bug appeared!\nPlease report this error via e-mail (at the top).\nIf calc stopped working, then reload webpage.\n\n¡Un bug salvaje apareció!\nPor favor informa de este error enviandome un e-mail.\nEs posible que la calculadora haya dejado de funcionar, en ese caso recargue la página web.');
-	return true;
-}
-</script>-->
   <script type="text/javascript">Lang = 0; PvP = 0;</script>
-  <script type="text/javascript" src="skill.js"></script>
-  <script type="text/javascript" src="head.js"></script>
-  <script type="text/javascript" src="item.js"></script>
-  <script type="text/javascript" src="etc.js"></script>
-
-  <!-- <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-37460810-2']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script> -->
+  <script type="text/javascript" src="/src/skill.js"></script>
+  <script type="text/javascript" src="/src/head.js"></script>
+  <script type="text/javascript" src="/src/item.js"></script>
+  <script type="text/javascript" src="/src/etc.js"></script>
 </head>
 
 <body onload="LoadTheme()">
+
   <form name="calcForm">
-    <!--<div id="calcoptions">
-<p class="point" onclick="options()">OPTIONS (click to show/hide)</p>
-<input type="checkbox" name="autocalc" onClick="auto()" checked disabled>Auto-Calculate<br>
-<input type="checkbox" name="restrict" onClick="restric()" checked disabled>Equip Job Restrictions<br>
-<input type="checkbox" name="restrict2" onClick="restric2()" checked>Card Slot Restrictions<br>
-Calc's theme: <select id="theme" onChange="themes()"><option value="0">Original</option><option value="1">Blue</option><option value="2">Cake</option><option value="3">Nifelheim</option><option value="4">Dark</option></select><br>
-</div>-->
     <h1>Ragnarok Online Classic Calc</h1>
     <div class="main">
       <h2 style="text-align:center; font-size:1.10em; margin:0; padding:0; font-weight:100;">A Ragnarok Online Classic
@@ -1016,9 +992,9 @@ Calc's theme: <select id="theme" onChange="themes()"><option value="0">Original<
     </div>
 
 
-    <script type="text/javascript" src="monster.js"></script>
-    <script type="text/javascript" src="card.js"></script>
-    <script type="text/javascript" src="foot.js"></script>
+    <script type="text/javascript" src="/src/monster.js"></script>
+    <script type="text/javascript" src="/src/card.js"></script>
+    <script type="text/javascript" src="/src/foot.js"></script>
 
   </form>
   <span id="popupURL"></span>

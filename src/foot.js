@@ -3115,7 +3115,7 @@ function EnemySort() {
         for (var t = 1; "E" != wESx[a][1]; t++)
             e[t] = wESx[a][1],
             a = wESx[a][1];
-        if (e = SZ(e),
+        if (e = checkMonsterPlace(e),
         ESwork2 = new Array,
         21 == wES || 22 == wES)
             for (a = 0; a <= EnemyNum; a++)
@@ -3136,22 +3136,30 @@ function EnemySort() {
     } else {
         for (var e = new Array, a = 0; a <= EnemyNum; a++)
             e[a] = v_MonsterSort[a];
-        e = SZ(e);
+        e = checkMonsterPlace(e);
         for (var t = 0, a = 0; a <= EnemyNum; a++)
             -1 != e[a] && (c.B_Enemy.options[t] = new Option(m_Monster[e[a]][1],e[a]),
             t++)
     }
 }
-function SZ(_) {
+
+/**
+ * When the user selects a Place to filter monsters this becomes useful
+ * Check the selected Place
+ * 
+ * @param {number[]} monsterIdArray Array of monster's id
+ * @returns 
+ */
+function checkMonsterPlace(monsterIdArray) {
     var a = document.calcForm.ENEMY_SORT2.value;
     if (0 != a)
         for (var n = 0; n <= EnemyNum; n++)
-            if (-1 != _[n]) {
-                for (var e = 0; "N" != m_MonsterMap[a][e] && _[n] != m_MonsterMap[a][e]; e++)
+            if (-1 != monsterIdArray[n]) {
+                for (var e = 0; "N" != m_MonsterMap[a][e] && monsterIdArray[n] != m_MonsterMap[a][e]; e++)
                     ;
-                "N" == m_MonsterMap[a][e] && (_[n] = -1)
+                "N" == m_MonsterMap[a][e] && (monsterIdArray[n] = -1)
             }
-    return _
+    return monsterIdArray
 }
 function MANUKU_MONSTER() {
     for (var _ = 0; _ < nMANUKU.length; _++)
