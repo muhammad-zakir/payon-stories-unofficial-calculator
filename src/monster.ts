@@ -667,12 +667,12 @@ for (i = 0; i <= EnemyNum; i++) {
 }
 
 v_MonsterSort = JSON.parse(JSON.stringify(m_Monster))
-    .sort((a, b) => {
+    .sort((a: any, b: any) => {
         if (a[1] < b[1]) { return -1; }
         if (a[1] > b[1]) { return 1; }
         return 0;
     })
-    .map(m => m[0]);
+    .map((m: any) => m[0]);
 
 var v_Place = ["All Regions", "Abyss Lake Dungeon", "Amatsu", "Ant Hell", "Ayothaya", "Battlegrounds", "Bibilan",
     "Bio Labs", "Bio Labs 4 (aRO)", "Bifrost", "Bossnia", "Brasilis", "Clock Tower", "Coal Mine", "Comodo Caves", "Comodo Fields", "Culverts", "Dewata", "Dimensional Crack", "Einbroch Dungeon",
@@ -686,8 +686,10 @@ var v_Place = ["All Regions", "Abyss Lake Dungeon", "Amatsu", "Ant Hell", "Ayoth
 
 
 if (PvP == 0) {
-    for (var i = 0; i < v_Place.length; i++)
+    for (var i = 0; i < v_Place.length; i++) {
+        // @ts-ignore
         document.calcForm.ENEMY_SORT2.options[i] = new Option(v_Place[i], i);
+    }
 }
 
 m_MonsterMap = [
