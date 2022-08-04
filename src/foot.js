@@ -3155,8 +3155,7 @@ function checkMonsterPlace(monsterIdArray) {
     if (selectedMap === "0") return monsterIdArray;
 
     for (var n = 0; n <= EnemyNum; n++){
-        let map = m_MonsterMap[selectedMap];
-        monsterIdArray[n] = map.monsterList.includes(monsterIdArray[n]) ? monsterIdArray[n] : -1;         
+        monsterIdArray[n] = m_MonsterMap[selectedMap].monsterList.includes(monsterIdArray[n]) ? monsterIdArray[n] : -1;         
     }
             
     return monsterIdArray
@@ -3177,72 +3176,79 @@ function SaveLocal() {
     if ("undefined" == typeof Storage)
         alert("Sorry, your browser does not support local storage. Please let me know if you see this message at kurimet@gmail.com");
     else {
-        for (SaveData = new Array,
-        a = 0; 414 >= a; a++)
+        for (SaveData = new Array, a = 0; 414 >= a; a++) {
             SaveData[a] = 0;
-        SaveData[0] = 1,
-        SaveData[2] = 1 * c.A_JOB.value,
-        SaveData[3] = 1 * c.A_JobLV.value,
-        SaveData[4] = 1 * c.A_BaseLV.value,
-        SaveData[5] = 1 * c.A_adopted.checked,
-        1 == SaveData[5] ? SaveData[5] = 1 : 0 == SaveData[5] && (SaveData[5] = 0),
-        SaveData[6] = 1 * c.A_STR.value,
-        SaveData[7] = 1 * c.A_AGI.value,
-        SaveData[8] = 1 * c.A_VIT.value,
-        SaveData[9] = 1 * c.A_DEX.value,
-        SaveData[10] = 1 * c.A_INT.value,
-        SaveData[11] = 1 * c.A_LUK.value,
-        SaveData[12] = 1 * c.A_Weapon_element.value,
-        SaveData[13] = m_Item[c.A_weapon1.value][1],
-        SaveData[14] = 1 * c.A_weapon1.value,
-        SaveData[15] = 1 * c.A_Weapon_refine.value,
-        SaveData[16] = 1 * c.A_weapon1_card1.value,
-        SaveData[17] = 1 * c.A_weapon1_card2.value,
-        SaveData[18] = 1 * c.A_weapon1_card3.value,
-        SaveData[19] = 1 * c.A_weapon1_card4.value,
-        n_Nitou ? (SaveData[20] = m_Item[c.A_weapon2.value][1],
-        SaveData[21] = 1 * c.A_weapon2.value,
-        SaveData[22] = 1 * c.A_Weapon2_refine.value,
-        SaveData[23] = 1 * c.A_weapon2_card1.value,
-        SaveData[24] = 1 * c.A_weapon2_card2.value,
-        SaveData[25] = 1 * c.A_weapon2_card3.value,
-        SaveData[26] = 1 * c.A_weapon2_card4.value) : (SaveData[20] = 0,
-        SaveData[21] = 0,
-        SaveData[22] = 0,
-        SaveData[23] = 0,
-        SaveData[24] = 0,
-        SaveData[25] = 0,
-        SaveData[26] = 0),
-        (2 == n_A_JobClass() || 4 == n_A_JobClass() || 45 == n_A_JOB && 0 != n_A_WeaponType) && (SaveData[27] = 1 * c.A_Arrow.value),
-        SaveData[28] = 1 * c.A_head1.value,
-        SaveData[29] = 1 * c.A_head1_card.value,
-        SaveData[30] = 1 * c.A_HEAD_REFINE.value,
-        SaveData[31] = 1 * c.A_head2.value,
-        SaveData[32] = 1 * c.A_head2_card.value,
-        SaveData[33] = 1 * c.A_head3.value,
-        SaveData[34] = 1 * c.A_left.value,
-        SaveData[35] = 1 * c.A_left_card.value,
-        SaveData[36] = 1 * c.A_LEFT_REFINE.value,
-        SaveData[37] = 1 * c.A_body.value,
-        SaveData[38] = 1 * c.A_body_card.value,
-        SaveData[39] = 1 * c.A_BODY_REFINE.value,
-        SaveData[40] = 1 * c.A_shoulder.value,
-        SaveData[41] = 1 * c.A_shoulder_card.value,
-        SaveData[42] = 1 * c.A_SHOULDER_REFINE.value,
-        SaveData[43] = 1 * c.A_shoes.value,
-        SaveData[44] = 1 * c.A_shoes_card.value,
-        SaveData[45] = 1 * c.A_SHOES_REFINE.value,
-        SaveData[46] = 1 * c.A_acces1.value,
-        SaveData[47] = 1 * c.A_acces1_card.value,
-        SaveData[48] = 1 * c.A_acces2.value,
-        SaveData[49] = 1 * c.A_acces2_card.value,
-        SaveData[50] = 1 * c.A_HSE_HEAD1.value,
-        SaveData[51] = 1 * c.A_HSE.value,
-        SaveData[52] = 0,
-        SaveData[53] = 0,
-        SaveData[54] = 0,
-        SaveData[55] = 0,
-        n_A_JobSet(),
+        }
+
+        SaveData[0] = 1;
+        SaveData[2] = 1 * c.A_JOB.value;
+        SaveData[3] = 1 * c.A_JobLV.value;
+        SaveData[4] = 1 * c.A_BaseLV.value;
+        SaveData[5] = 1 * c.A_adopted.checked;
+        1 == SaveData[5] ? SaveData[5] = 1 : 0 == SaveData[5] && (SaveData[5] = 0);
+        SaveData[6] = 1 * c.A_STR.value;
+        SaveData[7] = 1 * c.A_AGI.value;
+        SaveData[8] = 1 * c.A_VIT.value;
+        SaveData[9] = 1 * c.A_DEX.value;
+        SaveData[10] = 1 * c.A_INT.value;
+        SaveData[11] = 1 * c.A_LUK.value;
+        SaveData[12] = 1 * c.A_Weapon_element.value;
+        SaveData[13] = m_Item[c.A_weapon1.value][1];
+        SaveData[14] = 1 * c.A_weapon1.value;
+        SaveData[15] = 1 * c.A_Weapon_refine.value;
+        SaveData[16] = 1 * c.A_weapon1_card1.value;
+        SaveData[17] = 1 * c.A_weapon1_card2.value;
+        SaveData[18] = 1 * c.A_weapon1_card3.value;
+        SaveData[19] = 1 * c.A_weapon1_card4.value;
+
+        if (n_Nitou) {
+            SaveData[20] = m_Item[c.A_weapon2.value][1];
+            SaveData[21] = 1 * c.A_weapon2.value;
+            SaveData[22] = 1 * c.A_Weapon2_refine.value;
+            SaveData[23] = 1 * c.A_weapon2_card1.value;
+            SaveData[24] = 1 * c.A_weapon2_card2.value;
+            SaveData[25] = 1 * c.A_weapon2_card3.value;
+            SaveData[26] = 1 * c.A_weapon2_card4.value;
+        } else {
+            SaveData[20] = 0;
+            SaveData[21] = 0;
+            SaveData[22] = 0;
+            SaveData[23] = 0;
+            SaveData[24] = 0;
+            SaveData[25] = 0;
+            SaveData[26] = 0;
+        }
+
+        (2 == n_A_JobClass() || 4 == n_A_JobClass() || 45 == n_A_JOB && 0 != n_A_WeaponType) && (SaveData[27] = 1 * c.A_Arrow.value);
+        SaveData[28] = 1 * c.A_head1.value;
+        SaveData[29] = 1 * c.A_head1_card.value;
+        SaveData[30] = 1 * c.A_HEAD_REFINE.value;
+        SaveData[31] = 1 * c.A_head2.value;
+        SaveData[32] = 1 * c.A_head2_card.value;
+        SaveData[33] = 1 * c.A_head3.value;
+        SaveData[34] = 1 * c.A_left.value;
+        SaveData[35] = 1 * c.A_left_card.value;
+        SaveData[36] = 1 * c.A_LEFT_REFINE.value;
+        SaveData[37] = 1 * c.A_body.value;
+        SaveData[38] = 1 * c.A_body_card.value;
+        SaveData[39] = 1 * c.A_BODY_REFINE.value;
+        SaveData[40] = 1 * c.A_shoulder.value;
+        SaveData[41] = 1 * c.A_shoulder_card.value;
+        SaveData[42] = 1 * c.A_SHOULDER_REFINE.value;
+        SaveData[43] = 1 * c.A_shoes.value;
+        SaveData[44] = 1 * c.A_shoes_card.value;
+        SaveData[45] = 1 * c.A_SHOES_REFINE.value;
+        SaveData[46] = 1 * c.A_acces1.value;
+        SaveData[47] = 1 * c.A_acces1_card.value;
+        SaveData[48] = 1 * c.A_acces2.value;
+        SaveData[49] = 1 * c.A_acces2_card.value;
+        SaveData[50] = 1 * c.A_HSE_HEAD1.value;
+        SaveData[51] = 1 * c.A_HSE.value;
+        SaveData[52] = 0;
+        SaveData[53] = 0;
+        SaveData[54] = 0;
+        SaveData[55] = 0;
+        n_A_JobSet();
         w = n_A_JOB;
         for (var _ = 0, a = 0; 14 >= a && 0 == _; a++)
             if (999 != m_JobBuff[w][a]) {
