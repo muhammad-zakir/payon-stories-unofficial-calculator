@@ -3145,20 +3145,20 @@ function EnemySort() {
 
 /**
  * When the user selects a Place to filter monsters this becomes useful
- * Check the selected Place
+ * Check the selected Place and mark every monster out of it with -1
  * 
  * @param {number[]} monsterIdArray Array of monster's id
  * @returns 
  */
 function checkMonsterPlace(monsterIdArray) {
-    var a = document.calcForm.ENEMY_SORT2.value;
-    if (0 != a)
-        for (var n = 0; n <= EnemyNum; n++)
-            if (-1 != monsterIdArray[n]) {
-                for (var e = 0; "N" != m_MonsterMap[a][e] && monsterIdArray[n] != m_MonsterMap[a][e]; e++)
-                    ;
-                "N" == m_MonsterMap[a][e] && (monsterIdArray[n] = -1)
-            }
+    var selectedMap = document.calcForm.ENEMY_SORT2.value;
+    if (selectedMap === "0") return monsterIdArray;
+
+    for (var n = 0; n <= EnemyNum; n++){
+        let map = m_MonsterMap[selectedMap];
+        monsterIdArray[n] = map.monsterList.includes(monsterIdArray[n]) ? monsterIdArray[n] : -1;         
+    }
+            
     return monsterIdArray
 }
 function MANUKU_MONSTER() {
