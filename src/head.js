@@ -338,9 +338,11 @@ function BattleCalc999() {
             else if (158 == n_A_ActiveSkill)
                 wbairitu += .2 * n_A_ActiveSkillLV,
                 305 == m_Item[n_A_Equip[5]][0] && (wbairitu = 0);
-            else if (161 == n_A_ActiveSkill)
-                wbairitu += .35 * n_A_ActiveSkillLV,
+            else if (161 == n_A_ActiveSkill) {
+                // * Holy Cross new formula (300 + 25 × SkillLV)%
+                wbairitu += 2 +.25 * n_A_ActiveSkillLV;
                 n_A_Weapon_element = 6;
+            }
             else if (171 == n_A_ActiveSkill)
                 wbairitu += .4 * n_A_ActiveSkillLV;
             else if (72 == n_A_ActiveSkill)
