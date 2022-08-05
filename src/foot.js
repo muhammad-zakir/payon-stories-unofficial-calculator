@@ -918,7 +918,7 @@ function StAllCalc() {
     n_A_FLEE < 0 && 0 == SRV && (n_A_FLEE = 0),
     n_A_FLEE < 1 && SRV > 0 && (n_A_FLEE = 1),
 
-    // * 2H Quicken gives 1 FLEE per lvl
+    // * 2HQ Gives 1 extra flee per lvl
     SkillSearch(74) && n_A_WeaponType === 3 && (n_A_FLEE += SkillSearch(74)),
 
     myInnerHtml("A_FLEE", n_A_FLEE, 0),
@@ -977,6 +977,9 @@ function StAllCalc() {
     n_A_CRI = Math.round(10 * n_A_CRI) / 10,
     n_A_Buf6[9] && (n_A_CRI = 0),
 
+    // * 2HQ Gives 0.8 extra crit per lvl
+    SkillSearch(74) && n_A_WeaponType === 3 && (n_A_CRI += SkillSearch(74) * 0.8),
+    n_A_CRI = Number(n_A_CRI).toFixed(1),
 
     myInnerHtml("A_CRI", n_A_CRI, 0),
     n_A_CRITshield = 1 + .2 * n_A_LUK,
