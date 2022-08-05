@@ -919,7 +919,7 @@ function StAllCalc() {
     n_A_FLEE < 1 && SRV > 0 && (n_A_FLEE = 1),
 
     // * 2H Quicken gives 1 FLEE per lvl
-    SkillSearch(74) && (n_A_FLEE += SkillSearch(74)),
+    SkillSearch(74) && n_A_WeaponType === 3 && (n_A_FLEE += SkillSearch(74)),
 
     myInnerHtml("A_FLEE", n_A_FLEE, 0),
     myInnerHtml("A_WoeFLEE", Math.floor(.8 * n_A_FLEE), 0),
@@ -976,6 +976,8 @@ function StAllCalc() {
     11 == n_A_WeaponType && (n_A_CRI *= 2),
     n_A_CRI = Math.round(10 * n_A_CRI) / 10,
     n_A_Buf6[9] && (n_A_CRI = 0),
+
+
     myInnerHtml("A_CRI", n_A_CRI, 0),
     n_A_CRITshield = 1 + .2 * n_A_LUK,
     n_A_CRITshield = Math.round(10 * n_A_CRITshield) / 10,
