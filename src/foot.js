@@ -67,8 +67,8 @@ function SuperNoviceFullWeapon(_) {
     c.A_acces2.value = n_A_Equip[10]
 }
 function StAllCalc() {
-    if (n_A_JobSet(),
-    20 == n_A_JOB && (0 == SuperNoviceFullWeaponCHECK && 1 * c.A_skill9.value == 1 ? SuperNoviceFullWeapon(1) : 1 == SuperNoviceFullWeaponCHECK && 1 * c.A_skill9.value == 0 && SuperNoviceFullWeapon(0)),
+    n_A_JobSet();
+    if (20 == n_A_JOB && (0 == SuperNoviceFullWeaponCHECK && 1 * c.A_skill9.value == 1 ? SuperNoviceFullWeapon(1) : 1 == SuperNoviceFullWeaponCHECK && 1 * c.A_skill9.value == 0 && SuperNoviceFullWeapon(0)),
     n_A_BaseLV = 1 * c.A_BaseLV.value,
     n_A_JobLV = 1 * c.A_JobLV.value,
     n_A_STR = 1 * c.A_STR.value,
@@ -403,7 +403,7 @@ function StAllCalc() {
     n_B_manual[54] = 1 * c.BRG_RC39.value,
     n_B_manual[55] = 1 * c.BRG_RC40.value),
     _ = 0; 22 >= _; _++)
-        n_B[_] = m_Monster[c.B_Enemy.value][_];
+        selectedMonster[_] = m_Monster[c.B_Enemy.value][_];
     n_A_Bodyelement = StPlusCard(198),
     0 == n_A_Bodyelement && (n_A_Bodyelement = StPlusCalc2(198)),
     13 != n_A_JOB && 27 != n_A_JOB || !CardNumSearch(456) || (n_A_Bodyelement = 6),
@@ -938,7 +938,7 @@ function StAllCalc() {
     n_A_CRI = 1 + .3 * n_A_LUK,
     S = 0,
     S += n_tok[10] + n_A_Buf9[39],
-    S += n_tok[110 + n_B[2]],
+    S += n_tok[110 + selectedMonster[2]],
     S += Math.floor(n_A_JobLV / 10) * CardNumSearch(492),
     24 == n_A_JOB && (S += SkillSearch(270)),
     SkillSearch(253) && (S += 50),
@@ -958,11 +958,11 @@ function StAllCalc() {
     3 != n_A_WeaponType && 2 != n_A_WeaponType || (S += 5 * CardNumSearch(464)),
     6 == n_A_JobClass() && (S += 5 * EquipNumSearch(1122)),
     41 == n_A_JobClass() && 675 == n_A_Equip[2] && (S += 5),
-    3 != n_A_JobClass() || 1 != n_B[2] && 6 != n_B[2] || (S += 9 * CardNumSearch(253)),
+    3 != n_A_JobClass() || 1 != selectedMonster[2] && 6 != selectedMonster[2] || (S += 9 * CardNumSearch(253)),
     n_A_HEAD_REFINE >= 6 && 785 == n_A_Equip[2] && (S += n_A_HEAD_REFINE - 5),
     n_A_HEAD_REFINE >= 7 && 1612 == n_A_Equip[2] && (S += 10),
     n_A_HEAD_REFINE >= 8 && 1555 == n_A_Equip[2] && (S += 10),
-    n_A_Weapon_refine >= 6 && 7 == n_B[2] && 1091 == n_A_Equip[0] && (S += 5),
+    n_A_Weapon_refine >= 6 && 7 == selectedMonster[2] && 1091 == n_A_Equip[0] && (S += 5),
     10 == n_A_WeaponType && 15 == n_A_Arrow && (S += 20),
     (10 == n_A_WeaponType || 17 <= n_A_WeaponType && n_A_WeaponType <= 21) && (S += 15 * CardNumSearch(462)),
     SkillSearch(195) ? S += 7.5 + 2.5 * SkillSearch(195) : TimeItemNumSearch(34) && (S += 10),
@@ -1391,7 +1391,7 @@ function StAllCalc() {
         n_tok[56] -= 200,
         n_tok[58] -= 200,
         n_tok[59] -= 200);
-    if ((0 == n_B[20] && 0 == n_B_rangedAtk && 0 == n_B_rangedMAtk && 2 != c.B_AtkRange.value || 1 == c.B_AtkRange.value) && 957 == n_A_Equip[7])
+    if ((0 == selectedMonster[20] && 0 == n_B_rangedAtk && 0 == n_B_rangedMAtk && 2 != c.B_AtkRange.value || 1 == c.B_AtkRange.value) && 957 == n_A_Equip[7])
         for (_ = 0; 9 >= _; _++)
             n_tok[60 + _] += 30;
     if (n_A_HEAD_REFINE >= 7 && 1498 == n_A_Equip[2])
@@ -1437,14 +1437,14 @@ function StAllCalc() {
     1082 != n_A_Equip[0] && 1087 != n_A_Equip[0] && 1094 != n_A_Equip[0] && 1096 != n_A_Equip[0] || n_A_Weapon_refine >= 6 && (n_tok[307] += 5),
     645 == n_A_Equip[0] && (n_tok[295] += 10 + n_A_Weapon_refine),
     9 == n_A_WeaponType && (n_tok[295] += 2 * CardNumSearch(466)),
-    1 == n_B[19] && (n_tok[297] += 30 * CardNumSearch(425)),
+    1 == selectedMonster[19] && (n_tok[297] += 30 * CardNumSearch(425)),
     936 == n_A_Equip[0] && (n_tok[295] += 1 * n_A_Weapon_refine),
-    1 == n_B[19] && 1228 == n_A_Equip[2] && n_A_HEAD_REFINE >= 6 && (n_tok[297] += n_A_HEAD_REFINE - 5),
-    1 == n_B[19] && (n_tok[295] += n_tok[297]),
+    1 == selectedMonster[19] && 1228 == n_A_Equip[2] && n_A_HEAD_REFINE >= 6 && (n_tok[297] += n_A_HEAD_REFINE - 5),
+    1 == selectedMonster[19] && (n_tok[295] += n_tok[297]),
     1084 != n_A_Equip[0] && 1095 != n_A_Equip[0] || n_A_Weapon_refine >= 6 && (n_tok[317] += 5),
     1085 == n_A_Equip[0] && n_A_Weapon_refine >= 6 && (n_tok[317] += 5),
     1083 == n_A_Equip[0] && n_A_Weapon_refine >= 6 && (n_tok[317] += 5 + 2 * (n_A_Weapon_refine - 5)),
-    n_tok[70] += n_tok[320 + n_B[2]],
+    n_tok[70] += n_tok[320 + selectedMonster[2]],
     535 == n_A_Equip[7]) {
         n_A_JobClass();
         1 != i && 2 != i && 6 != i || (n_tok[71] += 5,
@@ -1997,6 +1997,8 @@ function JobEquipItemSearch(_) {
             return 1;
     return 0
 }
+
+
 function n_A_JobSet() {
     n_A_JOB = 1 * document.calcForm.A_JOB.value,
     21 <= n_A_JOB && n_A_JOB <= 40 ? (n_Reborn = 1,
@@ -2378,44 +2380,44 @@ function KakutyouKansuu() {
         var t = "Required BaseExp for Base Up: <B>" + Kanma(PC_BaseExp[n_Reborn][n_A_BaseLV] - o) + " </B>exp<BR>"
           , r = 0
           , S = 0;
-        if (0 != n_B[16]) {
+        if (0 != selectedMonster[16]) {
             for (n = n_A_BaseLV; 99 > n; n++) {
                 var i = PC_BaseExp[n_Reborn][n]
-                  , s = Math.floor((i - o) / n_B[16]);
+                  , s = Math.floor((i - o) / selectedMonster[16]);
                 for (r += s,
-                o += s * n_B[16]; i > o; )
-                    o += n_B[16],
+                o += s * selectedMonster[16]; i > o; )
+                    o += selectedMonster[16],
                     r += 1;
                 0 == S && (S = 1,
-                t += "(Equals <B>" + Kanma(r) + "</B> " + n_B[1] + " kill" + (1 != Kanma(r) ? "s" : "") + ")<BR>"),
+                t += "(Equals <B>" + Kanma(r) + "</B> " + selectedMonster[1] + " kill" + (1 != Kanma(r) ? "s" : "") + ")<BR>"),
                 o -= i,
                 o > i - 1 && (o = i - 1)
             }
-            t += "Until BaseLv99: <B>" + Kanma(r) + "</B> more " + n_B[1] + " kill" + (1 != Kanma(r) ? "s" : "") + "<BR><BR>"
+            t += "Until BaseLv99: <B>" + Kanma(r) + "</B> more " + selectedMonster[1] + " kill" + (1 != Kanma(r) ? "s" : "") + "<BR><BR>"
         }
         if (l = Math.floor(PC_JobExp[u][n_A_JobLV] * l / 100),
         (1 <= n_A_JOB && n_A_JOB <= 6 || 41 == n_A_JOB) && 50 == n_A_JobLV && (l = 0),
         t += "Required JobExp for Job Up: <B>" + Kanma(PC_JobExp[u][n_A_JobLV] - l) + "</B> exp<BR>",
         r = 0,
         S = 0,
-        0 != n_B[17]) {
+        0 != selectedMonster[17]) {
             for (n = 1; 0 != PC_JobExp[u][n]; n++)
                 ;
             var f = n;
             for ((1 <= n_A_JOB && n_A_JOB <= 6 || 41 == n_A_JOB) && (f = 50),
             n = n_A_JobLV; f > n; n++) {
                 var i = PC_JobExp[u][n]
-                  , s = Math.floor((i - l) / n_B[17]);
+                  , s = Math.floor((i - l) / selectedMonster[17]);
                 for (r += s,
-                l += s * n_B[17]; i > l; )
-                    l += n_B[17],
+                l += s * selectedMonster[17]; i > l; )
+                    l += selectedMonster[17],
                     r += 1;
                 0 == S && (S = 1,
-                t += "(Equals <B>" + Kanma(r) + "</B> " + n_B[1] + " kill" + (1 != Kanma(r) ? "s" : "") + ")<BR>"),
+                t += "(Equals <B>" + Kanma(r) + "</B> " + selectedMonster[1] + " kill" + (1 != Kanma(r) ? "s" : "") + ")<BR>"),
                 l -= i,
                 l > i - 1 && (l = i - 1)
             }
-            t += "Until JobLv" + f + ": <B>" + Kanma(r) + "</B> more " + n_B[1] + " kill" + (1 != Kanma(r) ? "s" : "") + "<BR>"
+            t += "Until JobLv" + f + ": <B>" + Kanma(r) + "</B> more " + selectedMonster[1] + " kill" + (1 != Kanma(r) ? "s" : "") + "<BR>"
         }
         myInnerHtml("A_KakutyouData", t, 0)
     } else if (22 == wKK)
@@ -3162,13 +3164,13 @@ function checkMonsterPlace(monsterIdArray) {
 }
 function MANUKU_MONSTER() {
     for (var _ = 0; _ < nMANUKU.length; _++)
-        if (n_B[0] == nMANUKU[_])
+        if (selectedMonster[0] == nMANUKU[_])
             return 1;
     return 0
 }
 function SUPURE_MONSTER() {
     for (var _ = 0; _ < nSUPURE.length; _++)
-        if (n_B[0] == nSUPURE[_])
+        if (selectedMonster[0] == nSUPURE[_])
             return 1;
     return 0
 }
@@ -3564,7 +3566,7 @@ function LoadLocal() {
                 }
                 break
             }
-        for (n_B[0] = SaveData[246],
+        for (selectedMonster[0] = SaveData[246],
         c.B_Enemy.value = SaveData[246],
         Bskill(),
         c.B_AtkSkill.value = SaveData[247],
@@ -3933,7 +3935,7 @@ function URLOUT() {
     SaveData[t + 6] = NtoS2(c.A_ActiveSkill.value, 2),
     SaveData[t + 7] = NtoS2(1 * c.A_ActiveSkillLV.value, 1),
     66 == n_A_ActiveSkill || 326 == n_A_ActiveSkill || 131 == n_A_ActiveSkill || 88 == n_A_ActiveSkill || 197 == n_A_ActiveSkill || 394 == n_A_ActiveSkill || 395 == n_A_ActiveSkill || 405 == n_A_ActiveSkill || 429 == n_A_ActiveSkill || SkillSearch(441) && (51 == n_A_ActiveSkill || 54 == n_A_ActiveSkill || 56 == n_A_ActiveSkill || 540 == n_A_ActiveSkill || 541 == n_A_ActiveSkill || 542 == n_A_ActiveSkill) ? SaveData[t + 8] = NtoS2(1 * c.SkillSubNum.value, 3) : SaveData[t + 8] = NtoS2(0, 3),
-    SaveData[t + 9] = NtoS2(n_B[0], 2),
+    SaveData[t + 9] = NtoS2(selectedMonster[0], 2),
     SaveData[t + 10] = NtoS2(c.B_AtkSkill.value, 2),
     444 == n_B_AtkSkill || 445 == n_B_AtkSkill || 125 == n_B_AtkSkill || 131 == n_B_AtkSkill ? SaveData[t + 11] = NtoS2(c.BSkillSubNum.value, 3) : SaveData[t + 11] = NtoS2(0, 3),
     t += 11,
@@ -4657,7 +4659,7 @@ function URLIN() {
                     }
                     break
                 }
-            n_B[0] = StoN2(a.substr(S + 14, 2)),
+            selectedMonster[0] = StoN2(a.substr(S + 14, 2)),
             c.B_Enemy.value = StoN2(a.substr(S + 14, 2)),
             calc(),
             Bskill(),

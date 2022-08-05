@@ -130,13 +130,13 @@ function BattleCalc999() {
         Last_DMG_B[_] = 0;
     if (str_bSUBname = "",
     str_bSUB = "",
-    0 == n_A_ActiveSkill || 272 == n_A_ActiveSkill || 401 == n_A_ActiveSkill || 86 == n_A_ActiveSkill && 50 <= n_B[3] && n_B[3] < 60 || (myInnerHtml("CRIATK", "", 0),
+    0 == n_A_ActiveSkill || 272 == n_A_ActiveSkill || 401 == n_A_ActiveSkill || 86 == n_A_ActiveSkill && 50 <= selectedMonster[3] && selectedMonster[3] < 60 || (myInnerHtml("CRIATK", "", 0),
     myInnerHtml("CRInum", "", 0),
     myInnerHtml("CRIATKname", "", 0),
     myInnerHtml("bSUB3name", "", 0),
     myInnerHtml("bSUB3", "", 0)),
     10 != n_A_WeaponType && 17 != n_A_WeaponType && 18 != n_A_WeaponType && 19 != n_A_WeaponType && 20 != n_A_WeaponType && 21 != n_A_WeaponType || 0 != n_A_ActiveSkill || (n_rangedAtk = 1),
-    0 == n_A_ActiveSkill || 86 == n_A_ActiveSkill && 50 <= n_B[3] && n_B[3] < 60)
+    0 == n_A_ActiveSkill || 86 == n_A_ActiveSkill && 50 <= selectedMonster[3] && selectedMonster[3] < 60)
         if (myInnerHtml("CRIATKname", "Critical Damage (Critical Rate)", 0),
         myInnerHtml("bSUB3name", "", 0),
         myInnerHtml("bSUB3", "", 0),
@@ -147,7 +147,7 @@ function BattleCalc999() {
             n_A_workDEX >= n_A_Weapon2_ATK ? w_left_Maxatk = n_A_ATK + n_A_Weapon2LV_Maxplus + Math.floor((n_A_Weapon2_ATK + wImp) * wCSize) : w_left_Maxatk = n_A_ATK + n_A_Weapon2LV_Maxplus + Math.floor((n_A_Weapon2_ATK - 1 + wImp) * wCSize),
             w_left_Maxatk = BattleCalc4(w_left_Maxatk * wbairitu, 2, 1),
             w_left_Maxatk < 1 && (w_left_Maxatk = 1),
-            w_left_Maxatk = Math.floor(w_left_Maxatk * element[n_B[3]][n_A_Weapon2_element]),
+            w_left_Maxatk = Math.floor(w_left_Maxatk * element[selectedMonster[3]][n_A_Weapon2_element]),
             w_left_star = 0,
             106 == n_A_card[4] && 106 == n_A_card[5] && 106 == n_A_card[6])
                 w_left_star += 40;
@@ -162,7 +162,7 @@ function BattleCalc999() {
             w_left_Minatk = n_A_ATK + n_A_Weapon2LV_Minplus + Math.floor((n_A_workDEX + wImp) * wCSize),
             w_left_Minatk = BattleCalc4(w_left_Minatk * wbairitu, 0, 1),
             w_left_Minatk < 1 && (w_left_Minatk = 1),
-            w_left_Minatk = Math.floor(w_left_Minatk * element[n_B[3]][n_A_Weapon2_element]),
+            w_left_Minatk = Math.floor(w_left_Minatk * element[selectedMonster[3]][n_A_Weapon2_element]),
             w_left_Minatk += w_left_star,
             w_left_Minatk *= .3 + SkillSearch(80) / 10,
             w_left_Minatk = Math.floor(w_left_Minatk),
@@ -205,22 +205,24 @@ function BattleCalc999() {
             CastAndDelay(),
             BattleCalc998()
         } else {
-            if (n_TAKA_DMG = 0,
-            wTAKA = BattleTAKA(),
-            TyouEnkakuSousa3dan = 0,
-            SkillSearch(187)) {
+            n_TAKA_DMG = 0;
+            wTAKA = BattleTAKA();
+
+            TyouEnkakuSousa3dan = 0;
+            if (SkillSearch(187)) {
                 TyouEnkakuSousa3dan = -1,
                 wBC3_3danAtkBairitu = .2 * SkillSearch(187);
                 for (var l = [0, 0, 0], _ = 0; 2 >= _; _++)
                     l[_] = BattleCalc(n_A_DMG[_] * (wbairitu + wBC3_3danAtkBairitu), _) + EDP_DMG(_),
                     l[_] = 3 * Math.floor(l[_] / 3),
-                    5 == n_B[19] && (l[_] = 3);
+                    5 == selectedMonster[19] && (l[_] = 3);
                 str_bSUBname += "Raging Trifecta Blow Damage<BR>",
                 str_bSUB += l[0] + "~" + l[2] + " (" + (30 - SkillSearch(187)) + "% Chance)<BR>",
                 TyouEnkakuSousa3dan = 0,
                 n_Min_DMG > l[0] && (n_Min_DMG = l[0]),
                 n_Max_DMG < l[2] && (n_Max_DMG = l[2])
             }
+
             ATKbai02(wbairitu, 0);
             for (var _ = 0; 2 >= _; _++)
                 w_DMG[_] = BattleCalc(n_A_DMG[_], _);
@@ -451,10 +453,10 @@ function BattleCalc999() {
             } else
                 317 == n_A_ActiveSkill ? (n_Delay[0] = 1,
                 n_Delay[5] = .05,
-                1 == n_B[19] && (n_Delay[5] = .1),
+                1 == selectedMonster[19] && (n_Delay[5] = .1),
                 1 == PvP && (str_bSUBname += "SP damage<BR>",
                 str_bSUB += "15<BR>")) : 318 == n_A_ActiveSkill ? (n_Delay[5] = .05,
-                1 == n_B[19] && (n_Delay[5] = .1),
+                1 == selectedMonster[19] && (n_Delay[5] = .1),
                 1 == PvP && (n_Delay[0] = 1,
                 str_bSUBname += "SP damage<BR>",
                 str_bSUB += "15<BR>")) : 326 == n_A_ActiveSkill ? (not_use_card = 1,
@@ -475,7 +477,7 @@ function BattleCalc999() {
                 n_Delay[2] = 1,
                 n_rangedAtk = 1,
                 wActiveHitNum = 5,
-                2 != n_B[2] && 7 != n_B[2] || (wbairitu += 4)) : 423 == n_A_ActiveSkill ? (n_rangedAtk = 1,
+                2 != selectedMonster[2] && 7 != selectedMonster[2] || (wbairitu += 4)) : 423 == n_A_ActiveSkill ? (n_rangedAtk = 1,
                 n_Delay[2] = .5,
                 n_A_Weapon_element = 8,
                 not_use_card = 1) : 428 == n_A_ActiveSkill ? (n_rangedAtk = 1,
@@ -546,7 +548,7 @@ function BattleCalc999() {
                 wHITsuu = 2;
             else if (70 == n_A_ActiveSkill)
                 wbairitu += .1 * n_A_ActiveSkillLV,
-                wHITsuu = n_B[4] + 1;
+                wHITsuu = selectedMonster[4] + 1;
             else if (76 == n_A_ActiveSkill)
                 wbairitu += .4 * n_A_ActiveSkillLV,
                 wCast = .7 * n_A_CAST,
@@ -583,7 +585,7 @@ function BattleCalc999() {
             ATKbai02(wbairitu, 0);
             for (var _ = 0; 2 >= _; _++)
                 w_DMG[_] = BattleCalc(n_A_DMG[_], _),
-                391 == n_A_ActiveSkill && 2 != n_B[2] && 4 != n_B[2] && (w_DMG[_] = 0),
+                391 == n_A_ActiveSkill && 2 != selectedMonster[2] && 4 != selectedMonster[2] && (w_DMG[_] = 0),
                 w_DMG[_] += EDP_DMG(_),
                 Last_DMG_B[_] = w_DMG[_],
                 76 == n_A_ActiveSkill && (Last_DMG_B[_] = 2 * w_DMG[_]),
@@ -606,12 +608,12 @@ function BattleCalc999() {
             n_rangedAtk = 1,
             wBT = 80 + 2 * Math.floor(n_A_DEX / 10) + 2 * Math.floor(n_A_INT / 2) + 6 * SkillSearch(119),
             271 == n_A_ActiveSkill ? (wBT = Math.floor(wBT * (150 + 70 * n_A_ActiveSkillLV) / 100),
-            wBT = Math.floor(wBT * element[n_B[3]][0]),
+            wBT = Math.floor(wBT * element[selectedMonster[3]][0]),
             wBT = tPlusDamCut(wBT),
             wBT *= 5,
-            5 == n_B[19] && (wBT = 1),
+            5 == selectedMonster[19] && (wBT = 1),
             wCast = 1 * n_A_CAST,
-            n_Delay[2] = 3) : (wBT = Math.floor(wBT * element[n_B[3]][0]),
+            n_Delay[2] = 3) : (wBT = Math.floor(wBT * element[selectedMonster[3]][0]),
             wBT = tPlusDamCut(wBT),
             wBT *= n_A_ActiveSkillLV,
             wCast = 1.5 * n_A_CAST,
@@ -625,14 +627,14 @@ function BattleCalc999() {
             w_HIT_HYOUJI = 100,
             CastAndDelay(),
             BattleCalc998()
-        } else if (17 == n_A_ActiveSkill || 86 == n_A_ActiveSkill && (n_B[3] < 50 || 60 <= n_B[3])) {
+        } else if (17 == n_A_ActiveSkill || 86 == n_A_ActiveSkill && (selectedMonster[3] < 50 || 60 <= selectedMonster[3])) {
             ATKbai02(wbairitu, 0),
             n_A_Weapon_element = 5,
-            wINV = Math.floor(BattleCalc2(0) * element[n_B[3]][5]),
+            wINV = Math.floor(BattleCalc2(0) * element[selectedMonster[3]][5]),
             n_PerHIT_DMG = wINV;
             for (var _ = 0; 2 >= _; _++)
                 w_DMG[_] = BattleCalc(n_A_DMG[_], _),
-                w_DMG[_] = Math.floor(w_DMG[_] * element[n_B[3]][5]),
+                w_DMG[_] = Math.floor(w_DMG[_] * element[selectedMonster[3]][5]),
                 Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_] + EDP_DMG(_),
                 InnStr[_] += Last_DMG_A[_];
             w_DMG[1] = (w_DMG[1] * w_HIT + wINV * (100 - w_HIT)) / 100,
@@ -650,11 +652,11 @@ function BattleCalc999() {
             wbairitu2 *= 2),
             SRV) {
                 wSBr = 10 * n_A_LEFT_REFINE,
-                EquipNumSearch(620) || EquipNumSearch(409) || CardNumSearch(255) || EquipNumSearch(43) ? (M_DEF1 = n_B[14],
-                M_DEF2 = n_B_DEF2[0]) : (EquipNumSearch(393) || EquipNumSearch(904)) && 7 == n_B[2] ? (M_DEF1 = n_B[14],
-                M_DEF2 = n_B_DEF2[0]) : (EquipNumSearch(392) || EquipNumSearch(401)) && 3 == n_B[2] ? (M_DEF1 = n_B[14],
-                M_DEF2 = n_B_DEF2[0]) : (EquipNumSearch(467) || EquipNumSearch(405) || EquipNumSearch(471)) && 9 == n_B[2] ? (M_DEF1 = n_B[14],
-                M_DEF2 = n_B_DEF2[0]) : EquipNumSearch(394) && 6 == n_B[2] ? (M_DEF1 = n_B[14],
+                EquipNumSearch(620) || EquipNumSearch(409) || CardNumSearch(255) || EquipNumSearch(43) ? (M_DEF1 = selectedMonster[14],
+                M_DEF2 = n_B_DEF2[0]) : (EquipNumSearch(393) || EquipNumSearch(904)) && 7 == selectedMonster[2] ? (M_DEF1 = selectedMonster[14],
+                M_DEF2 = n_B_DEF2[0]) : (EquipNumSearch(392) || EquipNumSearch(401)) && 3 == selectedMonster[2] ? (M_DEF1 = selectedMonster[14],
+                M_DEF2 = n_B_DEF2[0]) : (EquipNumSearch(467) || EquipNumSearch(405) || EquipNumSearch(471)) && 9 == selectedMonster[2] ? (M_DEF1 = selectedMonster[14],
+                M_DEF2 = n_B_DEF2[0]) : EquipNumSearch(394) && 6 == selectedMonster[2] ? (M_DEF1 = selectedMonster[14],
                 M_DEF2 = n_B_DEF2[0]) : (M_DEF1 = 0,
                 M_DEF2 = 0);
                 var o = n_A_ATK + .05 * n_A_ATK * n_A_Buf2[8];
@@ -662,15 +664,15 @@ function BattleCalc999() {
                 n_A_Buf6[5] && 0 == n_A_Buf7[31] && (o += Math.floor(o * (.02 + .03 * n_A_Buf6[5]))),
                 n_A_Buf7[31] && 0 == n_A_Buf6[5] && (o += Math.floor(.05 * o));
                 for (var _ = 0; 2 >= _; _++)
-                    n_tok[23] > 0 ? (n_A_ATK_IP = Math.round((o + Shieldw) * (n_B_DEF2[2 - _] + n_B[14]) / 100),
+                    n_tok[23] > 0 ? (n_A_ATK_IP = Math.round((o + Shieldw) * (n_B_DEF2[2 - _] + selectedMonster[14]) / 100),
                     w_DMG[_] = n_A_ATK_IP * wbairitu) : (w_DMG[_] = (o + Shieldw) * wbairitu,
-                    w_DMG[_] = Math.floor(w_DMG[_] * defReduction(n_B[14] - M_DEF1) - (n_B_DEF2[_] - M_DEF2))),
+                    w_DMG[_] = Math.floor(w_DMG[_] * defReduction(selectedMonster[14] - M_DEF1) - (n_B_DEF2[_] - M_DEF2))),
                     w_DMG[_] = Math.floor(w_DMG[_] * wbairitu2),
                     w_DMG[_] = ApplyModifiers(w_DMG[_]) + wSBr,
                     0 != M_DEF1 && (w_DMG[2] = w_DMG[1] = w_DMG[0]),
                     w_DMG[_] < 1 && (w_DMG[_] = 1),
                     305 == m_Item[n_A_Equip[5]][0] && (w_DMG[_] = 0),
-                    w_DMG[_] = Math.floor(w_DMG[_] * element[n_B[3]][0]),
+                    w_DMG[_] = Math.floor(w_DMG[_] * element[selectedMonster[3]][0]),
                     Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_],
                     InnStr[_] += Last_DMG_A[_]
             } else {
@@ -679,10 +681,10 @@ function BattleCalc999() {
                 n_A_ATK = n_A_STR + n_A_ATK_w + Math.floor(n_A_DEX / 5) + Math.floor(n_A_LUK / 5);
                 for (var _ = 0; 2 >= _; _++)
                     w_DMG[_] = n_A_ATK * wbairitu + Shieldw + wSBr,
-                    w_DMG[_] = Math.floor(Math.floor(w_DMG[_] * defReduction(n_B[14]) - n_B_DEF2[_]) * wbairitu2),
+                    w_DMG[_] = Math.floor(Math.floor(w_DMG[_] * defReduction(selectedMonster[14]) - n_B_DEF2[_]) * wbairitu2),
                     w_DMG[_] = ApplyModifiers(w_DMG[_]),
                     w_DMG[_] < 1 && (w_DMG[_] = 1),
-                    w_DMG[_] = Math.floor(w_DMG[_] * element[n_B[3]][0]),
+                    w_DMG[_] = Math.floor(w_DMG[_] * element[selectedMonster[3]][0]),
                     Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_],
                     InnStr[_] += Last_DMG_A[_]
             }
@@ -705,11 +707,11 @@ function BattleCalc999() {
                 n_A_Buf7[31] && 0 == n_A_Buf6[5] && (o += Math.floor(.05 * o));
                 for (var _ = 0; 2 >= _; _++)
                     w_DMG[_] = s * wbairitu + Shieldw,
-                    w_DMG[_] = Math.floor(Math.floor(5 * w_DMG[_] * defReduction(n_B[14]) - n_B_DEF2[_]) * wbairitu2) + 5 * n_A_LEFT_REFINE * 2,
+                    w_DMG[_] = Math.floor(Math.floor(5 * w_DMG[_] * defReduction(selectedMonster[14]) - n_B_DEF2[_]) * wbairitu2) + 5 * n_A_LEFT_REFINE * 2,
                     w_DMG[_] = ApplyModifiers(w_DMG[_]),
                     w_DMG[_] < 1 && (w_DMG[_] = 1),
                     305 == m_Item[n_A_Equip[5]][0] ? (w_DMG[_] = 0,
-                    InnStr[_] += w_DMG[_] + " (no shield equiped)") : (w_DMG[_] = Math.floor(w_DMG[_] * element[n_B[3]][0]),
+                    InnStr[_] += w_DMG[_] + " (no shield equiped)") : (w_DMG[_] = Math.floor(w_DMG[_] * element[selectedMonster[3]][0]),
                     Last_DMG_B[_] = Math.floor(w_DMG[_] / 5) + Math.floor(n_B_DEF2[_] / 3 - 1),
                     Last_DMG_A[_] = 5 * Last_DMG_B[_],
                     InnStr[_] += Last_DMG_A[_] + " (" + Last_DMG_B[_] + SubName[8] + "5 hits)",
@@ -728,12 +730,12 @@ function BattleCalc999() {
                 wSC2[1] = 100 + (Shieldw + 2 * wSBr * wSBr) / 2,
                 wSC2[0] = 100;
                 for (var _ = 0; 2 >= _; _++)
-                    w_DMG[_] = (n_A_ATK * defReduction(n_B[14]) - n_B_DEF2[_]) * wbairitu2,
+                    w_DMG[_] = (n_A_ATK * defReduction(selectedMonster[14]) - n_B_DEF2[_]) * wbairitu2,
                     w_DMG[_] += wSC2[_],
                     w_DMG[_] = ApplyModifiers(w_DMG[_]),
                     w_DMG[_] < 1 && (w_DMG[_] = 1),
                     305 == m_Item[n_A_Equip[5]][0] && (w_DMG[_] = 0),
-                    w_DMG[_] = Math.floor(w_DMG[_] * element[n_B[3]][0]),
+                    w_DMG[_] = Math.floor(w_DMG[_] * element[selectedMonster[3]][0]),
                     Last_DMG_A[_] = 5 * w_DMG[_],
                     Last_DMG_B[_] = w_DMG[_],
                     InnStr[_] += Last_DMG_A[_] + " (" + Last_DMG_B[_] + SubName[8] + "5 hits)",
@@ -744,7 +746,7 @@ function BattleCalc999() {
             BattleCalc998()
         } else if (259 == n_A_ActiveSkill) {
             n_rangedAtk = 1,
-            SRV ? wSPP2 = n_A_Weapon_refine * element[n_B[3]][n_A_Weapon_element] : wSPP2 = n_A_WeaponLV_refineATK * element[n_B[3]][n_A_Weapon_element],
+            SRV ? wSPP2 = n_A_Weapon_refine * element[selectedMonster[3]][n_A_Weapon_element] : wSPP2 = n_A_WeaponLV_refineATK * element[selectedMonster[3]][n_A_Weapon_element],
             wSPP2 = ApplyModifiers(wSPP2),
             wSPP2 = tPlusDamCut(wSPP2),
             n_PerHIT_DMG = 5 * wSPP2,
@@ -753,9 +755,9 @@ function BattleCalc999() {
             wSPP = Math.floor(n_A_STR / 10),
             Weaponw = 1 * c.SkillSubNum.value,
             w_DMG[2] = wSPP * wSPP + .8 * Weaponw * (1 + .5 * n_A_ActiveSkillLV),
-            wSPP = 1.25 - .25 * n_B[4],
+            wSPP = 1.25 - .25 * selectedMonster[4],
             SRV ? w_DMG[2] = Math.floor(w_DMG[2] * wSPP) + 10 + 1.5 * n_A_Weapon_refine : w_DMG[2] = Math.floor(w_DMG[2] * wSPP + n_A_WeaponLV_refineATK),
-            w_DMG[2] = w_DMG[2] * element[n_B[3]][n_A_Weapon_element],
+            w_DMG[2] = w_DMG[2] * element[selectedMonster[3]][n_A_Weapon_element],
             w_DMG[2] = ApplyModifiers(w_DMG[2]),
             w_DMG[0] = w_DMG[1] = w_DMG[2];
             for (var _ = 0; 2 >= _; _++)
@@ -772,14 +774,14 @@ function BattleCalc999() {
             not_use_card = 1,
             n_Delay[0] = 1,
             wCast = 1 * n_A_CAST,
-            0 == n_B[19]) {
+            0 == selectedMonster[19]) {
                 wbairitu += (400 + 50 * n_A_ActiveSkillLV + 20 * c.SkillSubNum.value) / 100,
                 ATKbai02(wbairitu, 0);
                 for (var _ = 0; 2 >= _; _++)
                     w_DMG[_] = BattleCalc(n_A_DMG[_], _),
                     w_DMG[_] = Math.floor(w_DMG[_])
             } else
-                5 == n_B[19] ? w_DMG[0] = w_DMG[1] = w_DMG[2] = 1 : w_DMG[0] = w_DMG[1] = w_DMG[2] = 0;
+                5 == selectedMonster[19] ? w_DMG[0] = w_DMG[1] = w_DMG[2] = 1 : w_DMG[0] = w_DMG[1] = w_DMG[2] = 0;
             for (var _ = 0; 2 >= _; _++)
                 Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_],
                 InnStr[_] += Last_DMG_A[_];
@@ -793,9 +795,9 @@ function BattleCalc999() {
             n_Delay[2] = .8 + .2 * n_A_ActiveSkillLV,
             w_SBr = new Array,
             a = 5 * n_A_INT * n_A_ActiveSkillLV,
-            w_SBr[2] = a + 1e3 - Math.floor((n_B[14] + n_B[15] + n_B_MDEF2 + n_B_DEF2[2]) / 2),
-            w_SBr[1] = a + 750 - Math.floor((n_B[14] + n_B[15] + n_B_MDEF2 + n_B_DEF2[1]) / 2),
-            w_SBr[0] = a + 500 - Math.floor((n_B[14] + n_B[15] + n_B_MDEF2 + n_B_DEF2[0]) / 2);
+            w_SBr[2] = a + 1e3 - Math.floor((selectedMonster[14] + selectedMonster[15] + n_B_MDEF2 + n_B_DEF2[2]) / 2),
+            w_SBr[1] = a + 750 - Math.floor((selectedMonster[14] + selectedMonster[15] + n_B_MDEF2 + n_B_DEF2[1]) / 2),
+            w_SBr[0] = a + 500 - Math.floor((selectedMonster[14] + selectedMonster[15] + n_B_MDEF2 + n_B_DEF2[0]) / 2);
             for (var _ = 0; 2 >= _; _++)
                 w_SBr[_] = tPlusDamCut(w_SBr[_]);
             for (var _ = 0; 2 >= _; _++)
@@ -807,7 +809,7 @@ function BattleCalc999() {
             var e = BattleCalc2(0) * n_A_ActiveSkillLV;
             if (n_PerHIT_DMG = e + w_SBr[1],
             str_PerHIT_DMG = e + w_SBr[0] + "~" + (e + w_SBr[2]),
-            5 == n_B[19])
+            5 == selectedMonster[19])
                 for (var _ = 0; 2 >= _; _++)
                     Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_] = 1,
                     InnStr[_] += Last_DMG_A[_];
@@ -844,16 +846,16 @@ function BattleCalc999() {
             n_Delay[2] = 1.5,
             wLAch = 1;
             for (var _ = 0; 2 >= _; _++)
-                w_DMG[_] = BK_n_A_DMG[_] * defReduction(n_B[14]) - n_B_DEF2[_] + n_A_WeaponLV_refineATK,
+                w_DMG[_] = BK_n_A_DMG[_] * defReduction(selectedMonster[14]) - n_B_DEF2[_] + n_A_WeaponLV_refineATK,
                 w_DMG[_] *= wbairitu + .4 * n_A_ActiveSkillLV,
-                w_DMG[_] = Math.floor(w_DMG[_] * element[n_B[3]][6]),
-                a = BK_n_A_MATK[_] * mdefReduction(n_B[15]) - n_B_MDEF2,
+                w_DMG[_] = Math.floor(w_DMG[_] * element[selectedMonster[3]][6]),
+                a = BK_n_A_MATK[_] * mdefReduction(selectedMonster[15]) - n_B_MDEF2,
                 a *= .4 * n_A_ActiveSkillLV + 1,
-                a = Math.floor(a * element[n_B[3]][6]),
-                w_DMG[_] = tPlusDamCut(Math.floor((a + w_DMG[_]) * element[n_B[3]][6])),
+                a = Math.floor(a * element[selectedMonster[3]][6]),
+                w_DMG[_] = tPlusDamCut(Math.floor((a + w_DMG[_]) * element[selectedMonster[3]][6])),
                 EquipNumSearch(1433) && (w_DMG[_] = Math.floor(1.1 * w_DMG[_])),
                 w_DMG[_] < 1 && (w_DMG[_] = 1),
-                60 <= n_B[3] && n_B[3] <= 69 && (w_DMG[_] = 0);
+                60 <= selectedMonster[3] && selectedMonster[3] <= 69 && (w_DMG[_] = 0);
             if (0 == n_B_IJYOU[6])
                 for (var u = 0; 2 >= u; u++)
                     Last_DMG_A[u] = Last_DMG_B[u] = 3 * w_DMG[u],
@@ -869,7 +871,7 @@ function BattleCalc999() {
             BattleCalc998()
         } else if (66 == n_A_ActiveSkill) {
             for (wCR = 100,
-            n_PerHIT_DMG = Math.floor(2 * BattleCalc2(0) * element[n_B[3]][0]),
+            n_PerHIT_DMG = Math.floor(2 * BattleCalc2(0) * element[selectedMonster[3]][0]),
             SkillSearch(327) ? wCR += 20 * SkillSearch(327) : (SkillSearch(154) && (wCR += 5 * SkillSearch(154)),
             0 == SkillSearch(154) && n_A_Buf2[8] && (wCR += 5 * n_A_Buf2[8])),
             CR_n_A_DMG = [0, 0, 0],
@@ -881,21 +883,21 @@ function BattleCalc999() {
             for (var u = 0; 2 >= u; u++)
                 w_DMG[u] = BattleCalc(n_A_DMG[u], u),
                 w_DMG[u] += Math.floor(BattleCalc(CR_n_A_DMG[u], u) * CRbai),
-                w_DMG[u] = Math.floor(w_DMG[u] * element[n_B[3]][0]),
+                w_DMG[u] = Math.floor(w_DMG[u] * element[selectedMonster[3]][0]),
                 SRV && (!CardNumSearch(523) || 6 != n_A_JOB && 12 != n_A_JOB && 19 != n_A_JOB && 26 != n_A_JOB && 33 != n_A_JOB && 40 != n_A_JOB || (w_DMG[0] *= 1.5,
                 w_DMG[1] *= 1.5,
                 w_DMG[2] *= 1.5)),
                 Last_DMG_A[u] = Last_DMG_B[u] = w_DMG[u] + EDP_DMG(u),
                 InnStr[u] += Last_DMG_A[u];
             w_DMG[1] = (w_DMG[1] * w_HIT + 2 * BattleCalc2(0) * (100 - w_HIT)) / 100,
-            w_DMG[1] = Math.floor(w_DMG[1] * element[n_B[3]][0]),
+            w_DMG[1] = Math.floor(w_DMG[1] * element[selectedMonster[3]][0]),
             EDPplus(1),
             CastAndDelay(),
             BattleCalc998()
         } else if (283 == n_A_ActiveSkill) {
             n_PerHIT_DMG = 0,
             w_DMG[2] = 500 + 300 * n_A_ActiveSkillLV,
-            5 == n_B[19] && (w_DMG[2] = 1),
+            5 == selectedMonster[19] && (w_DMG[2] = 1),
             w_DMG[0] = w_DMG[1] = w_DMG[2];
             for (var _ = 0; 2 >= _; _++)
                 Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_],
@@ -911,7 +913,7 @@ function BattleCalc999() {
             n_A_Weapon_element = 0,
             w_DMG[2] = Math.floor(.09 * n_A_MaxHP * (.9 + .1 * n_A_ActiveSkillLV)),
             w_DMG[2] = ApplyModifiers(w_DMG[2]),
-            w_DMG[2] = Math.floor(w_DMG[2] * element[n_B[3]][0]),
+            w_DMG[2] = Math.floor(w_DMG[2] * element[selectedMonster[3]][0]),
             w_DMG[0] = w_DMG[1] = w_DMG[2];
             for (var _ = 0; 2 >= _; _++)
                 Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_],
@@ -930,9 +932,9 @@ function BattleCalc999() {
             work_B_DEF2[1] = n_B_DEF2[1],
             work_B_DEF2[2] = n_B_DEF2[0];
             for (var u = 0; 2 >= u; u++)
-                w_DMG[u] = Math.floor(Math.floor(BK_n_A_DMG[u] * wbairitu) * (work_B_DEF2[u] + n_B[14]) / 50),
+                w_DMG[u] = Math.floor(Math.floor(BK_n_A_DMG[u] * wbairitu) * (work_B_DEF2[u] + selectedMonster[14]) / 50),
                 w_DMG[u] = ApplyModifiers(w_DMG[u]),
-                w_DMG[u] = Math.floor(w_DMG[u] * element[n_B[3]][0]),
+                w_DMG[u] = Math.floor(w_DMG[u] * element[selectedMonster[3]][0]),
                 SRV ? Last_DMG_A[u] = Last_DMG_B[u] = w_DMG[u] + EDP_DMG(u) + 1 * c.SkillSubNum.value * 3 : Last_DMG_A[u] = Last_DMG_B[u] = w_DMG[u] + EDP_DMG(u),
                 InnStr[u] += Last_DMG_A[u];
             EDPplus(1),
@@ -950,7 +952,7 @@ function BattleCalc999() {
             for (var u = 0; 2 >= u; u++)
                 w_DMG[u] = Math.floor(BK_n_A_DMG[u] * wbairitu) + wASYU,
                 w_DMG[u] = ApplyModifiers(w_DMG[u]),
-                w_DMG[u] = Math.floor(w_DMG[u] * element[n_B[3]][0]),
+                w_DMG[u] = Math.floor(w_DMG[u] * element[selectedMonster[3]][0]),
                 SRV && (n_A_Buf6[5] && (w_DMG[u] += Math.floor((.02 + .03 * n_A_Buf6[5]) * w_DMG[u])),
                 n_A_Buf6[5] && n_A_Buf7[31] ? w_DMG[u] += 0 : n_A_Buf7[31] && (w_DMG[u] += Math.floor(.05 * w_DMG[u])),
                 1 == n_A_Buf2[19] && (w_DMG[u] = 2 * w_DMG[u])),
@@ -967,11 +969,11 @@ function BattleCalc999() {
             ATKbai02(wbairitu, 0);
             for (var u = 0; 2 >= u; u++)
                 w_DMG[u] = BattleCalc(n_A_DMG[u], u),
-                w_DMG[u] = Math.floor(w_DMG[u] * element[n_B[3]][0]),
+                w_DMG[u] = Math.floor(w_DMG[u] * element[selectedMonster[3]][0]),
                 Last_DMG_A[u] = Last_DMG_B[u] = w_DMG[u],
                 InnStr[u] += Last_DMG_A[u];
-            w_DMG[1] = (w_DMG[1] * w_HIT + BattleCalc2(0) * element[n_B[3]][0] * (100 - w_HIT)) / 100,
-            n_PerHIT_DMG = BattleCalc2(0) * element[n_B[3]][0],
+            w_DMG[1] = (w_DMG[1] * w_HIT + BattleCalc2(0) * element[selectedMonster[3]][0] * (100 - w_HIT)) / 100,
+            n_PerHIT_DMG = BattleCalc2(0) * element[selectedMonster[3]][0],
             CastAndDelay(),
             BattleCalc998()
         } else if (395 == n_A_ActiveSkill) {
@@ -982,12 +984,12 @@ function BattleCalc999() {
             n_A_Weapon_element = m_Kunai[1 * c.SkillSubNum.value][1];
             for (var u = 0; 2 >= u; u++)
                 w_DMG[u] = BattleCalc(n_A_DMG[u], u),
-                w_DMG[u] = Math.floor(w_DMG[u] * element[n_B[3]][0]),
+                w_DMG[u] = Math.floor(w_DMG[u] * element[selectedMonster[3]][0]),
                 Last_DMG_B[u] = w_DMG[u],
                 Last_DMG_A[u] = 3 * w_DMG[u],
                 InnStr[u] += Last_DMG_A[u] + " (" + Last_DMG_B[u] + SubName[8] + "3 hits)",
                 w_DMG[u] = Last_DMG_A[u];
-            var e = Math.floor(BattleCalc2(0) * element[n_B[3]][0]);
+            var e = Math.floor(BattleCalc2(0) * element[selectedMonster[3]][0]);
             w_DMG[1] = (w_DMG[1] * w_HIT + 3 * e * (100 - w_HIT)) / 100,
             n_PerHIT_DMG = 3 * e,
             str_PerHIT_DMG = 3 * e + " (3" + SubName[8] + e + " Damage)",
@@ -1002,13 +1004,13 @@ function BattleCalc999() {
             wActiveHitNum = 2 + Math.round(n_A_ActiveSkillLV / 2);
             for (var u = 0; 2 >= u; u++)
                 w_DMG[u] = BattleCalc(n_A_DMG[u], u),
-                w_DMG[u] = Math.floor(w_DMG[u] * element[n_B[3]][0]),
+                w_DMG[u] = Math.floor(w_DMG[u] * element[selectedMonster[3]][0]),
                 wActiveHitNum > 1 && (w_DMG[u] = Math.floor(w_DMG[u] / wActiveHitNum) * wActiveHitNum),
                 Last_DMG_A[u] = Last_DMG_B[u] = w_DMG[u],
                 InnStr[u] += Last_DMG_A[u],
                 InnStr[u] += " (" + Last_DMG_A[u] / wActiveHitNum + " x " + wActiveHitNum + " hits)";
-            w_DMG[1] = (w_DMG[1] * w_HIT + BattleCalc2(0) * element[n_B[3]][0] * (100 - w_HIT)) / 100,
-            n_PerHIT_DMG = BattleCalc2(0) * element[n_B[3]][0],
+            w_DMG[1] = (w_DMG[1] * w_HIT + BattleCalc2(0) * element[selectedMonster[3]][0] * (100 - w_HIT)) / 100,
+            n_PerHIT_DMG = BattleCalc2(0) * element[selectedMonster[3]][0],
             CastAndDelay(),
             BattleCalc998()
         } else if (397 == n_A_ActiveSkill) {
@@ -1017,15 +1019,15 @@ function BattleCalc999() {
             wCast = 0,
             n_Delay[2] = 5,
             w_HIT_HYOUJI = 100,
-            1 == n_B[19] || 586 == n_B[0] ? (w_DMG[0] = 250 * n_A_ActiveSkillLV,
+            1 == selectedMonster[19] || 586 == selectedMonster[0] ? (w_DMG[0] = 250 * n_A_ActiveSkillLV,
             w_DMG[1] = 250 * n_A_ActiveSkillLV + 125 * n_A_ActiveSkillLV,
             w_DMG[2] = 250 * n_A_ActiveSkillLV + 250 * n_A_ActiveSkillLV) : (w_DMG[0] = 500 * n_A_ActiveSkillLV,
             w_DMG[1] = 500 * n_A_ActiveSkillLV + 250 * n_A_ActiveSkillLV,
             w_DMG[2] = 500 * n_A_ActiveSkillLV + 500 * n_A_ActiveSkillLV),
             _ = 0; 2 >= _; _++)
-                w_DMG[_] = w_DMG[_] * element[n_B[3]][n_A_Weapon_element],
+                w_DMG[_] = w_DMG[_] * element[selectedMonster[3]][n_A_Weapon_element],
                 w_DMG[_] = tPlusDamCut(w_DMG[_]);
-            for (5 == n_B[19] && (w_DMG[0] = w_DMG[1] = w_DMG[2] = 1),
+            for (5 == selectedMonster[19] && (w_DMG[0] = w_DMG[1] = w_DMG[2] = 1),
             _ = 0; 2 >= _; _++)
                 InnStr[_] += w_DMG[_];
             EDPplus(5),
@@ -1038,9 +1040,9 @@ function BattleCalc999() {
             ATKbai02(wbairitu, 0),
             405 == n_A_ActiveSkill ? w_1senHP = 1 * c.SkillSubNum.value : w_1senHP = n_A_MaxHP - 1,
             SRV ? w_DMG[0] = 40 * (n_A_STR - SkillSearch(404)) + n_A_ActiveSkillLV * (w_1senHP / 10 + 35) : w_DMG[0] = 40 * (n_A_STR + n_A_ActiveSkillLV) + w_1senHP * (n_A_BaseLV / 100) * n_A_ActiveSkillLV / 10,
-            w_DMG[0] = w_DMG[0] * defReduction(n_B[14]),
+            w_DMG[0] = w_DMG[0] * defReduction(selectedMonster[14]),
             w_DMG[0] = ApplyModifiers(w_DMG[0]),
-            w_DMG[0] = Math.floor(w_DMG[0] * element[n_B[3]][0]),
+            w_DMG[0] = Math.floor(w_DMG[0] * element[selectedMonster[3]][0]),
             w_DMG[2] = w_DMG[1] = w_DMG[0];
             for (var _ = 0; 2 >= _; _++)
                 Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_],
@@ -1056,7 +1058,7 @@ function BattleCalc999() {
             wbairitu = (50 + 50 * n_A_ActiveSkillLV) / 100;
             for (var u = 0; 2 >= u; u++)
                 w_DMG[u] = Math.floor((BK_n_A_DMG[u] - n_B_DEF2[u]) * wbairitu),
-                w_DMG[u] = Math.floor(w_DMG[u] * element[n_B[3]][0]),
+                w_DMG[u] = Math.floor(w_DMG[u] * element[selectedMonster[3]][0]),
                 w_DMG[u] = Math.floor(ApplyModifiers(w_DMG[u])),
                 Last_DMG_A[u] = Last_DMG_B[u] = w_DMG[u],
                 InnStr[u] += Last_DMG_A[u];
@@ -1069,9 +1071,9 @@ function BattleCalc999() {
             n_rangedAtk = 1,
             n_A_Weapon_element = 0,
             wHITsuu = n_A_ActiveSkillLV,
-            wAD = .7 * n_A_INT * n_A_INT * n_B[7] / (n_A_INT + n_B[7]),
+            wAD = .7 * n_A_INT * n_A_INT * selectedMonster[7] / (n_A_INT + selectedMonster[7]),
             w_DMG[2] = Math.floor(wAD),
-            w_DMG[2] = tPlusDamCut(Math.floor(w_DMG[2] * element[n_B[3]][0])),
+            w_DMG[2] = tPlusDamCut(Math.floor(w_DMG[2] * element[selectedMonster[3]][0])),
             1 == PvP && (w_DMG[2] = Math.floor(w_DMG[2] / 2)),
             w_DMG[0] = w_DMG[1] = w_DMG[2];
             for (var _ = 0; 2 >= _; _++)
@@ -1088,9 +1090,9 @@ function BattleCalc999() {
             n_PerHIT_DMG = 0,
             n_Delay[0] = 1,
             106 == n_A_ActiveSkill ? (n_A_Weapon_element = 2,
-            w_DMG[2] = Math.floor((75 + n_A_DEX) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[n_B[3]][2])) : 112 == n_A_ActiveSkill ? (n_A_Weapon_element = 4,
-            w_DMG[2] = Math.floor((50 + n_A_DEX / 2) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[n_B[3]][4])) : 113 == n_A_ActiveSkill && (n_A_Weapon_element = 3,
-            w_DMG[2] = Math.floor((75 + n_A_DEX / 2) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[n_B[3]][3])),
+            w_DMG[2] = Math.floor((75 + n_A_DEX) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[selectedMonster[3]][2])) : 112 == n_A_ActiveSkill ? (n_A_Weapon_element = 4,
+            w_DMG[2] = Math.floor((50 + n_A_DEX / 2) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[selectedMonster[3]][4])) : 113 == n_A_ActiveSkill && (n_A_Weapon_element = 3,
+            w_DMG[2] = Math.floor((75 + n_A_DEX / 2) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[selectedMonster[3]][3])),
             w_DMG[2] = tPlusDamCut(w_DMG[2]),
             w_DMG[0] = w_DMG[1] = w_DMG[2];
             for (var _ = 0; 2 >= _; _++)
@@ -1105,9 +1107,9 @@ function BattleCalc999() {
             n_Delay[2] = 1,
             n_rangedAtk = 2,
             w_DMG[2] = HealCalc(n_A_ActiveSkillLV, 0),
-            w_DMG[2] = Math.floor(Math.floor(w_DMG[2] / 2) * element[n_B[3]][6]),
-            n_B[3] < 90 && (w_DMG[2] = 0);
-            var e = n_tok[170 + n_B[2]];
+            w_DMG[2] = Math.floor(Math.floor(w_DMG[2] / 2) * element[selectedMonster[3]][6]),
+            selectedMonster[3] < 90 && (w_DMG[2] = 0);
+            var e = n_tok[170 + selectedMonster[2]];
             w_DMG[2] = Math.floor(w_DMG[2] * (100 + e) / 100),
             wHealBAI = 100 + n_tok[93],
             w_DMG[2] = Math.floor(w_DMG[2] * wHealBAI / 100),
@@ -1128,9 +1130,9 @@ function BattleCalc999() {
             n_A_ActiveSkillLV <= 6 ? w_DMG[2] = 100 * n_A_ActiveSkillLV : w_DMG[2] = 777,
             w_HEAL_BAI = 100 + n_tok[94],
             w_DMG[2] = Math.floor(w_DMG[2] * w_HEAL_BAI / 100),
-            w_DMG[2] = Math.floor(Math.floor(w_DMG[2] / 2) * element[n_B[3]][6]),
-            n_B[3] < 90 && 6 != n_B[2] && (w_DMG[2] = 0);
-            var e = n_tok[170 + n_B[2]];
+            w_DMG[2] = Math.floor(Math.floor(w_DMG[2] / 2) * element[selectedMonster[3]][6]),
+            selectedMonster[3] < 90 && 6 != selectedMonster[2] && (w_DMG[2] = 0);
+            var e = n_tok[170 + selectedMonster[2]];
             w_DMG[2] = Math.floor(w_DMG[2] * (100 + e) / 100),
             w_HEAL_BAI = 100 + n_tok[96],
             w_DMG[2] = Math.floor(w_DMG[2] * w_HEAL_BAI / 100),
@@ -1149,20 +1151,20 @@ function BattleCalc999() {
             wCast = 8 - 2 * n_A_ActiveSkillLV,
             wCast *= n_A_CAST),
             n_rangedAtk = 2,
-            n_B[3] < 90 ? (a = 0,
+            selectedMonster[3] < 90 ? (a = 0,
             w_DMG[2] = 0,
             w_DMG[0] = 0,
-            w_DMG[1] = 0) : (1 != n_B[19] ? (a = (20 * n_A_ActiveSkillLV + n_A_BaseLV + n_A_INT + n_A_LUK) / 1e3,
-            w_DMG[2] = n_B[6]) : (a = 0,
+            w_DMG[1] = 0) : (1 != selectedMonster[19] ? (a = (20 * n_A_ActiveSkillLV + n_A_BaseLV + n_A_INT + n_A_LUK) / 1e3,
+            w_DMG[2] = selectedMonster[6]) : (a = 0,
             w_DMG[2] = 0),
             w_DMG[0] = n_A_BaseLV + n_A_INT + 10 * n_A_ActiveSkillLV,
-            w_DMG[0] = Math.floor(w_DMG[0] * element[n_B[3]][n_A_Weapon_element]),
-            w_DMG[1] = Math.round(n_B[6] * a + w_DMG[0] * (100 - a) / 100));
+            w_DMG[0] = Math.floor(w_DMG[0] * element[selectedMonster[3]][n_A_Weapon_element]),
+            w_DMG[1] = Math.round(selectedMonster[6] * a + w_DMG[0] * (100 - a) / 100));
             for (var _ = 0; 2 >= _; _++)
                 Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_];
             InnStr[0] += w_DMG[0] + " (damage on Failure)",
             InnStr[1] += w_DMG[1] + " (considering success chance)",
-            InnStr[2] += Math.floor(w_DMG[2] * element[n_B[3]][n_A_Weapon_element]) + " (" + Math.floor(1e4 * a) / 100 + "% success chance)",
+            InnStr[2] += Math.floor(w_DMG[2] * element[selectedMonster[3]][n_A_Weapon_element]) + " (" + Math.floor(1e4 * a) / 100 + "% success chance)",
             n_Delay[2] = 3,
             w_HIT_HYOUJI = 100,
             CastAndDelay(),
@@ -1175,8 +1177,8 @@ function BattleCalc999() {
             wHITsuu = 4 + n_A_ActiveSkillLV,
             w_DMG[2] = 200 + 200 * n_A_ActiveSkillLV,
             w_DMG[2] = Math.floor(w_DMG[2]),
-            5 == n_B[19] && (w_DMG[2] = 1),
-            44 == n_B[0] && (w_DMG[2] = 400),
+            5 == selectedMonster[19] && (w_DMG[2] = 1),
+            44 == selectedMonster[0] && (w_DMG[2] = 400),
             w_DMG[0] = w_DMG[1] = w_DMG[2];
             for (var _ = 0; 2 >= _; _++)
                 Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_] * wHITsuu,
@@ -1288,7 +1290,7 @@ function BattleCalc999() {
             wHITsuu = n_A_ActiveSkillLV,
             wCast = 15,
             n_Delay[2] = 4,
-            6 != n_B[2] && n_B[3] < 90 && (n_A_MATK[2] = 0,
+            6 != selectedMonster[2] && selectedMonster[3] < 90 && (n_A_MATK[2] = 0,
             n_A_MATK[0] = 0,
             n_A_MATK[1] = 0)) : 312 == n_A_ActiveSkill ? (n_A_Weapon_element = 7,
             wHITsuu = Math.round(n_A_ActiveSkillLV / 2),
@@ -1296,7 +1298,7 @@ function BattleCalc999() {
             n_A_ActiveSkillLV % 2 == 0 ? n_Delay[2] = .8 + n_A_ActiveSkillLV / 2 * .2 : n_Delay[2] = 1 + (n_A_ActiveSkillLV + 1) / 2 * .2) : 373 == n_A_ActiveSkill ? (n_A_Weapon_element = 1 * c.A_Weapon_element.value,
             wCast = .1,
             n_Delay[2] = .5,
-            0 == n_B[4] ? wbairitu = .1 * n_A_ActiveSkillLV : wbairitu = .01,
+            0 == selectedMonster[4] ? wbairitu = .1 * n_A_ActiveSkillLV : wbairitu = .01,
             1 == PvP && (wbairitu = 0)) : 374 == n_A_ActiveSkill ? (n_A_Weapon_element = 1 * c.A_Weapon_element.value,
             wCast = .1,
             n_Delay[2] = .5,
@@ -1382,26 +1384,52 @@ function ATKbai02(_, e) {
     n_A_CriATK[0] = Math.floor(n_A_CriATK[0] * wA02 / 100),
     n_A_CriATK[2] = Math.floor(n_A_CriATK[2] * wA02 / 100))
 }
+
+// ? Esto es el cálculo de cuantos golpes se hacen y que daño tienen o solo con el halcón?
 function BattleTAKA() {
-    return 10 == n_A_WeaponType && SkillSearch(118) && 272 != n_A_ActiveSkill ? (wBTw1 = Math.floor((n_A_JobLV - 1) / 10 + 1),
-    wBTw1 > 5 && (wBTw1 = 5),
-    wBTw2 = SkillSearch(118),
-    wBTw2 < wBTw1 && (wBTw1 = wBTw2),
-    wBT = 80 + 2 * Math.floor(n_A_DEX / 10) + 2 * Math.floor(n_A_INT / 2) + 6 * SkillSearch(119),
-    wBT = Math.floor(wBT * element[n_B[3]][0]),
-    wBT = tPlusDamCut(wBT),
-    wBTw3 = Math.round(100 * (1 + .3 * n_A_LUK)) / 100,
-    44 == n_B[0] && (wBT = 0),
-    str_bSUBname += "Falcon Damage<BR>",
-    n_TAKA_DMG = wBT * wBTw1,
-    str_bSUB += n_TAKA_DMG + " (" + wBT + " x " + wBTw1 + " hits)",
-    str_bSUB += "(" + wBTw3 + "% Chance)<BR>",
-    wBT = n_TAKA_DMG * wBTw3 / 100,
-    wBT = wBT * (w_HIT + (100 - w_HIT) * w_Cri / 100) / 100,
-    wBTw1 = 0,
-    Math.round(100 * wBT) / 100) : (n_TAKA_DMG = 0,
-    0)
+    // ? WeaponType 10 = bow
+    if (n_A_WeaponType === 10 && SkillSearch(118) && n_A_ActiveSkill != 272) {
+
+        // Falcon hits depend on base lvl here it is calculated
+        falconHitCount = Math.floor((n_A_JobLV - 1) / 10 + 1);
+        falconHitCount > 5 && (falconHitCount = 5);
+
+        // ? Qué es este skill search
+        wBTw2 = SkillSearch(118);
+        wBTw2 < falconHitCount && (falconHitCount = wBTw2);
+
+        // Falcon single hit damage calculation
+
+        // * Old formula: [2 × Floor(INT/2) + 2 × Floor(DEX/10) + 6 × (Steel Crow level) + 80]
+        // * wBT = 80 + 2 * Math.floor(n_A_DEX / 10) + 2 * Math.floor(n_A_INT / 2) + 6 * SkillSearch(119);
+
+        // * New formula: [2 × LUK + INT + 12 × (Steel Crow level) + 40]
+        wBT = 2 * n_A_LUK + n_A_INT + 12 * SkillSearch(119) + 40;
+
+        wBT = Math.floor(wBT * element[selectedMonster[3]][0]);
+        wBT = tPlusDamCut(wBT);
+        falconChance = Math.round(100 * (1 + .3 * n_A_LUK)) / 100;
+        console.log(`Falcon chance: ${falconChance}%`);
+
+        // Does 0 dmg to empirium
+        if(selectedMonster[0] === 44) {
+            wBT = 0;
+        }
+
+        str_bSUBname += "Falcon Damage<br>";
+        n_TAKA_DMG = wBT * falconHitCount;
+        str_bSUB += n_TAKA_DMG + " (" + wBT + " x " + falconHitCount + " hits)";
+        str_bSUB += "(" + falconChance + "% Chance)<br>";
+        wBT = n_TAKA_DMG * falconChance / 100;
+        wBT = wBT * (w_HIT + (100 - w_HIT) * w_Cri / 100) / 100;
+        falconHitCount = 0;
+
+        return Math.round(100 * wBT) / 100;
+    } else {
+        return (n_TAKA_DMG = 0,0);
+    }
 }
+
 function HealCalc(_, e) {
     wHeal = Math.floor((n_A_BaseLV + n_A_INT) / 8) * (8 * _ + 4);
     var n = 100 + 2 * SkillSearch(269);
@@ -1433,7 +1461,7 @@ function BattleCalc998() {
     myInnerHtml("bSUBname", str_bSUBname, 0),
     myInnerHtml("bSUB", str_bSUB, 0),
     myInnerHtml("BattleHIT", w_HIT_HYOUJI, 0),
-    44 == n_B[0] && 0 != n_A_ActiveSkill && 325 != n_A_ActiveSkill)
+    44 == selectedMonster[0] && 0 != n_A_ActiveSkill && 325 != n_A_ActiveSkill)
         for (i = 0; 2 >= i; i++)
             w_DMG[i] = 0,
             myInnerHtml("ATK_0" + i, 0, 0);
@@ -1447,21 +1475,21 @@ function BattleCalc998() {
     w_DMG[1] = Math.floor(w_DMG[1] * _),
     w_DMG[2] = Math.floor(w_DMG[2] * _));
     var e;
-    if (e = Math.floor(n_B[6] / w_DMG[2]),
-    n_B[6] % Math.floor(w_DMG[2]) != 0 && (e += 1),
+    if (e = Math.floor(selectedMonster[6] / w_DMG[2]),
+    selectedMonster[6] % Math.floor(w_DMG[2]) != 0 && (e += 1),
     1e4 > e ? myInnerHtml("MinATKnum", e, 0) : myInnerHtml("MinATKnum", SubName[5], 0),
     0 != SG_Special_HITnum) {
         if (1 == e) {
             var n, l;
             if (n = SG_Special_HITnum,
-            l = (SG_Special_DMG[2] * wHITsuu - n_B[6]) / (SG_Special_DMG[2] * wHITsuu - SG_Special_DMG[0] * wHITsuu),
+            l = (SG_Special_DMG[2] * wHITsuu - selectedMonster[6]) / (SG_Special_DMG[2] * wHITsuu - SG_Special_DMG[0] * wHITsuu),
             l > 1 && (l = 1),
             0 > l && (l = 0),
             2 == n && (l = .5 > l ? 2 * l * l : 1 - 2 * (1 - l) * (1 - l)),
             3 == n && (1 / 3 > l ? l = 4.5 * Math.pow(l, 3) : l >= 1 / 3 && 2 / 3 > l ? l = 4.5 * (Math.pow(l, 3) - 3 * Math.pow(l - 1 / 3, 3)) : l >= 2 / 3 && (l = 1 - 4.5 * Math.pow(1 - l, 3))),
             n >= 4) {
                 var t = Math.sqrt(Math.pow(SG_Special_DMG[2] - SG_Special_DMG[0], 2) / 12 * n);
-                l = (SG_Special_DMG[1] * wHITsuu - n_B[6]) / t,
+                l = (SG_Special_DMG[1] * wHITsuu - selectedMonster[6]) / t,
                 l = l >= 0 ? .5 + .5 * Math.sqrt(1 - Math.exp(-2 * Math.pow(l, 2) / Math.PI)) : .5 - .5 * Math.sqrt(1 - Math.exp(-2 * Math.pow(l, 2) / Math.PI))
             }
             l = Math.floor(1e4 * l) / 100,
@@ -1474,16 +1502,16 @@ function BattleCalc998() {
     else {
         var a = w_DMG[0];
         w_HIT_HYOUJI < 100 && (a = n_PerHIT_DMG),
-        e = Math.floor(n_B[6] / a),
-        n_B[6] % Math.floor(a) != 0 && (e += 1),
+        e = Math.floor(selectedMonster[6] / a),
+        selectedMonster[6] % Math.floor(a) != 0 && (e += 1),
         1e4 > e ? myInnerHtml("MaxATKnum", e, 0) : myInnerHtml("MaxATKnum", SubName[5], 0)
     }
-    if (e = Math.floor(n_B[6] / w_DMG[1]),
-    n_B[6] % w_DMG[1] != 0 && (e += 1),
+    if (e = Math.floor(selectedMonster[6] / w_DMG[1]),
+    selectedMonster[6] % w_DMG[1] != 0 && (e += 1),
     0 == PvP ? (myInnerHtml("nm063", "Base Exp Per Hit", 0),
     myInnerHtml("nm064", "Job Exp Per Hit", 0),
-    1e4 > e ? (myInnerHtml("AtkBaseExp", Math.round(n_B[16] / e) + " exp", 0),
-    myInnerHtml("AtkJobExp", Math.round(n_B[17] / e) + " exp", 0)) : (myInnerHtml("AtkBaseExp", SubName[7], 0),
+    1e4 > e ? (myInnerHtml("AtkBaseExp", Math.round(selectedMonster[16] / e) + " exp", 0),
+    myInnerHtml("AtkJobExp", Math.round(selectedMonster[17] / e) + " exp", 0)) : (myInnerHtml("AtkBaseExp", SubName[7], 0),
     myInnerHtml("AtkJobExp", SubName[7], 0))) : (myInnerHtml("nm063", "", 0),
     myInnerHtml("AtkBaseExp", "", 0),
     myInnerHtml("nm064", "", 0),
@@ -1514,11 +1542,11 @@ function BattleCalc998() {
 function BattleHiDam() {
     var _ = 100
       , e = [0, 0, 0]
-      , n = Math.floor(n_B[9] / 7);
-    e[0] = n_B[9] + n_B_manual[42] + n * n,
+      , n = Math.floor(selectedMonster[9] / 7);
+    e[0] = selectedMonster[9] + n_B_manual[42] + n * n,
     e[0] += n_B_manual[43] * e[0] / 100,
-    n = Math.floor(n_B[9] / 5),
-    e[2] = n_B[9] + n_B_manual[42] + n * n,
+    n = Math.floor(selectedMonster[9] / 5),
+    e[2] = selectedMonster[9] + n_B_manual[42] + n * n,
     e[2] += n_B_manual[43] * e[2] / 100,
     e[1] = (e[2] + e[0]) / 2;
     var l = 0;
@@ -1528,7 +1556,7 @@ function BattleHiDam() {
       , a = 0;
     n_B_AtkSkill = c.B_AtkSkill.value;
     var A = 0;
-    if (A = m_Monster[n_B[0]][2 * c.B_AtkSkill.selectedIndex + 22],
+    if (A = m_Monster[selectedMonster[0]][2 * c.B_AtkSkill.selectedIndex + 22],
     BskillHitNum = 1,
     444 == n_B_AtkSkill || 445 == n_B_AtkSkill)
         if (BskillHitNum = 3,
@@ -1604,12 +1632,12 @@ function BattleHiDam() {
         n_B_ignoreFlee = 1;
     else if (476 == n_B_AtkSkill) {
         n_B_ignoreFlee = 1;
-        var n = Math.floor(n_B[9] / 7);
-        e[0] = n_B[9] + n * n,
-        n = Math.floor(n_B[9] / 5),
-        e[2] = n_B[9] + n * n,
+        var n = Math.floor(selectedMonster[9] / 7);
+        e[0] = selectedMonster[9] + n * n,
+        n = Math.floor(selectedMonster[9] / 5),
+        e[2] = selectedMonster[9] + n * n,
         e[1] = (e[2] + e[0]) / 2,
-        _ = n_B[9]
+        _ = selectedMonster[9]
     } else if (477 == n_B_AtkSkill)
         n_B_HIT += 20;
     else if (480 == n_B_AtkSkill)
@@ -1627,7 +1655,7 @@ function BattleHiDam() {
         n_B_rangedAtk = 1;
     else if (487 == n_B_AtkSkill)
         t = 1,
-        n_B[12] = n_B[13];
+        selectedMonster[12] = selectedMonster[13];
     else if (n_B_AtkSkill >= 490 && 499 >= n_B_AtkSkill)
         n_B_rangedAtk = 0,
         l = n_B_AtkSkill - 490,
@@ -1658,7 +1686,7 @@ function BattleHiDam() {
         n_B_rangedMAtk = 1,
         l = 8,
         BskillHitNum = Math.round(A / 2),
-        91 != n_B[3] && 92 != n_B[3] && 93 != n_B[3] && 94 != n_B[3] || (_ += 5 * A);
+        91 != selectedMonster[3] && 92 != selectedMonster[3] && 93 != selectedMonster[3] && 94 != selectedMonster[3] || (_ += 5 * A);
     else if (51 == n_B_AtkSkill)
         n_B_rangedMAtk = 1,
         l = 3,
@@ -1849,23 +1877,23 @@ function BattleHiDam() {
                 n_B_rangedAtk = 1,
                 1 == PvP && (bShieldw = Math.floor(c.BSkillSubNum.value)),
                 i = 0; 6 >= i; i++)
-                    w_HiDam[i] = Math.floor(Math.floor(5 * (n_B[13] * (1 + .3 * A) + bShieldw) * defReduction(n_A_totalDEF) - n_A_VITDEF[Math.floor(i / 2)]) * (1 + .3 * A)) + 5 * n_A_LEFT_REFINE * 2;
+                    w_HiDam[i] = Math.floor(Math.floor(5 * (selectedMonster[13] * (1 + .3 * A) + bShieldw) * defReduction(n_A_totalDEF) - n_A_VITDEF[Math.floor(i / 2)]) * (1 + .3 * A)) + 5 * n_A_LEFT_REFINE * 2;
             else
-                wBHD = n_B[13],
-                w_HiDam[0] = _ / 100 * n_B[12],
-                w_HiDam[1] = _ / 100 * (5 * n_B[12] + wBHD) / 6,
-                w_HiDam[2] = _ / 100 * (4 * n_B[12] + 2 * wBHD) / 6,
-                w_HiDam[3] = _ / 100 * (n_B[12] + wBHD) / 2,
-                w_HiDam[4] = _ / 100 * (2 * n_B[12] + 4 * wBHD) / 6,
-                w_HiDam[5] = _ / 100 * (n_B[12] + 5 * wBHD) / 6,
+                wBHD = selectedMonster[13],
+                w_HiDam[0] = _ / 100 * selectedMonster[12],
+                w_HiDam[1] = _ / 100 * (5 * selectedMonster[12] + wBHD) / 6,
+                w_HiDam[2] = _ / 100 * (4 * selectedMonster[12] + 2 * wBHD) / 6,
+                w_HiDam[3] = _ / 100 * (selectedMonster[12] + wBHD) / 2,
+                w_HiDam[4] = _ / 100 * (2 * selectedMonster[12] + 4 * wBHD) / 6,
+                w_HiDam[5] = _ / 100 * (selectedMonster[12] + 5 * wBHD) / 6,
                 w_HiDam[6] = _ / 100 * wBHD,
-                n_B[12] == n_B[13] && (w_HiDam[6] = _ / 100 * wBHD - 1);
+                selectedMonster[12] == selectedMonster[13] && (w_HiDam[6] = _ / 100 * wBHD - 1);
         else {
             for (n_B_rangedAtk = 1,
             1 == PvP && (bShieldw = Math.floor(c.BSkillSubNum.value)),
             i = 0; 6 >= i; i++)
-                w_HiDam[i] = Math.floor(Math.floor(5 * (n_B[13] * (1 + .3 * A) + bShieldw) * defReduction(n_A_totalDEF) - n_A_VITDEF[Math.floor(i / 2)]) * (1 + .3 * A)) + 5 * n_A_LEFT_REFINE * 2;
-            w_HiDam[i] = Math.floor(Math.floor(n_B[13] + bShieldw) * (1 + .3 * n_A_ActiveSkillLV))
+                w_HiDam[i] = Math.floor(Math.floor(5 * (selectedMonster[13] * (1 + .3 * A) + bShieldw) * defReduction(n_A_totalDEF) - n_A_VITDEF[Math.floor(i / 2)]) * (1 + .3 * A)) + 5 * n_A_LEFT_REFINE * 2;
+            w_HiDam[i] = Math.floor(Math.floor(selectedMonster[13] + bShieldw) * (1 + .3 * n_A_ActiveSkillLV))
         }
         0 == t && (w_HiDam[0] = w_HiDam[0] * defReduction(n_A_totalDEF) - n_A_VITDEF[2],
         w_HiDam[1] = w_HiDam[1] * defReduction(n_A_totalDEF) - n_A_VITDEF[2],
@@ -1896,7 +1924,7 @@ function BattleHiDam() {
     wBHD = n_A_ResElem - Math.floor(n_A_ResElem * n_tok[60 + 1 * l]) / 100),
     i = 0; 6 >= i; i++)
         w_HiDam[i] = Math.floor(w_HiDam[i] * wBHD / 100);
-    if (SkillSearch(23) && (n_B[3] >= 90 || 6 == n_B[2]))
+    if (SkillSearch(23) && (selectedMonster[3] >= 90 || 6 == selectedMonster[2]))
         for (wBHD = Math.floor((3 + .04 * n_A_BaseLV) * SkillSearch(23)),
         i = 0; 6 >= i; i++)
             w_HiDam[i] -= wBHD;
@@ -1908,19 +1936,19 @@ function BattleHiDam() {
         for (wBHD = 6 * SkillSearch(58),
         i = 0; 6 >= i; i++)
             w_HiDam[i] -= Math.floor(w_HiDam[i] * wBHD / 100);
-    if (wBHD = n_tok[50 + n_B[2]],
+    if (wBHD = n_tok[50 + selectedMonster[2]],
     0 != wBHD)
         for (i = 0; 6 >= i; i++)
             w_HiDam[i] -= Math.floor(w_HiDam[i] * wBHD / 100);
-    if (wBHD = n_tok[190 + n_B[4]],
+    if (wBHD = n_tok[190 + selectedMonster[4]],
     0 != wBHD)
         for (i = 0; 6 >= i; i++)
             w_HiDam[i] -= Math.floor(w_HiDam[i] * wBHD / 100);
-    if (0 == n_B[19])
+    if (0 == selectedMonster[19])
         for (wBHD = n_tok[79],
         i = 0; 6 >= i; i++)
             w_HiDam[i] -= Math.floor(w_HiDam[i] * wBHD / 100);
-    if ((n_B[20] || n_B_rangedAtk || n_B_rangedMAtk || 2 == c.B_AtkRange.value) && 1 != c.B_AtkRange.value) {
+    if ((selectedMonster[20] || n_B_rangedAtk || n_B_rangedMAtk || 2 == c.B_AtkRange.value) && 1 != c.B_AtkRange.value) {
         for (wBHD = n_tok[78],
         i = 0; 6 >= i; i++)
             w_HiDam[i] -= Math.floor(w_HiDam[i] * wBHD / 100);
@@ -1929,7 +1957,7 @@ function BattleHiDam() {
             i = 0; 6 >= i; i++)
                 w_HiDam[i] -= Math.floor(w_HiDam[i] * wBHD / 100)
     }
-    if ((n_B[20] || 2 == c.B_AtkRange.value) && 1 != c.B_AtkRange.value) {
+    if ((selectedMonster[20] || 2 == c.B_AtkRange.value) && 1 != c.B_AtkRange.value) {
         if (n_A_Buf2[15])
             for (wBHD = 5 + 15 * n_A_Buf2[15],
             i = 0; 6 >= i; i++)
@@ -1939,18 +1967,18 @@ function BattleHiDam() {
             i = 0; 6 >= i; i++)
                 w_HiDam[i] -= Math.floor(w_HiDam[i] * wBHD / 100)
     }
-    if (1 == n_B[19])
+    if (1 == selectedMonster[19])
         for (i = 0; 6 >= i; i++)
             w_HiDam[i] -= Math.floor(w_HiDam[i] * n_tok[77] / 100);
     if (TimeItemNumSearch(9))
         for (i = 0; 6 >= i; i++)
             w_HiDam[i] -= Math.floor(w_HiDam[i] / 5);
-    if (wBHD = n_tok[330 + Math.floor(n_B[3] / 10)],
+    if (wBHD = n_tok[330 + Math.floor(selectedMonster[3] / 10)],
     0 != wBHD)
         for (i = 0; 6 >= i; i++)
             w_HiDam[i] -= Math.floor(w_HiDam[i] * wBHD / 100);
-    for (wBHD = StPlusCard(3e3 + n_B[0]),
-    wBHD += StPlusCalc2(3e3 + n_B[0]),
+    for (wBHD = StPlusCard(3e3 + selectedMonster[0]),
+    wBHD += StPlusCalc2(3e3 + selectedMonster[0]),
     i = 0; 6 >= i; i++)
         w_HiDam[i] -= Math.floor(w_HiDam[i] * wBHD / 100);
     if (n_A_Buf7[22] && MANUKU_MONSTER())
@@ -2016,7 +2044,7 @@ function BattleHiDam() {
       , m = ""
       , S = 1;
     if (n_A_Buf2[14]) {
-        if ((n_B[20] || n_B_rangedAtk || n_B_rangedMAtk || 2 == c.B_AtkRange.value) && 1 != c.B_AtkRange.value)
+        if ((selectedMonster[20] || n_B_rangedAtk || n_B_rangedMAtk || 2 == c.B_AtkRange.value) && 1 != c.B_AtkRange.value)
             myInnerHtml("aREFLECT1", '<B style="color:blue">(No melee dmg to reflect)</B>', 0);
         else {
             var B = (10 + 3 * n_A_Buf2[14]) * S
@@ -2034,7 +2062,7 @@ function BattleHiDam() {
         myInnerHtml("aREFLECT1", "", 0),
         myInnerHtml("aREFLECT1name", "", 0);
     if (n_tok[71]) {
-        if ((n_B[20] || n_B_rangedAtk || n_B_rangedMAtk || 2 == c.B_AtkRange.value) && 1 != c.B_AtkRange.value)
+        if ((selectedMonster[20] || n_B_rangedAtk || n_B_rangedMAtk || 2 == c.B_AtkRange.value) && 1 != c.B_AtkRange.value)
             myInnerHtml("aREFLECT2", '<B style="color:blue">(No melee dmg to reflect)</B>', 0);
         else {
             var D = new Array
@@ -2059,18 +2087,18 @@ function BattleHiDam() {
     wBHD
 }
 function BattleMagicCalc(_) {
-    wBMC_MDEF = n_B[15];
+    wBMC_MDEF = selectedMonster[15];
     var e = 0;
-    0 == n_B[19] && CardNumSearch(424) && (e = 1),
+    0 == selectedMonster[19] && CardNumSearch(424) && (e = 1),
     0 != e && (wBMC_MDEF = 0,
     n_B_MDEF2 = 0),
     122 == n_A_ActiveSkill ? wBMC2 = Math.floor(_ + 50) : wBMC2 = Math.floor(_ * mdefReduction(wBMC_MDEF) - n_B_MDEF2),
     wBMC2 < 1 && (wBMC2 = 1),
-    104 == n_A_ActiveSkill && 6 != n_B[2] && n_B[3] < 90 && (wBMC2 = 0),
-    50 > SRV ? wBMC2 = Math.floor(wBMC2 * element[n_B[3]][n_A_Weapon_element]) : wBMC2 = Math.floor(wBMC2 * element_R[n_B[3]][n_A_Weapon_element]),
-    SRV ? n_B[3] > 89 && n_B[3] < 95 && 47 == n_A_ActiveSkill && (wBMC2 = Math.floor(wBMC2 * (1 + .05 * n_A_ActiveSkillLV))) : 90 <= n_B[3] && 47 == n_A_ActiveSkill && (wBMC2 = Math.floor(wBMC2 * (1 + .05 * n_A_ActiveSkillLV)));
-    var n = n_tok[170 + n_B[2]];
-    9 == n_B[2] && SkillSearch(234) && (n += 2 * SkillSearch(234)),
+    104 == n_A_ActiveSkill && 6 != selectedMonster[2] && selectedMonster[3] < 90 && (wBMC2 = 0),
+    50 > SRV ? wBMC2 = Math.floor(wBMC2 * element[selectedMonster[3]][n_A_Weapon_element]) : wBMC2 = Math.floor(wBMC2 * element_R[selectedMonster[3]][n_A_Weapon_element]),
+    SRV ? selectedMonster[3] > 89 && selectedMonster[3] < 95 && 47 == n_A_ActiveSkill && (wBMC2 = Math.floor(wBMC2 * (1 + .05 * n_A_ActiveSkillLV))) : 90 <= selectedMonster[3] && 47 == n_A_ActiveSkill && (wBMC2 = Math.floor(wBMC2 * (1 + .05 * n_A_ActiveSkillLV)));
+    var n = n_tok[170 + selectedMonster[2]];
+    9 == selectedMonster[2] && SkillSearch(234) && (n += 2 * SkillSearch(234)),
     wBMC2 = wBMC2 * (100 + n) / 100,
     wBMC2 = tPlusDamCut(wBMC2);
     var n = StPlusCalc2(5e3 + n_A_ActiveSkill) + StPlusCard(5e3 + n_A_ActiveSkill);
@@ -2084,7 +2112,7 @@ function BattleMagicCalc(_) {
     wBMC2 = wBMC2 * (100 + n) / 100,
     n_A_Buf7[21] && MANUKU_MONSTER() && (wBMC2 = 110 * wBMC2 / 100),
     n_A_Buf7[24] && SUPURE_MONSTER() && (wBMC2 = 110 * wBMC2 / 100),
-    131 == n_A_ActiveSkill && n_B_IJYOU[4] && 0 == n_B[19] && n_B[3] < 90 && (wBMC2 = 0),
+    131 == n_A_ActiveSkill && n_B_IJYOU[4] && 0 == selectedMonster[19] && selectedMonster[3] < 90 && (wBMC2 = 0),
     wBMC2 = Math.floor(wBMC2),
     wBMC2
 }
@@ -2330,11 +2358,11 @@ function BClickAtkSkill() {
         i = 1; 99 >= i; i++)
             c.BSkillSubNum.options[i - 1] = new Option(i,i);
     else if (489 == n_B_AtkSkill)
-        myInnerHtml("BBSkill", 'Enemy Remaining HP: <input type="text" inputmode="numeric" name="BSkillSubNum" onkeypress="return isNumeric(event)" onkeyup="calc()" value="' + n_B[6] + '" size="7" class="center">', 0);
+        myInnerHtml("BBSkill", 'Enemy Remaining HP: <input type="text" inputmode="numeric" name="BSkillSubNum" onkeypress="return isNumeric(event)" onkeyup="calc()" value="' + selectedMonster[6] + '" size="7" class="center">', 0);
     else if (125 == n_B_AtkSkill) {
         myInnerHtml("BBSkill", 'Meteors landing on Player: <select name="BSkillSubNum" onChange="calc()"></select>', 0);
         var _ = 0;
-        _ = m_Monster[n_B[0]][2 * c.B_AtkSkill.selectedIndex + 22];
+        _ = m_Monster[selectedMonster[0]][2 * c.B_AtkSkill.selectedIndex + 22];
         var e = 2 + Math.floor(_ / 2);
         for (i = 1; e >= i; i++)
             c.BSkillSubNum.options[i - 1] = new Option(i,i);
@@ -3659,7 +3687,7 @@ function IjyouSW(_) {
             for (i = 0; 4 >= i; i++)
                 c.B_IJYOU23.options[i] = new Option(n[i],i)
         }
-        for (n_B[3] < 90 ? (myInnerHtml("BI0_1", "Provoke", 0),
+        for (selectedMonster[3] < 90 ? (myInnerHtml("BI0_1", "Provoke", 0),
         c.B_IJYOU0.disabled = !1,
         myInnerHtml("BI4_1", "Frozen", 0),
         c.B_IJYOU4.disabled = !1,
@@ -3676,7 +3704,7 @@ function IjyouSW(_) {
         c.B_IJYOU9.disabled = !0,
         c.B_IJYOU9.value = 0,
         n_B_IJYOU[9] = 0),
-        6 == n_B[2] || n_B[3] >= 90 ? (myInnerHtml("BI5_1", "Blessing", 0),
+        6 == selectedMonster[2] || selectedMonster[3] >= 90 ? (myInnerHtml("BI5_1", "Blessing", 0),
         c.B_IJYOU5.disabled = !1,
         myInnerHtml("BI12_1", "Signum Crucis", 0),
         c.B_IJYOU12.disabled = !1) : (myInnerHtml("BI5_1", "<S>Blessing</S>", 0),
@@ -3822,52 +3850,52 @@ function AK(_) {
     myInnerHtml("AKused", " <B>[Active]</B>", 0))
 }
 function ClickB_Enemy() {
-    for (n_B = new Array,
+    for (selectedMonster = new Array,
     n_B2 = new Array,
     i = 0; 22 >= i; i++)
-        n_B[i] = m_Monster[c.B_Enemy.value][i],
-        n_B2[i] = n_B[i];
-    586 == n_B[0] ? PvP = 1 : PvP = 0,
-    n_B[6] += n_B_manual[30],
-    n_B[6] += Math.floor(n_B[6] * n_B_manual[31] / 100),
-    n_B[7] += n_B_manual[49],
-    n_B[8] += n_B_manual[48],
-    n_B[9] += n_B_manual[50],
-    n_B[10] += n_B_manual[51],
-    n_B[11] += n_B_manual[52],
-    n_B[12] += n_B_manual[40],
-    n_B[12] += Math.floor(n_B[12] * n_B_manual[53] / 100),
-    n_B[13] += n_B_manual[40],
-    n_B[13] += Math.floor(n_B[13] * n_B_manual[53] / 100),
-    n_B[14] += n_B_manual[34],
-    n_B[15] += n_B_manual[35],
-    586 == n_B[0] ? (n_B[23] = Math.floor(.5 * n_B[7]) + Math.floor(.3 * n_B[7]),
-    n_B[24] = Math.floor(.5 * n_B[7]) + Math.floor(n_B[7] * n_B[7] / 150) - 1,
-    n_B[23] > n_B[24] && (n_B[24] = n_B[23])) : (n_B2[23] = n_B[7],
-    n_B2[24] = n_B[7] + (Math.floor(n_B[7] / 20) * Math.floor(n_B[7] / 20) - 1),
+        selectedMonster[i] = m_Monster[c.B_Enemy.value][i],
+        n_B2[i] = selectedMonster[i];
+    586 == selectedMonster[0] ? PvP = 1 : PvP = 0,
+    selectedMonster[6] += n_B_manual[30],
+    selectedMonster[6] += Math.floor(selectedMonster[6] * n_B_manual[31] / 100),
+    selectedMonster[7] += n_B_manual[49],
+    selectedMonster[8] += n_B_manual[48],
+    selectedMonster[9] += n_B_manual[50],
+    selectedMonster[10] += n_B_manual[51],
+    selectedMonster[11] += n_B_manual[52],
+    selectedMonster[12] += n_B_manual[40],
+    selectedMonster[12] += Math.floor(selectedMonster[12] * n_B_manual[53] / 100),
+    selectedMonster[13] += n_B_manual[40],
+    selectedMonster[13] += Math.floor(selectedMonster[13] * n_B_manual[53] / 100),
+    selectedMonster[14] += n_B_manual[34],
+    selectedMonster[15] += n_B_manual[35],
+    586 == selectedMonster[0] ? (selectedMonster[23] = Math.floor(.5 * selectedMonster[7]) + Math.floor(.3 * selectedMonster[7]),
+    selectedMonster[24] = Math.floor(.5 * selectedMonster[7]) + Math.floor(selectedMonster[7] * selectedMonster[7] / 150) - 1,
+    selectedMonster[23] > selectedMonster[24] && (selectedMonster[24] = selectedMonster[23])) : (n_B2[23] = selectedMonster[7],
+    n_B2[24] = selectedMonster[7] + (Math.floor(selectedMonster[7] / 20) * Math.floor(selectedMonster[7] / 20) - 1),
     n_B2[23] > n_B2[24] && (n_B2[24] = n_B2[23])),
-    myInnerHtml("B_6", n_B[6], 0),
-    myInnerHtml("B_16", n_B[16], 0),
-    myInnerHtml("B_12", n_B[12], 0),
-    myInnerHtml("B_13", n_B[13], 0),
-    myInnerHtml("B_17", n_B[17], 0),
-    myInnerHtml("B_14", n_B[14], 0),
-    myInnerHtml("B_23", n_B[23], 0),
-    myInnerHtml("B_15", n_B[15], 0),
-    myInnerHtml("B_vit", n_B[7], 0),
-    myInnerHtml("B_agi", n_B[8], 0),
-    myInnerHtml("B_int", n_B[9], 0),
-    myInnerHtml("B_dex", n_B[10], 0),
-    myInnerHtml("B_luk", n_B[11], 0),
-    PvP ? (n_B[23] = Math.floor(.5 * n_B[7]) + Math.floor(.3 * n_B[7]),
-    n_B[24] = Math.floor(.5 * n_B[7]) + Math.floor(n_B[7] * n_B[7] / 150) - 1,
-    n_B[23] > n_B[24] && (n_B[24] = n_B[23])) : (n_B2[23] = n_B[7],
-    n_B2[24] = n_B[7] + (Math.floor(n_B[7] / 20) * Math.floor(n_B[7] / 20) - 1),
+    myInnerHtml("B_6", selectedMonster[6], 0),
+    myInnerHtml("B_16", selectedMonster[16], 0),
+    myInnerHtml("B_12", selectedMonster[12], 0),
+    myInnerHtml("B_13", selectedMonster[13], 0),
+    myInnerHtml("B_17", selectedMonster[17], 0),
+    myInnerHtml("B_14", selectedMonster[14], 0),
+    myInnerHtml("B_23", selectedMonster[23], 0),
+    myInnerHtml("B_15", selectedMonster[15], 0),
+    myInnerHtml("B_vit", selectedMonster[7], 0),
+    myInnerHtml("B_agi", selectedMonster[8], 0),
+    myInnerHtml("B_int", selectedMonster[9], 0),
+    myInnerHtml("B_dex", selectedMonster[10], 0),
+    myInnerHtml("B_luk", selectedMonster[11], 0),
+    PvP ? (selectedMonster[23] = Math.floor(.5 * selectedMonster[7]) + Math.floor(.3 * selectedMonster[7]),
+    selectedMonster[24] = Math.floor(.5 * selectedMonster[7]) + Math.floor(selectedMonster[7] * selectedMonster[7] / 150) - 1,
+    selectedMonster[23] > selectedMonster[24] && (selectedMonster[24] = selectedMonster[23])) : (n_B2[23] = selectedMonster[7],
+    n_B2[24] = selectedMonster[7] + (Math.floor(selectedMonster[7] / 20) * Math.floor(selectedMonster[7] / 20) - 1),
     n_B2[23] > n_B2[24] && (n_B2[24] = n_B2[23])),
-    n_B2[25] = Math.floor(n_B[7] / 2) + n_B[9],
-    50 > SRV ? (n_B2[26] = n_B[5] + n_B[10],
-    n_B2[27] = n_B[5] + n_B[8]) : (n_B2[26] = 175 + n_B[5] + n_B[10],
-    n_B2[27] = 100 + n_B[5] + n_B[8]),
+    n_B2[25] = Math.floor(selectedMonster[7] / 2) + selectedMonster[9],
+    50 > SRV ? (n_B2[26] = selectedMonster[5] + selectedMonster[10],
+    n_B2[27] = selectedMonster[5] + selectedMonster[8]) : (n_B2[26] = 175 + selectedMonster[5] + selectedMonster[10],
+    n_B2[27] = 100 + selectedMonster[5] + selectedMonster[8]),
     n_IjyouSW && (n_B_IJYOU[0] = 1 * c.B_IJYOU0.value,
     n_B_IJYOU[1] = 1 * c.B_IJYOU1.value,
     n_B_IJYOU[2] = c.B_IJYOU2.checked,
@@ -3909,140 +3937,140 @@ function ClickB_Enemy() {
     n_B_KYOUKA[12] = 1 * c.B_buff12.value,
     n_B_KYOUKA[13] = 1 * c.B_buff13.value,
     n_B_KYOUKA[14] = 1 * c.B_buff14.value),
-    n_B_KYOUKA[6] && (n_B[3] = n_B_KYOUKA[6]),
-    n_B_IJYOU[23] && (n_B[3] = 10 * n_B_IJYOU[23] + n_B[3] % 10),
-    0 == n_B[19] && n_B[3] < 90 && n_B_IJYOU[4] && (n_B[3] = 11),
-    0 == n_B[19] && n_B[3] < 90 && n_B_IJYOU[9] && (n_B[3] = 21),
-    n_B_KYOUKA[3] && (n_B[12] = n_B[13]),
-    0 == n_B[19] && n_B_IJYOU[10] && (n_B[12] -= Math.floor(25 * n_B[12] / 100),
-    n_B[13] -= Math.floor(25 * n_B[13] / 100));
+    n_B_KYOUKA[6] && (selectedMonster[3] = n_B_KYOUKA[6]),
+    n_B_IJYOU[23] && (selectedMonster[3] = 10 * n_B_IJYOU[23] + selectedMonster[3] % 10),
+    0 == selectedMonster[19] && selectedMonster[3] < 90 && n_B_IJYOU[4] && (selectedMonster[3] = 11),
+    0 == selectedMonster[19] && selectedMonster[3] < 90 && n_B_IJYOU[9] && (selectedMonster[3] = 21),
+    n_B_KYOUKA[3] && (selectedMonster[12] = selectedMonster[13]),
+    0 == selectedMonster[19] && n_B_IJYOU[10] && (selectedMonster[12] -= Math.floor(25 * selectedMonster[12] / 100),
+    selectedMonster[13] -= Math.floor(25 * selectedMonster[13] / 100));
     var _ = 0;
-    if (0 == n_B[19] && 0 != n_B_IJYOU[0] && n_B[3] < 90 && (_ += 2 + 3 * n_B_IJYOU[0]),
+    if (0 == selectedMonster[19] && 0 != n_B_IJYOU[0] && selectedMonster[3] < 90 && (_ += 2 + 3 * n_B_IJYOU[0]),
     0 == PvP && n_B_IJYOU[22] && (_ += 300),
     n_B_KYOUKA[4] && (_ += 200),
-    n_B[12] += Math.floor(n_B[12] * _ / 100),
-    n_B[13] += Math.floor(n_B[13] * _ / 100),
-    n_B_IJYOU[13] && 0 == PvP && (n_B[12] -= Math.floor(25 * n_B[12] / 100),
-    n_B[13] -= Math.floor(25 * n_B[13] / 100)),
-    n_B_KYOUKA[0] && (n_B[8] += 2 + n_B_KYOUKA[0]),
+    selectedMonster[12] += Math.floor(selectedMonster[12] * _ / 100),
+    selectedMonster[13] += Math.floor(selectedMonster[13] * _ / 100),
+    n_B_IJYOU[13] && 0 == PvP && (selectedMonster[12] -= Math.floor(25 * selectedMonster[12] / 100),
+    selectedMonster[13] -= Math.floor(25 * selectedMonster[13] / 100)),
+    n_B_KYOUKA[0] && (selectedMonster[8] += 2 + n_B_KYOUKA[0]),
     n_B_IJYOU[1]) {
         var e, n;
         PvP ? (n = 5 * n_B_IJYOU[1],
-        e = Math.floor(n_B[8] / 4)) : (n = 10 * n_B_IJYOU[1],
-        e = Math.floor(n_B[8] / 2)),
-        e > n ? n_B[8] -= n : n_B[8] -= e
+        e = Math.floor(selectedMonster[8] / 4)) : (n = 10 * n_B_IJYOU[1],
+        e = Math.floor(selectedMonster[8] / 2)),
+        e > n ? selectedMonster[8] -= n : selectedMonster[8] -= e
     }
-    if (0 == n_B[19] && n_B_IJYOU[11] && (n_B[8] -= n_B_IJYOU[11] + 2,
-    n_B[8] < 0 && (n_B[8] = 0)),
+    if (0 == selectedMonster[19] && n_B_IJYOU[11] && (selectedMonster[8] -= n_B_IJYOU[11] + 2,
+    selectedMonster[8] < 0 && (selectedMonster[8] = 0)),
     n_B_IJYOU[1]) {
         var e, n;
         PvP ? (n = 5 * n_B_IJYOU[1],
-        e = Math.floor(n_B[10] / 4)) : (n = 10 * n_B_IJYOU[1],
-        e = Math.floor(n_B[10] / 2)),
-        e > n ? n_B[10] -= n : n_B[10] -= e
+        e = Math.floor(selectedMonster[10] / 4)) : (n = 10 * n_B_IJYOU[1],
+        e = Math.floor(selectedMonster[10] / 2)),
+        e > n ? selectedMonster[10] -= n : selectedMonster[10] -= e
     }
-    0 == n_B[19] && n_B_IJYOU[5] && (6 == n_B[2] || n_B[3] >= 90) && (n_B[10] = n_B[10] - Math.floor(n_B[10] / 2)),
-    n_B_IJYOU[15] && 0 == PvP && (n_B[7] -= Math.floor(40 * n_B[7] / 100)),
-    0 == n_B[19] && n_B_IJYOU[5] && (6 == n_B[2] || n_B[3] >= 90) && (n_B[9] = n_B[9] - Math.floor(n_B[9] / 2)),
-    n_B_IJYOU[16] && 0 == PvP && (n_B[9] -= Math.floor(40 * n_B[9] / 100)),
-    0 == n_B[19] && n_B_IJYOU[10] && (n_B[11] = 0),
-    0 == PvP && (n_B[23] = n_B[7],
-    n_B[24] = n_B[7] + (Math.floor(n_B[7] / 20) * Math.floor(n_B[7] / 20) - 1),
-    n_B[23] > n_B[24] && (n_B[24] = n_B[23])),
+    0 == selectedMonster[19] && n_B_IJYOU[5] && (6 == selectedMonster[2] || selectedMonster[3] >= 90) && (selectedMonster[10] = selectedMonster[10] - Math.floor(selectedMonster[10] / 2)),
+    n_B_IJYOU[15] && 0 == PvP && (selectedMonster[7] -= Math.floor(40 * selectedMonster[7] / 100)),
+    0 == selectedMonster[19] && n_B_IJYOU[5] && (6 == selectedMonster[2] || selectedMonster[3] >= 90) && (selectedMonster[9] = selectedMonster[9] - Math.floor(selectedMonster[9] / 2)),
+    n_B_IJYOU[16] && 0 == PvP && (selectedMonster[9] -= Math.floor(40 * selectedMonster[9] / 100)),
+    0 == selectedMonster[19] && n_B_IJYOU[10] && (selectedMonster[11] = 0),
+    0 == PvP && (selectedMonster[23] = selectedMonster[7],
+    selectedMonster[24] = selectedMonster[7] + (Math.floor(selectedMonster[7] / 20) * Math.floor(selectedMonster[7] / 20) - 1),
+    selectedMonster[23] > selectedMonster[24] && (selectedMonster[24] = selectedMonster[23])),
     e = n_B_KYOUKA[10],
-    e && (n_B[23] = Math.floor(n_B[23] * (1 + .05 * e)),
-    n_B[24] = Math.floor(n_B[24] * (1 + .05 * e))),
-    n_B[25] = Math.floor(n_B[7] / 2) + n_B[9],
-    50 > SRV ? (n_B[26] = n_B[5] + n_B[10],
-    n_B[27] = n_B[5] + n_B[8]) : (n_B[26] = 175 + n_B[5] + n_B[10],
-    n_B[27] = 100 + n_B[5] + n_B[8]);
+    e && (selectedMonster[23] = Math.floor(selectedMonster[23] * (1 + .05 * e)),
+    selectedMonster[24] = Math.floor(selectedMonster[24] * (1 + .05 * e))),
+    selectedMonster[25] = Math.floor(selectedMonster[7] / 2) + selectedMonster[9],
+    50 > SRV ? (selectedMonster[26] = selectedMonster[5] + selectedMonster[10],
+    selectedMonster[27] = selectedMonster[5] + selectedMonster[8]) : (selectedMonster[26] = 175 + selectedMonster[5] + selectedMonster[10],
+    selectedMonster[27] = 100 + selectedMonster[5] + selectedMonster[8]);
     var l = 0;
-    0 == n_B[19] && 0 != n_B_IJYOU[0] && n_B[3] < 90 && (l += 5 + 5 * n_B_IJYOU[0]),
+    0 == selectedMonster[19] && 0 != n_B_IJYOU[0] && selectedMonster[3] < 90 && (l += 5 + 5 * n_B_IJYOU[0]),
     0 == PvP && n_B_IJYOU[22] && (l += 50),
     0 == PvP && n_B_IJYOU[24] && (l += 5 * n_B_IJYOU[24]),
     l > 100 && (l = 100),
-    0 == PvP && (n_B[14] -= Math.floor(n_B[14] * l / 100)),
-    0 == n_B[19] && n_B_IJYOU[2] && (n_B[14] -= Math.floor(25 * n_B[14] / 100));
+    0 == PvP && (selectedMonster[14] -= Math.floor(selectedMonster[14] * l / 100)),
+    0 == selectedMonster[19] && n_B_IJYOU[2] && (selectedMonster[14] -= Math.floor(25 * selectedMonster[14] / 100));
     var e = 0;
     e += n_tok[290],
-    SRV ? (0 == n_B[19] && (e += n_tok[291]),
-    1 == n_B[19] && (e += n_tok[292]),
-    e += n_tok[300 + n_B[2]],
-    324 != n_A_ActiveSkill && 159 != n_A_ActiveSkill && 384 != n_A_ActiveSkill && 162 != n_A_ActiveSkill && 193 != n_A_ActiveSkill && 405 != n_A_ActiveSkill && 438 != n_A_ActiveSkill || (e = 0)) : (e += n_tok[300 + n_B[2]],
+    SRV ? (0 == selectedMonster[19] && (e += n_tok[291]),
+    1 == selectedMonster[19] && (e += n_tok[292]),
+    e += n_tok[300 + selectedMonster[2]],
+    324 != n_A_ActiveSkill && 159 != n_A_ActiveSkill && 384 != n_A_ActiveSkill && 162 != n_A_ActiveSkill && 193 != n_A_ActiveSkill && 405 != n_A_ActiveSkill && 438 != n_A_ActiveSkill || (e = 0)) : (e += n_tok[300 + selectedMonster[2]],
     324 != n_A_ActiveSkill && 159 != n_A_ActiveSkill && 384 != n_A_ActiveSkill && 162 != n_A_ActiveSkill && 193 != n_A_ActiveSkill && 405 != n_A_ActiveSkill && 438 != n_A_ActiveSkill || (e = 0)),
     e && (0 > e && (e = 0),
-    n_B[14] -= Math.floor(n_B[14] * e / 100)),
-    n_B_IJYOU[14] && 0 == PvP && (n_B[14] -= Math.floor(15 * n_B[14] / 100)),
-    0 == n_B[19] && n_B_IJYOU[4] && n_B[3] < 90 && (n_B[14] -= Math.floor(50 * n_B[14] / 100)),
-    0 == n_B[19] && n_B_IJYOU[9] && n_B[3] < 90 && (n_B[14] -= Math.floor(50 * n_B[14] / 100)),
-    n_B_KYOUKA[9] && (SRV ? n_B[14] = 90 : n_B[14] *= 2),
-    n_B_IJYOU[12] && (6 == n_B[2] || n_B[3] >= 90) && (n_B[14] -= Math.floor(n_B[14] * (10 + 4 * n_B_IJYOU[12]) / 100)),
-    n_B_IJYOU[20] && 0 == PvP && (n_B[14] = 0),
-    n_B[23] -= Math.floor(n_B[23] * l / 100),
-    n_B[24] -= Math.floor(n_B[24] * l / 100),
-    0 == n_B[19] && n_B_IJYOU[2] && (n_B[23] -= Math.floor(25 * n_B[23] / 100),
-    n_B[24] -= Math.floor(25 * n_B[24] / 100)),
-    0 == n_B[19] && n_B_IJYOU[4] && n_B[3] < 90 && (n_B[23] -= Math.floor(50 * n_B[23] / 100),
-    n_B[24] -= Math.floor(50 * n_B[24] / 100)),
-    0 == n_B[19] && n_B_IJYOU[9] && n_B[3] < 90 && (n_B[23] -= Math.floor(50 * n_B[23] / 100),
-    n_B[24] -= Math.floor(50 * n_B[24] / 100)),
-    0 == PvP && n_B_KYOUKA[8] && (n_B[23] -= Math.floor(20 * n_B[23] * n_B_KYOUKA[8] / 100),
-    n_B[24] -= Math.floor(20 * n_B[24] * n_B_KYOUKA[8] / 100)),
-    0 == PvP && n_B_IJYOU[21] && (n_B[24] += 90),
-    n_B_IJYOU[20] && (n_B[23] = 0,
-    n_B[24] = 0);
+    selectedMonster[14] -= Math.floor(selectedMonster[14] * e / 100)),
+    n_B_IJYOU[14] && 0 == PvP && (selectedMonster[14] -= Math.floor(15 * selectedMonster[14] / 100)),
+    0 == selectedMonster[19] && n_B_IJYOU[4] && selectedMonster[3] < 90 && (selectedMonster[14] -= Math.floor(50 * selectedMonster[14] / 100)),
+    0 == selectedMonster[19] && n_B_IJYOU[9] && selectedMonster[3] < 90 && (selectedMonster[14] -= Math.floor(50 * selectedMonster[14] / 100)),
+    n_B_KYOUKA[9] && (SRV ? selectedMonster[14] = 90 : selectedMonster[14] *= 2),
+    n_B_IJYOU[12] && (6 == selectedMonster[2] || selectedMonster[3] >= 90) && (selectedMonster[14] -= Math.floor(selectedMonster[14] * (10 + 4 * n_B_IJYOU[12]) / 100)),
+    n_B_IJYOU[20] && 0 == PvP && (selectedMonster[14] = 0),
+    selectedMonster[23] -= Math.floor(selectedMonster[23] * l / 100),
+    selectedMonster[24] -= Math.floor(selectedMonster[24] * l / 100),
+    0 == selectedMonster[19] && n_B_IJYOU[2] && (selectedMonster[23] -= Math.floor(25 * selectedMonster[23] / 100),
+    selectedMonster[24] -= Math.floor(25 * selectedMonster[24] / 100)),
+    0 == selectedMonster[19] && n_B_IJYOU[4] && selectedMonster[3] < 90 && (selectedMonster[23] -= Math.floor(50 * selectedMonster[23] / 100),
+    selectedMonster[24] -= Math.floor(50 * selectedMonster[24] / 100)),
+    0 == selectedMonster[19] && n_B_IJYOU[9] && selectedMonster[3] < 90 && (selectedMonster[23] -= Math.floor(50 * selectedMonster[23] / 100),
+    selectedMonster[24] -= Math.floor(50 * selectedMonster[24] / 100)),
+    0 == PvP && n_B_KYOUKA[8] && (selectedMonster[23] -= Math.floor(20 * selectedMonster[23] * n_B_KYOUKA[8] / 100),
+    selectedMonster[24] -= Math.floor(20 * selectedMonster[24] * n_B_KYOUKA[8] / 100)),
+    0 == PvP && n_B_IJYOU[21] && (selectedMonster[24] += 90),
+    n_B_IJYOU[20] && (selectedMonster[23] = 0,
+    selectedMonster[24] = 0);
     var e = 0;
     if (e += n_tok[295],
-    e += n_tok[310 + n_B[2]],
+    e += n_tok[310 + selectedMonster[2]],
     e && (0 > e && (e = 0),
-    n_B[15] -= Math.floor(n_B[15] * e / 100)),
-    0 == n_B[19] && n_B_IJYOU[4] && n_B[3] < 90 && (n_B[15] += Math.floor(25 * n_B[15] / 100)),
-    0 == n_B[19] && n_B_IJYOU[9] && n_B[3] < 90 && (n_B[15] += Math.floor(25 * n_B[15] / 100)),
-    0 == n_B[19] && n_B_IJYOU[18] && n_B[3] < 90 && (n_B[25] -= Math.floor(n_B[25] * (12 * n_B_IJYOU[18]) / 100)),
-    0 == PvP && n_B_KYOUKA[7] && (n_B[25] -= Math.floor(20 * n_B[25] * n_B_KYOUKA[7] / 100)),
-    0 == PvP && n_B_IJYOU[21] && (n_B[25] = 90),
-    n_B[26] += n_B_manual[36],
-    0 == n_B[19] && n_B_IJYOU[3] && (n_B[26] -= 25,
-    n_B[26] < 1 && (n_B[26] = 1)),
-    !n_B[20] && 2 != c.B_AtkRange.value || 1 == c.B_AtkRange.value || n_A_Buf6[3] && (n_B[26] -= 50,
-    n_B[26] < 1 && (n_B[26] = 1)),
-    n_B_KYOUKA[4] && (n_B[26] = 2 * n_B[26]),
-    n_B[27] += n_B_manual[37],
-    0 == n_B[19] && n_B_IJYOU[3] && (n_B[27] -= Math.floor(25 * n_B[27] / 100)),
-    0 != n_B_KYOUKA[5] && (n_B[27] = Math.floor(n_B[27] * (1 + .2 * n_B_KYOUKA[5]))),
-    n_B_IJYOU[17] && (n_B[27] -= 50,
-    n_B[27] < 0 && (n_B[27] = 0)),
-    0 == n_B[19] && n_B_IJYOU[4] && n_B[3] < 90 && (n_B[27] = -19),
-    0 == n_B[19] && n_B_IJYOU[9] && n_B[3] < 90 && (n_B[27] = -19),
-    0 == n_B[19] && (n_B_IJYOU[7] || n_B_IJYOU[8]) && (n_B[27] = -19),
+    selectedMonster[15] -= Math.floor(selectedMonster[15] * e / 100)),
+    0 == selectedMonster[19] && n_B_IJYOU[4] && selectedMonster[3] < 90 && (selectedMonster[15] += Math.floor(25 * selectedMonster[15] / 100)),
+    0 == selectedMonster[19] && n_B_IJYOU[9] && selectedMonster[3] < 90 && (selectedMonster[15] += Math.floor(25 * selectedMonster[15] / 100)),
+    0 == selectedMonster[19] && n_B_IJYOU[18] && selectedMonster[3] < 90 && (selectedMonster[25] -= Math.floor(selectedMonster[25] * (12 * n_B_IJYOU[18]) / 100)),
+    0 == PvP && n_B_KYOUKA[7] && (selectedMonster[25] -= Math.floor(20 * selectedMonster[25] * n_B_KYOUKA[7] / 100)),
+    0 == PvP && n_B_IJYOU[21] && (selectedMonster[25] = 90),
+    selectedMonster[26] += n_B_manual[36],
+    0 == selectedMonster[19] && n_B_IJYOU[3] && (selectedMonster[26] -= 25,
+    selectedMonster[26] < 1 && (selectedMonster[26] = 1)),
+    !selectedMonster[20] && 2 != c.B_AtkRange.value || 1 == c.B_AtkRange.value || n_A_Buf6[3] && (selectedMonster[26] -= 50,
+    selectedMonster[26] < 1 && (selectedMonster[26] = 1)),
+    n_B_KYOUKA[4] && (selectedMonster[26] = 2 * selectedMonster[26]),
+    selectedMonster[27] += n_B_manual[37],
+    0 == selectedMonster[19] && n_B_IJYOU[3] && (selectedMonster[27] -= Math.floor(25 * selectedMonster[27] / 100)),
+    0 != n_B_KYOUKA[5] && (selectedMonster[27] = Math.floor(selectedMonster[27] * (1 + .2 * n_B_KYOUKA[5]))),
+    n_B_IJYOU[17] && (selectedMonster[27] -= 50,
+    selectedMonster[27] < 0 && (selectedMonster[27] = 0)),
+    0 == selectedMonster[19] && n_B_IJYOU[4] && selectedMonster[3] < 90 && (selectedMonster[27] = -19),
+    0 == selectedMonster[19] && n_B_IJYOU[9] && selectedMonster[3] < 90 && (selectedMonster[27] = -19),
+    0 == selectedMonster[19] && (n_B_IJYOU[7] || n_B_IJYOU[8]) && (selectedMonster[27] = -19),
     0 == PvP) {
         var t = 100;
-        t += StPlusCard(120 + n_B[2]),
-        t += StPlusCalc2(120 + n_B[2]);
+        t += StPlusCard(120 + selectedMonster[2]),
+        t += StPlusCalc2(120 + selectedMonster[2]);
         var a = 0;
         EquipNumSearch(1030) && (t += 5 * EquipNumSearch(1030)),
-        3 != n_A_JobClass() || !CardNumSearch(452) || 1 != n_B[2] && 6 != n_B[2] || (t += 5),
-        2 == n_B[2] && 4 == n_A_JobClass() && CardNumSearch(453) && (t += 5),
+        3 != n_A_JobClass() || !CardNumSearch(452) || 1 != selectedMonster[2] && 6 != selectedMonster[2] || (t += 5),
+        2 == selectedMonster[2] && 4 == n_A_JobClass() && CardNumSearch(453) && (t += 5),
         n_A_Buf8[1] && (t += 25 * n_A_Buf8[1]),
         n_A_Buf8[2] && (a += 50),
         n_A_Buf6[2] && (t += 100),
         (3 == c.A8_Skill14.value || n_A_Buf6[2]) && (t = 2 * t,
         a = 2 * a),
-        0 == t && 0 == a || (n_B[16] = Math.floor(n_B[16] * t / 100),
-        n_B[17] = Math.floor(n_B[17] * (t + a) / 100)),
-        n_A_Buf8[5] && (n_B[16] = Math.floor(n_B[16] / (1 + n_A_Buf8[5]) + 1),
-        n_B[17] = Math.floor(n_B[17] / (1 + n_A_Buf8[5]) + 1)),
-        n_A_Buf8[6] && (n_B[16] = Math.floor(n_B[16] * (100 + 25 * n_A_Buf8[6]) / 100),
-        n_B[17] = Math.floor(n_B[17] * (100 + 25 * n_A_Buf8[6]) / 100)),
-        SkillSearch(367) && (n_B[16] = Math.floor(n_B[16] * (100 + 10 * SkillSearch(367)) / 100),
-        n_B[17] = Math.floor(n_B[17] * (100 + 10 * SkillSearch(367)) / 100)),
-        n_A_Buf8[7] && (n_B[17] = Math.floor(n_B[17] * (1 + n_A_Buf8[7]))),
-        n_A_Buf8[3] && (n_B[16] = Math.floor(n_B[16] * (1 + n_A_Buf8[3]))),
-        0 == n_B[19] && n_A_Buf3[8] && (n_B[16] = Math.floor(n_B[16] * (125 + 11 * n_A_Buf3[8]) / 100),
-        n_B[17] = Math.floor(n_B[17] * (125 + 11 * n_A_Buf3[8]) / 100))
+        0 == t && 0 == a || (selectedMonster[16] = Math.floor(selectedMonster[16] * t / 100),
+        selectedMonster[17] = Math.floor(selectedMonster[17] * (t + a) / 100)),
+        n_A_Buf8[5] && (selectedMonster[16] = Math.floor(selectedMonster[16] / (1 + n_A_Buf8[5]) + 1),
+        selectedMonster[17] = Math.floor(selectedMonster[17] / (1 + n_A_Buf8[5]) + 1)),
+        n_A_Buf8[6] && (selectedMonster[16] = Math.floor(selectedMonster[16] * (100 + 25 * n_A_Buf8[6]) / 100),
+        selectedMonster[17] = Math.floor(selectedMonster[17] * (100 + 25 * n_A_Buf8[6]) / 100)),
+        SkillSearch(367) && (selectedMonster[16] = Math.floor(selectedMonster[16] * (100 + 10 * SkillSearch(367)) / 100),
+        selectedMonster[17] = Math.floor(selectedMonster[17] * (100 + 10 * SkillSearch(367)) / 100)),
+        n_A_Buf8[7] && (selectedMonster[17] = Math.floor(selectedMonster[17] * (1 + n_A_Buf8[7]))),
+        n_A_Buf8[3] && (selectedMonster[16] = Math.floor(selectedMonster[16] * (1 + n_A_Buf8[3]))),
+        0 == selectedMonster[19] && n_A_Buf3[8] && (selectedMonster[16] = Math.floor(selectedMonster[16] * (125 + 11 * n_A_Buf3[8]) / 100),
+        selectedMonster[17] = Math.floor(selectedMonster[17] * (125 + 11 * n_A_Buf3[8]) / 100))
     }
-    n_B[21] = n_B[27] + 20,
-    n_B[22] = n_B[26] + 75,
+    selectedMonster[21] = selectedMonster[27] + 20,
+    selectedMonster[22] = selectedMonster[26] + 75,
     myInnerHtml("B_AA", " + ", 0),
     myInnerHtml("B_AB", " + ", 0);
     var A = [6, 12, 13, 21, 22, 14, 15, 23, 25]
@@ -4051,98 +4079,107 @@ function ClickB_Enemy() {
       , s = "<B style='color:red'>"
       , u = "</B>";
     for (i = 0; 8 >= i; i++) {
-        var m = n_B[A[i]];
-        n_B[A[i]] < n_B2[A[i]] && (m = r + n_B[A[i]] + u),
-        n_B[A[i]] > n_B2[A[i]] && (m = s + n_B[A[i]] + u),
+        var m = selectedMonster[A[i]];
+        selectedMonster[A[i]] < n_B2[A[i]] && (m = r + selectedMonster[A[i]] + u),
+        selectedMonster[A[i]] > n_B2[A[i]] && (m = s + selectedMonster[A[i]] + u),
         myInnerHtml("B_" + A[i], m, 0)
     }
     if (0 == PvP)
         for (i = 0; 1 >= i; i++) {
-            var m = n_B[o[i]];
-            n_B[o[i]] < n_B2[o[i]] && (m = s + n_B[o[i]] + u),
-            n_B[o[i]] > n_B2[o[i]] && (m = r + n_B[o[i]] + u),
+            var m = selectedMonster[o[i]];
+            selectedMonster[o[i]] < n_B2[o[i]] && (m = s + selectedMonster[o[i]] + u),
+            selectedMonster[o[i]] > n_B2[o[i]] && (m = r + selectedMonster[o[i]] + u),
             myInnerHtml("B_" + o[i], m, 0)
         }
-    myInnerHtml("B_2", v_Race[n_B[2]], 0),
-    e = Math.floor(n_B[3] / 10),
-    n_B[3] != n_B2[3] ? myInnerHtml("B_3", "<b>" + s + (v_Element[e] + n_B[3] % 10) + u + "</b>", 0) : myInnerHtml("B_3", "<b>" + (v_Element[e] + n_B[3] % 10) + "</b>", 0),
-    myInnerHtml("B_4", v_Size[n_B[4]], 0),
-    myInnerHtml("B_type", v_Type[n_B[19]], 0),
-    n_B[27] += n_B_manual[37],
+    myInnerHtml("B_2", v_Race[selectedMonster[2]], 0),
+    e = Math.floor(selectedMonster[3] / 10),
+    selectedMonster[3] != n_B2[3] ? myInnerHtml("B_3", "<b>" + s + (v_Element[e] + selectedMonster[3] % 10) + u + "</b>", 0) : myInnerHtml("B_3", "<b>" + (v_Element[e] + selectedMonster[3] % 10) + "</b>", 0),
+    myInnerHtml("B_4", v_Size[selectedMonster[4]], 0),
+    myInnerHtml("B_type", v_Type[selectedMonster[19]], 0),
+    selectedMonster[27] += n_B_manual[37],
     1 == c.A8_Skill14.value ? n_WoE = 1 : n_WoE = 0,
-    n_WoE && (n_B[27] = Math.floor(.8 * n_B[27])),
+    n_WoE && (selectedMonster[27] = Math.floor(.8 * selectedMonster[27])),
     n_B_DEF2 = [0, 0, 0],
-    n_B_DEF2[2] = n_B[23],
-    n_B_DEF2[0] = n_B[24],
+    n_B_DEF2[2] = selectedMonster[23],
+    n_B_DEF2[0] = selectedMonster[24],
     n_B_DEF2[1] = Math.floor((n_B_DEF2[2] + n_B_DEF2[0]) / 2),
-    n_B_MDEF2 = n_B[25],
-    n_B_HIT = n_B[26],
-    n_B_FLEE = n_B[27]
+    n_B_MDEF2 = selectedMonster[25],
+    n_B_HIT = selectedMonster[26],
+    n_B_FLEE = selectedMonster[27]
 }
+
+/**
+ * Combat calculation
+ */
 function calc() {
-    for (var _ = 0; 2 >= _; _++)
+    for (var _ = 0; 2 >= _; _++) {
         InnStr[_] = "";
-    StAllCalc(),
-    wCSize = m_WeaponSize[n_A_WeaponType][n_B[4]],
-    SkillSearch(78) && (4 != n_A_WeaponType && 5 != n_A_WeaponType || 1 != n_B[4] || (wCSize = 1)),
-    (SkillSearch(153) || n_A_Buf2[7]) && (wCSize = 1),
-    CardNumSearch(32) && (wCSize = 1),
-    EquipNumSearch(1177) && (wCSize = 1),
-    w_HIT = n_A_HIT + 80 - n_B_FLEE,
-    w_HIT_EDP = w_HIT,
-    w_HIT_EDP > 100 && (w_HIT_EDP = 100),
-    w_HIT_EDP < 5 && (w_HIT_EDP = 5),
-    SkillSearch(148) && (w_HIT = Math.floor(w_HIT * (100 + 2 * SkillSearch(148)) / 100)),
-    70 != n_A_ActiveSkill && 6 != n_A_ActiveSkill || (w_HIT *= 1 + .05 * n_A_ActiveSkillLV),
-    83 != n_A_ActiveSkill && 388 != n_A_ActiveSkill || !SkillSearch(381) || (w_HIT *= 1.5),
-    7 == n_A_ActiveSkill && (w_HIT *= 1 + .1 * n_A_ActiveSkillLV),
-    272 == n_A_ActiveSkill && (w_HIT *= 1 + .1 * n_A_ActiveSkillLV),
-    337 == n_A_ActiveSkill && (w_HIT = 100),
-    0 == SRV && 324 == n_A_ActiveSkill && (w_HIT += 20),
-    384 == n_A_ActiveSkill && (w_HIT = 100),
-    SkillSearch(364) && (w_HIT = 100),
-    w_HIT > 100 ? w_HIT = 100 : w_HIT < 5 && (w_HIT = 5),
-    n_tok[86] && (w_HIT += (100 - w_HIT) * n_tok[86] / 100),
-    w_HIT = Math.floor(100 * w_HIT) / 100,
-    w_HIT_HYOUJI = w_HIT,
-    272 == n_A_ActiveSkill && (n_A_CRI += 20),
-    401 == n_A_ActiveSkill && (n_A_CRI += 25 + 5 * n_A_ActiveSkillLV),
-    w_Cri = n_A_CRI - .2 * n_B[11] + .1,
-    n_B_IJYOU[8] && (w_Cri *= 2),
-    w_Cri < 0 ? w_Cri = 0 : w_Cri > 100 && (w_Cri = 100),
-    TyouEnkakuSousa3dan = 0,
-    wBC3_3danHatudouRitu = 0,
-    SkillSearch(187) && (wBC3_3danHatudouRitu = 30 - SkillSearch(187)),
-    wDA = 5 * SkillSearch(13),
-    1 != n_A_WeaponType && (wDA = 0),
-    CardNumSearch(43) && (SkillSearch(13) > 1 ? wDA = 5 * SkillSearch(13) : wDA = 5),
+    }
+
+    StAllCalc();
+
+    // Multiplier on how the weapon equiped affects the monster selected
+    wCSize = m_WeaponSize[n_A_WeaponType][selectedMonster[4]];
+    
+    SkillSearch(78) && (4 != n_A_WeaponType && 5 != n_A_WeaponType || 1 != selectedMonster[4] || (wCSize = 1));
+    (SkillSearch(153) || n_A_Buf2[7]) && (wCSize = 1);
+    CardNumSearch(32) && (wCSize = 1);
+    EquipNumSearch(1177) && (wCSize = 1);
+    w_HIT = n_A_HIT + 80 - n_B_FLEE;
+    w_HIT_EDP = w_HIT;
+    w_HIT_EDP > 100 && (w_HIT_EDP = 100);
+    w_HIT_EDP < 5 && (w_HIT_EDP = 5);
+    SkillSearch(148) && (w_HIT = Math.floor(w_HIT * (100 + 2 * SkillSearch(148)) / 100));
+    70 != n_A_ActiveSkill && 6 != n_A_ActiveSkill || (w_HIT *= 1 + .05 * n_A_ActiveSkillLV);
+    83 != n_A_ActiveSkill && 388 != n_A_ActiveSkill || !SkillSearch(381) || (w_HIT *= 1.5);
+    7 == n_A_ActiveSkill && (w_HIT *= 1 + .1 * n_A_ActiveSkillLV);
+    272 == n_A_ActiveSkill && (w_HIT *= 1 + .1 * n_A_ActiveSkillLV);
+    337 == n_A_ActiveSkill && (w_HIT = 100);
+    0 == SRV && 324 == n_A_ActiveSkill && (w_HIT += 20);
+    384 == n_A_ActiveSkill && (w_HIT = 100);
+    SkillSearch(364) && (w_HIT = 100);
+    w_HIT > 100 ? w_HIT = 100 : w_HIT < 5 && (w_HIT = 5);
+    n_tok[86] && (w_HIT += (100 - w_HIT) * n_tok[86] / 100);
+    w_HIT = Math.floor(100 * w_HIT) / 100;
+    w_HIT_HYOUJI = w_HIT;
+    272 == n_A_ActiveSkill && (n_A_CRI += 20);
+    401 == n_A_ActiveSkill && (n_A_CRI += 25 + 5 * n_A_ActiveSkillLV);
+    w_Cri = n_A_CRI - .2 * selectedMonster[11] + .1;
+    n_B_IJYOU[8] && (w_Cri *= 2);
+    w_Cri < 0 ? w_Cri = 0 : w_Cri > 100 && (w_Cri = 100);
+    TyouEnkakuSousa3dan = 0;
+    wBC3_3danHatudouRitu = 0;
+    SkillSearch(187) && (wBC3_3danHatudouRitu = 30 - SkillSearch(187));
+    wDA = 5 * SkillSearch(13);
+    1 != n_A_WeaponType && (wDA = 0);
+    CardNumSearch(43) && (SkillSearch(13) > 1 ? wDA = 5 * SkillSearch(13) : wDA = 5);
     0 != n_A_WeaponType && ((EquipNumSearch(570) || EquipNumSearch(1442) || EquipNumSearch(1443)) && (SkillSearch(13) > 2 ? wDA = 5 * SkillSearch(13) : wDA = 10),
     EquipNumSearch(1578) && (wDA = 5 * SkillSearch(13),
     5 != n_A_SHOULDER_REFINE && 6 != n_A_SHOULDER_REFINE || SkillSearch(13) < 1 && (wDA = 5),
     n_A_SHOULDER_REFINE >= 7 && SkillSearch(13) < 5 && (wDA = 25)),
-    EquipNumSearch(1321) && (SkillSearch(13) > 5 ? wDA = 5 * SkillSearch(13) : wDA = 25)),
-    (EquipNumSearch(399) || EquipNumSearch(1571)) && (SkillSearch(13) > 5 ? wDA = 5 * SkillSearch(13) : wDA = 25),
+    EquipNumSearch(1321) && (SkillSearch(13) > 5 ? wDA = 5 * SkillSearch(13) : wDA = 25));
+    (EquipNumSearch(399) || EquipNumSearch(1571)) && (SkillSearch(13) > 5 ? wDA = 5 * SkillSearch(13) : wDA = 25);
     17 == n_A_WeaponType && (wDA = 5 * SkillSearch(427),
     CardNumSearch(43) && (wDA = 5 * SkillSearch(427) + 5 * (100 - 5 * SkillSearch(427)) / 100),
     (EquipNumSearch(570) || EquipNumSearch(1442) || EquipNumSearch(1443)) && (wDA = 5 * SkillSearch(427) + 10 * (100 - 5 * SkillSearch(427)) / 100)),
     w_HIT_DA = w_HIT,
     0 != wDA && 17 != n_A_WeaponType && (w_HIT_DA = w_HIT_DA * (100 + SkillSearch(13)) / 100,
-    w_HIT_DA >= 100 && (w_HIT_DA = 100)),
-    w998A = 100 - wBC3_3danHatudouRitu,
-    w998B = wBC3_3danHatudouRitu * w_HIT / 100,
-    w998C = wBC3_3danHatudouRitu - w998B,
-    w998D = w998A * wDA / 100,
-    w998E = w998D * w_HIT_DA / 100,
-    w998F = w998D - w998E,
-    w998G = (100 - wBC3_3danHatudouRitu - w998D) * w_Cri / 100,
-    w998H = 100 - wBC3_3danHatudouRitu - w998D - w998G,
-    w998I = w998H * w_HIT / 100,
-    w998J = w998H - w998I,
-    w998K = w998B + w998E + w998G + w998I,
+    w_HIT_DA >= 100 && (w_HIT_DA = 100));
+    w998A = 100 - wBC3_3danHatudouRitu;
+    w998B = wBC3_3danHatudouRitu * w_HIT / 100;
+    w998C = wBC3_3danHatudouRitu - w998B;
+    w998D = w998A * wDA / 100;
+    w998E = w998D * w_HIT_DA / 100;
+    w998F = w998D - w998E;
+    w998G = (100 - wBC3_3danHatudouRitu - w998D) * w_Cri / 100;
+    w998H = 100 - wBC3_3danHatudouRitu - w998D - w998G;
+    w998I = w998H * w_HIT / 100;
+    w998J = w998H - w998I;
+    w998K = w998B + w998E + w998G + w998I;
     0 == SRV && (w_HIT >= 100 && (w998K = 100),
-    w_Cri >= 100 && (w998K = 100)),
-    w998L = 100 - w998K,
-    (0 == n_A_ActiveSkill || 272 == n_A_ActiveSkill || 401 == n_A_ActiveSkill || 86 == n_A_ActiveSkill && 50 <= n_B[3] && n_B[3] < 60) && (w_HIT_HYOUJI = Math.floor(100 * w998K) / 100,
+    w_Cri >= 100 && (w998K = 100));
+    w998L = 100 - w998K;
+    (0 == n_A_ActiveSkill || 272 == n_A_ActiveSkill || 401 == n_A_ActiveSkill || 86 == n_A_ActiveSkill && 50 <= selectedMonster[3] && selectedMonster[3] < 60) && (w_HIT_HYOUJI = Math.floor(100 * w998K) / 100,
     myInnerHtml("CRInum", " (" + Math.round(100 * w998G) / 100 + "%)", 0)),
     w_FLEE = n_A_FLEE + 20 - n_B_HIT,
     w_FLEE > 95 ? w_FLEE = 95 : w_FLEE < 5 && (w_FLEE = 5),
@@ -4224,7 +4261,7 @@ function calc() {
         n_A_workDEX >= n_A_Weapon2_ATK ? w_left_Maxatk = n_A_ATK + n_A_Weapon2LV_Maxplus + Math.floor((n_A_Weapon2_ATK + wImp) * wCSize) : w_left_Maxatk = n_A_ATK + n_A_Weapon2LV_Maxplus + Math.floor((n_A_Weapon2_ATK - 1 + wImp) * wCSize),
         w_left_Maxatk = BattleCalc4(w_left_Maxatk * wbairitu, 2, 1),
         w_left_Maxatk < 1 && (w_left_Maxatk = 1),
-        w_left_Maxatk = Math.floor(w_left_Maxatk * element[n_B[3]][n_A_Weapon2_element]),
+        w_left_Maxatk = Math.floor(w_left_Maxatk * element[selectedMonster[3]][n_A_Weapon2_element]),
         w_left_star = 0,
         106 == n_A_card[4] && 106 == n_A_card[5] && 106 == n_A_card[6])
             w_left_star += 40;
@@ -4239,7 +4276,7 @@ function calc() {
         w_left_Minatk = n_A_ATK + n_A_Weapon2LV_Minplus + Math.floor((n_A_workDEX + wImp) * wCSize),
         w_left_Minatk = BattleCalc4(w_left_Minatk * wbairitu, 0, 1),
         w_left_Minatk < 1 && (w_left_Minatk = 1),
-        w_left_Minatk = Math.floor(w_left_Minatk * element[n_B[3]][n_A_Weapon2_element]),
+        w_left_Minatk = Math.floor(w_left_Minatk * element[selectedMonster[3]][n_A_Weapon2_element]),
         w_left_Minatk += w_left_star,
         w_left_Minatk *= .3 + SkillSearch(80) / 10,
         w_left_Minatk = Math.floor(w_left_Minatk),
@@ -4271,10 +4308,10 @@ function calc() {
         n_A_CriATK[0] == n_A_CriATK[2] ? myInnerHtml("CRIATK", n_A_CriATK[1], 0) : myInnerHtml("CRIATK", n_A_CriATK[0] + "~" + n_A_CriATK[2], 0);
     if (n_Max_DMG = 0,
     n_Min_DMG = 9999999,
-    (0 == n_A_ActiveSkill || 86 == n_A_ActiveSkill && 50 <= n_B[3] && n_B[3] < 60) && w998G > 0 && (n_Min_DMG = n_A_CriATK[0],
+    (0 == n_A_ActiveSkill || 86 == n_A_ActiveSkill && 50 <= selectedMonster[3] && selectedMonster[3] < 60) && w998G > 0 && (n_Min_DMG = n_A_CriATK[0],
     n_Max_DMG = n_A_CriATK[2]),
     BattleCalc999(),
-    myInnerHtml("A_WeaponElement", v_Element[n_A_Weapon_element] + " (" + 100 * element[n_B[3]][n_A_Weapon_element] + "% vs " + v_Element[Math.floor(n_B[3] / 10)] + n_B[3] % 10 + ")", 0),
+    myInnerHtml("A_WeaponElement", v_Element[n_A_Weapon_element] + " (" + 100 * element[selectedMonster[3]][n_A_Weapon_element] + "% vs " + v_Element[Math.floor(selectedMonster[3] / 10)] + selectedMonster[3] % 10 + ")", 0),
     0 == n_rangedAtk) {
         var t = n_B_KYOUKA[12]
           , a = n_B_manual[21];
@@ -4321,8 +4358,8 @@ function BattleCalc(_, e) {
     1 == n_A_WeaponType || 2 == n_A_WeaponType ? _ += 4 * SkillSearch(3) : 3 == n_A_WeaponType ? _ += 4 * SkillSearch(4) : 4 == n_A_WeaponType || 5 == n_A_WeaponType ? _ += 0 == SkillSearch(78) ? 4 * SkillSearch(69) : 5 * SkillSearch(69) : 8 == n_A_WeaponType ? _ += 3 * SkillSearch(89) : 11 == n_A_WeaponType ? _ += 3 * SkillSearch(81) : 14 == n_A_WeaponType ? _ += 3 * SkillSearch(198) : 15 == n_A_WeaponType ? _ += 3 * SkillSearch(206) : 12 == n_A_WeaponType ? _ += 3 * SkillSearch(224) : 6 == n_A_WeaponType || 7 == n_A_WeaponType ? _ += 3 * SkillSearch(241) : 13 != n_A_WeaponType && 0 != n_A_WeaponType || (_ += 3 * SkillSearch(183)),
     0 == n_A_WeaponType && SkillSearch(329) && (_ += 10 * SkillSearch(329)),
     !n_A_Buf3[10] || 4 != n_A_WeaponLV && 4 != n_A_Weapon2LV || (_ += 50 + 25 * n_A_Buf3[10]),
-    (6 == n_B[2] || 90 <= n_B[3] && n_B[3] <= 99) && SkillSearch(24) && (_ += Math.floor((3 + .05 * n_A_BaseLV) * SkillSearch(24))),
-    2 != n_B[2] && 4 != n_B[2] || (_ += 4 * SkillSearch(116),
+    (6 == selectedMonster[2] || 90 <= selectedMonster[3] && selectedMonster[3] <= 99) && SkillSearch(24) && (_ += Math.floor((3 + .05 * n_A_BaseLV) * SkillSearch(24))),
+    2 != selectedMonster[2] && 4 != selectedMonster[2] || (_ += 4 * SkillSearch(116),
     SkillSearch(390) && (_ += n_A_STR)),
     _ = BattleCalc2(_),
     Math.floor(_)
@@ -4331,14 +4368,14 @@ function BattleCalc2(_) {
     if (w999_AB = 0,
     _ > 0 && (w999_AB = 1),
     _ += 2 * SkillSearch(148),
-    0 == wBCEDPch && (_ = Math.floor(_ * element[n_B[3]][n_A_Weapon_element])),
+    0 == wBCEDPch && (_ = Math.floor(_ * element[selectedMonster[3]][n_A_Weapon_element])),
     0 == n_A_WeaponType && SkillSearch(329) && (331 != n_A_ActiveSkill && 333 != n_A_ActiveSkill && 335 != n_A_ActiveSkill && 337 != n_A_ActiveSkill || (_ += 10 * SkillSearch(329))),
     _ += 3 * n_A_Buf2[12],
     _ += 3 * SkillSearch(416),
     0 != n_A_WeaponType && 1 == w999_AB && (_ += 20 * SkillSearch(254)),
     0 == wBCEDPch && (17 != n_A_ActiveSkill && 307 != n_A_ActiveSkill || (_ += 15 * n_A_ActiveSkillLV),
-    86 == n_A_ActiveSkill && (n_B[3] < 50 || 60 <= n_B[3]) && (_ += 75)),
-    423 == n_A_ActiveSkill && (_ += Math.floor(n_A_MATK[w_MagiclBulet] * mdefReduction(n_B[15]) - n_B_MDEF2)),
+    86 == n_A_ActiveSkill && (selectedMonster[3] < 50 || 60 <= selectedMonster[3]) && (_ += 75)),
+    423 == n_A_ActiveSkill && (_ += Math.floor(n_A_MATK[w_MagiclBulet] * mdefReduction(selectedMonster[15]) - n_B_MDEF2)),
     437 == n_A_ActiveSkill && (_ += 50 * n_A_ActiveSkillLV),
     106 == m_Card[n_A_card[0]][0] && 106 == m_Card[n_A_card[1]][0] && 106 == m_Card[n_A_card[2]][0])
         _ += 40;
@@ -4353,38 +4390,38 @@ function BattleCalc2(_) {
     50 > SRV && (_ = ApplyModifiers(_)),
     169 == n_A_ActiveSkill && 10 == n_A_WeaponType && (_ = Math.floor(_ / 2)),
     n_Nitou && 0 == n_A_ActiveSkill && 0 != n_A_WeaponType && (_ = Math.floor(_ * (50 + 10 * SkillSearch(79)) / 100)),
-    423 == n_A_ActiveSkill && (_ *= element[n_B[3]][8]),
-    437 == n_A_ActiveSkill && (_ *= element[n_B[3]][0]),
+    423 == n_A_ActiveSkill && (_ *= element[selectedMonster[3]][8]),
+    437 == n_A_ActiveSkill && (_ *= element[selectedMonster[3]][0]),
     1 == PvP && (317 != n_A_ActiveSkill && 318 != n_A_ActiveSkill || (_ = 0)),
     _
 }
 function ApplyModifiers(_) {
     if (0 == wBCEDPch && 0 == not_use_card) {
         var e = 0;
-        e = n_tok[30 + n_B[2]],
+        e = n_tok[30 + selectedMonster[2]],
         _ = Math.floor(_ * (100 + e) / 100),
-        e = n_tok[40 + Math.floor(n_B[3] / 10)],
+        e = n_tok[40 + Math.floor(selectedMonster[3] / 10)],
         _ = Math.floor(_ * (100 + e) / 100),
-        e = n_tok[27 + n_B[4]],
+        e = n_tok[27 + selectedMonster[4]],
         _ = Math.floor(_ * (100 + e) / 100),
         1 == n_rangedAtk && -1 != TyouEnkakuSousa3dan && (e = n_tok[25],
         _ = Math.floor(_ * (100 + e) / 100)),
         e = 0,
-        1 == n_B[19] && (e += n_tok[26]),
+        1 == selectedMonster[19] && (e += n_tok[26]),
         e += n_tok[80],
         _ = Math.floor(_ * (100 + e) / 100),
         1 == wCriTyuu && 401 != n_A_ActiveSkill && (_ = Math.floor(_ * (100 + n_tok[70]) / 100)),
-        (108 <= n_B[0] && n_B[0] <= 115 || 319 == n_B[0]) && (_ = Math.floor(_ * (100 + n_tok[81]) / 100)),
-        116 <= n_B[0] && n_B[0] <= 120 && (_ = Math.floor(_ * (100 + n_tok[82]) / 100)),
-        (49 <= n_B[0] && n_B[0] <= 52 || 55 == n_B[0] || 221 == n_B[0]) && (_ = Math.floor(_ * (100 + n_tok[83]) / 100)),
-        106 != n_B[0] && 152 != n_B[0] && 308 != n_B[0] && 32 != n_B[0] && 541 != n_B[0] || (_ = Math.floor(_ * (100 + n_tok[84]) / 100)),
-        _ = Math.floor(_ * (100 + StPlusCalc2(1e3 + n_B[0]) + StPlusCard(1e3 + n_B[0])) / 100),
+        (108 <= selectedMonster[0] && selectedMonster[0] <= 115 || 319 == selectedMonster[0]) && (_ = Math.floor(_ * (100 + n_tok[81]) / 100)),
+        116 <= selectedMonster[0] && selectedMonster[0] <= 120 && (_ = Math.floor(_ * (100 + n_tok[82]) / 100)),
+        (49 <= selectedMonster[0] && selectedMonster[0] <= 52 || 55 == selectedMonster[0] || 221 == selectedMonster[0]) && (_ = Math.floor(_ * (100 + n_tok[83]) / 100)),
+        106 != selectedMonster[0] && 152 != selectedMonster[0] && 308 != selectedMonster[0] && 32 != selectedMonster[0] && 541 != selectedMonster[0] || (_ = Math.floor(_ * (100 + n_tok[84]) / 100)),
+        _ = Math.floor(_ * (100 + StPlusCalc2(1e3 + selectedMonster[0]) + StPlusCard(1e3 + selectedMonster[0])) / 100),
         SkillSearch(258) && (_ = 2 * _),
         SkillSearch(266) && (_ = Math.floor(_ * (150 + 50 * SkillSearch(266)) / 100)),
-        86 == n_A_ActiveSkill && 50 <= n_B[3] && n_B[3] < 60 && (_ = Math.floor(_ * (100 + 30 * n_A_ActiveSkillLV) / 100)),
+        86 == n_A_ActiveSkill && 50 <= selectedMonster[3] && selectedMonster[3] < 60 && (_ = Math.floor(_ * (100 + 30 * n_A_ActiveSkillLV) / 100)),
         11 == n_A_WeaponType && SkillSearch(262) && (_ = Math.floor(_ * (110 + 2 * SkillSearch(262)) / 100)),
         e = 0,
-        0 == PvP ? SkillSearch(354) && SkillSearch(365) ? e += (n_A_BaseLV + n_A_STR + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(354)) : SkillSearch(354) && 2 == n_B[4] && n_B[6] >= 17392 ? e += (n_A_BaseLV + n_A_STR + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(354)) : SkillSearch(352) && 0 == n_B[4] ? e += (n_A_BaseLV + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(352)) : SkillSearch(353) && 1 == n_B[4] && n_B[6] >= 5218 && (e += (n_A_BaseLV + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(353))) : SkillSearch(354) ? e += (n_A_BaseLV + n_A_STR + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(354)) : SkillSearch(352) ? e += (n_A_BaseLV + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(352)) : SkillSearch(353) && (e += (n_A_BaseLV + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(353))),
+        0 == PvP ? SkillSearch(354) && SkillSearch(365) ? e += (n_A_BaseLV + n_A_STR + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(354)) : SkillSearch(354) && 2 == selectedMonster[4] && selectedMonster[6] >= 17392 ? e += (n_A_BaseLV + n_A_STR + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(354)) : SkillSearch(352) && 0 == selectedMonster[4] ? e += (n_A_BaseLV + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(352)) : SkillSearch(353) && 1 == selectedMonster[4] && selectedMonster[6] >= 5218 && (e += (n_A_BaseLV + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(353))) : SkillSearch(354) ? e += (n_A_BaseLV + n_A_STR + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(354)) : SkillSearch(352) ? e += (n_A_BaseLV + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(352)) : SkillSearch(353) && (e += (n_A_BaseLV + n_A_LUK + n_A_DEX) / (12 - 3 * SkillSearch(353))),
         _ = Math.floor(_ * (100 + e) / 100)
     }
     return _ = Math.floor(tPlusDamCut(_)),
@@ -4426,17 +4463,24 @@ function BattleCalc3left(_) {
     wBC3_X = tPlusDamCut(wBC3_X),
     tPlusLucky(wBC3_X)
 }
-function SkillSearch(_) {
-    if (258 == _ && TimeItemNumSearch(35))
+
+// Returns the skill level selected or 0 if is not available for that class
+function SkillSearch(skillToSearch) {
+    if (258 == skillToSearch && TimeItemNumSearch(35)) {
         return 1;
-    for (var e = 0; 14 >= e; e++)
-        if (m_JobBuff[n_A_JOB][e] == _)
+    }
+
+    for (var e = 0; 14 >= e; e++) {
+        if (m_JobBuff[n_A_JOB][e] == skillToSearch) {
             return n_A_Buf[e];
-    return 0
+        }
+    }
+
+    return 0;
 }
 function BattleCalc4(_, e, n) {
     return n = 0 == n ? n_A_WeaponLV_refineATK : n_A_Weapon2LV_refineATK,
-    275 == n_A_ActiveSkill ? Math.floor(_ * defReduction(n_B[14])) - n_B_DEF2[e] + n : 432 == n_A_ActiveSkill ? _ + n : n_tok[180 + n_B[2]] >= 1 ? _ + n : n_tok[22] >= 1 && 0 == n_B[19] ? _ + n : n_tok[22] >= 10 ? _ + n : SkillSearch(364) ? _ + n : (0 == n_tok[23] ? _ = Math.floor(_ * defReduction(n_B[14])) - n_B_DEF2[e] + n : 50 > SRV ? _ = 0 == e ? Math.floor(_ * (n_B_DEF2[2] + n_B[14]) / 100) + n : 1 == e ? Math.floor(_ * (n_B_DEF2[1] + n_B[14]) / 100) + n : Math.floor(_ * (n_B_DEF2[0] + n_B[14]) / 100) + n : _ += n,
+    275 == n_A_ActiveSkill ? Math.floor(_ * defReduction(selectedMonster[14])) - n_B_DEF2[e] + n : 432 == n_A_ActiveSkill ? _ + n : n_tok[180 + selectedMonster[2]] >= 1 ? _ + n : n_tok[22] >= 1 && 0 == selectedMonster[19] ? _ + n : n_tok[22] >= 10 ? _ + n : SkillSearch(364) ? _ + n : (0 == n_tok[23] ? _ = Math.floor(_ * defReduction(selectedMonster[14])) - n_B_DEF2[e] + n : 50 > SRV ? _ = 0 == e ? Math.floor(_ * (n_B_DEF2[2] + selectedMonster[14]) / 100) + n : 1 == e ? Math.floor(_ * (n_B_DEF2[1] + selectedMonster[14]) / 100) + n : Math.floor(_ * (n_B_DEF2[0] + selectedMonster[14]) / 100) + n : _ += n,
     1 > _ && (_ = 1),
     _)
 }
@@ -4449,9 +4493,9 @@ function BattleCalcEDP(_, e) {
     var n = 0
       , l = 0;
     return SkillSearch(266) && (n = BattleCalc(_, e),
-    n = Math.floor(n * element[n_B[3]][5] / 4)),
+    n = Math.floor(n * element[selectedMonster[3]][5] / 4)),
     n_A_Buf6[7] && (l = BattleCalc(_, e),
-    l = Math.floor(l * element[n_B[3]][3] / 5)),
+    l = Math.floor(l * element[selectedMonster[3]][3] / 5)),
     wBCEDPch = 0,
     n + l
 }
@@ -4464,11 +4508,11 @@ function EDPplus(_) {
 function EDPhyouzi() {}
 function EDP_DMG(_) {
     if (SkillSearch(266) || n_A_Buf6[7]) {
-        if (17 == n_A_ActiveSkill && 52 <= n_B[3] && n_B[3] <= 59)
+        if (17 == n_A_ActiveSkill && 52 <= selectedMonster[3] && selectedMonster[3] <= 59)
             return 0;
-        if ((66 == n_A_ActiveSkill || 193 == n_A_ActiveSkill || 197 == n_A_ActiveSkill || 321 == n_A_ActiveSkill) && 83 <= n_B[3] && n_B[3] <= 89)
+        if ((66 == n_A_ActiveSkill || 193 == n_A_ActiveSkill || 197 == n_A_ActiveSkill || 321 == n_A_ActiveSkill) && 83 <= selectedMonster[3] && selectedMonster[3] <= 89)
             return 0;
-        if (element[n_B[3]][n_A_Weapon_element] <= 0 && 0 == n_PerHIT_DMG)
+        if (element[selectedMonster[3]][n_A_Weapon_element] <= 0 && 0 == n_PerHIT_DMG)
             return 0;
         if (0 == _)
             return 100 == w_HIT_EDP ? n_A_EDP_DMG[0] : 0;
@@ -4543,7 +4587,7 @@ function tPlusDamCut(_) {
     _ = Math.floor(_ * w / 100)),
     w = n_B_KYOUKA[14],
     w > 0 && 2 != n_rangedAtk && (_ -= Math.floor(_ * w * 6 / 100)),
-    0 == wBTw1 && (n_B_IJYOU[6] && 0 == wLAch && (_ *= 2),
+    0 == falconHitCount && (n_B_IJYOU[6] && 0 == wLAch && (_ *= 2),
     n_B_IJYOU[17] && 3 == n_A_Weapon_element && (_ *= 2),
     baizok = [110, 114, 117, 119, 120],
     0 == n_A_Buf6[0] && n_A_Buf6[1] >= 1 && 3 == n_A_Weapon_element && (_ = Math.floor(_ * baizok[n_A_Buf6[1] - 1] / 100)),
@@ -4553,22 +4597,22 @@ function tPlusDamCut(_) {
     n_B_KYOUKA[1] && 1 == PvP && (_ = Math.floor(2 * _ / 3)),
     n_B_KYOUKA[7] && 2 != n_rangedAtk && (_ -= Math.floor(20 * _ * n_B_KYOUKA[7] / 100)),
     n_B_KYOUKA[8] && 2 == n_rangedAtk && (_ -= Math.floor(20 * _ * n_B_KYOUKA[8] / 100)),
-    5 == n_B[19] && (_ = 1,
+    5 == selectedMonster[19] && (_ = 1,
     122 == n_A_ActiveSkill && (_ = 0)),
     _
 }
 function tPlusEnemyClick() {
     if (PvP) {
-        for (n_B = new Array,
+        for (selectedMonster = new Array,
         i = 0; 26 >= i; i++)
-            n_B[i] = m_Monster2[c.B_Enemy.value][i];
-        c.B_LV.value = n_B[5],
-        c.B_AGI.value = n_B[8],
-        c.B_VIT.value = n_B[7],
-        c.B_INT.value = n_B[9],
-        c.B_LUK.value = n_B[11],
-        c.B_DEF.value = n_B[14],
-        c.B_MDEF.value = n_B[15]
+            selectedMonster[i] = m_Monster2[c.B_Enemy.value][i];
+        c.B_LV.value = selectedMonster[5],
+        c.B_AGI.value = selectedMonster[8],
+        c.B_VIT.value = selectedMonster[7],
+        c.B_INT.value = selectedMonster[9],
+        c.B_LUK.value = selectedMonster[11],
+        c.B_DEF.value = selectedMonster[14],
+        c.B_MDEF.value = selectedMonster[15]
     }
 }
 function tPlusTaiseiSyokia() {
@@ -4598,9 +4642,9 @@ function tPlusTaiseiSyokia() {
             c.B_TAISEI13.options[i] = new Option(v_EnergyCoat[i],i);
         for (i = 0; 10 >= i; i++)
             c.B_TAISEI14.options[i] = new Option(i,i);
-        for (n_B = new Array,
+        for (selectedMonster = new Array,
         i = 0; 26 >= i; i++)
-            n_B[i] = m_Monster2[c.B_Enemy.value][i];
+            selectedMonster[i] = m_Monster2[c.B_Enemy.value][i];
         i = 1 * c.B_Enemy.value,
         c.B_LV.value = m_Monster2[i][5],
         c.B_VIT.value = m_Monster2[i][7],
@@ -4613,7 +4657,7 @@ function tPlusTaiseiSyokia() {
 }
 function tPlusLucky(_) {
     return PvP ? (w = n_B_manual[38],
-    w += n_B[11] / 10,
+    w += selectedMonster[11] / 10,
     w = _ * (100 - w) / 100,
     w) : _
 }
@@ -4653,7 +4697,7 @@ n_KyoukaSW = 0,
 wBCEDPch = 0,
 wLAch = 0,
 wCriTyuu = 0,
-wBTw1 = 0,
+falconHitCount = 0,
 n_TAKA_DMG = 0,
 TyouEnkakuSousa3dan = 0,
 not_use_card = 0;
@@ -4674,7 +4718,7 @@ n_tok = new Array;
 for (var i = 0; 450 >= i; i++)
     n_tok[i] = 0;
 var first_check = 0;
-n_B = new Array,
+selectedMonster = new Array,
 Last_DMG_A = [0, 0, 0],
 Last_DMG_B = [0, 0, 0],
 InnStr = new Array,

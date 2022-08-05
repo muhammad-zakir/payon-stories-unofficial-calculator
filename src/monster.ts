@@ -664,8 +664,11 @@ globalThis.m_Monster = [
 globalThis.EnemyNum = m_Monster.length - 1;
 
 for (i = 0; i <= globalThis.EnemyNum; i++) {
-    m_Monster[i][21] = 20 + m_Monster[i][5] + m_Monster[i][8];		//mejorar: 100% hit es necesario guardarlo aquí?
-    m_Monster[i][22] = 75 + m_Monster[i][5] + m_Monster[i][10];	//mejorar: 95% dodge es necesario guardarlo aquí?
+    // 100% hit = 20 + lvl + agi
+    m_Monster[i][21] = 20 + m_Monster[i][5] + m_Monster[i][8];
+
+    // 95% flee = 75 + lvl + dex
+    m_Monster[i][22] = 75 + m_Monster[i][5] + m_Monster[i][10];
 }
 
 globalThis.v_MonsterSort = JSON.parse(JSON.stringify(m_Monster))
@@ -676,6 +679,8 @@ globalThis.v_MonsterSort = JSON.parse(JSON.stringify(m_Monster))
     })
     .map((m: any) => m[0]);
 
+
+// TODO: Join this list with the commented m_MonsterMap below
 var v_Place = ["Einbroch Fields", "El Dicastes", "Endless Tower Finale", "Geffenia", "Geffen Dungeon", "Geffen Fields", "Glast Heim", "Glast Heim Dungeons", "Gonryun",
     "Guild Dungeon [Aldebaran]", "Guild Dungeon [Arunafeltz]", "Guild Dungeon [Geffen]", "Guild Dungeon [Payon]", "Guild Dungeon [Prontera]",
     "Guild Dungeon [Schwartzvald]", "Hidden Temple", "Hugel Fields", "Ice Cave", "Juperos Dungeon", "Kiel Dungeon", "Lighthalzen Fields",
@@ -763,6 +768,9 @@ globalThis.m_MonsterMap = [
     },
 ];
 
+/**
+ * Fill the Place selector with the above data
+ */
 if (PvP == 0) {
     for (var i = 0; i < m_MonsterMap.length; i++) {
         // @ts-ignore
