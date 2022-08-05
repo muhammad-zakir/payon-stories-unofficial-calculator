@@ -4357,7 +4357,7 @@ function calc() {
 function BattleCalc(_, e) {
     return 10 == e ? _ += n_A_WeaponLV_refineATK : _ = BattleCalc4(_, e, 0),
     1 > _ && (_ = 1),
-    1 == n_A_WeaponType || 2 == n_A_WeaponType ? _ += 4 * SkillSearch(3) : 3 == n_A_WeaponType ? _ += 4 * SkillSearch(4) : 4 == n_A_WeaponType || 5 == n_A_WeaponType ? _ += 0 == SkillSearch(78) ? 4 * SkillSearch(69) : 5 * SkillSearch(69) : 8 == n_A_WeaponType ? _ += 3 * SkillSearch(89) : 11 == n_A_WeaponType ? _ += 3 * SkillSearch(81) : 14 == n_A_WeaponType ? _ += 3 * SkillSearch(198) : 15 == n_A_WeaponType ? _ += 3 * SkillSearch(206) : 12 == n_A_WeaponType ? _ += 3 * SkillSearch(224) : 6 == n_A_WeaponType || 7 == n_A_WeaponType ? _ += 3 * SkillSearch(241) : 13 != n_A_WeaponType && 0 != n_A_WeaponType || (_ += 3 * SkillSearch(183)),
+    1 == n_A_WeaponType || 2 == n_A_WeaponType ? _ += 4 * SkillSearch(3) : 3 == n_A_WeaponType ? _ += 4 * SkillSearch(4) : 4 == n_A_WeaponType || 5 == n_A_WeaponType ? _ += 0 == SkillSearch(78) ? 5 * SkillSearch(69) : 7 * SkillSearch(69) : 8 == n_A_WeaponType ? _ += 3 * SkillSearch(89) : 11 == n_A_WeaponType ? _ += 3 * SkillSearch(81) : 14 == n_A_WeaponType ? _ += 3 * SkillSearch(198) : 15 == n_A_WeaponType ? _ += 3 * SkillSearch(206) : 12 == n_A_WeaponType ? _ += 3 * SkillSearch(224) : 6 == n_A_WeaponType || 7 == n_A_WeaponType ? _ += 3 * SkillSearch(241) : 13 != n_A_WeaponType && 0 != n_A_WeaponType || (_ += 3 * SkillSearch(183)),
     0 == n_A_WeaponType && SkillSearch(329) && (_ += 10 * SkillSearch(329)),
     !n_A_Buf3[10] || 4 != n_A_WeaponLV && 4 != n_A_Weapon2LV || (_ += 50 + 25 * n_A_Buf3[10]),
     (6 == selectedMonster[2] || 90 <= selectedMonster[3] && selectedMonster[3] <= 99) && SkillSearch(24) && (_ += Math.floor((3 + .05 * n_A_BaseLV) * SkillSearch(24))),
