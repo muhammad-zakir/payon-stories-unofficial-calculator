@@ -553,15 +553,15 @@ function BattleCalc999() {
             else if (70 == n_A_ActiveSkill)
                 wbairitu += .1 * n_A_ActiveSkillLV,
                 wHITsuu = selectedMonster[4] + 1;
-            else if (76 == n_A_ActiveSkill)
-                wbairitu += .4 * n_A_ActiveSkillLV,
-                wCast = .7 * n_A_CAST,
-                wHITsuu = 2,
-                1 == n_A_ActiveSkillLV && (wHITsuu = 1),
-                wLAch = 1,
-                1 == n_B_IJYOU[6] && (wHITsuu = 3,
-                1 == n_A_ActiveSkillLV && (wHITsuu = 2));
-            else if (192 == n_A_ActiveSkill)
+            else if (76 == n_A_ActiveSkill) {
+                // * Bowling bash formula updated
+                wbairitu += .3 * n_A_ActiveSkillLV;
+                wCast = .7 * n_A_CAST;
+                wHITsuu = 2;
+                1 == n_A_ActiveSkillLV && (wHITsuu = 1);
+                wLAch = 1;
+                1 == n_B_IJYOU[6] && (wHITsuu = 3, 1 == n_A_ActiveSkillLV && (wHITsuu = 2));
+            } else if (192 == n_A_ActiveSkill)
                 wbairitu += .5 * n_A_ActiveSkillLV,
                 a = n_A_Buf2[12],
                 a > n_A_ActiveSkillLV && (a = n_A_ActiveSkillLV),
