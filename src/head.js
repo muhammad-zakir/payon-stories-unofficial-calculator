@@ -205,7 +205,7 @@ function BattleCalc999() {
             CastAndDelay(),
             BattleCalc998()
         } else {
-            n_TAKA_DMG = 0;
+            falconTotalDamage = 0;
             wTAKA = BattleTAKA();
 
             TyouEnkakuSousa3dan = 0;
@@ -245,14 +245,14 @@ function BattleCalc999() {
             Last_DMG_A[2] = Last_DMG_B[2] + i[2],
             InnStr[2] += Last_DMG_A[2],
             11 == n_A_WeaponType && (InnStr[2] = Last_DMG_A[2] + " (" + Last_DMG_B[2] + "+" + i[2] + ")"),
-            n_Max_DMG += n_TAKA_DMG;
+            n_Max_DMG += falconTotalDamage;
             var e = Last_DMG_A[2];
-            if (e += n_TAKA_DMG,
+            if (e += falconTotalDamage,
             n_Max_DMG < e && w998G < 100 && (n_Max_DMG = e),
             w998D) {
                 var e = 2 * (w_DMG[2] + EDP_DMG(2) + i[2]);
                 str_bSUB += e + " (" + w998D + "%)<BR>",
-                e += n_TAKA_DMG,
+                e += falconTotalDamage,
                 n_Max_DMG < e && (n_Max_DMG = e)
             }
             w_DMG[2] = n_Max_DMG,
@@ -606,24 +606,24 @@ function BattleCalc999() {
             n_PerHIT_DMG = 0,
             n_A_Weapon_element = 0,
             n_rangedAtk = 1,
-            falconDamage = 80 + 2 * Math.floor(n_A_DEX / 10) + 2 * Math.floor(n_A_INT / 2) + 6 * SkillSearch(119),
-            271 == n_A_ActiveSkill ? (falconDamage = Math.floor(falconDamage * (150 + 70 * n_A_ActiveSkillLV) / 100),
-            falconDamage = Math.floor(falconDamage * element[selectedMonster[3]][0]),
-            falconDamage = tPlusDamCut(falconDamage),
-            falconDamage *= 5,
-            5 == selectedMonster[19] && (falconDamage = 1),
+            falconSingleHitDamage = 80 + 2 * Math.floor(n_A_DEX / 10) + 2 * Math.floor(n_A_INT / 2) + 6 * SkillSearch(119),
+            271 == n_A_ActiveSkill ? (falconSingleHitDamage = Math.floor(falconSingleHitDamage * (150 + 70 * n_A_ActiveSkillLV) / 100),
+            falconSingleHitDamage = Math.floor(falconSingleHitDamage * element[selectedMonster[3]][0]),
+            falconSingleHitDamage = tPlusDamCut(falconSingleHitDamage),
+            falconSingleHitDamage *= 5,
+            5 == selectedMonster[19] && (falconSingleHitDamage = 1),
             wCast = 1 * n_A_CAST,
-            n_Delay[2] = 3) : (falconDamage = Math.floor(falconDamage * element[selectedMonster[3]][0]),
-            falconDamage = tPlusDamCut(falconDamage),
-            falconDamage *= n_A_ActiveSkillLV,
+            n_Delay[2] = 3) : (falconSingleHitDamage = Math.floor(falconSingleHitDamage * element[selectedMonster[3]][0]),
+            falconSingleHitDamage = tPlusDamCut(falconSingleHitDamage),
+            falconSingleHitDamage *= n_A_ActiveSkillLV,
             wCast = 1.5 * n_A_CAST,
             n_Delay[2] = 1);
             for (var _ = 0; 2 >= _; _++)
-                Last_DMG_A[_] = Last_DMG_B[_] = falconDamage,
+                Last_DMG_A[_] = Last_DMG_B[_] = falconSingleHitDamage,
                 InnStr[_] += Last_DMG_A[_],
-                118 == n_A_ActiveSkill && (Last_DMG_B[_] = falconDamage / n_A_ActiveSkillLV,
+                118 == n_A_ActiveSkill && (Last_DMG_B[_] = falconSingleHitDamage / n_A_ActiveSkillLV,
                 InnStr[_] += " (" + Last_DMG_B[_] + " x " + n_A_ActiveSkillLV + " hits)"),
-                w_DMG[_] = falconDamage;
+                w_DMG[_] = falconSingleHitDamage;
             w_HIT_HYOUJI = 100,
             CastAndDelay(),
             BattleCalc998()
@@ -1399,34 +1399,34 @@ function BattleTAKA() {
         wBTw2 < falconHitCount && (falconHitCount = wBTw2);
 
         // Falcon single hit damage calculation
-
         // * Old formula: [2 × Floor(INT/2) + 2 × Floor(DEX/10) + 6 × (Steel Crow level) + 80]
-        // * falconDamage = 80 + 2 * Math.floor(n_A_DEX / 10) + 2 * Math.floor(n_A_INT / 2) + 6 * SkillSearch(119);
+        // * falconSingleHitDamage = 80 + 2 * Math.floor(n_A_DEX / 10) + 2 * Math.floor(n_A_INT / 2) + 6 * SkillSearch(119);
 
         // * New formula: [2 × LUK + INT + 12 × (Steel Crow level) + 40]
-        falconDamage = 2 * n_A_LUK + n_A_INT + 12 * SkillSearch(119) + 40;
+        falconSingleHitDamage = 2 * n_A_LUK + n_A_INT + 12 * SkillSearch(119) + 40;
 
-        falconDamage = Math.floor(falconDamage * element[selectedMonster[3]][0]);
-        falconDamage = tPlusDamCut(falconDamage);
+        falconSingleHitDamage = Math.floor(falconSingleHitDamage * element[selectedMonster[3]][0]);
+        falconSingleHitDamage = tPlusDamCut(falconSingleHitDamage);
         falconChance = Math.round(100 * (1 + .3 * n_A_LUK)) / 100;
         console.log(`Falcon chance: ${falconChance}%`);
 
         // Does 0 dmg to empirium
         if(selectedMonster[0] === 44) {
-            falconDamage = 0;
+            falconSingleHitDamage = 0;
         }
 
+        falconTotalDamage = falconSingleHitDamage * falconHitCount;
+        
         str_bSUBname += "Falcon Damage<br>";
-        n_TAKA_DMG = falconDamage * falconHitCount;
-        str_bSUB += n_TAKA_DMG + " (" + falconDamage + " x " + falconHitCount + " hits)";
-        str_bSUB += "(" + falconChance + "% Chance)<br>";
-        falconDamage = n_TAKA_DMG * falconChance / 100;
-        falconDamage = falconDamage * (w_HIT + (100 - w_HIT) * w_Cri / 100) / 100;
+        str_bSUB += `${falconTotalDamage} (${falconSingleHitDamage} x ${falconHitCount} hits)(${falconChance}% Chance)`;
+
+        falconSingleHitDamage = falconTotalDamage * falconChance / 100;
+        falconSingleHitDamage = falconSingleHitDamage * (w_HIT + (100 - w_HIT) * w_Cri / 100) / 100;
         falconHitCount = 0;
 
-        return Math.round(100 * falconDamage) / 100;
+        return Math.round(100 * falconSingleHitDamage) / 100;
     } else {
-        return (n_TAKA_DMG = 0,0);
+        return (falconTotalDamage = 0,0);
     }
 }
 
@@ -4698,7 +4698,7 @@ wBCEDPch = 0,
 wLAch = 0,
 wCriTyuu = 0,
 falconHitCount = 0,
-n_TAKA_DMG = 0,
+falconTotalDamage = 0,
 TyouEnkakuSousa3dan = 0,
 not_use_card = 0;
 var n_B_AtkSkill = 0

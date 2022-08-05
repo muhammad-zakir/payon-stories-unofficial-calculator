@@ -1,6 +1,6 @@
 import { Element, Race, Size } from "./utils/enums";
 
-globalThis.m_Monster = [
+global.m_Monster = [
     [0, "Arc Angeling", 8, 63, 1, 60, 79523, 80, 65, 74, 65, 105, 669, 1338, 54, 58, 4152, 2173, , 1, 0, , , 162, 1, 456, 5, 0]
     , [1, "Archer Skeleton", 1, 91, 1, 31, 3040, 14, 8, 5, 90, 5, 128, 256, 0, 0, 555, 325, , 0, 1, , , 459, 2, 40, 1, 0]
     , [2, "Blue Plant", 3, 21, 0, 1, 10, 0, 0, 0, 0, 0, 1, 2, 100, 99, 0, 0, , 5, 0, , , 0]
@@ -661,9 +661,9 @@ globalThis.m_Monster = [
 ];
 //,[ ID, "name", race, element, size, lvl, hp, vit, agi, int, dex, luk, min atk, max atk, def, mdef, baseexp, jobexp, ? , 0 = non boss / 1 = boss, 0 = melee / 1 = long-range ]
 
-globalThis.EnemyNum = m_Monster.length - 1;
+global.EnemyNum = m_Monster.length - 1;
 
-for (i = 0; i <= globalThis.EnemyNum; i++) {
+for (i = 0; i <= global.EnemyNum; i++) {
     // 100% hit = 20 + lvl + agi
     m_Monster[i][21] = 20 + m_Monster[i][5] + m_Monster[i][8];
 
@@ -671,7 +671,7 @@ for (i = 0; i <= globalThis.EnemyNum; i++) {
     m_Monster[i][22] = 75 + m_Monster[i][5] + m_Monster[i][10];
 }
 
-globalThis.v_MonsterSort = JSON.parse(JSON.stringify(m_Monster))
+global.v_MonsterSort = JSON.parse(JSON.stringify(m_Monster))
     .sort((a: any, b: any) => {
         if (a[1] < b[1]) { return -1; }
         if (a[1] > b[1]) { return 1; }
@@ -681,15 +681,15 @@ globalThis.v_MonsterSort = JSON.parse(JSON.stringify(m_Monster))
 
 
 // TODO: Join this list with the commented m_MonsterMap below
-var v_Place = ["Einbroch Fields", "El Dicastes", "Endless Tower Finale", "Geffenia", "Geffen Dungeon", "Geffen Fields", "Glast Heim", "Glast Heim Dungeons", "Gonryun",
-    "Guild Dungeon [Aldebaran]", "Guild Dungeon [Arunafeltz]", "Guild Dungeon [Geffen]", "Guild Dungeon [Payon]", "Guild Dungeon [Prontera]",
-    "Guild Dungeon [Schwartzvald]", "Hidden Temple", "Hugel Fields", "Ice Cave", "Juperos Dungeon", "Kiel Dungeon", "Lighthalzen Fields",
-    "Louyang", "Lutie & Toy Factory", "Magma Dungeon", "Malangdo", "Manuk", "Morroc Fields", "Moscovia", "Mt. Mjolnir", "Nameless Island", "Nidhoggr's Nest",
-    "Niflheim", "Odins Shrine", "Orc Dungeon", "Payon Dungeon", "Payon Fields", "Poring Island", "Prontera Fields", "Pyramid", "Rachel Fields",
-    "Rachel Sanctuary", "Scaraba Hole", "Sphinx", "Splendide", "Sunken Ship", "Thanatos Tower", "Thors Volcano", "Turtle Island", "Umbala Dungeon",
-    "Umbala Fields", "Veins Fields", "War of Emperium", "Yuno Fields"];
+// var v_Place = ["Einbroch Fields", "El Dicastes", "Endless Tower Finale", "Geffenia", "Geffen Dungeon", "Geffen Fields", "Glast Heim", "Glast Heim Dungeons", "Gonryun",
+//     "Guild Dungeon [Aldebaran]", "Guild Dungeon [Arunafeltz]", "Guild Dungeon [Geffen]", "Guild Dungeon [Payon]", "Guild Dungeon [Prontera]",
+//     "Guild Dungeon [Schwartzvald]", "Hidden Temple", "Hugel Fields", "Ice Cave", "Juperos Dungeon", "Kiel Dungeon", "Lighthalzen Fields",
+//     "Louyang", "Lutie & Toy Factory", "Magma Dungeon", "Malangdo", "Manuk", "Morroc Fields", "Moscovia", "Mt. Mjolnir", "Nameless Island", "Nidhoggr's Nest",
+//     "Niflheim", "Odins Shrine", "Orc Dungeon", "Payon Dungeon", "Payon Fields", "Poring Island", "Prontera Fields", "Pyramid", "Rachel Fields",
+//     "Rachel Sanctuary", "Scaraba Hole", "Sphinx", "Splendide", "Sunken Ship", "Thanatos Tower", "Thors Volcano", "Turtle Island", "Umbala Dungeon",
+//     "Umbala Fields", "Veins Fields", "War of Emperium", "Yuno Fields"];
 
-globalThis.m_MonsterMap = [
+global.m_MonsterMap = [
     {
         name: 'All Regions',
         monsterList: [0]
