@@ -1396,7 +1396,6 @@ function BattleTAKA() {
         falconHitCount = Math.floor((n_A_JobLV - 1) / 10 + 1);
         falconHitCount > 5 && (falconHitCount = 5);
 
-        // ? Qué es este skill search
         wBTw2 = SkillSearch(118);
         wBTw2 < falconHitCount && (falconHitCount = wBTw2);
 
@@ -1405,7 +1404,8 @@ function BattleTAKA() {
         // * falconSingleHitDamage = 80 + 2 * Math.floor(n_A_DEX / 10) + 2 * Math.floor(n_A_INT / 2) + 6 * SkillSearch(119);
 
         // * New formula: [2 × LUK + INT + 12 × (Steel Crow level) + 40]
-        falconSingleHitDamage = 2 * n_A_LUK + n_A_INT + 12 * SkillSearch(119) + 40;
+        // falconSingleHitDamage = 2 * n_A_LUK + n_A_INT + 12 * SkillSearch(119) + 40;
+        falconSingleHitDamage = (n_A_LUK + n_A_INT / 2 + SkillSearch(119) * 6 + 20) * 2;
 
         falconSingleHitDamage = Math.floor(falconSingleHitDamage * element[selectedMonster[3]][0]);
         falconSingleHitDamage = tPlusDamCut(falconSingleHitDamage);
@@ -4466,7 +4466,7 @@ function BattleCalc3left(_) {
     tPlusLucky(wBC3_X)
 }
 
-// Returns the skill level selected or 0 if is not available for that class
+// Returns the skill level selected or 0 if it's not available for that class
 function SkillSearch(skillToSearch) {
     if (258 == skillToSearch && TimeItemNumSearch(35)) {
         return 1;
