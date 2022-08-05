@@ -335,9 +335,11 @@ function BattleCalc999() {
             else if (84 == n_A_ActiveSkill)
                 n_A_ActiveSkillLV >= 3 && (n_rangedAtk = 1),
                 wbairitu += .2 * n_A_ActiveSkillLV;
-            else if (158 == n_A_ActiveSkill)
-                wbairitu += .2 * n_A_ActiveSkillLV,
+            else if (158 == n_A_ActiveSkill) {
+                // * Shield Charge new formula (300 + 25 × SkillLV)%
+                wbairitu += 1 + .2 * n_A_ActiveSkillLV;
                 305 == m_Item[n_A_Equip[5]][0] && (wbairitu = 0);
+            }
             else if (161 == n_A_ActiveSkill) {
                 // * Holy Cross new formula (300 + 25 × SkillLV)%
                 wbairitu += 2 +.25 * n_A_ActiveSkillLV;
