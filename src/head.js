@@ -583,17 +583,19 @@ function BattleCalc999() {
                 wHITsuu = A[1 * c.SkillSubNum.value]
             }
             ATKbai02(wbairitu, 0);
-            for (var _ = 0; 2 >= _; _++)
-                w_DMG[_] = BattleCalc(n_A_DMG[_], _),
-                391 == n_A_ActiveSkill && 2 != selectedMonster[2] && 4 != selectedMonster[2] && (w_DMG[_] = 0),
-                w_DMG[_] += EDP_DMG(_),
-                Last_DMG_B[_] = w_DMG[_],
-                76 == n_A_ActiveSkill && (Last_DMG_B[_] = 2 * w_DMG[_]),
-                Last_DMG_A[_] = w_DMG[_] * wHITsuu,
+            console.log('BowlingBashData');
+            for (var _ = 0; 2 >= _; _++) {
+                w_DMG[_] = BattleCalc(n_A_DMG[_], _);
+                391 == n_A_ActiveSkill && 2 != selectedMonster[2] && 4 != selectedMonster[2] && (w_DMG[_] = 0);
+                w_DMG[_] += EDP_DMG(_);
+                Last_DMG_B[_] = w_DMG[_];
+                76 == n_A_ActiveSkill && (Last_DMG_B[_] = 2 * w_DMG[_]);
+                Last_DMG_A[_] = w_DMG[_] * wHITsuu;
                 0 == n_B_IJYOU[6] || 0 == wLAch ? InnStr[_] += Math.floor(w_DMG[_] * wHITsuu) + " (" + w_DMG[_] + SubName[8] + wHITsuu + " hits)" : (InnStr[_] += 3 * w_DMG[_] + "(" + 2 * w_DMG[_] + "+" + w_DMG[_] + ")",
-                Last_DMG_B[_] = 3 * w_DMG[_]),
-                w_DMG[_] -= EDP_DMG(_),
+                Last_DMG_B[_] = 3 * w_DMG[_]);
+                w_DMG[_] -= EDP_DMG(_);
                 w_DMG[_] *= wHITsuu;
+            }
             var e = BattleCalc2(0);
             w_DMG[1] = (w_DMG[1] * w_HIT + e * wHITsuu * (100 - w_HIT)) / 100,
             0 == wHITsuu && 192 == n_A_ActiveSkill && (InnStr[0] = "<B style='color:red'># of Spirit Spheres must be higher than 0<BR>Please change it at [Supportive/Party Skills]</B>"),
@@ -4478,6 +4480,8 @@ function SkillSearch(skillToSearch) {
 
     return 0;
 }
+
+
 function BattleCalc4(_, e, n) {
     return n = 0 == n ? n_A_WeaponLV_refineATK : n_A_Weapon2LV_refineATK,
     275 == n_A_ActiveSkill ? Math.floor(_ * defReduction(selectedMonster[14])) - n_B_DEF2[e] + n : 432 == n_A_ActiveSkill ? _ + n : n_tok[180 + selectedMonster[2]] >= 1 ? _ + n : n_tok[22] >= 1 && 0 == selectedMonster[19] ? _ + n : n_tok[22] >= 10 ? _ + n : SkillSearch(364) ? _ + n : (0 == n_tok[23] ? _ = Math.floor(_ * defReduction(selectedMonster[14])) - n_B_DEF2[e] + n : 50 > SRV ? _ = 0 == e ? Math.floor(_ * (n_B_DEF2[2] + selectedMonster[14]) / 100) + n : 1 == e ? Math.floor(_ * (n_B_DEF2[1] + selectedMonster[14]) / 100) + n : Math.floor(_ * (n_B_DEF2[0] + selectedMonster[14]) / 100) + n : _ += n,

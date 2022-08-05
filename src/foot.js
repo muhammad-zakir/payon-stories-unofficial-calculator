@@ -917,6 +917,10 @@ function StAllCalc() {
     n_A_Buf6[15] && (n_A_FLEE = 0),
     n_A_FLEE < 0 && 0 == SRV && (n_A_FLEE = 0),
     n_A_FLEE < 1 && SRV > 0 && (n_A_FLEE = 1),
+
+    // * 2H Quicken gives 1 FLEE per lvl
+    SkillSearch(74) && (n_A_FLEE += SkillSearch(74)),
+
     myInnerHtml("A_FLEE", n_A_FLEE, 0),
     myInnerHtml("A_WoeFLEE", Math.floor(.8 * n_A_FLEE), 0),
     n_A_LUCKY = 1 + .1 * n_A_LUK,
