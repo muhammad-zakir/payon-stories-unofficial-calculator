@@ -30,7 +30,7 @@
 <body onload="LoadTheme()">
 
   <form name="calcForm">
-    <h1>Ragnarok Online Classic Calc</h1>
+    <h1>Oath Classic Calc</h1>
     <div class="main">
       <h2 style="text-align:center; font-size:1.10em; margin:0; padding:0; font-weight:100;">A Ragnarok Online Classic
         (Pre-Renewal) Calculator, updated by Kurimet, able to simulate characters in PvM, PvP and MvP
@@ -39,15 +39,15 @@
       <table>
         <tr>
           <td class="data">
-            [<a href="features-EN.html">Noteworthy features</a>] [<a href="features-ES.html">Caracter&iacute;sticas
-              destacables</a>]<br>
+            <!-- [<a href="features-EN.html">Noteworthy features</a>] [<a href="features-ES.html">Caracter&iacute;sticas
+              destacables</a>]<br> -->
             <br>
             <!--<p onclick="LoadChangelog()" style="cursor:pointer;">Click here to display last Changelog.</p>-->
             <span id="changelog"></span>
-            <br>
-            [<a href="changelog-EN.html">Full English changelog</a>] [<a href="changelog-ES.html">Lista de cambios en
+            <!-- <br> -->
+            <!-- [<a href="changelog-EN.html">Full English changelog</a>] [<a href="changelog-ES.html">Lista de cambios en
               Espa&ntilde;ol</a>]<br>
-            [<a href="faq-EN.html">Frequently asked questions</a>] [<a href="faq-ES.html">Preguntas frecuentes</a>]
+            [<a href="faq-EN.html">Frequently asked questions</a>] [<a href="faq-ES.html">Preguntas frecuentes</a>] -->
           </td>
           <td style="vertical-align:bottom; width:185px;">
             <p>OPTIONS</p>
@@ -673,9 +673,9 @@
       Combat Simulator
       <input type="button" value="ReCalculate" onclick="calc()" style="margin:18px 0px 12px 14%;">
     </h3>
-    <div class="main">
+    <div class="main" style="display: flex">
 
-      <div style="float:left;">
+      <div>
         <table class="tborderA" style="font-weight:bold; width:378px;">
           <tr>
             <td colspan="6" class="subheader">Place:
@@ -756,7 +756,7 @@
           <tr></tr>
         </table>
 
-        <table style="float:left; font-weight:bold;" class="tborderA">
+        <table style="float:left; font-weight:bold; width:378px;" class="tborderA">
           <tr>
             <td colspan="2" class="subheader" style="padding-bottom:0;">Player Attack Skills: <select
                 name="A_ActiveSkill" onchange="ClickActiveSkill()||calc()" style="width:165px;">
@@ -912,7 +912,7 @@
         </table>
       </div>
 
-      <div style="overflow:hidden;">
+      <div style="overflow:hidden; flex-grow: 1;">
         Number of Enemies attacking you: <select name="B_num" onChange="calc()">
           <option selected="selected" value="1">1</option>
         </select>

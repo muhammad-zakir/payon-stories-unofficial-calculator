@@ -1409,7 +1409,7 @@ function BattleTAKA() {
 
         // * New formula: [2 × LUK + INT + 12 × (Steel Crow level) + 40]
         // falconSingleHitDamage = 2 * n_A_LUK + n_A_INT + 12 * SkillSearch(119) + 40;
-        falconSingleHitDamage = (n_A_LUK + n_A_INT / 2 + SkillSearch(119) * 6 + 20) * 2;
+        falconSingleHitDamage = (20 + n_A_LUK + Math.floor(n_A_INT/2) + (SkillSearch(119)*6))*2;
 
         falconSingleHitDamage = Math.floor(falconSingleHitDamage * element[selectedMonster[3]][0]);
         falconSingleHitDamage = tPlusDamCut(falconSingleHitDamage);
@@ -2493,23 +2493,12 @@ function ClickActiveSkill2() {
 function LoadChangelog() {
     if (1 != n_LogSW) {
         n_LogSW = 1;
-        var _;
-        _ = "<b>Changelog 2022-04-13:</b>",
-        _ += "<br>&#8226; Fixed ''RO server'' not applying properly when 1st loading the website on some cases.",
-        _ += "<br>",
-        _ += "<br><b>Changelog 2021-12-24:</b>",
-        _ += "<br>&#8226; Fixed Merman card set description: 10% Coma --> 1% Coma.",
-        _ += "<br>&#8226; Fixed Ragged Zombie card set description: when killing monsters --> when killing Demi-human.",
-        _ += "<br>&#8226; Fixed Green Ferus card set description: Tarot card Lv 5 --> Lv 2.",
-        _ += "<br>&#8226; Fixed Myst Case card set description: Recover 1 SP --> 2 SP.",
-        _ += "<br>&#8226; Fixed Yellow Novus card set description: 5% to reflect --> 20%.",
-        _ += "<br>&#8226; Fixed Fantastic Wig, Shiny Wig, Marvelous Wig, and Happy Wig.",
-        _ += "<br>&#8226; Added 28 rental items (check ''Full English changelog'' for more details).",
-        _ += "<br>&#8226; Improved ''Player Resistance'' and ''+% ATK/MATK based Damage Modifiers'' readability in ''Other Info''.",
-        _ += "<br>&#8226; Now, negative damage received by the Player will show 0 damage in ''MONSTER COMBAT SIMULATOR''.",
-        _ += "<br>&#8226; Fixed ''Lady Solace Card'' showing [Grand Cross] level 1 instead of level 5 in ''Player Attack Skills''.",
-        _ += "<br>&#8226; Fixed ''Gryphon Card'' showing [Bowling Bash] level 1 instead of level 5 in ''Player Attack Skills''.",
-        _ += "<br>",
+        var _ = `
+            <b>Changelog 2022-08-05:</b>
+            <br>&#8226; Updated knight skills to work with Oath balance
+            <br>&#8226; Updated hunter falcon damage with Oath balance
+            <br>
+        `;
         document.getElementById("changelog").innerHTML = _
     } else
         1 == n_LogSW && (n_LogSW = 0,

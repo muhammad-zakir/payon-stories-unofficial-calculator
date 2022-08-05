@@ -18,6 +18,10 @@ td {
   vertical-align: middle;
 }
 
+td.data {
+  vertical-align: baseline;
+}
+
 h1 {
   text-align: center;
 }
@@ -58,6 +62,10 @@ select option {
 
 div {
   overflow: auto;
+}
+
+div.main {
+  /* overflow: unset; */
 }
 
 p {
