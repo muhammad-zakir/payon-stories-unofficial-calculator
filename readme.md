@@ -19,6 +19,7 @@ npm run dev
 ## Pending modifications
 !!! This list is incomplete
 ### Class rebalance (wiki page from top to bottom)
+
 - Knight
     - ~~Bowling bash new damage formula~~
     - Check brandish spear damage
@@ -47,10 +48,10 @@ npm run dev
 
 - Hunter
     - ~~Blast mine new formula~~
-    - ~~Land mine new formula (can't seem to find this calculation at a first glance)
-    - Freezing trap new formula
+    - ~~Land mine new formula~~
+    - Freezing trap new formula (can't seem to find this calculation at a first glance)
     - ~~Claymore trap new formula~~
-    - ! These traps damage can be increased by some cards, investigate how to implement this correctly
+    - ! These trap's damage can be increased by some cards, investigate how to implement this correctly
 
 - Bard/Dancer
     - Musical lesson increase attack by 5 and add 1% aspd per lvl
@@ -93,3 +94,15 @@ npm run dev
 
 - Super novice
     - Extra HP and SP calculations
+
+### Add new items, monsters and areas
+- This includes new cards mechanics, which will be the most difficult thing
+
+### Project files
+
+This are some tasks anyone can do despite not knowing about RO at all
+
+- Modify every file to typescript, this is done by adding global variables to global.d.ts and adding "global" to every variable in the file, later modify the index.html
+- Create enums for whatever is necessary (weapon types, skills, races, elements, ...)
+- Create typings, for example for global variables
+- Rewrite some parts of the code and add comments for better understanding
