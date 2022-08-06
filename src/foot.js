@@ -1141,14 +1141,14 @@ function StAllCalc() {
     D = 1),
     2 == n_A_WeaponType && SkillSearch(386) && (S += 30,
     D = 1),
-    6 <= n_A_WeaponType && n_A_WeaponType <= 8 && SkillSearch(152) && (S += 30,
-    D = 1),
-    0 == D && SkillSearch(389) && (S += 30,
-    D = 1),
-    0 == D && (TimeItemNumSearch(5) || TimeItemNumSearch(28)) && (n_A_WeaponType > 5 && n_A_WeaponType < 9 || 0 == SRV) && (S += 30,
-    D = 1),
-    5 == n_A_WeaponType && SkillSearch(166) && (S += SkillSearch(166) + 20,
-    D = 1)),
+    6 <= n_A_WeaponType && n_A_WeaponType <= 8 && SkillSearch(152) && (S += 30, D = 1),
+    0 == D && SkillSearch(389) && (S += 30, D = 1),
+    0 == D && (TimeItemNumSearch(5) || TimeItemNumSearch(28)) && (n_A_WeaponType > 5 && n_A_WeaponType < 9 || 0 == SRV) && (S += 30, D = 1),
+    
+    // * Spear quicken balance
+    4 == n_A_WeaponType && SkillSearch(166) && (S += SkillSearch(166) * 0.5 + 7.5, D = 1),
+    5 == n_A_WeaponType && SkillSearch(166) && (S += SkillSearch(166) * 1.5 + 20, D = 1)),
+
     !SkillSearch(78) || 0 != n_A_ActiveSkill && 284 != n_A_ActiveSkill || (S -= 10 * (6 - SkillSearch(78))),
     S += Math.round(SkillSearch(425) / 2),
     12 == n_A_WeaponType && SkillSearch(224) && (S += SkillSearch(224) / 2),
