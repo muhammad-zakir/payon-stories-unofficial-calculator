@@ -1412,8 +1412,9 @@ function StAllCalc() {
     if (n_A_HEAD_REFINE >= 7 && 1498 == n_A_Equip[2])
         for (_ = 0; 9 >= _; _++)
             n_tok[60 + _] += 5;
-    if (SkillSearch(150) && (n_tok[60] += SkillSearch(150),
-    n_tok[63] += 4 * SkillSearch(150)),
+    // * Skin tempering increase 4% def per lvl and 2% fire def per lvl
+    if (SkillSearch(150) && (n_tok[60] += SkillSearch(150) * 4,
+    n_tok[63] += 6 * SkillSearch(150)),
     n_A_Buf3[7]) {
         for (_ = 61; 69 >= _; _++)
             n_tok[_] += 55 + 5 * n_A_Buf3[7];

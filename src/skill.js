@@ -389,7 +389,7 @@ m_Skill = [
     [386, 1, "One Hand Quicken [Soul Linked]", 0],
     [387, 1, "Holy Light [Soul Linked]", 0],
     [388, 10, "Sonic Blow [Soul Linked]", 0],
-    [389, 1, "Full Andrenaline Rush", 0],
+    [389, 1, "Full Adrenaline Rush", 0],
     [390, 1, "Hunter Spirit [Soul Linker]", 0],
     [391, 1, "Beast Strafing", 0],
     [392, 3, "Rebirth Spirit [Soul Linker]", 0],
