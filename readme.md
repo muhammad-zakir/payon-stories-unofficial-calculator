@@ -20,21 +20,21 @@ npm run dev
 !!! This list is incomplete
 ### Class rebalance (wiki page from top to bottom)
 - Knight
-    - Bowling bash new damage formula
+    - ~~Bowling bash new damage formula~~
     - Check brandish spear damage
 
 - Crusader
-    - Spear quicken new formula
+    - ~~Spear quicken new formula~~
 
 - Acolyte
-    - Demon bane new stats
-    - Holy light new formula and cast time
+    - ~~Demon bane new stats~~
+    - Holy light new formula and cast time (can't seem to find this calculation at a first glance)
 
 - Priest
-    - Battle mastery new formula and add aspd +12% if skill is lvl 10
-    - Turn undead new damage on failure formula
+    - ~~Battle mastery new formula~~ and add aspd +12% if skill is lvl 10 (don't know how to apply it correctly, maybe at the same time as spear quicken calculation ?)
+    - ~~Turn undead new damage on failure formula~~
     - Remove slow poison skill
-    - Add renew skill
+    - Add renew skill ? (has no effect, just heals and stops the heal reduction of poison)
 
 - Monk
     - Dodge new flee formula

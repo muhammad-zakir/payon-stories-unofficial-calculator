@@ -587,7 +587,6 @@ function BattleCalc999() {
                 wHITsuu = A[1 * c.SkillSubNum.value]
             }
             ATKbai02(wbairitu, 0);
-            console.log('BowlingBashData');
             for (var _ = 0; 2 >= _; _++) {
                 w_DMG[_] = BattleCalc(n_A_DMG[_], _);
                 391 == n_A_ActiveSkill && 2 != selectedMonster[2] && 4 != selectedMonster[2] && (w_DMG[_] = 0);
@@ -1163,7 +1162,9 @@ function BattleCalc999() {
             w_DMG[1] = 0) : (1 != selectedMonster[19] ? (a = (20 * n_A_ActiveSkillLV + n_A_BaseLV + n_A_INT + n_A_LUK) / 1e3,
             w_DMG[2] = selectedMonster[6]) : (a = 0,
             w_DMG[2] = 0),
-            w_DMG[0] = n_A_BaseLV + n_A_INT + 10 * n_A_ActiveSkillLV,
+            
+            // * Turn undead new rebalance increased on failure damage by 2.5
+            w_DMG[0] = (n_A_BaseLV + n_A_INT + 10 * n_A_ActiveSkillLV) * 2.5,
             w_DMG[0] = Math.floor(w_DMG[0] * element[selectedMonster[3]][n_A_Weapon_element]),
             w_DMG[1] = Math.round(selectedMonster[6] * a + w_DMG[0] * (100 - a) / 100));
             for (var _ = 0; 2 >= _; _++)
@@ -1414,7 +1415,6 @@ function BattleTAKA() {
         falconSingleHitDamage = Math.floor(falconSingleHitDamage * element[selectedMonster[3]][0]);
         falconSingleHitDamage = tPlusDamCut(falconSingleHitDamage);
         falconChance = Math.round(100 * (1 + .3 * n_A_LUK)) / 100;
-        console.log(`Falcon chance: ${falconChance}%`);
 
         // Does 0 dmg to empirium
         if(selectedMonster[0] === 44) {
@@ -4350,10 +4350,18 @@ function calc() {
 function BattleCalc(_, e) {
     return 10 == e ? _ += n_A_WeaponLV_refineATK : _ = BattleCalc4(_, e, 0),
     1 > _ && (_ = 1),
-    1 == n_A_WeaponType || 2 == n_A_WeaponType ? _ += 4 * SkillSearch(3) : 3 == n_A_WeaponType ? _ += 4 * SkillSearch(4) : 4 == n_A_WeaponType || 5 == n_A_WeaponType ? _ += 0 == SkillSearch(78) ? 5 * SkillSearch(69) : 7 * SkillSearch(69) : 8 == n_A_WeaponType ? _ += 3 * SkillSearch(89) : 11 == n_A_WeaponType ? _ += 3 * SkillSearch(81) : 14 == n_A_WeaponType ? _ += 3 * SkillSearch(198) : 15 == n_A_WeaponType ? _ += 3 * SkillSearch(206) : 12 == n_A_WeaponType ? _ += 3 * SkillSearch(224) : 6 == n_A_WeaponType || 7 == n_A_WeaponType ? _ += 3 * SkillSearch(241) : 13 != n_A_WeaponType && 0 != n_A_WeaponType || (_ += 3 * SkillSearch(183)),
+
+    // * Mace mastery / Battle mastery skill balancem atk per lvl increased from +3 to +4
+
+    1 == n_A_WeaponType || 2 == n_A_WeaponType ? _ += 4 * SkillSearch(3) : 3 == n_A_WeaponType ? _ += 4 * SkillSearch(4) : 4 == n_A_WeaponType || 5 == n_A_WeaponType ? _ += 0 == SkillSearch(78) ? 5 * SkillSearch(69) : 7 * SkillSearch(69) : 8 == n_A_WeaponType ? _ += 4 * SkillSearch(89) : 11 == n_A_WeaponType ? _ += 3 * SkillSearch(81) : 14 == n_A_WeaponType ? _ += 3 * SkillSearch(198) : 15 == n_A_WeaponType ? _ += 3 * SkillSearch(206) : 12 == n_A_WeaponType ? _ += 3 * SkillSearch(224) : 6 == n_A_WeaponType || 7 == n_A_WeaponType ? _ += 3 * SkillSearch(241) : 13 != n_A_WeaponType && 0 != n_A_WeaponType || (_ += 3 * SkillSearch(183)),
     0 == n_A_WeaponType && SkillSearch(329) && (_ += 10 * SkillSearch(329)),
     !n_A_Buf3[10] || 4 != n_A_WeaponLV && 4 != n_A_Weapon2LV || (_ += 50 + 25 * n_A_Buf3[10]),
-    (6 == selectedMonster[2] || 90 <= selectedMonster[3] && selectedMonster[3] <= 99) && SkillSearch(24) && (_ += Math.floor((3 + .05 * n_A_BaseLV) * SkillSearch(24))),
+
+    // * Demon bane custom balance +5 per skill lvl
+    // ? Undead is an element so we use selectedMonster[3] but why the value <99 >90?
+    // (6 == selectedMonster[2] || 90 <= selectedMonster[3] && selectedMonster[3] <= 99) && SkillSearch(24) && (_ += Math.floor((5 + .05 * n_A_BaseLV) * SkillSearch(24))),
+    (6 == selectedMonster[2] || 90 <= selectedMonster[3] && selectedMonster[3] <= 99) ? (_ += Math.floor((5 + .05 * n_A_BaseLV) * SkillSearch(24))) : (_ += Math.floor(4 * SkillSearch(24))),
+
     2 != selectedMonster[2] && 4 != selectedMonster[2] || (_ += 4 * SkillSearch(116),
     SkillSearch(390) && (_ += n_A_STR)),
     _ = BattleCalc2(_),
