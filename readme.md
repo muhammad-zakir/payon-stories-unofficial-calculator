@@ -82,17 +82,14 @@ npm run dev
     - Back stab cast delay
     - ~~Raid new formula~~
 
-- Merchant 
-    - Cart revolution always does max damage, remove weight input
-
 - Blacksmith
-    - Skin tempering new formula
+    - ~~Skin tempering new formula~~
 
 - Alchemist
-    - Axe mastery +5 atk and +0.8% aspd per lvl
+    - ~~Axe mastery +5 atk~~ and +0.8% aspd per lvl
 
 - Super novice
-    - Extra HP and SP calculations
+    - Extra HP and SP calculations (need to code this)
 
 ### Add new items, monsters and areas
 - This includes new cards mechanics, which will be the most difficult thing
