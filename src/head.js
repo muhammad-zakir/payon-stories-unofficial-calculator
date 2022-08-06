@@ -1096,17 +1096,42 @@ function BattleCalc999() {
             CastAndDelay(),
             BattleCalc998()
         } else if (106 == n_A_ActiveSkill || 112 == n_A_ActiveSkill || 113 == n_A_ActiveSkill) {
-            n_PerHIT_DMG = 0,
-            n_Delay[0] = 1,
-            106 == n_A_ActiveSkill ? (n_A_Weapon_element = 2,
-            w_DMG[2] = Math.floor((75 + n_A_DEX) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[selectedMonster[3]][2])) : 112 == n_A_ActiveSkill ? (n_A_Weapon_element = 4,
-            w_DMG[2] = Math.floor((50 + n_A_DEX / 2) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[selectedMonster[3]][4])) : 113 == n_A_ActiveSkill && (n_A_Weapon_element = 3,
-            w_DMG[2] = Math.floor((75 + n_A_DEX / 2) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[selectedMonster[3]][3])),
+            n_PerHIT_DMG = 0;
+            n_Delay[0] = 1;
+
+            // * Hunter traps new damage formula
+            // Land mine
+            if (n_A_ActiveSkill === 106) {
+                n_A_Weapon_element = 2;
+                w_DMG[2] = Math.floor(((80 + n_A_DEX) * (100 + n_A_INT) * n_A_ActiveSkillLV / 70) * element[selectedMonster[3]][2]);
+            }
+
+            // Blast mine
+            if (n_A_ActiveSkill === 112) {
+                n_A_Weapon_element = 4;
+                w_DMG[2] = Math.floor(((70 + n_A_DEX) * (70 + n_A_INT) * n_A_ActiveSkillLV / 65) * element[selectedMonster[3]][4]);
+            }
+
+            // Claymore mine
+            if (n_A_ActiveSkill === 113) {
+                n_A_Weapon_element = 3;
+                w_DMG[2] = Math.floor(((30 + n_A_DEX) * (100 + n_A_INT) * n_A_ActiveSkillLV / 100) * element[selectedMonster[3]][3]);
+            }
+
+            // * Old mine calculation
+            // 106 == n_A_ActiveSkill ? (n_A_Weapon_element = 2,
+            // w_DMG[2] = Math.floor((75 + n_A_DEX) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[selectedMonster[3]][2])) : 112 == n_A_ActiveSkill ? (n_A_Weapon_element = 4,
+            // w_DMG[2] = Math.floor((50 + n_A_DEX / 2) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[selectedMonster[3]][4])) : 113 == n_A_ActiveSkill && (n_A_Weapon_element = 3,
+            // w_DMG[2] = Math.floor((75 + n_A_DEX / 2) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[selectedMonster[3]][3])),
+            
             w_DMG[2] = tPlusDamCut(w_DMG[2]),
             w_DMG[0] = w_DMG[1] = w_DMG[2];
-            for (var _ = 0; 2 >= _; _++)
-                Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_],
+
+            for (var _ = 0; 2 >= _; _++) {
+                Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_];
                 InnStr[_] += Last_DMG_A[_];
+            }
+
             w_HIT_HYOUJI = 100,
             CastAndDelay(),
             BattleCalc998()

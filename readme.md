@@ -46,10 +46,10 @@ npm run dev
     - ~~Throw spirit sphere new formula~~
 
 - Hunter
-    - Blast mine new formula
-    - Land mine new formula
+    - ~~Blast mine new formula~~
+    - ~~Land mine new formula (can't seem to find this calculation at a first glance)
     - Freezing trap new formula
-    - Claymore trap new formula
+    - ~~Claymore trap new formula~~
     - ! These traps damage can be increased by some cards, investigate how to implement this correctly
 
 - Bard/Dancer
