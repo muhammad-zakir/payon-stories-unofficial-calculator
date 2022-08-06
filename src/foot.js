@@ -1153,7 +1153,7 @@ function StAllCalc() {
 
     !SkillSearch(78) || 0 != n_A_ActiveSkill && 284 != n_A_ActiveSkill || (S -= 10 * (6 - SkillSearch(78))),
     S += Math.round(SkillSearch(425) / 2),
-    12 == n_A_WeaponType && SkillSearch(224) && (S += SkillSearch(224) / 2),
+    12 == n_A_WeaponType && SkillSearch(224) && (S += SkillSearch(224) * 0.7),
     SkillSearch(196) && (S -= 25),
     SkillSearch(258) && (S += 30),
     SkillSearch(420) && (S += 20),

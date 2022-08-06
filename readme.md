@@ -64,7 +64,7 @@ npm run dev
     
 - Sage
     - Add sense to skills and calculate it's 2% reduction
-    - Advanced book new formula and +1% matk per lvl
+    - ~~Advanced book new formula~~ and +1% matk per lvl
     - Investigate auto spell new changes and how to implement them in the battle calculation
 
 - Thief
