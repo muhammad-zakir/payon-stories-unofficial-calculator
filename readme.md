@@ -37,12 +37,13 @@ npm run dev
     - Add renew skill ? (has no effect, just heals and stops the heal reduction of poison)
 
 - Monk
-    - Dodge new flee formula
+    - ~~Dodge new flee formula~~
     - Mental strength new formula
-    - Iron fists new formula
-    - Raging quadruple blow damage increase by 30%
-    - Raging thrust damage increase (and 15% attack buff ?)
-    - Throw spirit sphere new formula
+    - ~~Iron fists new formula~~
+    - Iron fist extra aspd increase
+    - ~~Raging quadruple blow damage increase by 30%~~
+    - ~~Raging thrust damage increase~~ (and 15% attack buff ?)
+    - ~~Throw spirit sphere new formula~~
 
 - Hunter
     - Blast mine new formula

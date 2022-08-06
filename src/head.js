@@ -374,18 +374,21 @@ function BattleCalc999() {
             else if (176 == n_A_ActiveSkill)
                 wbairitu += .3 * n_A_ActiveSkillLV,
                 n_Delay[2] = 1;
-            else if (188 == n_A_ActiveSkill)
-                wActiveHitNum = 4,
-                wbairitu += .5 + .5 * n_A_ActiveSkillLV,
-                n_Delay[0] = 1,
-                n_Delay[1] = .1,
+            else if (188 == n_A_ActiveSkill) {
+                wActiveHitNum = 4;
+                // * Raging quadruple blow damage increased by 30% per lvl
+                wbairitu += .5 + .8 * n_A_ActiveSkillLV;
+                n_Delay[0] = 1;
+                n_Delay[1] = .1;
                 n_Delay[3] = 1 - .004 * n_A_AGI - .002 * n_A_DEX;
-            else if (189 == n_A_ActiveSkill)
-                wbairitu += 1.4 + .6 * n_A_ActiveSkillLV,
-                n_Delay[0] = 1,
-                n_Delay[1] = .1,
+            } else if (189 == n_A_ActiveSkill) {
+                // * Raging thrust damage increased by 25% per lvl
+                // ? How to implement the extra 15% increased attack buff
+                wbairitu += 1.4 + .85 * n_A_ActiveSkillLV;
+                n_Delay[0] = 1;
+                n_Delay[1] = .1;
                 n_Delay[3] = .7 - .004 * n_A_AGI - .002 * n_A_DEX;
-            else if (199 == n_A_ActiveSkill || 207 == n_A_ActiveSkill)
+            } else if (199 == n_A_ActiveSkill || 207 == n_A_ActiveSkill)
                 wCast = 1.5,
                 wbairitu += .4 * n_A_ActiveSkillLV - .4,
                 n_A_Weapon_element = m_Arrow[n_A_Arrow][1],
@@ -561,15 +564,16 @@ function BattleCalc999() {
                 1 == n_A_ActiveSkillLV && (wHITsuu = 1);
                 wLAch = 1;
                 1 == n_B_IJYOU[6] && (wHITsuu = 3, 1 == n_A_ActiveSkillLV && (wHITsuu = 2));
-            } else if (192 == n_A_ActiveSkill)
-                wbairitu += .5 * n_A_ActiveSkillLV,
+            } else if (192 == n_A_ActiveSkill) {
+                // * Finger offensive new damage formula 100% + 50% per lvl
+                wbairitu += 1 + .5 * n_A_ActiveSkillLV,
                 a = n_A_Buf2[12],
                 a > n_A_ActiveSkillLV && (a = n_A_ActiveSkillLV),
                 wHITsuu = a,
                 wCast = (1 + a) * n_A_CAST,
                 n_Delay[2] = .5,
                 n_rangedAtk = 1;
-            else if (418 == n_A_ActiveSkill)
+            } else if (418 == n_A_ActiveSkill)
                 n_rangedAtk = 1,
                 n_Delay[2] = 1,
                 wbairitu += .5,
