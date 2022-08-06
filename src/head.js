@@ -347,8 +347,10 @@ function BattleCalc999() {
                 wbairitu += 2 +.25 * n_A_ActiveSkillLV;
                 n_A_Weapon_element = 6;
             }
-            else if (171 == n_A_ActiveSkill)
-                wbairitu += .4 * n_A_ActiveSkillLV;
+            else if (171 == n_A_ActiveSkill) {
+                // * Raid damage increased by 40% per lvl
+                wbairitu += .8 * n_A_ActiveSkillLV;
+            }
             else if (72 == n_A_ActiveSkill)
                 wbairitu += .5 * n_A_ActiveSkillLV,
                 n_Delay[2] = 1,
@@ -2156,13 +2158,13 @@ function BattleMagicCalc(_) {
     wBMC2 = Math.floor(wBMC2),
     wBMC2
 }
-function ClickJob(_) {
+function ClickJob(jobSelected) {
     if (myInnerHtml("A_KakutyouSel", "", 0),
     myInnerHtml("A_KakutyouData", "", 0),
     c.A_Kakutyou.value = 0,
     n_A_JobSet(),
-    _ = n_A_JOB,
-    46 > _)
+    jobSelected = n_A_JOB,
+    46 > jobSelected)
         for (var e = 1; 99 >= e; e++)
             c.A_BaseLV.options[e - 1] = new Option(e,e),
             c.A_STR.options[e - 1] = new Option(e,e),
@@ -2187,7 +2189,7 @@ function ClickJob(_) {
     for (e = 0; n > e; e++)
         c.A_JobLV.options[0] = null;
     var l = 0;
-    for (l = 0 == _ ? 10 : 19 >= _ || _ >= 41 && 43 >= _ ? 50 : 20 == _ ? 99 : _ > 45 ? 60 : 70,
+    for (l = 0 == jobSelected ? 10 : 19 >= jobSelected || jobSelected >= 41 && 43 >= jobSelected ? 50 : 20 == jobSelected ? 99 : jobSelected > 45 ? 60 : 70,
     e = 1; l >= e; e++)
         c.A_JobLV.options[e - 1] = new Option(e,e);
     for (n_SkillSW && (45 == n_A_JOB ? (myInnerHtml("AS12_1", "<S># of Spirit Spheres</S>", 0),
@@ -2208,18 +2210,18 @@ function ClickJob(_) {
     m_JobASPD_R[20][7] = 0),
     0 == SRV && 8 == n_A_JobClass2() && 1 == n_Nitou && (n_Nitou = 0,
     ClickWeaponType2(0)),
-    WeaponSet(_),
+    WeaponSet(jobSelected),
     e = 0; 14 >= e; e++)
-        385 == m_JobBuff[_][e] ? (myInnerHtml("P_Skill" + e, m_Skill[m_JobBuff[_][e]][2], 0),
-        myInnerHtml("P_Skill" + e + "s", "<select name=A_skill" + e + " id=A_skill" + e + ' onChange="StAllCalc() | WeaponSet(20) | restrictCardslot(1)"></select>', 0)) : 392 == m_JobBuff[_][e] ? (myInnerHtml("P_Skill" + e, m_Skill[m_JobBuff[_][e]][2], 0),
+        385 == m_JobBuff[jobSelected][e] ? (myInnerHtml("P_Skill" + e, m_Skill[m_JobBuff[jobSelected][e]][2], 0),
+        myInnerHtml("P_Skill" + e + "s", "<select name=A_skill" + e + " id=A_skill" + e + ' onChange="StAllCalc() | WeaponSet(20) | restrictCardslot(1)"></select>', 0)) : 392 == m_JobBuff[jobSelected][e] ? (myInnerHtml("P_Skill" + e, m_Skill[m_JobBuff[jobSelected][e]][2], 0),
         myInnerHtml("P_Skill" + e + "s", "<select name=A_skill" + e + " id=A_skill" + e + ' onChange="StAllCalc()" style="width:70px;"></select>', 0),
-        0 == n_Reborn && myInnerHtml("P_Skill" + e, "", 0)) : 441 == m_JobBuff[_][e] ? (myInnerHtml("P_Skill" + e, m_Skill[m_JobBuff[_][e]][2], 0),
+        0 == n_Reborn && myInnerHtml("P_Skill" + e, "", 0)) : 441 == m_JobBuff[jobSelected][e] ? (myInnerHtml("P_Skill" + e, m_Skill[m_JobBuff[jobSelected][e]][2], 0),
         myInnerHtml("P_Skill" + e + "s", "<select name=A_skill" + e + " id=A_skill" + e + ' onChange="StAllCalc() | ClickActiveSkill2() | calc()"></select>', 0),
-        0 == n_Reborn && myInnerHtml("P_Skill" + e, "", 0)) : 999 != m_JobBuff[_][e] ? (myInnerHtml("P_Skill" + e, m_Skill[m_JobBuff[_][e]][2], 0),
+        0 == n_Reborn && myInnerHtml("P_Skill" + e, "", 0)) : 999 != m_JobBuff[jobSelected][e] ? (myInnerHtml("P_Skill" + e, m_Skill[m_JobBuff[jobSelected][e]][2], 0),
         myInnerHtml("P_Skill" + e + "s", "<select name=A_skill" + e + " id=A_skill" + e + " onChange=StAllCalc()></select>", 0)) : (myInnerHtml("P_Skill" + e, "", 0),
         myInnerHtml("P_Skill" + e + "s", "", 0));
     for (var i = 0; 14 >= i; i++) {
-        var l = m_JobBuff[_][i]
+        var l = m_JobBuff[jobSelected][i]
           , t = [12, 68, 152, 253, 258, 301, 309, 310, 322, 345, 364, 365, 383, 385, 386, 390, 420, 421, 422];
         if (NumSearch(l, t)) {
             var a = document.getElementById("A_skill" + i);
@@ -2228,9 +2230,9 @@ function ClickJob(_) {
         } else if (999 != l) {
             for (var a = document.getElementById("A_skill" + i), e = 10; e >= 0; e--)
                 a.options[e] = null;
-            for (var e = 0; e <= m_Skill[m_JobBuff[_][i]][1]; e++)
+            for (var e = 0; e <= m_Skill[m_JobBuff[jobSelected][i]][1]; e++)
                 a.options[e] = new Option(e,e);
-            if (392 == m_Skill[m_JobBuff[_][i]][0]) {
+            if (392 == m_Skill[m_JobBuff[jobSelected][i]][0]) {
                 for (n_ECname = ["off", "eAthena (max stats)", "iRO", "Original"],
                 e = 0; 3 >= e; e++)
                     a.options[e] = new Option(n_ECname[e],e);
@@ -2238,28 +2240,28 @@ function ClickJob(_) {
             }
         }
     }
-    if (58 == m_JobBuff[_][0]) {
+    if (58 == m_JobBuff[jobSelected][0]) {
         for (e = 10; e >= 0; e--)
             c.A_skill0.options[e] = null;
         for (n_ECname = ["0", "6% Reduction", "12% Reduction", "18% Reduction", "24% Reduction", "30% Reduction"],
         e = 0; 5 >= e; e++)
             c.A_skill0.options[e] = new Option(n_ECname[e],e)
     }
-    if (78 == m_JobBuff[_][5]) {
+    if (78 == m_JobBuff[jobSelected][5]) {
         for (e = 10; e >= 0; e--)
             c.A_skill5.options[e] = null;
         for (n_ECname = ["(No Peco)", "0", "1", "2", "3", "4", "5"],
         e = 0; 6 >= e; e++)
             c.A_skill5.options[e] = new Option(n_ECname[e],e)
     }
-    if (78 == m_JobBuff[_][8]) {
+    if (78 == m_JobBuff[jobSelected][8]) {
         for (e = 10; e >= 0; e--)
             c.A_skill8.options[e] = null;
         for (n_ECname = ["(No Peco)", "0", "1", "2", "3", "4", "5"],
         e = 0; 6 >= e; e++)
             c.A_skill8.options[e] = new Option(n_ECname[e],e)
     }
-    if (367 == m_JobBuff[_][11]) {
+    if (367 == m_JobBuff[jobSelected][11]) {
         for (e = 10; e >= 0; e--)
             c.A_skill11.options[e] = null;
         for (n_ECname = [0, 1, 2, 3, 4, 5, 6, 8, 10],
@@ -4179,8 +4181,17 @@ function calc() {
     TyouEnkakuSousa3dan = 0;
     wBC3_3danHatudouRitu = 0;
     SkillSearch(187) && (wBC3_3danHatudouRitu = 30 - SkillSearch(187));
+
+    // * Thief double attack increased by 2% per lvl
     wDA = 7 * SkillSearch(13);
+
     1 != n_A_WeaponType && (wDA = 0);
+
+    // * Sword mastery applies double attack if on rogue
+    if (n_A_WeaponType === 2 && n_A_JOB === 14) {
+        wDA = 7 * SkillSearch(3);
+    }
+
     CardNumSearch(43) && (SkillSearch(13) > 1 ? wDA = 5 * SkillSearch(13) : wDA = 5);
     0 != n_A_WeaponType && ((EquipNumSearch(570) || EquipNumSearch(1442) || EquipNumSearch(1443)) && (SkillSearch(13) > 2 ? wDA = 5 * SkillSearch(13) : wDA = 10),
     EquipNumSearch(1578) && (wDA = 5 * SkillSearch(13),
