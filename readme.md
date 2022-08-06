@@ -74,13 +74,13 @@ npm run dev
 - Assassin
     - ~~Right hand mastery increase values~~
     - ~~Left hand mastery increase values~~ (damage needs to be tested and compared to rocalc)
-    - ~~Katar mastery +1 atk per lvl and 0.5% crit per lvl~~
+    - ~~Katar mastery +1 atk per lvl and 0.5% crit per lvl~~ (crit chance needs to be checked, adds 10% but wiki hints it should be double)
 
 - Rogue
-    - Strip skills affect combat on the calculator ?
-    - Sword mastery now has double attack chance
+    - Strip skills
+    - ~~Sword mastery now has double attack chance~~
     - Back stab cast delay
-    - Raid new formula
+    - ~~Raid new formula~~
 
 - Merchant 
     - Cart revolution always does max damage, remove weight input
