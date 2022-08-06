@@ -981,6 +981,10 @@ function StAllCalc() {
 
     // * 2HQ Gives 0.8 extra crit per lvl
     SkillSearch(74) && n_A_WeaponType === 3 && (n_A_CRI += SkillSearch(74) * 0.8),
+
+    // * Katar mastery 1 extra crit per lvl
+    // ? Crit adds 10, but wiki description hints this has to double, check
+    SkillSearch(81) && n_A_WeaponType === 11 && (n_A_CRI += SkillSearch(81) * 1),
     n_A_CRI = Number(n_A_CRI).toFixed(1),
 
     myInnerHtml("A_CRI", n_A_CRI, 0),

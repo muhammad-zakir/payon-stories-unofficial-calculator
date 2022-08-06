@@ -68,14 +68,13 @@ npm run dev
     - Investigate auto spell new changes and how to implement them in the battle calculation
 
 - Thief
-    - Double attack increased chance
-    - Envenom new formula
+    - ~~Double attack increased chance~~
+    - Envenom new formula (can't seem to find this calculation at a first glance)
 
 - Assassin
-    - Right hand mastery increase values
-    - Left hand mastery increase values
-    - Enchant poison increased chance ?
-    - Katar mastery +1 atk per lvl and 0.5% crit per lvl
+    - ~~Right hand mastery increase values~~
+    - ~~Left hand mastery increase values~~ (damage needs to be tested and compared to rocalc)
+    - ~~Katar mastery +1 atk per lvl and 0.5% crit per lvl~~
 
 - Rogue
     - Strip skills affect combat on the calculator ?

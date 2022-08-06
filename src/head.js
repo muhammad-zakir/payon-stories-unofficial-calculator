@@ -156,7 +156,9 @@ function BattleCalc999() {
                     106 == m_Card[n_A_card[_]][0] && (w_left_star += 5);
             106 == n_A_card[7] && (w_left_star += 10),
             w_left_Maxatk += w_left_star,
-            w_left_Maxatk = w_left_Maxatk * (3 + SkillSearch(80)) / 10,
+            // * Assassin left hand mastery damage increased by flat 20%
+            // ? When comparing with rocalc damage this +20% seems way greater than what it should be, need to test
+            w_left_Maxatk = w_left_Maxatk * (5 + SkillSearch(80)) / 10,
             w_left_Maxatk = Math.floor(w_left_Maxatk),
             n_A_workDEX > n_A_Weapon2_ATK && (n_A_workDEX = n_A_Weapon2_ATK),
             w_left_Minatk = n_A_ATK + n_A_Weapon2LV_Minplus + Math.floor((n_A_workDEX + wImp) * wCSize),
@@ -164,7 +166,7 @@ function BattleCalc999() {
             w_left_Minatk < 1 && (w_left_Minatk = 1),
             w_left_Minatk = Math.floor(w_left_Minatk * element[selectedMonster[3]][n_A_Weapon2_element]),
             w_left_Minatk += w_left_star,
-            w_left_Minatk *= .3 + SkillSearch(80) / 10,
+            w_left_Minatk *= .5 + SkillSearch(80) / 10,
             w_left_Minatk = Math.floor(w_left_Minatk),
             w_left_Aveatk = (w_left_Maxatk + w_left_Minatk) / 2,
             w_left_Maxatk = tPlusDamCut(w_left_Maxatk),
@@ -199,7 +201,7 @@ function BattleCalc999() {
             w_DMG[1] += EDP_DMG(1),
             EDPhyouzi(1);
             var e = BattleCalc2(0)
-              , n = Math.floor(w_left_star * (.3 + SkillSearch(80) / 10));
+              , n = Math.floor(w_left_star * (.5 + SkillSearch(80) / 10));
             n_PerHIT_DMG = e + n,
             str_PerHIT_DMG = e + "+" + n,
             CastAndDelay(),
@@ -4177,7 +4179,7 @@ function calc() {
     TyouEnkakuSousa3dan = 0;
     wBC3_3danHatudouRitu = 0;
     SkillSearch(187) && (wBC3_3danHatudouRitu = 30 - SkillSearch(187));
-    wDA = 5 * SkillSearch(13);
+    wDA = 7 * SkillSearch(13);
     1 != n_A_WeaponType && (wDA = 0);
     CardNumSearch(43) && (SkillSearch(13) > 1 ? wDA = 5 * SkillSearch(13) : wDA = 5);
     0 != n_A_WeaponType && ((EquipNumSearch(570) || EquipNumSearch(1442) || EquipNumSearch(1443)) && (SkillSearch(13) > 2 ? wDA = 5 * SkillSearch(13) : wDA = 10),
@@ -4297,7 +4299,7 @@ function calc() {
                 106 == m_Card[n_A_card[_]][0] && (w_left_star += 5);
         106 == n_A_card[7] && (w_left_star += 10),
         w_left_Maxatk += w_left_star,
-        w_left_Maxatk = w_left_Maxatk * (3 + SkillSearch(80)) / 10,
+        w_left_Maxatk = w_left_Maxatk * (5 + SkillSearch(80)) / 10,
         w_left_Maxatk = Math.floor(w_left_Maxatk),
         n_A_workDEX > n_A_Weapon2_ATK && (n_A_workDEX = n_A_Weapon2_ATK),
         w_left_Minatk = n_A_ATK + n_A_Weapon2LV_Minplus + Math.floor((n_A_workDEX + wImp) * wCSize),
@@ -4305,7 +4307,7 @@ function calc() {
         w_left_Minatk < 1 && (w_left_Minatk = 1),
         w_left_Minatk = Math.floor(w_left_Minatk * element[selectedMonster[3]][n_A_Weapon2_element]),
         w_left_Minatk += w_left_star,
-        w_left_Minatk *= .3 + SkillSearch(80) / 10,
+        w_left_Minatk *= .5 + SkillSearch(80) / 10,
         w_left_Minatk = Math.floor(w_left_Minatk),
         w_left_Aveatk = (w_left_Maxatk + w_left_Minatk) / 2,
         w_left_Maxatk = tPlusDamCut(w_left_Maxatk),
@@ -4385,7 +4387,7 @@ function BattleCalc(_, e) {
 
     // * Mace mastery / Battle mastery skill balancem atk per lvl increased to +4 from +3
     // * Musical lesson / Dancing lesson atk increased to +5 from +3
-    1 == n_A_WeaponType || 2 == n_A_WeaponType ? _ += 4 * SkillSearch(3) : 3 == n_A_WeaponType ? _ += 4 * SkillSearch(4) : 4 == n_A_WeaponType || 5 == n_A_WeaponType ? _ += 0 == SkillSearch(78) ? 5 * SkillSearch(69) : 7 * SkillSearch(69) : 8 == n_A_WeaponType ? _ += 4 * SkillSearch(89) : 11 == n_A_WeaponType ? _ += 3 * SkillSearch(81) : 14 == n_A_WeaponType ? _ += 5 * SkillSearch(198) : 15 == n_A_WeaponType ? _ += 5 * SkillSearch(206) : 12 == n_A_WeaponType ? _ += 3 * SkillSearch(224) : 6 == n_A_WeaponType || 7 == n_A_WeaponType ? _ += 3 * SkillSearch(241) : 13 != n_A_WeaponType && 0 != n_A_WeaponType || (_ += 5 * SkillSearch(183)),
+    1 == n_A_WeaponType || 2 == n_A_WeaponType ? _ += 4 * SkillSearch(3) : 3 == n_A_WeaponType ? _ += 4 * SkillSearch(4) : 4 == n_A_WeaponType || 5 == n_A_WeaponType ? _ += 0 == SkillSearch(78) ? 5 * SkillSearch(69) : 7 * SkillSearch(69) : 8 == n_A_WeaponType ? _ += 4 * SkillSearch(89) : 11 == n_A_WeaponType ? _ += 4 * SkillSearch(81) : 14 == n_A_WeaponType ? _ += 5 * SkillSearch(198) : 15 == n_A_WeaponType ? _ += 5 * SkillSearch(206) : 12 == n_A_WeaponType ? _ += 3 * SkillSearch(224) : 6 == n_A_WeaponType || 7 == n_A_WeaponType ? _ += 3 * SkillSearch(241) : 13 != n_A_WeaponType && 0 != n_A_WeaponType || (_ += 5 * SkillSearch(183)),
     0 == n_A_WeaponType && SkillSearch(329) && (_ += 10 * SkillSearch(329)),
     !n_A_Buf3[10] || 4 != n_A_WeaponLV && 4 != n_A_Weapon2LV || (_ += 50 + 25 * n_A_Buf3[10]),
 
@@ -4424,7 +4426,8 @@ function BattleCalc2(_) {
     395 == n_A_ActiveSkill && (_ += 3 * m_Kunai[1 * document.calcForm.SkillSubNum.value][0]),
     50 > SRV && (_ = ApplyModifiers(_)),
     169 == n_A_ActiveSkill && 10 == n_A_WeaponType && (_ = Math.floor(_ / 2)),
-    n_Nitou && 0 == n_A_ActiveSkill && 0 != n_A_WeaponType && (_ = Math.floor(_ * (50 + 10 * SkillSearch(79)) / 100)),
+    // * Right hand mastery damage increased by 20%
+    n_Nitou && 0 == n_A_ActiveSkill && 0 != n_A_WeaponType && (_ = Math.floor(_ * (70 + 10 * SkillSearch(79)) / 100)),
     423 == n_A_ActiveSkill && (_ *= element[selectedMonster[3]][8]),
     437 == n_A_ActiveSkill && (_ *= element[selectedMonster[3]][0]),
     1 == PvP && (317 != n_A_ActiveSkill && 318 != n_A_ActiveSkill || (_ = 0)),
