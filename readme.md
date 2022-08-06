@@ -54,10 +54,10 @@ npm run dev
     - ! These trap's damage can be increased by some cards, investigate how to implement this correctly
 
 - Bard/Dancer
-    - Musical lesson increase attack by 5 and add 1% aspd per lvl
-    - Dancing lesson increase attack by 5 and add 1% aspd per lvl
-    - Throw arrow new formula
-    - Musical strike new formula
+    - ~~Musical lesson increase attack by 5~~ and add 1% aspd per lvl
+    - ~~Dancing lesson increase attack by 5~~ and add 1% aspd per lvl
+    - ~~Throw arrow new formula~~
+    - ~~Musical strike new formula~~
 
 - Wizard
     - Add sense to skills and calculate it's 2% reduction

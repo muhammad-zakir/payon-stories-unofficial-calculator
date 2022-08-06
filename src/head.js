@@ -388,13 +388,16 @@ function BattleCalc999() {
                 n_Delay[0] = 1;
                 n_Delay[1] = .1;
                 n_Delay[3] = .7 - .004 * n_A_AGI - .002 * n_A_DEX;
-            } else if (199 == n_A_ActiveSkill || 207 == n_A_ActiveSkill)
-                wCast = 1.5,
-                wbairitu += .4 * n_A_ActiveSkillLV - .4,
-                n_A_Weapon_element = m_Arrow[n_A_Arrow][1],
-                1 * c.A_Weapon_element.value != 0 && (n_A_Weapon_element = 1 * c.A_Weapon_element.value),
+            } else if (199 == n_A_ActiveSkill || 207 == n_A_ActiveSkill) {
+                // * Throw arrow / Musical strike damage increased by 25% per lvl
+                // ? Originally "wbaritu" at max lvl gives 260% instead of 250%, is that on purpose or a bug?
+                // wbairitu += .4 * n_A_ActiveSkillLV - .4;
+                wbairitu += 0.75 + .25 * n_A_ActiveSkillLV;
+                wCast = 1.5;
+                n_A_Weapon_element = m_Arrow[n_A_Arrow][1];
+                1 * c.A_Weapon_element.value != 0 && (n_A_Weapon_element = 1 * c.A_Weapon_element.value);
                 n_rangedAtk = 1;
-            else if (248 == n_A_ActiveSkill)
+            } else if (248 == n_A_ActiveSkill)
                 not_use_card = 1,
                 n_A_Weapon_element = 3,
                 n_Delay[0] = 1,
@@ -4380,9 +4383,9 @@ function BattleCalc(_, e) {
     return 10 == e ? _ += n_A_WeaponLV_refineATK : _ = BattleCalc4(_, e, 0),
     1 > _ && (_ = 1),
 
-    // * Mace mastery / Battle mastery skill balancem atk per lvl increased from +3 to +4
-
-    1 == n_A_WeaponType || 2 == n_A_WeaponType ? _ += 4 * SkillSearch(3) : 3 == n_A_WeaponType ? _ += 4 * SkillSearch(4) : 4 == n_A_WeaponType || 5 == n_A_WeaponType ? _ += 0 == SkillSearch(78) ? 5 * SkillSearch(69) : 7 * SkillSearch(69) : 8 == n_A_WeaponType ? _ += 4 * SkillSearch(89) : 11 == n_A_WeaponType ? _ += 3 * SkillSearch(81) : 14 == n_A_WeaponType ? _ += 3 * SkillSearch(198) : 15 == n_A_WeaponType ? _ += 3 * SkillSearch(206) : 12 == n_A_WeaponType ? _ += 3 * SkillSearch(224) : 6 == n_A_WeaponType || 7 == n_A_WeaponType ? _ += 3 * SkillSearch(241) : 13 != n_A_WeaponType && 0 != n_A_WeaponType || (_ += 5 * SkillSearch(183)),
+    // * Mace mastery / Battle mastery skill balancem atk per lvl increased to +4 from +3
+    // * Musical lesson / Dancing lesson atk increased to +5 from +3
+    1 == n_A_WeaponType || 2 == n_A_WeaponType ? _ += 4 * SkillSearch(3) : 3 == n_A_WeaponType ? _ += 4 * SkillSearch(4) : 4 == n_A_WeaponType || 5 == n_A_WeaponType ? _ += 0 == SkillSearch(78) ? 5 * SkillSearch(69) : 7 * SkillSearch(69) : 8 == n_A_WeaponType ? _ += 4 * SkillSearch(89) : 11 == n_A_WeaponType ? _ += 3 * SkillSearch(81) : 14 == n_A_WeaponType ? _ += 5 * SkillSearch(198) : 15 == n_A_WeaponType ? _ += 5 * SkillSearch(206) : 12 == n_A_WeaponType ? _ += 3 * SkillSearch(224) : 6 == n_A_WeaponType || 7 == n_A_WeaponType ? _ += 3 * SkillSearch(241) : 13 != n_A_WeaponType && 0 != n_A_WeaponType || (_ += 5 * SkillSearch(183)),
     0 == n_A_WeaponType && SkillSearch(329) && (_ += 10 * SkillSearch(329)),
     !n_A_Buf3[10] || 4 != n_A_WeaponLV && 4 != n_A_Weapon2LV || (_ += 50 + 25 * n_A_Buf3[10]),
 
