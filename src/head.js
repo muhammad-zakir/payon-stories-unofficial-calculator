@@ -370,11 +370,13 @@ function BattleCalc999() {
                 n_Delay[0] = 1,
                 not_use_card = 1,
                 n_A_Weapon_element = 1;
-            else if (169 == n_A_ActiveSkill)
+            else if (169 == n_A_ActiveSkill) {
+                // Back stab needs to apply cast delay (3.4 - 0.1 × SkillLV) look on how to properly code it
                 wbairitu += .4 * n_A_ActiveSkillLV + 2,
                 n_Delay[2] = .5,
                 w_HIT = 100,
                 w_HIT_HYOUJI = 100;
+            }                
             else if (176 == n_A_ActiveSkill)
                 wbairitu += .3 * n_A_ActiveSkillLV,
                 n_Delay[2] = 1;

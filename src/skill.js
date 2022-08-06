@@ -152,7 +152,7 @@ m_Skill = [
     [149, 1, "Weapon Repair", 0],
     [150, 5, "Skin Tempering", 0],
     [151, 5, "Hammer Fall", 0],
-    [152, 5, "Andrenaline Rush", 0],
+    [152, 5, "Adrenaline Rush", 0],
     [153, 5, "Weapon Perfection", 0],
     [154, 5, "Power-Thrust", 0],
     [155, 5, "Power Maximize", 0],
