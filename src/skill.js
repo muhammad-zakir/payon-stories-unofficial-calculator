@@ -96,7 +96,7 @@ m_Skill = [
     [93, 5, "Benedictio Sanctissimi Sacramenti", 0],
     [94, 10, "Sanctuary", 0],
     [95, 1, "Status Recovery", 0],
-    // [96, 4, "Slow Poison", 0],
+    [96, 4, "Slow Poison", 0],
     [97, 4, "Resurection", 0],
     [98, 10, "Kyrie Eleison", 0],
     [99, 5, "Magnificat", 0],

@@ -33,7 +33,7 @@ npm run dev
 - Priest
     - ~~Battle mastery new formula~~ and add aspd +12% if skill is lvl 10 (don't know how to apply it correctly, maybe at the same time as spear quicken calculation ?)
     - ~~Turn undead new damage on failure formula~~
-    - Remove slow poison skill
+    - ~~Remove slow poison skill~~
     - Add renew skill ? (has no effect, just heals and stops the heal reduction of poison)
 
 - Monk

@@ -899,8 +899,10 @@ function StAllCalc() {
     2 == n_A_Buf6[0] && n_A_Buf6[1] >= 1 && 4 == n_A_Bodyelement && (n_A_FLEE += 3 * n_A_Buf6[1]),
     8 == n_A_JOB || 14 == n_A_JOB || 22 == n_A_JOB || 28 == n_A_JOB ? n_A_FLEE += 4 * SkillSearch(14) : n_A_FLEE += 3 * SkillSearch(14),
     SkillSearch(433) && (20 != n_A_WeaponType && 0 != n_A_WeaponType || (n_A_FLEE -= 5 * SkillSearch(433))),
-    Mikiri = new Array(0,1,3,4,6,7,9,10,12,13,15),
-    n_A_FLEE += Mikiri[SkillSearch(191)],
+    // * Dodge values updated, from 1.5 to 2
+    // Mikiri = new Array(0,1,3,4,6,7,9,10,12,13,15),
+    // n_A_FLEE += Mikiri[SkillSearch(191)],
+    n_A_FLEE += SkillSearch(191) * 2,
     SRV >= 50) {
         var r = 1;
         n_A_FLEE = Math.floor(n_A_FLEE * r)

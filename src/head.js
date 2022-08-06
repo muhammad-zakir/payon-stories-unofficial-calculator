@@ -1162,7 +1162,7 @@ function BattleCalc999() {
             w_DMG[1] = 0) : (1 != selectedMonster[19] ? (a = (20 * n_A_ActiveSkillLV + n_A_BaseLV + n_A_INT + n_A_LUK) / 1e3,
             w_DMG[2] = selectedMonster[6]) : (a = 0,
             w_DMG[2] = 0),
-            
+
             // * Turn undead new rebalance increased on failure damage by 2.5
             w_DMG[0] = (n_A_BaseLV + n_A_INT + 10 * n_A_ActiveSkillLV) * 2.5,
             w_DMG[0] = Math.floor(w_DMG[0] * element[selectedMonster[3]][n_A_Weapon_element]),
@@ -4353,7 +4353,7 @@ function BattleCalc(_, e) {
 
     // * Mace mastery / Battle mastery skill balancem atk per lvl increased from +3 to +4
 
-    1 == n_A_WeaponType || 2 == n_A_WeaponType ? _ += 4 * SkillSearch(3) : 3 == n_A_WeaponType ? _ += 4 * SkillSearch(4) : 4 == n_A_WeaponType || 5 == n_A_WeaponType ? _ += 0 == SkillSearch(78) ? 5 * SkillSearch(69) : 7 * SkillSearch(69) : 8 == n_A_WeaponType ? _ += 4 * SkillSearch(89) : 11 == n_A_WeaponType ? _ += 3 * SkillSearch(81) : 14 == n_A_WeaponType ? _ += 3 * SkillSearch(198) : 15 == n_A_WeaponType ? _ += 3 * SkillSearch(206) : 12 == n_A_WeaponType ? _ += 3 * SkillSearch(224) : 6 == n_A_WeaponType || 7 == n_A_WeaponType ? _ += 3 * SkillSearch(241) : 13 != n_A_WeaponType && 0 != n_A_WeaponType || (_ += 3 * SkillSearch(183)),
+    1 == n_A_WeaponType || 2 == n_A_WeaponType ? _ += 4 * SkillSearch(3) : 3 == n_A_WeaponType ? _ += 4 * SkillSearch(4) : 4 == n_A_WeaponType || 5 == n_A_WeaponType ? _ += 0 == SkillSearch(78) ? 5 * SkillSearch(69) : 7 * SkillSearch(69) : 8 == n_A_WeaponType ? _ += 4 * SkillSearch(89) : 11 == n_A_WeaponType ? _ += 3 * SkillSearch(81) : 14 == n_A_WeaponType ? _ += 3 * SkillSearch(198) : 15 == n_A_WeaponType ? _ += 3 * SkillSearch(206) : 12 == n_A_WeaponType ? _ += 3 * SkillSearch(224) : 6 == n_A_WeaponType || 7 == n_A_WeaponType ? _ += 3 * SkillSearch(241) : 13 != n_A_WeaponType && 0 != n_A_WeaponType || (_ += 5 * SkillSearch(183)),
     0 == n_A_WeaponType && SkillSearch(329) && (_ += 10 * SkillSearch(329)),
     !n_A_Buf3[10] || 4 != n_A_WeaponLV && 4 != n_A_Weapon2LV || (_ += 50 + 25 * n_A_Buf3[10]),
 
