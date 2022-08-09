@@ -666,7 +666,7 @@ m_Monster = [
     // ! Add skills
     , [593, "Conductring",   Race.Formless, Elements.Wind1,    Size.Medium, 44, 5065, 16, 55, 90,  65, 15, 385,    420,    30,  27,  2204,    2050,   , 0,         0,            , , 0]
     // ! Add skills
-    , [549, "Corruptor",     Race.Demon,    Elements.Dark2,    Size.Large,  70, 13800, 16, 85, 100,  100, 15, 855,    1280,    40,  35,  6255,    5050,   , 0,         0,            , , 0]
+    , [549, "Corruptor",     Race.Demon,    Elements.Shadow2,    Size.Large,  70, 13800, 16, 85, 100,  100, 15, 855,    1280,    40,  35,  6255,    5050,   , 0,         0,            , , 0]
 ];
 //,[ ID, "name", race, element, size, lvl, hp, vit, agi, int, dex, luk, min atk, max atk, def, mdef, baseexp, jobexp, ? , 0 = non boss / 1 = boss, 0 = melee / 1 = long-range ]
 
