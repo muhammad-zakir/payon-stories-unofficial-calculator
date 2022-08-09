@@ -707,7 +707,7 @@ function StAllCalc() {
         n_A_totalDEF >= 100 && (n_A_totalDEF = 99),
         CardNumSearch(392) && (n_A_totalDEF -= 50),
         c.B_num.value >= 2 && (n_A_totalDEF -= Math.floor(n_A_totalDEF * (1 * c.B_num.value - 1) * 5 / 100)),
-        SkillSearch(196) && (n_A_totalDEF = 90);
+        SkillSearch(196) && (n_A_totalDEF = Math.min(n_A_totalDEF * 2, 90));
     else {
         var e = 0;
         SkillSearch(256) && (e += -0.05 * SkillSearch(256)),
@@ -809,7 +809,7 @@ function StAllCalc() {
     (TimeItemNumSearch(33) || TimeItemNumSearch(51)) && (n_A_MDEF += 20),
     (n_A_Buf6[13] || n_A_Buf6[15]) && (n_A_MDEF += Math.floor(.25 * n_A_MDEF)),
     SRV < 50)
-        SkillSearch(196) && (n_A_MDEF = 90),
+        SkillSearch(196) && (n_A_MDEF = Math.min(n_A_MDEF * 4, 90)),
         CardNumSearch(392) && (n_A_MDEF -= 50),
         n_A_MDEF >= 99 && (n_A_MDEF = 99);
     else {

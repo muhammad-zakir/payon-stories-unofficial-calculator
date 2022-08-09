@@ -4,7 +4,7 @@ Shameless copy from [rocalc.com](https://www.rocalc.com) adapted for OathRO
 
 ## Objective
 
-- Change every javascript file to a typescript file
+- Change every javascript file to a typescript file (got a branch with some progress but it is hard)
 - Add typing
 - Make the code readable
 - Add enums and populate them on the code to get a better understanding (race: 0 is Race.Formless)
@@ -22,7 +22,6 @@ npm run dev
 
 - Knight
     - ~~Bowling bash new damage formula~~
-    - Check brandish spear damage
 
 - Crusader
     - ~~Spear quicken new formula~~
@@ -35,7 +34,6 @@ npm run dev
     - ~~Battle mastery new formula~~ and add aspd +12% if skill is lvl 10 (don't know how to apply it correctly, maybe at the same time as spear quicken calculation ?)
     - ~~Turn undead new damage on failure formula~~
     - ~~Remove slow poison skill~~
-    - Add renew skill ? (has no effect, just heals and stops the heal reduction of poison)
 
 - Monk
     - ~~Dodge new flee formula~~
