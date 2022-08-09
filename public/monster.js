@@ -659,6 +659,14 @@ m_Monster = [
     , [588, "Abomring",      Race.Formless, Elements.Neutral3, Size.Small,  32, 2265, 16, 33, 1,  55, 15, 180,    255,    5,   10,  818,     595,    , 0,         0,            , , Skill.SilenceAttack, 5, 0]
     , [589, "Ancient Guard", Race.Formless, Elements.Ghost1,   Size.Medium, 41, 5940, 28, 25, 1,  60, 45, 285,    394,    16,  15,  3645,    2342,   , 0,         0,            , , Skill.Pierce, 5, Skill.SpearStab, 5, Skill.StunAttack, 3, 0]
     , [590, "Assassin Fly",  Race.Formless, Elements.Wind3,    Size.Medium, 85, 85000, 60, 105, 85,  108, 30, 1285,    2000,    25,  30,  85000,    65000,   , 1,         0,            , , 0]
+    // ! Add skills
+    , [591, "Bonechewer",    Race.Undead,   Elements.Undead2,  Size.Medium, 51, 8485, 30, 40, 1,  67, 1, 415,    580,    5,  26,  3355,    2841,   , 0,         0,            , , 0]
+    // ! Add skills
+    , [592, "Cave Viper",    Race.Undead,   Elements.Poison3,  Size.Medium, 75, 11455, 50, 73, 15,  150, 20, 935,    1100,    20,  25,  6893,    5482,   , 0,         0,            , , 0]
+    // ! Add skills
+    , [593, "Conductring",   Race.Formless, Elements.Wind1,    Size.Medium, 44, 5065, 16, 55, 90,  65, 15, 385,    420,    30,  27,  2204,    2050,   , 0,         0,            , , 0]
+    // ! Add skills
+    , [549, "Corruptor",     Race.Demon,    Elements.Dark2,    Size.Large,  70, 13800, 16, 85, 100,  100, 15, 855,    1280,    40,  35,  6255,    5050,   , 0,         0,            , , 0]
 ];
 //,[ ID, "name", race, element, size, lvl, hp, vit, agi, int, dex, luk, min atk, max atk, def, mdef, baseexp, jobexp, ? , 0 = non boss / 1 = boss, 0 = melee / 1 = long-range ]
 
