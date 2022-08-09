@@ -1,6 +1,4 @@
-import { Element, Race, Size } from "./utils/enums";
-
-global.m_Monster = [
+m_Monster = [
     [0, "Arc Angeling", 8, 63, 1, 60, 79523, 80, 65, 74, 65, 105, 669, 1338, 54, 58, 4152, 2173, , 1, 0, , , 162, 1, 456, 5, 0]
     , [1, "Archer Skeleton", 1, 91, 1, 31, 3040, 14, 8, 5, 90, 5, 128, 256, 0, 0, 555, 325, , 0, 1, , , 459, 2, 40, 1, 0]
     , [2, "Blue Plant", 3, 21, 0, 1, 10, 0, 0, 0, 0, 0, 1, 2, 100, 99, 0, 0, , 5, 0, , , 0]
@@ -657,13 +655,13 @@ global.m_Monster = [
     , [653, "Minstel Alphoccio [MVP] (aRO)", 7, 44, 1, 120, 8567411, 43, 150, 107, 150, 99, 5282, 7498, 33, 27, 21130180, 12344860, , 1, 0, , , 40, 10, 41, 10, 130, 10, 199, 5, 292, 10, 448, 5, 449, 5, 454, 5, 461, 5, 487, 1, 0]
     , [654, "Gypsy Trentini [MVP] (aRO)", 7, 44, 1, 120, 8567411, 55, 150, 217, 145, 61, 4032, 8072, 30, 28, 22318790, 12815480, , 1, 0, , , 40, 10, 41, 10, 207, 5, 292, 10, 448, 5, 449, 5, 454, 5, 461, 5, 487, 1, 0]
 
-    , [655, "Abomring", Race.Formless, Element.Neutral3, Size.Small, 14, 344, 14, 14, 0, 19, 15, 59, 72, 0, 10, 81, 44, , 0, 0, , , 460, 2, 455, 1, 0]
+    , [655, "Abomring", 0, 3, 0, 14, 344, 14, 14, 0, 19, 15, 59, 72, 0, 10, 81, 44, , 0, 0, , , 460, 2, 455, 1, 0]
 ];
 //,[ ID, "name", race, element, size, lvl, hp, vit, agi, int, dex, luk, min atk, max atk, def, mdef, baseexp, jobexp, ? , 0 = non boss / 1 = boss, 0 = melee / 1 = long-range ]
 
-global.EnemyNum = m_Monster.length - 1;
+EnemyNum = m_Monster.length - 1;
 
-for (i = 0; i <= global.EnemyNum; i++) {
+for (i = 0; i <= EnemyNum; i++) {
     // 100% hit = 20 + lvl + agi
     m_Monster[i][21] = 20 + m_Monster[i][5] + m_Monster[i][8];
 
@@ -671,13 +669,13 @@ for (i = 0; i <= global.EnemyNum; i++) {
     m_Monster[i][22] = 75 + m_Monster[i][5] + m_Monster[i][10];
 }
 
-global.v_MonsterSort = JSON.parse(JSON.stringify(m_Monster))
-    .sort((a: any, b: any) => {
+v_MonsterSort = JSON.parse(JSON.stringify(m_Monster))
+    .sort((a, b) => {
         if (a[1] < b[1]) { return -1; }
         if (a[1] > b[1]) { return 1; }
         return 0;
     })
-    .map((m: any) => m[0]);
+    .map((m) => m[0]);
 
 
 // TODO: Join this list with the commented m_MonsterMap below
@@ -689,7 +687,7 @@ global.v_MonsterSort = JSON.parse(JSON.stringify(m_Monster))
 //     "Rachel Sanctuary", "Scaraba Hole", "Sphinx", "Splendide", "Sunken Ship", "Thanatos Tower", "Thors Volcano", "Turtle Island", "Umbala Dungeon",
 //     "Umbala Fields", "Veins Fields", "War of Emperium", "Yuno Fields"];
 
-global.m_MonsterMap = [
+m_MonsterMap = [
     {
         name: 'All Regions',
         monsterList: [0]
