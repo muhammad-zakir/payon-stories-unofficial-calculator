@@ -37,7 +37,7 @@ npm run dev
 
 - Monk
     - ~~Dodge new flee formula~~
-    - Mental strength new formula
+    - ~~Mental strength new formula~~
     - ~~Iron fists new formula~~
     - Iron fist extra aspd increase
     - ~~Raging quadruple blow damage increase by 30%~~

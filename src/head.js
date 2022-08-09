@@ -2529,18 +2529,18 @@ function ClickActiveSkill2() {
     }
 }
 function LoadChangelog() {
-    if (1 != n_LogSW) {
-        n_LogSW = 1;
-        var _ = `
-            <b>Changelog 2022-08-05:</b>
-            <br>&#8226; Updated knight skills to work with Oath balance
-            <br>&#8226; Updated hunter falcon damage with Oath balance
-            <br>
-        `;
-        document.getElementById("changelog").innerHTML = _
-    } else
-        1 == n_LogSW && (n_LogSW = 0,
-        document.getElementById("changelog").innerHTML = "")
+    // if (1 != n_LogSW) {
+    //     n_LogSW = 1;
+    //     var _ = `
+    //         <b>Changelog 2022-08-05:</b>
+    //         <br>&#8226; Updated knight skills to work with Oath balance
+    //         <br>&#8226; Updated hunter falcon damage with Oath balance
+    //         <br>
+    //     `;
+    //     document.getElementById("changelog").innerHTML = _
+    // } else
+    //     1 == n_LogSW && (n_LogSW = 0,
+    //     document.getElementById("changelog").innerHTML = "")
 }
 function SaveTheme() {
     "undefined" == typeof Storage ? alert("Sorry, your browser does not support local storage. Please let me know if you see this message at kurimet@gmail.com") : (SaveData = new Array,
