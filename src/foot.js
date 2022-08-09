@@ -1150,13 +1150,30 @@ function StAllCalc() {
     6 <= n_A_WeaponType && n_A_WeaponType <= 8 && SkillSearch(152) && (S += 30, D = 1),
     0 == D && SkillSearch(389) && (S += 30, D = 1),
     0 == D && (TimeItemNumSearch(5) || TimeItemNumSearch(28)) && (n_A_WeaponType > 5 && n_A_WeaponType < 9 || 0 == SRV) && (S += 30, D = 1),
-    
+
     // * Spear quicken balance
     4 == n_A_WeaponType && SkillSearch(166) && (S += SkillSearch(166) * 0.5 + 7.5, D = 1),
     5 == n_A_WeaponType && SkillSearch(166) && (S += SkillSearch(166) * 1.5 + 20, D = 1)),
+    
 
     !SkillSearch(78) || 0 != n_A_ActiveSkill && 284 != n_A_ActiveSkill || (S -= 10 * (6 - SkillSearch(78))),
     S += Math.round(SkillSearch(425) / 2),
+    console.log(n_A_WeaponType),
+    // * Iron fists +1% aspd per lvl
+    (0 == n_A_WeaponType || 13 == n_A_WeaponType) && SkillSearch(183) && (S += SkillSearch(183)),
+    
+    // * Mace mastery +10% aspd at lvl 10 with maces
+    8 == n_A_WeaponType && SkillSearch(89) == 10 && (S += 12),
+    
+    // * Musical lesson +1% aspd per lvl 
+    14 == n_A_WeaponType && SkillSearch(198) && (S += SkillSearch(198)),
+
+    // * Dancing lesson +1% aspd per lvl
+    15 == n_A_WeaponType && SkillSearch(206) && (S += SkillSearch(206)),
+
+    // * Axe mastery +0.8% aspd per lvl
+    (6 == n_A_WeaponType || 7 == n_A_WeaponType) && SkillSearch(241) && (S += SkillSearch(241) * 0.8),
+
     12 == n_A_WeaponType && SkillSearch(224) && (S += SkillSearch(224) * 0.7),
     SkillSearch(196) && (S -= 25),
     SkillSearch(258) && (S += 30),
@@ -1206,30 +1223,30 @@ function StAllCalc() {
         n_A_ASPD += percentAspdEquipment
     }
     var S = 0;
-    S += EquipNumSearch(1696),
-    n_A_Buf2[15] && (S -= 25 - 5 * n_A_Buf2[15]),
-    47 == n_A_Equip[0] && (S += 2),
-    1434 == n_A_Equip[0] && (S += Math.floor(n_A_Weapon_refine / 2)),
-    1632 == n_A_Equip[4] && (S += 1),
-    EquipNumSearch(1722) && (S += 2),
-    EquipNumSearch(1727) && (S -= 7),
-    EquipNumSearch(1752) && (S += 1),
-    SU_AGI >= 120 && EquipNumSearch(1255) && (S += 1),
-    SU_AGI >= 120 && EquipNumSearch(1399) && (S += 1),
-    SU_STR >= 120 && EquipNumSearch(1259) && (S += 1),
-    10 == n_A_WeaponType && n_A_Weapon_refine >= 7 && (S += CardNumSearch(544)),
-    10 == n_A_WeaponType && n_A_Weapon_refine >= 9 && (S += CardNumSearch(544)),
-    3 == n_A_WeaponType && n_A_Weapon_refine >= 10 && (S += CardNumSearch(525)),
-    3 == n_A_WeaponType && n_A_Weapon_refine >= 14 && (S += CardNumSearch(525)),
-    10 == n_A_WeaponType && n_A_Weapon_refine >= 10 && (S += CardNumSearch(528)),
-    10 == n_A_WeaponType && n_A_Weapon_refine >= 14 && (S += CardNumSearch(528)),
-    n_A_SHOULDER_REFINE >= 9 && SU_AGI >= 90 && 1472 == n_A_Equip[7] && (S += 1),
-    SkillSearch(560) && (S += SkillSearch(555) / 10 * 4),
-    1 == SkillSearch(815) && SkillSearch(816) > 0 && 1 == SkillSearch(806) && (S += 5),
-    n_A_ASPD += S,
-    1 === thirdClass && n_A_ASPD > 193 ? n_A_ASPD = 193 : n_A_ASPD > 190 && (n_A_ASPD = 190),
-    n_A_ASPD = Math.floor(10 * n_A_ASPD) / 10,
-    myInnerHtml("A_ASPD", n_A_ASPD, 0),
+    S += EquipNumSearch(1696);
+    n_A_Buf2[15] && (S -= 25 - 5 * n_A_Buf2[15]);
+    47 == n_A_Equip[0] && (S += 2);
+    1434 == n_A_Equip[0] && (S += Math.floor(n_A_Weapon_refine / 2));
+    1632 == n_A_Equip[4] && (S += 1);
+    EquipNumSearch(1722) && (S += 2);
+    EquipNumSearch(1727) && (S -= 7);
+    EquipNumSearch(1752) && (S += 1);
+    SU_AGI >= 120 && EquipNumSearch(1255) && (S += 1);
+    SU_AGI >= 120 && EquipNumSearch(1399) && (S += 1);
+    SU_STR >= 120 && EquipNumSearch(1259) && (S += 1);
+    10 == n_A_WeaponType && n_A_Weapon_refine >= 7 && (S += CardNumSearch(544));
+    10 == n_A_WeaponType && n_A_Weapon_refine >= 9 && (S += CardNumSearch(544));
+    3 == n_A_WeaponType && n_A_Weapon_refine >= 10 && (S += CardNumSearch(525));
+    3 == n_A_WeaponType && n_A_Weapon_refine >= 14 && (S += CardNumSearch(525));
+    10 == n_A_WeaponType && n_A_Weapon_refine >= 10 && (S += CardNumSearch(528));
+    10 == n_A_WeaponType && n_A_Weapon_refine >= 14 && (S += CardNumSearch(528));
+    n_A_SHOULDER_REFINE >= 9 && SU_AGI >= 90 && 1472 == n_A_Equip[7] && (S += 1);
+    SkillSearch(560) && (S += SkillSearch(555) / 10 * 4);
+    1 == SkillSearch(815) && SkillSearch(816) > 0 && 1 == SkillSearch(806) && (S += 5);
+    n_A_ASPD += S;
+    1 === thirdClass && n_A_ASPD > 193 ? n_A_ASPD = 193 : n_A_ASPD > 190 && (n_A_ASPD = 190);
+    n_A_ASPD = Math.floor(10 * n_A_ASPD) / 10;
+    myInnerHtml("A_ASPD", n_A_ASPD, 0);
     n_A_ASPD = (200 - n_A_ASPD) / 50,
     n_Delay[1] = Math.floor(1e3 * n_A_ASPD) / 1e3,
     17 == n_A_ActiveSkill && (n_Delay[1] = Math.floor(75 * n_A_ASPD) / 100),
