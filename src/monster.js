@@ -699,7 +699,31 @@ m_Monster = [
     // ! Add skills
     , ["Miasmus",     Race.Formless,    Elements.Poison3,    Size.Large,  85, 32545, 90, 59, 90,  95, 40, 1680,    2200,    15,  40,  21427,    15002,   , 0,         0,            , , 0]
     // ! Add skills
-    // , ["Moon Rabbit",     Race.Formless,    Elements.Poison3,    Size.Large,  85, 32545, 90, 59, 90,  95, 40, 1680,    2200,    15,  40,  21427,    15002,   , 0,         0,            , , 0]
+    , ["Moon Rabbit",     Race.Brute,    Elements.Holy1,    Size.Medium,  74, 11585, 51, 69, 70,  90, 65, 720,    915,    20,  24,  7180,    6095,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Onigiring",     Race.Formless,    Elements.Poison2,    Size.Small,  72, 9999, 42, 61, 1,  82, 1, 490,    618,    21,  29,  6505,    5114,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Pill Bug",     Race.Insect,    Elements.Earth2,    Size.Medium,  40, 4105, 5, 45, 5,  65, 50, 275,    345,    10,  10,  1557,    1301,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Protoring",     Race.Plant,    Elements.Earth1,    Size.Medium,  38, 3640, 16, 51, 40,  60, 15, 215,    285,    5,  10,  1210,    1008,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Puck",     Race.Dragon,    Elements.Holy1,    Size.Medium,  55, 8816, 52, 62, 40,  90, 65, 603,   689,    27,  15,  3958,   3001,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Roper",     Race.Plant,    Elements.Earth2,    Size.Medium,  81, 29500, 40, 51, 85,  126, 50, 1350,   1650,    15,  30,  15002,   10959,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Shade of Payon",     Race.Formless,    Elements.Ghost3,    Size.Large,  55, 10122, 40, 79, 92,  81, 25, 625,   795,    25,  28,  4519,   3810,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Spectring",     Race.Demon,    Elements.Ghost1,    Size.Medium,  59, 7955, 35, 68, 120,  90, 15, 602,  825,    25,  20,  4052,   3100,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["The Grovekeeper",     Race.Undead,    Elements.Neutral1,    Size.Large,  73, 63455, 60, 25, 75,  90, 1, 195,  329,    45,  45,  0,   0,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Tomb Crawler",     Race.Insect,    Elements.Earth2,    Size.Small,  40, 3250, 10, 28, 1,  63, 1, 262,  312,    23,  12,  1302,   959,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Twinorc",     Race.DemiHuman,    Elements.Shadow2,    Size.Medium,  80, 27800, 80, 50, 25,  81, 20, 1230,  1540,    27,  35,  14625,   7709,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Wolpertinger",     Race.Brute,    Elements.Neutral3,    Size.Medium,  69, 9250, 45, 62, 80,  80, 1, 785,  890,    18,  27,  6955,   5215,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Yser",     Race.Dragon,    Elements.Wind1,    Size.Medium,  43, 4794, 30, 48, 65,  68, 50, 334,  415,    29,  16,  2712,   2090,   , 0,         0,            , , 0]
 ];
 //,[ ID, "name", race, element, size, lvl, hp, vit, agi, int, dex, luk, min atk, max atk, def, mdef, baseexp, jobexp, ? , 0 = non boss / 1 = boss, 0 = melee / 1 = long-range ]
 
