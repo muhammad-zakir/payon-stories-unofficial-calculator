@@ -1158,7 +1158,6 @@ function StAllCalc() {
 
     !SkillSearch(78) || 0 != n_A_ActiveSkill && 284 != n_A_ActiveSkill || (S -= 10 * (6 - SkillSearch(78))),
     S += Math.round(SkillSearch(425) / 2),
-    console.log(n_A_WeaponType),
     // * Iron fists +1% aspd per lvl
     (0 == n_A_WeaponType || 13 == n_A_WeaponType) && SkillSearch(183) && (S += SkillSearch(183)),
     

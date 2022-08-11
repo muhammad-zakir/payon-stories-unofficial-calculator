@@ -696,8 +696,10 @@ m_Monster = [
     , ["Kodama",     Race.Plant,    Elements.Neutral3,    Size.Large,  77, 17940, 25, 58, 85,  125, 1, 1085,    1265,    69,  20,  10804,    7245,   , 0,         0,            , , 0]
     // ! Add skills
     , ["Logi",     Race.DemiHuman,    Elements.Shadow1,    Size.Large,  92, 585000, 115, 135, 125,  115, 110, 3400,    3800,    55,  69,  460200,    368160,   , 1,         0,            , , 0]
-    // // ! Add skills
-    // , ["Logi",     Race.DemiHuman,    Elements.Shadow1,    Size.Large,  92, 585000, 115, 135, 125,  115, 110, 3400,    3800,    55,  69,  460200,    368160,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Miasmus",     Race.Formless,    Elements.Poison3,    Size.Large,  85, 32545, 90, 59, 90,  95, 40, 1680,    2200,    15,  40,  21427,    15002,   , 0,         0,            , , 0]
+    // ! Add skills
+    // , ["Moon Rabbit",     Race.Formless,    Elements.Poison3,    Size.Large,  85, 32545, 90, 59, 90,  95, 40, 1680,    2200,    15,  40,  21427,    15002,   , 0,         0,            , , 0]
 ];
 //,[ ID, "name", race, element, size, lvl, hp, vit, agi, int, dex, luk, min atk, max atk, def, mdef, baseexp, jobexp, ? , 0 = non boss / 1 = boss, 0 = melee / 1 = long-range ]
 

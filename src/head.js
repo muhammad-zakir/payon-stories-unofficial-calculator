@@ -4194,7 +4194,7 @@ function calc() {
         wDA = 7 * SkillSearch(3);
     }
 
-    CardNumSearch(43) && (SkillSearch(13) > 1 ? wDA = 5 * SkillSearch(13) : wDA = 5);
+    CardNumSearch(43) && (SkillSearch(13) > 1 ? wDA = 7 * SkillSearch(13) : wDA = 7);
     0 != n_A_WeaponType && ((EquipNumSearch(570) || EquipNumSearch(1442) || EquipNumSearch(1443)) && (SkillSearch(13) > 2 ? wDA = 5 * SkillSearch(13) : wDA = 10),
     EquipNumSearch(1578) && (wDA = 5 * SkillSearch(13),
     5 != n_A_SHOULDER_REFINE && 6 != n_A_SHOULDER_REFINE || SkillSearch(13) < 1 && (wDA = 5),
