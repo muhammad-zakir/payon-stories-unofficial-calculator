@@ -1832,6 +1832,8 @@ m_Item = [
     , [1823, 61, 74, 4, 0, 1, 120, 80, "Carapice of the Damned", 0, "", 19, 2, 67, 5, 0]
     // * Custom item Diadem of the High Priestess https://oathro.com/wiki/index.php/Diadem_of_the_High_Priestess
     , [1824, 50, 0, 2, 0, 1, 140, 75, "Diadem of the High Priestess", 0, "", 19, 2, 66, 10, 0]
+    // * Custom item Diving Goggles https://oathro.com/wiki/index.php/Diving_Goggles
+    , [1825, 51, 0, 0, 0, 0, 10, 1, "Diving Goggles", 0, "", 55, 3, 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
