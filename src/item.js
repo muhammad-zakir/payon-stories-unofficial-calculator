@@ -1860,6 +1860,8 @@ m_Item = [
     , [1837, 1, 0, 115, 4, 0, 35, 45, "Poring Dagger", 0, "[Missing speed increase, wiki does not show %]", 30, 20, 0]
     // * Custom item Protector's Spear https://oathro.com/wiki/index.php/Protector%27s_Spear
     , [1838, 4, 1, 114, 3, 0, 90, 20, "Protector's Spear", 0, "", 0]
+    // * Custom item Ring of Peace https://oathro.com/wiki/index.php/Ring_of_Peace
+    , [1839, 64, 0, 0, 0, 1, 10, 40, "Ring of Peace", 0, "", 13, 100, 14, 10, 75, 5, 76, 5, 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
