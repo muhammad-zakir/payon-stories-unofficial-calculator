@@ -1856,6 +1856,10 @@ m_Item = [
     , [1835, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 51, 10, 68, 10, 31, 10, 48, 10, 0]
     // * Custom item Pink Clip https://oathro.com/wiki/index.php/Pink_Clip
     , [1836, 64, 0, 0, 0, 1, 10, 45, "Pink Clip", 0, "", 13, 30, 14, 20, 0]
+    // * Custom item Poring Dagger https://oathro.com/wiki/index.php/Pink_Clip
+    , [1837, 1, 0, 115, 4, 0, 35, 45, "Poring Dagger", 0, "[Missing speed increase, wiki does not show %]", 30, 20, 0]
+    // * Custom item Protector's Spear https://oathro.com/wiki/index.php/Protector%27s_Spear
+    , [1838, 4, 1, 114, 3, 0, 90, 20, "Protector's Spear", 0, "", 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
