@@ -1834,6 +1834,8 @@ m_Item = [
     , [1824, 50, 0, 2, 0, 1, 140, 75, "Diadem of the High Priestess", 0, "", 19, 2, 66, 10, 0]
     // * Custom item Diving Goggles https://oathro.com/wiki/index.php/Diving_Goggles
     , [1825, 51, 0, 0, 0, 0, 10, 1, "Diving Goggles", 0, "", 55, 3, 0]
+    // * Custom item Divinity Bow https://oathro.com/wiki/index.php/Divinity_Bow
+    , [1826, 10, 0, 110, 3, 1, 130, 45, "Divinity Bow", 0, "", 36, 20, 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
