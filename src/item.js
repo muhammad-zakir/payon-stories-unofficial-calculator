@@ -1828,6 +1828,8 @@ m_Item = [
     , [1821, 11, 0, 132, 3, 0, 140, 50, "Astra of the Empress", 0, "", 20, WeaponElements.Holy, 0]
     // * Custom item Bloodstained Headband https://oathro.com/wiki/index.php/Bloodstained_Headband
     , [1822, 50, 0, 1, 0, 0, 10, 1, "Bloodstained Headband", 0, "", 1, 1, 3, 1, 0]
+    // * Custom item Carapice of the Damned https://oathro.com/wiki/index.php/Carapice_of_the_Damned
+    , [1823, 61, 87, 4, 0, 1, 120, 80, "Carapice of the Damned", 0, "", 19, 2, 67, 5, 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
