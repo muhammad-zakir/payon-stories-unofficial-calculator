@@ -1,5 +1,5 @@
 const WeaponElements = {
-    Neutral: 1,
+    Neutral: 0,
     Water: 1,
     Earth: 2,
     Fire: 3,
