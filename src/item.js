@@ -1836,8 +1836,24 @@ m_Item = [
     , [1825, 51, 0, 0, 0, 0, 10, 1, "Diving Goggles", 0, "", 55, 3, 0]
     // * Custom item Divinity Bow https://oathro.com/wiki/index.php/Divinity_Bow
     , [1826, 10, 0, 110, 3, 1, 130, 45, "Divinity Bow", 0, "", 36, 20, 0]
+    // * Custom item Ghost Shroom Hat https://oathro.com/wiki/index.php/Ghost_Shroom_Hat
+    , [1827, 50, 1, 3, 0, 0, 90, 20, "Ghost Shroom Hat", 0, "", 61, 5, 0]
     // * Custom item Ghostly Muffler https://oathro.com/wiki/index.php/Ghostly_Muffler
-    , [1827, 62, 1, 0, 0, 1, 10, 65, "Ghostly Muffler", 0, "", 19, 2, 13, 100, 0]
+    , [1828, 62, 1, 0, 0, 1, 10, 65, "Ghostly Muffler", 0, "", 19, 2, 13, 100, 0]
+    // * Custom item Guardian's Robe https://oathro.com/wiki/index.php/Guardian%27s_Robe
+    , [1829, 60, 201, 5, 0, 1, 65, 80, "Guardian's Robe", 0, "", 4, 1, 19, 3, 0]
+    // * Custom item Guardian's Skull https://oathro.com/wiki/index.php/Guardian%27s_Skull
+    , [1830, 50, 1, 1, 0, 0, 95, 80, "Guardian's Skull", 0, "", 1, 1, 5, 1, 0]
+    // * Custom item Magic Sprite Hat https://oathro.com/wiki/index.php/Magic_Sprite_Hat
+    , [1831, 50, 0, 4, 0, 0, 40, 40, "Magic Sprite Hat", 0, "", 1, 1, 2, 1, 76, 5, 0]
+    // * Custom item Momoe's Hairband https://oathro.com/wiki/index.php/Momoe%27s_Hairband
+    , [1832, 50, 0, 2, 0, 0, 20, 1, "Momoe's Hairband", 0, "[Missing 20% dmg to turtles]", 2, 1, 9, 5, 0]
+    // * Custom item Necrofantasy Muffler https://oathro.com/wiki/index.php/Necrofantasy_Muffler
+    , [1833, 62, 0, 3, 0, 0, 45, 1, "Necrofantasy Muffler", 0, "", 9, 10, 0]
+    // * Custom item Necrofantasy Shoes https://oathro.com/wiki/index.php/Necrofantasy_Shoes
+    , [1834, 63, 0, 3, 0, 0, 55, 1, "Necrofantasy Shoes", 0, "", 13, 200, 0]
+    // * Combo Necrofantasy Muffler & Necrofantasy Shoes
+    , [1835, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 51, 10, 68, 10, 31, 10, 48, 10, 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
@@ -2344,6 +2360,7 @@ w_SE = [[737, 436, 475, "NULL"]
     , [1783, 1782, 1175, "NULL"]
     , [1784, 1782, 1176, "NULL"]
     , [1786, 1785, 1169, "NULL"]
+    , [1835, 1833, 1834, "NULL"]
 ];
 SE_MAXnum = w_SE.length - 1;
 for (var i = 0; i <= SE_MAXnum; i++) {

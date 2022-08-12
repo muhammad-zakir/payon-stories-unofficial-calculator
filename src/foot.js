@@ -1963,17 +1963,17 @@ function WeaponSet2(_) {
             A[n] = 0;
 
         // Here it is decided which items a given class can equip
-
         for (n = 0; n <= ItemMax; n++) {
             // if (m_Item[n][1] === 50 && (1 == JobEquipItemSearch(m_Item[n][2]) || SuperNoviceFullWeaponCHECK || 0 == t) && (m_Item[n][7] <= n_A_BaseLV || SuperNoviceFullWeaponCHECK || 0 == a)) {
 
             // } else {
 
             // }
-            50 == m_Item[n][1] && (1 == JobEquipItemSearch(m_Item[n][2]) || SuperNoviceFullWeaponCHECK || 0 == t) && (m_Item[n][7] <= n_A_BaseLV || SuperNoviceFullWeaponCHECK || 0 == a) ? (equippableItems[0][A[0]] = n,
-                A[0]++) : 51 == m_Item[n][1] && (1 == JobEquipItemSearch(m_Item[n][2]) || SuperNoviceFullWeaponCHECK || 0 == t) && (m_Item[n][7] <= n_A_BaseLV || SuperNoviceFullWeaponCHECK || 0 == a) ? (equippableItems[1][A[1]] = n,
-                    A[1]++) : 52 == m_Item[n][1] && (1 == JobEquipItemSearch(m_Item[n][2]) || SuperNoviceFullWeaponCHECK || 0 == t) && (m_Item[n][7] <= n_A_BaseLV || SuperNoviceFullWeaponCHECK || 0 == a) ? (equippableItems[2][A[2]] = n,
-                        A[2]++) : 61 != m_Item[n][1] || 1 != JobEquipItemSearch(m_Item[n][2]) && 0 != t || !(m_Item[n][7] <= n_A_BaseLV || 0 == a) ? 60 != m_Item[n][1] || 1 != JobEquipItemSearch(m_Item[n][2]) && 0 != t || !(m_Item[n][7] <= n_A_BaseLV || 0 == a) ? 62 != m_Item[n][1] || 1 != JobEquipItemSearch(m_Item[n][2]) && 0 != t || !(m_Item[n][7] <= n_A_BaseLV || 0 == a) ? 63 != m_Item[n][1] || 1 != JobEquipItemSearch(m_Item[n][2]) && 0 != t || !(m_Item[n][7] <= n_A_BaseLV || 0 == a) ? 64 != m_Item[n][1] || 1 != JobEquipItemSearch(m_Item[n][2]) && 0 != t || !(m_Item[n][7] <= n_A_BaseLV || 0 == a) || (equippableItems[7][A[7]] = n,
+            let jobEquippable = JobEquipItemSearch(m_Item[n][2]);
+            50 == m_Item[n][1] && (1 == jobEquippable || SuperNoviceFullWeaponCHECK || 0 == t) && (m_Item[n][7] <= n_A_BaseLV || SuperNoviceFullWeaponCHECK || 0 == a) ? (equippableItems[0][A[0]] = n,
+                A[0]++) : 51 == m_Item[n][1] && (1 == jobEquippable || SuperNoviceFullWeaponCHECK || 0 == t) && (m_Item[n][7] <= n_A_BaseLV || SuperNoviceFullWeaponCHECK || 0 == a) ? (equippableItems[1][A[1]] = n,
+                    A[1]++) : 52 == m_Item[n][1] && (1 == jobEquippable || SuperNoviceFullWeaponCHECK || 0 == t) && (m_Item[n][7] <= n_A_BaseLV || SuperNoviceFullWeaponCHECK || 0 == a) ? (equippableItems[2][A[2]] = n,
+                        A[2]++) : 61 != m_Item[n][1] || 1 != jobEquippable && 0 != t || !(m_Item[n][7] <= n_A_BaseLV || 0 == a) ? 60 != m_Item[n][1] || 1 != jobEquippable && 0 != t || !(m_Item[n][7] <= n_A_BaseLV || 0 == a) ? 62 != m_Item[n][1] || 1 != jobEquippable && 0 != t || !(m_Item[n][7] <= n_A_BaseLV || 0 == a) ? 63 != m_Item[n][1] || 1 != jobEquippable && 0 != t || !(m_Item[n][7] <= n_A_BaseLV || 0 == a) ? 64 != m_Item[n][1] || 1 != jobEquippable && 0 != t || !(m_Item[n][7] <= n_A_BaseLV || 0 == a) || (equippableItems[7][A[7]] = n,
                             A[7]++) : (equippableItems[6][A[6]] = n,
                                 A[6]++) : (equippableItems[5][A[5]] = n,
                                     A[5]++) : (equippableItems[4][A[4]] = n,
