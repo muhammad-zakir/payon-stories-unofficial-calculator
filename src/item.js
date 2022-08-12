@@ -1826,6 +1826,8 @@ m_Item = [
     
     // * Custom item Astra of the Empress https://oathro.com/wiki/index.php/Astra_of_the_Empress
     , [1821, 11, 0, 132, 3, 0, 140, 50, "Astra of the Empress", 0, "", 20, WeaponElements.Holy, 0]
+    // * Custom item Bloodstained Headband https://oathro.com/wiki/index.php/Bloodstained_Headband
+    , [1822, 50, 0, 1, 0, 0, 10, 1, "Bloodstained Headband", 0, "", 1, 1, 3, 1, 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
