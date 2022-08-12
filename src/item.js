@@ -1830,6 +1830,8 @@ m_Item = [
     , [1822, 50, 0, 1, 0, 0, 10, 1, "Bloodstained Headband", 0, "", 1, 1, 3, 1, 0]
     // * Custom item Carapice of the Damned https://oathro.com/wiki/index.php/Carapice_of_the_Damned
     , [1823, 61, 74, 4, 0, 1, 120, 80, "Carapice of the Damned", 0, "", 19, 2, 67, 5, 0]
+    // * Custom item Diadem of the High Priestess https://oathro.com/wiki/index.php/Diadem_of_the_High_Priestess
+    , [1824, 50, 0, 2, 0, 1, 140, 75, "Diadem of the High Priestess", 0, "", 19, 2, 66, 10, 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
