@@ -1862,6 +1862,10 @@ m_Item = [
     , [1838, 4, 1, 114, 3, 0, 90, 20, "Protector's Spear", 0, "", 0]
     // * Custom item Ring of Peace https://oathro.com/wiki/index.php/Ring_of_Peace
     , [1839, 64, 0, 0, 0, 1, 10, 40, "Ring of Peace", 0, "", 13, 100, 14, 10, 75, 5, 76, 5, 0]
+    // * Custom item Ring of the Claw https://oathro.com/wiki/index.php/Ring_of_the_Claw
+    , [1840, 64, 0, 0, 0, 0, 15, 40, "Ring of the Claw", 0, "", 1, 2, 18, -1, 10, 2, 70, 10, 0]
+    // * Custom item Sacred Saint's Robe https://oathro.com/wiki/index.php/Sacred_Saint%27s_Robe
+    , [1841, 60, 0, 5, 0, 1, 65, 55, "Sacred Saint's Robe", 0, "", 19, 3, 5, 1, 91, 5, 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
