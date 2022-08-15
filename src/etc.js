@@ -553,7 +553,14 @@ m_TempEffect = [
 ];
 //m_TempEffect = [ id, name, description, item/card, item/card ID, ... ]
 
-m_TempEffect_SORT = [0, 5, 10, 4, 27, 3, 44, 63, 64, 30, 31, 26, 39, 45, 46, 18, 59, 48, 55, 61, 15, 11, 12, 14, 13, 17, 32, 2, 1, 7, 47, 56, 35, 60, 33, 21, 16, 40, 28, 49, 53, 54, 34, 38, 42, 19, 52, 22, 23, 24, 36, 41, 25, 50, 51, 9, 6, 20, 8, 29, 43, 37, 58, 62, 57];
+m_TempEffect_SORT = JSON.parse(JSON.stringify(m_TempEffect))
+	.sort((a, b) => {
+		if (a[1] < b[1]) { return -1; }
+		if (a[1] > b[1]) { return 1; }
+		return 0;
+	})
+	.map((m) => m[0]);
+// m_TempEffect_SORT = [0, 5, 10, 4, 27, 3, 44, 63, 64, 30, 31, 26, 39, 45, 46, 18, 59, 48, 55, 61, 15, 11, 12, 14, 13, 17, 32, 2, 1, 7, 47, 56, 35, 60, 33, 21, 16, 40, 28, 49, 53, 54, 34, 38, 42, 19, 52, 22, 23, 24, 36, 41, 25, 50, 51, 9, 6, 20, 8, 29, 43, 37, 58, 62, 57];
 
 
 //WeaponName = ["(Unarmed)","Dagger","Sword","Two-handed Sword","Spear","Two-handed Spear","Axe","Two-handed Axe","Mace","Rod / Staff","Bow","Katar","Book","Knuckle","Instrument","Whip","Huuma Shuriken","Handgun","Rifle","Shotgun","Gatling Gun","Grenade Launcher"];
@@ -632,7 +639,7 @@ m_Kunai = [
  * 
  * Feel free to creat any combination you need but check if it already exists
  */
-m_JobEquip = [		
+m_JobEquip = [
 	[0, 50, 90, 100, 999] 																		// novice
 	, [0, 1, 51, 101, 70, 71, 72, 74, 75, 78, 83, 84, 85, 86, 87, 90, 91, 999] 					// swordman
 	, [0, 1, 52, 102, 72, 74, 75, 78, 80, 83, 84, 85, 90, 91, 999] 								// thief
