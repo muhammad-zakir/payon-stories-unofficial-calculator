@@ -574,7 +574,7 @@ function BattleCalc999() {
                 wLAch = 1;
                 1 == n_B_IJYOU[6] && (wHITsuu = 3, 1 == n_A_ActiveSkillLV && (wHITsuu = 2));
             } else if (192 == n_A_ActiveSkill) {
-                // * Finger offensive new damage formula 100% + 50% per lvl
+                // * Finger offensive damage formula 100% + 50% per lvl
                 wbairitu += .5 * n_A_ActiveSkillLV,
                 a = n_A_Buf2[12],
                 a > n_A_ActiveSkillLV && (a = n_A_ActiveSkillLV),
