@@ -547,41 +547,72 @@ m_Card = [
     , [543, 2, "Gold Queen Scaraba", "[Refine Rate 9~20] Adds an additional 5% resistance to [" + v_Race[4] + "] race monsters.", 4, 3, 54, 10, 0]
     , [544, 1, "Beholder Master (aRO)", "<b>If compounded on a bow:</b><br>[Refine Rate 7~10] ASPD +1<br>[Refine Rate 9~10] Additional ASPD +1", 25, 3, 0]
     , [545, 2, "Duneyrr (old)", "When dealing ATK based damage, 1% chance you gain ASPD +5% for 10 seconds.", 17, 10, 0]
-    , [546, 7, "Kafra Blossom", "2% chance to increase resistance to [" + v_Element[3] + "], [" + v_Element[4] + "], [" + v_Element[1] + "], [" + v_Element[2] + "], [" + v_Element[6] + "], [" + v_Element[7] + "] elements by 10% for 10 seconds when receiving magic damage.", 61, 10, 62, 10, 63, 10, 64, 10, 66, 10, 67, 10, 0]
-    , [547, 1, "Pom Spider", "", 49, 20, 0]
-    , [548, 1, "Little Fatum", "When dealing MATK based damage, 5% chance to cause [Silence] status effect on your target.", 0]
-    , [549, 1, "Miming", "When dealing melee ATK based damage, 0'3% chance to cause [Deep Sleep] status effect on your target.", 0]
-    , [550, 2, "Angra Mantis", "If equipped by a [Thief] class job: Critical Damage +(refine/2)", 70, 2, 0]
-    , [551, 2, "Parus", "If equipped by a [Acolyte] class job: Your [Heal], [Sanctuary], and [Potion Pitcher] effectiveness +(refine/2)%", 99, 3, 0]
-    , [552, 4, "Comodo", "<b>* Warning: Renewal Card *</b>", 18, 50, 9, -25, 0]
-    , [553, 5, "Leak", "50% chance to cause Confusion on target enemy when hit by magic damage.<BR><b>* Warning: Renewal Card *</b>", 1, 3, 0]
-    , [554, 5, "Randel (aRO)", "Enables the use of [Auto-Guard] Lv 1", 9, 10, 0]
-    , [555, 4, "Paladin Randel (aRO)", "<b>[Base INT >= 110]</b> MaxHP +10%", 221, 164, 15, 10, 0]
-    , [556, 5, "Flamel (aRO)", "Increase HP restored with Red, Orange, Yellow and White Potion by 200%", 9, 10, 0]
-    , [557, 4, "Biochemist Flamel (aRO)", "<b>[Base STR >= 110]</b> CRI +20", 221, 165, 10, 20, 0]
-    , [558, 5, "Celia (aRO)", "Enables the use of [Abracadabra] Lv 1", 9, 10, 0]
-    , [559, 4, "Scholar Celia (aRO)", "<b>[Base DEX >= 110]</b> MATK +7%", 221, 166, 89, 7, 0]
-    , [560, 5, "Chen (aRO)", "Enables the use of [Call Spirits] Lv 2", 9, 10, 0]
-    , [561, 4, "Champion Chen (aRO)", "<b>[Base AGI >= 110]</b> ATK +7%", 221, 167, 87, 7, 0]
-    , [562, 5, "Gertie (aRO)", "Enables the use of [Close Confine] Lv 1", 9, 10, 0]
-    , [563, 4, "Stalker Gertie (aRO)", "<b>[Base LUK >= 110]</b> HIT +20", 221, 168, 8, 20, 0]
-    , [564, 5, "Alphoccio (aRO)", "<b>[Bard Class]</b> MaxHP +10%, MaxSP +5%.", 9, 10, 0]
-    , [565, 4, "Minstel Alphoccio (aRO)", "<b>[Base VIT >= 110]</b> FLEE +20<BR>Enables use of [Poem of Bragi] Lv 10 (this skill can only be used when an instrument is equipped).", 9, 20, 0]
-    , [566, 5, "Trentini (aRO)", "<b>[Dancer Class]</b> MaxHP +10%, MaxSP +5%.", 9, 10, 0]
-    , [567, 4, "Gypsi Trentini (aRO)", "<b>[Base VIT >= 110]</b> FLEE +20<BR>Enables use of [Fortune's kiss] Lv 10 (this skill can only be used when a whip or an instrument is equipped).", 9, 20, 0]
+    // , [546, 7, "Kafra Blossom", "2% chance to increase resistance to [" + v_Element[3] + "], [" + v_Element[4] + "], [" + v_Element[1] + "], [" + v_Element[2] + "], [" + v_Element[6] + "], [" + v_Element[7] + "] elements by 10% for 10 seconds when receiving magic damage.", 61, 10, 62, 10, 63, 10, 64, 10, 66, 10, 67, 10, 0]
+    // , [547, 1, "Pom Spider", "", 49, 20, 0]
+    // , [548, 1, "Little Fatum", "When dealing MATK based damage, 5% chance to cause [Silence] status effect on your target.", 0]
+    // , [549, 1, "Miming", "When dealing melee ATK based damage, 0'3% chance to cause [Deep Sleep] status effect on your target.", 0]
+    // , [550, 2, "Angra Mantis", "If equipped by a [Thief] class job: Critical Damage +(refine/2)", 70, 2, 0]
+    // , [551, 2, "Parus", "If equipped by a [Acolyte] class job: Your [Heal], [Sanctuary], and [Potion Pitcher] effectiveness +(refine/2)%", 99, 3, 0]
+    // , [552, 4, "Comodo", "<b>* Warning: Renewal Card *</b>", 18, 50, 9, -25, 0]
+    // , [553, 5, "Leak", "50% chance to cause Confusion on target enemy when hit by magic damage.<BR><b>* Warning: Renewal Card *</b>", 1, 3, 0]
+    // , [554, 5, "Randel (aRO)", "Enables the use of [Auto-Guard] Lv 1", 9, 10, 0]
+    // , [555, 4, "Paladin Randel (aRO)", "<b>[Base INT >= 110]</b> MaxHP +10%", 221, 164, 15, 10, 0]
+    // , [556, 5, "Flamel (aRO)", "Increase HP restored with Red, Orange, Yellow and White Potion by 200%", 9, 10, 0]
+    // , [557, 4, "Biochemist Flamel (aRO)", "<b>[Base STR >= 110]</b> CRI +20", 221, 165, 10, 20, 0]
+    // , [558, 5, "Celia (aRO)", "Enables the use of [Abracadabra] Lv 1", 9, 10, 0]
+    // , [559, 4, "Scholar Celia (aRO)", "<b>[Base DEX >= 110]</b> MATK +7%", 221, 166, 89, 7, 0]
+    // , [560, 5, "Chen (aRO)", "Enables the use of [Call Spirits] Lv 2", 9, 10, 0]
+    // , [561, 4, "Champion Chen (aRO)", "<b>[Base AGI >= 110]</b> ATK +7%", 221, 167, 87, 7, 0]
+    // , [562, 5, "Gertie (aRO)", "Enables the use of [Close Confine] Lv 1", 9, 10, 0]
+    // , [563, 4, "Stalker Gertie (aRO)", "<b>[Base LUK >= 110]</b> HIT +20", 221, 168, 8, 20, 0]
+    // , [564, 5, "Alphoccio (aRO)", "<b>[Bard Class]</b> MaxHP +10%, MaxSP +5%.", 9, 10, 0]
+    // , [565, 4, "Minstel Alphoccio (aRO)", "<b>[Base VIT >= 110]</b> FLEE +20<BR>Enables use of [Poem of Bragi] Lv 10 (this skill can only be used when an instrument is equipped).", 9, 20, 0]
+    // , [566, 5, "Trentini (aRO)", "<b>[Dancer Class]</b> MaxHP +10%, MaxSP +5%.", 9, 10, 0]
+    // , [567, 4, "Gypsi Trentini (aRO)", "<b>[Base VIT >= 110]</b> FLEE +20<BR>Enables use of [Fortune's kiss] Lv 10 (this skill can only be used when a whip or an instrument is equipped).", 9, 20, 0]
+    , [546, 7, "Abomring", "Small chance of obtaining <b>[Box of Bounce]</b> when killing monsters", 0]
+    , [547, 1, "Assassin Fly", "Provides 2% Leech on physical damage done to enemies", 8, 5, 0]
+    , [548, 1, "Bonechewer", "<b>[Missing implementation]</b><br>Has a 5% chance to enter Brutality status with each normal attack (melee and ranged)", 0]
+    , [549, 5, "Cave Viper", "", 3, 1, 65, 20, 0]
+    , [550, 1, "Conductring", "", 5056, 15, 7054, 15, 0]
+    , [551, 7, "Corruptor", "<b>[Missing implementation]</b>", 0]
+    , [552, 1, "Dory", "<b>[Missing implementation]</b>", 0]
+    , [553, 1, "Doughring", "<b>[Missing implementation]</b>", 0]
+    , [554, 1, "Flame Beetle", "<b>[Missing implementation]</b>", 0]
+    , [555, 1, "Frigid Lich", "<b>[Missing implementation]</b>", 0]
+    , [556, 1, "Ghost Shroom", "<b>[Missing implementation]</b>", 0]
+    , [557, 1, "Gyokuto", "<b>[Missing implementation]</b>", 0]
+    , [558, 1, "Jabberwock", "<b>[Missing implementation]</b>", 0]
+    , [559, 1, "Jelring", "<b>[Missing implementation]</b>", 0]
+    , [560, 1, "Kalec", "<b>[Missing implementation]</b>", 0]
+    , [561, 1, "King Poring", "<b>[Missing implementation]</b>", 0]
+    , [562, 1, "Kodama", "<b>[Missing implementation]</b>", 0]
+    , [563, 1, "Lady Huo", "<b>[Missing implementation]</b>", 0]
+    , [564, 1, "Logi", "<b>[Missing implementation]</b>", 0]
+    , [565, 1, "Miasmus", "<b>[Missing implementation]</b>", 0]
+    , [566, 1, "Moon Rabbit", "<b>[Missing implementation]</b>", 0]
+    , [567, 1, "Onigiring", "<b>[Missing implementation]</b>", 0]
+    , [568, 1, "Protoring", "<b>[Missing implementation]</b>", 0]
+    , [569, 1, "Puck", "<b>[Missing implementation]</b>", 0]
+    , [570, 1, "Roper", "<b>[Missing implementation]</b>", 0]
+    , [571, 1, "Shade of Payon", "<b>[Missing implementation]</b>", 0]
+    , [572, 1, "Spectring", "<b>[Missing implementation]</b>", 0]
+    , [573, 1, "Tomb Crawler", "<b>[Missing implementation]</b>", 0]
+    , [574, 1, "Twinorc", "<b>[Missing implementation]</b>", 0]
+    , [575, 1, "Wolpertinger", "<b>[Missing implementation]</b>", 0]
+    , [576, 6, "Yser", "", 8, 5, 5171, 30, 5169, 30, 0]
 ];
 
 CardNum = m_Card.length - 1;
 
 m_CardSort = [	//cards renewal comentadas
-    [0, 201, 202, 203, 204, 106, 1, 2, 3, 156, 31, 25, 522, 11, 112, 107, 223, 356, 463, 524, 305, 45, 355, 528, 544, 361, 217, 465, 521, 163, 15, 265, 160, 499, 325, 520, 259, 279, 311, 169, 28, 20, 329, 427, 42, 519, 47, 21, 32, 343, 5, 462, 215, 19, 244, 158, 4, 359, 525, 110, 8, 17, 253, 263, 14, 286, 288, 287, 39, 277, 518, 167, 498, 6, 159, 46, 13, 255, 235, 26, 289, 290, 164, 168, 382,/*548,*/219, 7, 165, 37, 23, 398, 35, 166, 157, 36,/*549,*/30, 328, 40, 380, 517, 466, 516, 345, 252, 27, 353, 12, 360, 44, 515, 171, 33,/*547,*/170, 111, 390, 22, 109, 16, 108, 254, 43, 428, 29, 9, 34, 162, 41, 366, 313, 18, 464, 526, 532, 233, 296, 323, 24, 363, 161, 10, 514, 38, 326, 319, "NULL"],
-    [0, 106, 1, 2, 3, 156, 31, 25, 522, 11, 112, 107, 223, 356, 463, 524, 305, 45, 355, 528, 544, 361, 217, 465, 521, 163, 15, 265, 160, 499, 325, 520, 259, 279, 311, 169, 28, 20, 329, 427, 42, 519, 47, 21, 32, 343, 5, 462, 215, 19, 244, 158, 4, 359, 525, 110, 8, 17, 253, 263, 14, 286, 288, 287, 39, 277, 518, 167, 498, 6, 159, 46, 13, 255, 235, 26, 289, 290, 164, 168, 382,/*548,*/219, 7, 165, 37, 23, 398, 35, 166, 157, 36,/*549,*/30, 328, 40, 380, 517, 466, 516, 345, 252, 27, 353, 12, 360, 44, 515, 171, 33,/*547,*/170, 111, 390, 22, 109, 16, 108, 254, 43, 428, 29, 9, 34, 162, 41, 366, 313, 18, 464, 526, 532, 233, 296, 323, 24, 363, 161, 10, 514, 38, 326, 319, "NULL"],
+    [0, 201, 202, 203, 204, 106, 1, 2, 3, 156, 31, 25, 522, 11, 112, 107, 547, 223, 356, 463, 524, 305, 45, 355, 528, 544, 361, 217, 548, 465, 521, 163, 15, 265, 160, 499, 325, 520, 259, 279, 311, 169, 28, 20, 329, 427, 42, 519, 47, 21, 32, 343, 5, 462, 215, 19, 244, 158, 4, 359, 525, 110, 8, 17, 253, 263, 14, 286, 288, 287, 39, 277, 518, 167, 498, 6, 159, 46, 13, 255, 235, 26, 289, 290, 164, 168, 382,/*548,*/219, 7, 165, 37, 23, 398, 35, 166, 157, 36,/*549,*/30, 328, 40, 380, 517, 466, 516, 345, 252, 27, 353, 12, 360, 44, 515, 171, 33,/*547,*/170, 111, 390, 22, 109, 16, 108, 254, 43, 428, 29, 9, 34, 162, 41, 366, 313, 18, 464, 526, 532, 233, 296, 323, 24, 363, 161, 10, 514, 38, 326, 319, "NULL"],
+    [0, 106, 1, 2, 3, 156, 31, 25, 522, 11, 112, 107, 547, 223, 356, 463, 524, 305, 45, 355, 528, 544, 361, 217, 548, 465, 521, 163, 15, 265, 160, 499, 325, 520, 259, 279, 311, 169, 28, 20, 329, 427, 42, 519, 47, 21, 32, 343, 5, 462, 215, 19, 244, 158, 4, 359, 525, 110, 8, 17, 253, 263, 14, 286, 288, 287, 39, 277, 518, 167, 498, 6, 159, 46, 13, 255, 235, 26, 289, 290, 164, 168, 382,/*548,*/219, 7, 165, 37, 23, 398, 35, 166, 157, 36,/*549,*/30, 328, 40, 380, 517, 466, 516, 345, 252, 27, 353, 12, 360, 44, 515, 171, 33,/*547,*/170, 111, 390, 22, 109, 16, 108, 254, 43, 428, 29, 9, 34, 162, 41, 366, 313, 18, 464, 526, 532, 233, 296, 323, 24, 363, 161, 10, 514, 38, 326, 319, "NULL"],
     [0, 153,/*550,*/221, 332, 474, 179, 298, 339, 114, 273, 320, 510, 51, 342, 540, 511, 545, 49, 337, 284, 176, 116, 303, 213, 117, 543, 274, 424, 175, 234, 472, 177, 357, 473, 397, 387, 178, 118, 426, 115, 374, 119, 376, 50, 52,/*551,*/347, 120, 512, 509, 513, 383, 180, 113, 309, 174, 471, 425, 48, 239, 238, "NULL"],
     [0, 154, 155, 231, 537, 55, 245, 54, 122, 502, 222, 124, 58, 503, 504, 506, 173, 505, 538, 307, 241, 470, 126, 348, 467, 62, 61, 507, 127, 63, 123, 272, 125, 469, 375, 57, 358, 368, 59, 468, 60, 121, 310, 396, 508, 539, 172, 56, 53, 249, 306, "NULL"],
     [0, 476, 194, 282, 191, 136, 224, 232, 225, 190, 135, 69, 281, 500, 137,/*557,*/364, 479,/*561,*/264, 280,/*552,*/128, 275, 321, 330, 422, 198, 214, 134, 334, 477, 187, 501, 139, 199, 349, 301, 138, 302, 475, 283, 276,/*567,*/530, 531, 421, 261, 268, 299, 478, 220, 285, 75, 184,/*565,*/196, 529, 527, 533, 344, 197, 185, 140,/*555,*/133, 73, 367, 65, 183, 64, 71, 420, 192, 186, 68, 72, 384, 132, 293, 70,/*559,*/308, 195, 333, 317,/*563,*/74, 291, 66, 131, 392, 67, 189, 182, 181, 240, 331, 193, "NULL"],
-    [0, 405,/*564,*/404, 78,/*558,560,*/327, 402, 79, 394, 341, 340, 80, 243,/*556,*/141,/*562,*/267, 346, 83, 86, 82, 258, 482, 401,/*553,*/483, 84, 81, 372, 87, 271, 400, 403, 85, 352,/*554,*/77, 480, 481, 338,/*566,*/294, 369, 295, 76, 393, "NULL"],
-    [0, 229, 227, 228, 246, 266, 88, 269, 322, 95, 94, 242, 486, 304, 362, 257, 423, 407, 408, 278, 523, 484, 399, 409, 89, 90, 381, 351, 377, 379, 129, 406, 388, 300, 91, 92, 391, 93, 318, 485, "NULL"],
-    [0, 230, 412, 188, 416, 142, 411, 365, 350, 370, 270, 147, 395, 417, 324, 414, 262, 490, 256, 489, 542, 335, 410, 418, 354, 495, 389, 151, 419, 216, 492, 493, 226, 152, 546, 103, 97, 218, 101, 371, 144, 378, 104, 149, 250, 130, 248, 247, 105, 150, 415, 143, 251, 148, 212, 494, 386, 316, 541, 297, 260, 488, 315, 146, 487, 96, 314, 491, 312, 336, 98, 292, 236, 145, 413, 237, 99, 385, 102, 100, "NULL"]
+    [0, 405,/*564,*/404, 78,/*558,560,*/549, 327, 402, 79, 394, 341, 340, 80, 243,/*556,*/141,/*562,*/267, 346, 83, 86, 82, 258, 482, 401,/*553,*/483, 84, 81, 372, 87, 271, 400, 403, 85, 352,/*554,*/77, 480, 481, 338,/*566,*/294, 369, 295, 76, 393, "NULL"],
+    [0, 229, 227, 228, 246, 266, 88, 269, 322, 95, 94, 242, 486, 304, 362, 257, 423, 407, 408, 278, 523, 484, 399, 409, 89, 90, 381, 351, 377, 379, 129, 406, 388, 300, 91, 92, 391, 576, 93, 318, 485, "NULL"],
+    [0, 546, 230, 412, 188, 416, 142, 411, 365, 350, 370, 550, 270, 147, 395, 417, 324, 414, 262, 490, 256, 489, 542, 335, 410, 418, 354, 495, 389, 151, 419, 216, 492, 493, 226, 152, 546, 103, 97, 218, 101, 371, 144, 378, 104, 149, 250, 130, 248, 247, 105, 150, 415, 143, 251, 148, 212, 494, 386, 316, 541, 297, 260, 488, 315, 146, 487, 96, 314, 491, 312, 336, 98, 292, 236, 145, 413, 237, 99, 385, 102, 100, "NULL"]
 ];
 
 function allCard() {

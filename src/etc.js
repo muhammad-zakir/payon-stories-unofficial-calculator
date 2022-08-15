@@ -523,6 +523,7 @@ m_TempEffect = [
 	, [35, "Lord Knight Card", "Berserk", 2, 178, 0]
 	, [36, "Soldier Shotgun", "ATK +80", 1, 928, 17, 80, 0]
 	, [37, "Weihna", "Physical Damage +10%", 1, 1157, 80, 10, 0]
+	, [38, "Bonechewer Card", "CRIT +5, Critical Damage +50%", 2, 548, 12, 100, 0]
 	// , [38, "Ruber", "Bash / Bowling Bash Damage +20%", 1, 1158, 5006, 20, 5076, 20, 0]
 	// , [39, "Chronos", "MATK +12%", 1, 1172, 89, 12, 0]
 	// , [40, "Nemesis", "ATK +50", 1, 820, 17, 50, 0]
