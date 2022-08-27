@@ -1053,7 +1053,8 @@ m_EnableSkill = [
     [45, 0, 68, 1],
     [46, 1, 6, 1],
     [47, 0, 102, 3],
-    [48, 1, 128, 1]
+    [48, 1, 128, 1],
+    [49, 1, 85, 1], // miasmus
 ];
 
 m_AutoSpellSkill = [		// id, add to skill list, skill id, lvl, chance, when receiving/attacking ATK/MATK
