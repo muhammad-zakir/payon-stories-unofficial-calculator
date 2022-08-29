@@ -414,14 +414,21 @@ function StAllCalc() {
         myInnerHtml("A_BodyELEMENT", v_Element[n_A_Bodyelement] + "1", 0);
     for (var _ = 0; 6 >= _; _++)
         n_Delay[_] = 0;
-    for (_ = 1; 210 >= _; _++)
-        n_tok[_] = 0,
-            n_tok[_] += StPlusCalc2(_),
-            n_tok[_] += StPlusCard(_);
-    for (_ = 290; 339 >= _; _++)
-        n_tok[_] = 0,
-            n_tok[_] += StPlusCalc2(_),
-            n_tok[_] += StPlusCard(_);
+    for (_ = 1; 210 >= _; _++) {
+        n_tok[_] = 0;
+        n_tok[_] += StPlusCalc2(_);
+        n_tok[_] += StPlusCard(_);
+    }
+
+    for (_ = 290; 339 >= _; _++) {
+        n_tok[_] = 0;
+        n_tok[_] += StPlusCalc2(_);
+        n_tok[_] += StPlusCard(_);
+    }
+
+    n_tok[10001] = 0;
+    n_tok[10001] += StPlusCard(10001);
+
     for (StPlusCalc(),
         restrictEquipslot(),
         equip_restrict ? (n_tok[195] ? (c.A_LEFT_REFINE.disabled = !0,

@@ -4466,6 +4466,10 @@ function ApplyModifiers(_) {
         (108 <= selectedMonster[0] && selectedMonster[0] <= 115 || 319 == selectedMonster[0]) && (_ = Math.floor(_ * (100 + n_tok[81]) / 100)),
         116 <= selectedMonster[0] && selectedMonster[0] <= 120 && (_ = Math.floor(_ * (100 + n_tok[82]) / 100)),
         (49 <= selectedMonster[0] && selectedMonster[0] <= 52 || 55 == selectedMonster[0] || 221 == selectedMonster[0]) && (_ = Math.floor(_ * (100 + n_tok[83]) / 100)),
+
+        // * Damage to poring race monsters
+        ([272, 271, 214, 278, 605, 588, 597, 614, 593, 618].includes(selectedMonster[0])) && (_ = Math.floor(_ * (100 + n_tok[10001]) / 100)),
+
         106 != selectedMonster[0] && 152 != selectedMonster[0] && 308 != selectedMonster[0] && 32 != selectedMonster[0] && 541 != selectedMonster[0] || (_ = Math.floor(_ * (100 + n_tok[84]) / 100)),
         _ = Math.floor(_ * (100 + StPlusCalc2(1e3 + selectedMonster[0]) + StPlusCard(1e3 + selectedMonster[0])) / 100),
         SkillSearch(258) && (_ = 2 * _),

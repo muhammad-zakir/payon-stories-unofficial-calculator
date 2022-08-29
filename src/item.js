@@ -2215,6 +2215,12 @@ function Item_Setumei(nC1, nC2) {
         else
             CBIstr += "[" + m_Skill[nC1 - 7000][2] + "] skill Casting Time" + wIS + nC2 + "%<BR>";
     }
+    // * Custom effects
+
+    // * Jelring card
+    if (10001 == nC1)
+        //		CBIstr += "Increase ATK based damage against [Orc] race monsters by "+ wIS + nC2 +"%<BR>";
+        CBIstr += "Deal" + wIS + nC2 + "% ATK based damage against [Poring] race monsters.<BR><b>[Does not work against boss monsters]</b>";
 }
 
 w_SE = [[737, 436, 475, "NULL"]

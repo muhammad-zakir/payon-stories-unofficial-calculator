@@ -582,7 +582,7 @@ m_Card = [
     , [556, 3, "Ghost Shroom", "", 9, 10, 68, 20, 0]
     , [557, 2, "Gyokuto", "", 7104, 20, 0]
     , [558, 4, "Jabberwock", "", 75, -100, 76, -100, 0]
-    , [559, 1, "Jelring", "<b>[Missing implementation]</b>", 0]
+    , [559, 1, "Jelring", "", 10001, 30, 0]
     , [560, 6, "Kalec", "[Refine Rate 9~10] MaxHP +10% and MaxSP +10%", 4, 2, 0]
     , [561, 6, "King Poring", "Grants the Blacksmith skill Greed", 0]
     , [562, 5, "Kodama", "When your HP is brought below 35% you will heal for 30% of your health, 45s cooldown", 0]
