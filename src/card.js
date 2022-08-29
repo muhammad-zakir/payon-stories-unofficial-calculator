@@ -578,7 +578,7 @@ m_Card = [
     , [552, 1, "Dory", "<b>[Missing implementation]</b>", 5111, 30, 5113, 15, 0]
     , [553, 5, "Doughring", "Chance of obtaining <b>[Food item]</b>", 9, 7, 0]
     , [554, 7, "Flame Beetle", "Has 20% chance to reduce the zeny cost of <b>Mammonite skill</b> to zero", 0]
-    , [555, 6, "Frigid Lich", "<b>[Missing implementation]</b>", 2, 1, 0]
+    , [555, 6, "Frigid Lich", "", 2, 1, 221, 173, 0]
     , [556, 3, "Ghost Shroom", "", 9, 10, 68, 20, 0]
     , [557, 2, "Gyokuto", "", 7104, 20, 0]
     , [558, 4, "Jabberwock", "", 75, -100, 76, -100, 0]

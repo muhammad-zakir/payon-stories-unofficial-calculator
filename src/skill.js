@@ -1227,9 +1227,10 @@ m_AutoSpellSkill = [		// id, add to skill list, skill id, lvl, chance, when rece
     [166, 1, 238, 5, 7, 9],
     [167, 1, 193, 5, 7, 6],
     [168, 1, 440, 1, 7, 6],
-    [169, 0, 25, 5, 2, 6]
+    [169, 0, 25, 5, 2, 6],
     [170, 0, 267, 1, 3, 6], //angelic protection
     [171, 0, 30, 10, 2, 6], //defolty doll hat
     [172, 0, 25, 1, 2, 1], //enchanted peach tree card
+    [173, 0, 130, 3, 3, 1], // * frigid lich
 ];
 //ID, selectable in "Attack Skills", skill ID, skill Lv, chance, trigger
