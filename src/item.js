@@ -1870,6 +1870,8 @@ m_Item = [
     , [1357, 52, 0, 0, 0, 0, 40, 40, "Scouting Scarf", 0, "", 9, 3, 0]
     // * Custom item Staff of the Priestess https://oathro.com/wiki/index.php/Staff_of_the_Priestess
     , [1358, 55, 0, 0, 0, 0, 40, 40, "Staff of the Priestess", 0, "Grants Level 3 Heal if you do not know it", 4, 1, 89, 15, 91, 5, 0]
+
+    , [1359, 64, 0, 0, 0, 0, 15, 60, "Talisman of Holy Protection", 0, "", 7, 1, 66, 7, 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
