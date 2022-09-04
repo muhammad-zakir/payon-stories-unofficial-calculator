@@ -724,6 +724,16 @@ m_Monster = [
     , ["Wolpertinger",     Race.Brute,    Elements.Neutral3,    Size.Medium,  69, 9250, 45, 62, 80,  80, 1, 785,  890,    18,  27,  6955,   5215,   , 0,         0,            , , 0]
     // ! Add skills
     , ["Yser",     Race.Dragon,    Elements.Wind1,    Size.Medium,  43, 4794, 30, 48, 65,  68, 50, 334,  415,    29,  16,  2712,   2090,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Naiad",     Race.Formless,    Elements.Water4,    Size.Medium,  55, 9115, 30, 68, 72,  73, 50, 401,  686,    10,  20,  3194,   2760,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Selkie",     Race.Formless,    Elements.Water2,    Size.Medium,  52, 8352, 25, 61, 65,  81, 50, 505,  721,    22,  10,  3612,   2899,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Bombo",     Race.Plant,    Elements.Fire2,    Size.Small,  48, 6522, 29, 55, 20,  70, 32, 401,  621,    8,  7,  3055,   2221,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Needlefish",     Race.Fish,    Elements.Fire1,    Size.Small,  50, 7005, 1, 60, 75,  72, 42, 500,  785,    19,  20,  3261,   3005,   , 0,         0,            , , 0]
+    // ! Add skills
+    , ["Abzu",     Race.Formless,    Elements.Water1,    Size.Medium,  61, 26585, 35, 71, 80,  75, 66, 940,  1550,    26,  22,  12800,   9090,   , 0,         0,            , , 0]
 ];
 //,[ ID, "name", race, element, size, lvl, hp, vit, agi, int, dex, luk, min atk, max atk, def, mdef, baseexp, jobexp, ? , 0 = non boss / 1 = boss, 0 = melee / 1 = long-range ]
 
