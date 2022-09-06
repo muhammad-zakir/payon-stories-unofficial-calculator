@@ -725,6 +725,11 @@ m_Monster = [
     // ! Add skills
     , ["Yser",     Race.Dragon,    Elements.Wind1,    Size.Medium,  43, 4794, 30, 48, 65,  68, 50, 334,  415,    29,  16,  2712,   2090,   , 0,         0,            , , 0]
     // ! Add skills
+    , ["Lady Huo",     Race.Formless,    Elements.Holy1,    Size.Large,  87, 482500, 85, 102, 165,  130, 80, 2750,  3590,    42,  45,  157000,   120800,   , 1,         0,            , , 0]
+    
+    
+    // * Summer event mobs
+    // ! Add skills
     , ["Naiad",     Race.Formless,    Elements.Water4,    Size.Medium,  55, 9115, 30, 68, 72,  73, 50, 401,  686,    10,  20,  3194,   2760,   , 0,         0,            , , 0]
     // ! Add skills
     , ["Selkie",     Race.Formless,    Elements.Water2,    Size.Medium,  52, 8352, 25, 61, 65,  81, 50, 505,  721,    22,  10,  3612,   2899,   , 0,         0,            , , 0]
