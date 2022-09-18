@@ -1133,6 +1133,9 @@ function BattleCalc999() {
             // w_DMG[2] = Math.floor((50 + n_A_DEX / 2) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[selectedMonster[3]][4])) : 113 == n_A_ActiveSkill && (n_A_Weapon_element = 3,
             // w_DMG[2] = Math.floor((75 + n_A_DEX / 2) * (1 + n_A_INT / 100) * n_A_ActiveSkillLV * element[selectedMonster[3]][3])),
             
+            // * These skill need to apply modifier now that we have Wolpertinger and Dory cards
+            w_DMG[2] = ApplyModifiers(w_DMG[2]);
+            
             w_DMG[2] = tPlusDamCut(w_DMG[2]),
             w_DMG[0] = w_DMG[1] = w_DMG[2];
 
@@ -4450,19 +4453,18 @@ function BattleCalc2(_) {
 function ApplyModifiers(_) {
     if (0 == wBCEDPch && 0 == not_use_card) {
         var e = 0;
-        e = n_tok[30 + selectedMonster[2]],
-        _ = Math.floor(_ * (100 + e) / 100),
-        e = n_tok[40 + Math.floor(selectedMonster[3] / 10)],
-        _ = Math.floor(_ * (100 + e) / 100),
-        e = n_tok[27 + selectedMonster[4]],
-        _ = Math.floor(_ * (100 + e) / 100),
-        1 == n_rangedAtk && -1 != TyouEnkakuSousa3dan && (e = n_tok[25],
-        _ = Math.floor(_ * (100 + e) / 100)),
-        e = 0,
-        1 == selectedMonster[19] && (e += n_tok[26]),
-        e += n_tok[80],
-        _ = Math.floor(_ * (100 + e) / 100),
-        1 == wCriTyuu && 401 != n_A_ActiveSkill && (_ = Math.floor(_ * (100 + n_tok[70]) / 100)),
+        e = n_tok[30 + selectedMonster[2]];
+        _ = Math.floor(_ * (100 + e) / 100);
+        e = n_tok[40 + Math.floor(selectedMonster[3] / 10)];
+        _ = Math.floor(_ * (100 + e) / 100);
+        e = n_tok[27 + selectedMonster[4]];
+        _ = Math.floor(_ * (100 + e) / 100);
+        1 == n_rangedAtk && -1 != TyouEnkakuSousa3dan && (e = n_tok[25], _ = Math.floor(_ * (100 + e) / 100));
+        e = 0;
+        1 == selectedMonster[19] && (e += n_tok[26]);
+        e += n_tok[80];
+        _ = Math.floor(_ * (100 + e) / 100);
+        1 == wCriTyuu && 401 != n_A_ActiveSkill && (_ = Math.floor(_ * (100 + n_tok[70]) / 100));
         (108 <= selectedMonster[0] && selectedMonster[0] <= 115 || 319 == selectedMonster[0]) && (_ = Math.floor(_ * (100 + n_tok[81]) / 100)),
         116 <= selectedMonster[0] && selectedMonster[0] <= 120 && (_ = Math.floor(_ * (100 + n_tok[82]) / 100)),
         (49 <= selectedMonster[0] && selectedMonster[0] <= 52 || 55 == selectedMonster[0] || 221 == selectedMonster[0]) && (_ = Math.floor(_ * (100 + n_tok[83]) / 100)),

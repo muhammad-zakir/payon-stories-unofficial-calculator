@@ -4,6 +4,7 @@ import fs from "fs"
 export function copyFiles(from, to, overwrite = false) {
     return {
         name: 'copy-files',
+        apply: 'build',
         buildStart() {
             const log = msg => console.log('\x1b[36m%s\x1b[0m', msg);
             log(`copy files: ${from} → ${to}`);
