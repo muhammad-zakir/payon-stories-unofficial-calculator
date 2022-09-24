@@ -623,8 +623,9 @@ function BattleCalc999() {
         } else if (118 == n_A_ActiveSkill || 271 == n_A_ActiveSkill) {
             n_PerHIT_DMG = 0,
             n_A_Weapon_element = 0,
-            n_rangedAtk = 1,
-            falconSingleHitDamage = 80 + 2 * Math.floor(n_A_DEX / 10) + 2 * Math.floor(n_A_INT / 2) + 6 * SkillSearch(119),
+            n_rangedAtk = 1,            
+            falconSingleHitDamage = (20 + n_A_LUK + Math.floor(n_A_INT/2) + (SkillSearch(119)*6))*2;
+            
             271 == n_A_ActiveSkill ? (falconSingleHitDamage = Math.floor(falconSingleHitDamage * (150 + 70 * n_A_ActiveSkillLV) / 100),
             falconSingleHitDamage = Math.floor(falconSingleHitDamage * element[selectedMonster[3]][0]),
             falconSingleHitDamage = tPlusDamCut(falconSingleHitDamage),
