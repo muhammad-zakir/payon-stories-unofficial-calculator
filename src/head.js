@@ -1333,7 +1333,7 @@ function BattleCalc999() {
             n_Delay[2] = 1,
             wbairitu = .7 + .1 * n_A_ActiveSkillLV) : 37 == n_A_ActiveSkill || 387 == n_A_ActiveSkill ? (n_A_Weapon_element = 6,
             wCast = 2,
-            wbairitu = 1.25,
+            wbairitu = 1 + (n_A_BaseLV + 1) / 100,
             387 == n_A_ActiveSkill && (wbairitu *= 5)) : 104 == n_A_ActiveSkill ? (n_Delay[0] = 1,
             n_A_Weapon_element = 6,
             wHITsuu = n_A_ActiveSkillLV,
