@@ -1,6 +1,6 @@
-# Oath calculator
+# Ragnarok calculator
 
-Shameless copy from [rocalc.com](https://www.rocalc.com) adapted for OathRO
+Shameless copy from [rocalc.com](https://www.rocalc.com) adapted for Payon Stories
 
 ## Objective
 
