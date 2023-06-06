@@ -758,7 +758,7 @@ m_Monster = [
     // ! Add skills
     , ["Ignis", Race.Formless, Elements.Fire3, Size.Large, 80, 83200, 50, 35, 60, 74, 1, 1000, 1450, 25, 40, 67560, 28200, , 0, 0, , , 0]
     // ! Add skills
-    , ["WELDER", Race.Formless, Elements.Wind3, Size.Large, 75, 21800, 50, 70, 70, 80, 50, 700, 1000, 25, 20, 15480, 8640, , 0, 0, , , 0]
+    , ["WELDER", Race.Formless, Elements.Wind2, Size.Large, 75, 21800, 50, 70, 70, 80, 50, 700, 1000, 25, 20, 15480, 8640, , 0, 0, , , 0]
     // ! Add skills
     , ["CORE", Race.Formless, Elements.Fire2, Size.Small, 68, 15800, 1, 78, 70, 70, 1, 650, 850, 10, 40, 9900, 8040, , 0, 0, , , 0]
     // ! Add skills
