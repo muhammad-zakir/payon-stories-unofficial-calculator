@@ -1823,7 +1823,7 @@ m_Item = [
     // , [1818, 64, 52, 0, 0, 0, 20, 60, "Moonlight Ring_", 0, "", 19, 2, 0]
     // , [1819, 1, 1, 129, 4, 0, 0, 1, "Combat Knife (rental)", 0, "Recover 3 SP when dealing ATK based damage.", 16, 10, 187, 1, 57, 10, 56, -10, 193, 1, 0]
     // , [1820, 51, 1, 0, 0, 0, 0, 1, "Elven Ears (rental)", 0, "", 4, 1, 0]
-    
+
     // * Custom item Astra of the Empress https://oathro.com/wiki/index.php/Astra_of_the_Empress
     , [1336, 11, 0, 132, 3, 0, 140, 50, "Astra of the Empress", 0, "", 20, WeaponElements.Holy, 0]
     // * Custom item Bloodstained Headband https://oathro.com/wiki/index.php/Bloodstained_Headband
@@ -1870,8 +1870,28 @@ m_Item = [
     , [1357, 52, 0, 0, 0, 0, 40, 40, "Scouting Scarf", 0, "", 9, 3, 0]
     // * Custom item Staff of the Priestess https://oathro.com/wiki/index.php/Staff_of_the_Priestess
     , [1358, 55, 0, 0, 0, 0, 40, 40, "Staff of the Priestess", 0, "Grants Level 3 Heal if you do not know it", 4, 1, 89, 15, 91, 5, 0]
-
+    // * Custom item Talisman of Holy Protection
     , [1359, 64, 0, 0, 0, 0, 15, 60, "Talisman of Holy Protection", 0, "", 7, 1, 66, 7, 0]
+    // * Custom item Aggayu Mask
+    , [1360, 52, 1, 2, 0, 0, 35, 40, "Aggayu Mask", 0, "", 63, 3, 0]
+    // * Custom item Brass Wristwatch
+    , [1361, 64, 0, 0, 0, 1, 40, 0, "Brass Wristwatch", 0, "", 0]
+    // * Custom item Brimstone Spellbook
+    , [1362, 12, 0, 90, 3, 0, 75, 50, "Brimstone Spellbook", 0, "", 20, 3, 0]
+    // * Custom item Fancy Shoes
+    , [1363, 63, 1, 0, 0, 1, 30, 0, "Fancy Shoes", 0, "", 19, 2, 13, 100, 0]
+    // * Custom item Heavy Gunner Armor
+    , [1364, 63, 1, 0, 0, 1, 30, 0, "Heavy Gunner Armor", 0, "", 0]
+    // * Custom item Magma Whip
+    , [1365, 15, 0, 150, 4, 0, 110, 65, "Magma Whip", 0, "", 5, 4, 5207, 10, 5292, 10, 20, 3, 0]
+    // * Custom item Magma Guitar
+    , [1366, 14, 0, 150, 4, 0, 110, 65, "Magma Guitar", 0, "", 5, 4, 5199, 15, 5292, 10, 0]
+    // * Custom item Mercenary Bodysuit
+    , [1367, 60, 0, 2, 0, 1, 60, 0, "Mercenary Bodysuit", 0, "", 2, 1, 0]
+    // * Custom item Ruby Pumps
+    , [1368, 63, 0, 2, 0, 0, 15, 0, "Ruby Pumps", 0, "", 10, 3, 0]
+    // * Custom item Staff of the Scholar
+    , [1369, 60, 0, 2, 0, 1, 60, 0, "Staff of the Scholar", 0, "[Missing MDEF ignore]", 4, 4, 89, 15, 20, 3, 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
