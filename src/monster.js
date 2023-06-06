@@ -1,14 +1,14 @@
 m_Monster = [
-["Arc Angeling", 8, 63, 1, 60, 79523, 80, 65, 74, 65, 105, 669, 1338, 54, 58, 4152, 2173, , 1, 0, , , 162, 1, 456, 5, 0]
-    ,["Archer Skeleton", 1, 91, 1, 31, 2840, 14, 8, 5, 90, 5, 128, 256, 0, 0, 782, 648, , 0, 1, , , 459, 2, 40, 1, 0]
-    ,["Blue Plant", 3, 21, 0, 1, 10, 0, 0, 0, 0, 0, 1, 2, 100, 99, 0, 0, , 5, 0, , , 0]
-    ,["Red Mushroom", 3, 21, 0, 1, 15, 0, 0, 0, 0, 0, 1, 2, 100, 99, 0, 0, , 5, 0, , , 0]
-    ,["Red Plant", 3, 21, 0, 1, 10, 0, 0, 0, 0, 0, 1, 2, 100, 99, 0, 0, , 5, 0, , , 0]
-    ,["Arclouse", 4, 22, 1, 59, 6075, 5, 75, 5, 75, 50, 570, 640, 10, 15, 2956, 2411, , 0, 0, , , 452, 1, 0]
-    ,["Assaulter", 7, 42, 1, 71, 11170, 10, 74, 35, 100, 100, 764, 1499, 35, 28, 4854, 2654, , 0, 0, , , 83, 10, 454, 3, 0]
-    ,["Anacondaq", 2, 51, 1, 23, 1109, 28, 23, 10, 36, 5, 124, 157, 0, 0, 300, 255, , 0, 0, , , 460, 3, 455, 1, 0]
-    ,["Anolian", 5, 12, 1, 61, 16490, 58, 43, 25, 80, 65, 640, 980, 15, 15, 6284, 4210, , 0, 0, , , 6, 5, 451, 1, 0]
-    ,["Apocalypse", 0, 3, 2, 66, 22880, 120, 48, 48, 66, 85, 1030, 1370, 62, 49, 6540, 4935, , 0, 0, , , 73, 5, 472, 4, 489, 1, 0]
+    ["Arc Angeling", 8, 63, 1, 60, 79523, 80, 65, 74, 65, 105, 669, 1338, 54, 58, 4152, 2173, , 1, 0, , , 162, 1, 456, 5, 0]
+    , ["Archer Skeleton", 1, 91, 1, 31, 2840, 14, 8, 5, 90, 5, 128, 256, 0, 0, 782, 648, , 0, 1, , , 459, 2, 40, 1, 0]
+    , ["Blue Plant", 3, 21, 0, 1, 10, 0, 0, 0, 0, 0, 1, 2, 100, 99, 0, 0, , 5, 0, , , 0]
+    , ["Red Mushroom", 3, 21, 0, 1, 15, 0, 0, 0, 0, 0, 1, 2, 100, 99, 0, 0, , 5, 0, , , 0]
+    , ["Red Plant", 3, 21, 0, 1, 10, 0, 0, 0, 0, 0, 1, 2, 100, 99, 0, 0, , 5, 0, , , 0]
+    , ["Arclouse", 4, 22, 1, 59, 6075, 5, 75, 5, 75, 50, 570, 640, 10, 15, 2956, 2411, , 0, 0, , , 452, 1, 0]
+    , ["Assaulter", 7, 42, 1, 71, 11170, 10, 74, 35, 100, 100, 764, 1499, 35, 28, 4854, 2654, , 0, 0, , , 83, 10, 454, 3, 0]
+    , ["Anacondaq", 2, 51, 1, 23, 1109, 28, 23, 10, 36, 5, 124, 157, 0, 0, 300, 255, , 0, 0, , , 460, 3, 455, 1, 0]
+    , ["Anolian", 5, 12, 1, 61, 16490, 58, 43, 25, 80, 65, 640, 980, 15, 15, 6284, 4210, , 0, 0, , , 6, 5, 451, 1, 0]
+    , ["Apocalypse", 0, 3, 2, 66, 22880, 120, 48, 48, 66, 85, 1030, 1370, 62, 49, 6540, 4935, , 0, 0, , , 73, 5, 472, 4, 489, 1, 0]
     , ["Am Mut", 6, 71, 0, 61, 12099, 40, 65, 35, 83, 45, 1040, 1121, 50, 10, 7709, 2690, , 0, 0, , , 65, 9, 244, 5, 457, 3, 0]
     , ["Alarm", 0, 3, 1, 58, 10647, 72, 62, 10, 85, 45, 480, 600, 15, 15, 4104, 3694, , 0, 0, , , 464, 3, 497, 2, 486, 1, 0]
     , ["Alligator", 2, 11, 1, 42, 4488, 50, 45, 10, 69, 65, 315, 360, 2, 5, 1522, 1157, , 0, 0, , , 451, 2, 0]
@@ -654,91 +654,121 @@ m_Monster = [
     // , ["Stalker Gertie [MVP] (aRO)", 7, 54, 1, 120, 8926014, 42, 150, 51, 150, 61, 2548, 12324, 35, 27, 22103490, 13456370, , 1, 0, , , 6, 10, 17, 10, 169, 10, 171, 5, 455, 5, 461, 5, 487, 1, 0]
     // , ["Minstel Alphoccio [MVP] (aRO)", 7, 44, 1, 120, 8567411, 43, 150, 107, 150, 99, 5282, 7498, 33, 27, 21130180, 12344860, , 1, 0, , , 40, 10, 41, 10, 130, 10, 199, 5, 292, 10, 448, 5, 449, 5, 454, 5, 461, 5, 487, 1, 0]
     // , ["Gypsy Trentini [MVP] (aRO)", 7, 44, 1, 120, 8567411, 55, 150, 217, 145, 61, 4032, 8072, 30, 28, 22318790, 12815480, , 1, 0, , , 40, 10, 41, 10, 207, 5, 292, 10, 448, 5, 449, 5, 454, 5, 461, 5, 487, 1, 0]
-    
+
     // ID   NAME             RACE           ELEMENT            SIZE         LVL HP    VIT AGI INT DEX LUK MIN-ATK MAX-ATK DEF  MDEF BASEEXP  JOBEXP ?  ISBOSS = 1 ISRANGE = 1 ? ? ? SKILL/LVL ENDED WITH A 0
-    , ["Abomring",      Race.Formless, Elements.Neutral3, Size.Small,  32, 2265, 16, 33, 1,  55, 15, 180,    255,    5,   10,  818,     595,    , 0,         0,            , , Skill.SilenceAttack, 5, 0]
-    , ["Ancient Guard", Race.Formless, Elements.Ghost1,   Size.Medium, 41, 5940, 28, 25, 1,  60, 45, 285,    394,    16,  15,  3645,    2342,   , 0,         0,            , , Skill.Pierce, 5, Skill.SpearStab, 5, Skill.StunAttack, 3, 0]
-    , ["Assassin Fly",  Race.Formless, Elements.Wind3,    Size.Medium, 85, 85000, 60, 105, 85,  108, 30, 1285,    2000,    25,  30,  85000,    65000,   , 1,         0,            , , 0]
+    , ["Abomring", Race.Formless, Elements.Neutral3, Size.Small, 32, 2265, 16, 33, 1, 55, 15, 180, 255, 5, 10, 818, 595, , 0, 0, , , Skill.SilenceAttack, 5, 0]
+    , ["Ancient Guard", Race.Formless, Elements.Ghost1, Size.Medium, 41, 5940, 28, 25, 1, 60, 45, 285, 394, 16, 15, 3645, 2342, , 0, 0, , , Skill.Pierce, 5, Skill.SpearStab, 5, Skill.StunAttack, 3, 0]
+    , ["Assassin Fly", Race.Formless, Elements.Wind3, Size.Medium, 85, 85000, 60, 105, 85, 108, 30, 1285, 2000, 25, 30, 85000, 65000, , 1, 0, , , 0]
     // ! Add skills
-    , ["Bonechewer",    Race.Undead,   Elements.Undead2,  Size.Medium, 51, 8485, 30, 40, 1,  67, 1, 415,    580,    5,  26,  3355,    2841,   , 0,         0,            , , 0]
+    , ["Bonechewer", Race.Undead, Elements.Undead2, Size.Medium, 51, 8485, 30, 40, 1, 67, 1, 415, 580, 5, 26, 3355, 2841, , 0, 0, , , 0]
     // ! Add skills and check race & element
-    , ["Cave Viper",    Race.Undead,   Elements.Poison3,  Size.Medium, 75, 11455, 50, 73, 15,  150, 20, 935,    1100,    20,  25,  6893,    5482,   , 0,         0,            , , 0]
+    , ["Cave Viper", Race.Undead, Elements.Poison3, Size.Medium, 75, 11455, 50, 73, 15, 150, 20, 935, 1100, 20, 25, 6893, 5482, , 0, 0, , , 0]
     // ! Add skills
-    , ["Conductring",   Race.Formless, Elements.Wind1,    Size.Medium, 44, 5065, 16, 55, 90,  65, 15, 385,    420,    30,  27,  2204,    2050,   , 0,         0,            , , 0]
+    , ["Conductring", Race.Formless, Elements.Wind1, Size.Medium, 44, 5065, 16, 55, 90, 65, 15, 385, 420, 30, 27, 2204, 2050, , 0, 0, , , 0]
     // ! Add skills
-    , ["Corruptor",     Race.Demon,    Elements.Shadow2,    Size.Large,  70, 13800, 16, 85, 100,  100, 15, 855,    1280,    40,  35,  6255,    5050,   , 0,         0,            , , 0]
+    , ["Corruptor", Race.Demon, Elements.Shadow2, Size.Large, 70, 13800, 16, 85, 100, 100, 15, 855, 1280, 40, 35, 6255, 5050, , 0, 0, , , 0]
     // ! Add skills and check race & element
-    , ["Demonic Tutor", Race.Demon,    Elements.Shadow2,    Size.Large,  74, 41585, 12, 75, 70,  80, 34, 175,    295,    5,  70,  0,    0,   , 0,         0,            , , 0]
+    , ["Demonic Tutor", Race.Demon, Elements.Shadow2, Size.Large, 74, 41585, 12, 75, 70, 80, 34, 175, 295, 5, 70, 0, 0, , 0, 0, , , 0]
     // ! Add skills
-    , ["Dory",     Race.Fish,    Elements.Water3,    Size.Small,  58, 9615, 30, 72, 72,  82, 50, 465,    712,    15,  18,  3385,    2989,   , 0,         0,            , , 0]
-    , ["Doughring",     Race.Formless,    Elements.Neutral1,    Size.Medium,  25, 1204, 28, 18, 15,  30, 20, 75,    100,    10,  15,  265,    222,   , 0,         0,            , , 0]
+    , ["Dory", Race.Fish, Elements.Water3, Size.Small, 58, 9615, 30, 72, 72, 82, 50, 465, 712, 15, 18, 3385, 2989, , 0, 0, , , 0]
+    , ["Doughring", Race.Formless, Elements.Neutral1, Size.Medium, 25, 1204, 28, 18, 15, 30, 20, 75, 100, 10, 15, 265, 222, , 0, 0, , , 0]
     // ! Add skills
-    , ["Flame Beetle",     Race.Insect,    Elements.Fire1,    Size.Medium,  45, 3685, 15, 35, 40,  75, 30, 318,    382,    24,  16,  1631,    1004,   , 0,         0,            , , 0]
+    , ["Flame Beetle", Race.Insect, Elements.Fire1, Size.Medium, 45, 3685, 15, 35, 40, 75, 30, 318, 382, 24, 16, 1631, 1004, , 0, 0, , , 0]
     // ! Add skills & is it a mini boss?
-    , ["Frigid Lich",     Race.Undead,    Elements.Water2,    Size.Medium,  83, 29758, 65, 43, 85,  66, 55, 1020,    1450,    10,  40,  16640,    9984,   , 0,         0,            , , 0]
+    , ["Frigid Lich", Race.Undead, Elements.Water2, Size.Medium, 83, 29758, 65, 43, 85, 66, 55, 1020, 1450, 10, 40, 16640, 9984, , 0, 0, , , 0]
     // ! Add skills & is it a mini boss?
-    , ["Ghost Shroom",     Race.Plant,    Elements.Ghost1,    Size.Medium,  79, 27460, 54, 33, 25,  58, 10, 770,    1105,    20,  10,  12402,    9919,   , 0,         0,            , , 0]
+    , ["Ghost Shroom", Race.Plant, Elements.Ghost1, Size.Medium, 79, 27460, 54, 33, 25, 58, 10, 770, 1105, 20, 10, 12402, 9919, , 0, 0, , , 0]
     // ! Add skills
-    , ["Great Snake",     Race.Brute,    Elements.Earth1,    Size.Medium,  37, 3128, 15, 45, 10,  65, 5, 250,    300,    5,  0,  1280,    1049,   , 0,         0,            , , 0]
+    , ["Great Snake", Race.Brute, Elements.Earth1, Size.Medium, 37, 3128, 15, 45, 10, 65, 5, 250, 300, 5, 0, 1280, 1049, , 0, 0, , , 0]
     // ! Add skills
-    , ["Gyokuto",     Race.Angel,    Elements.Holy1,    Size.Small,  75, 12012, 43, 80, 130,  93, 99, 581,    793,    30,  32,  8485,    6350,   , 0,         0,            , , 0]
+    , ["Gyokuto", Race.Angel, Elements.Holy1, Size.Small, 75, 12012, 43, 80, 130, 93, 99, 581, 793, 30, 32, 8485, 6350, , 0, 0, , , 0]
     // ! Add skills & is it a mini boss?
-    , ["Indignant Soul",     Race.Formless,    Elements.Ghost3,    Size.Small,  82, 15400, 35, 78, 125,  73, 25, 1145,    1380,    40,  40,  15860,    9282,   , 0,         0,            , , 0]
+    , ["Indignant Soul", Race.Formless, Elements.Ghost3, Size.Small, 82, 15400, 35, 78, 125, 73, 25, 1145, 1380, 40, 40, 15860, 9282, , 0, 0, , , 0]
     // ! Add skills & is it a mini boss?
-    , ["Jabberwock",     Race.Demon,    Elements.Shadow2,    Size.Large,  66, 85900, 65, 80, 90,  105, 10, 1685,    2150,    35,  35,  46200,    40500,   , 0,         0,            , , 0]
+    , ["Jabberwock", Race.Demon, Elements.Shadow2, Size.Large, 66, 85900, 65, 80, 90, 105, 10, 1685, 2150, 35, 35, 46200, 40500, , 0, 0, , , 0]
     // ! Add skills
-    , ["Jelring",     Race.Plant,    Elements.Water1,    Size.Medium,  22, 1115, 12, 17, 1,  29, 15, 85,    110,    10,  10,  308,    300,   , 0,         0,            , , 0]
+    , ["Jelring", Race.Plant, Elements.Water1, Size.Medium, 22, 1115, 12, 17, 1, 29, 15, 85, 110, 10, 10, 308, 300, , 0, 0, , , 0]
     // ! Add skills
-    , ["Kalec",     Race.Dragon,    Elements.Water2,    Size.Medium,  42, 4366, 40, 26, 55,  72, 50, 304,    401,    22,  25,  2622,    1695,   , 0,         0,            , , 0]
+    , ["Kalec", Race.Dragon, Elements.Water2, Size.Medium, 42, 4366, 40, 26, 55, 72, 50, 304, 401, 22, 25, 2622, 1695, , 0, 0, , , 0]
     // ! Add skills
-    , ["King Poring",     Race.Plant,    Elements.Ghost1,    Size.Large,  83, 504000, 85, 125, 130,  120, 15, 2800,    3525,    60,  65,  225000,    140000,   , 1,         0,            , , 0]
+    , ["King Poring", Race.Plant, Elements.Ghost1, Size.Large, 83, 504000, 85, 125, 130, 120, 15, 2800, 3525, 60, 65, 225000, 140000, , 1, 0, , , 0]
     // ! Add skills
-    , ["Kodama",     Race.Plant,    Elements.Neutral3,    Size.Large,  77, 17940, 25, 58, 85,  125, 1, 1085,    1265,    69,  20,  10804,    7245,   , 0,         0,            , , 0]
+    , ["Kodama", Race.Plant, Elements.Neutral3, Size.Large, 77, 17940, 25, 58, 85, 125, 1, 1085, 1265, 69, 20, 10804, 7245, , 0, 0, , , 0]
     // ! Add skills
-    , ["Logi",     Race.DemiHuman,    Elements.Shadow1,    Size.Large,  92, 585000, 115, 135, 125,  115, 110, 3400,    3800,    55,  69,  460200,    368160,   , 1,         0,            , , 0]
+    , ["Logi", Race.DemiHuman, Elements.Shadow1, Size.Large, 92, 585000, 115, 135, 125, 115, 110, 3400, 3800, 55, 69, 460200, 368160, , 1, 0, , , 0]
     // ! Add skills
-    , ["Miasmus",     Race.Formless,    Elements.Poison3,    Size.Large,  85, 32545, 90, 59, 90,  95, 40, 1680,    2200,    15,  40,  21427,    15002,   , 0,         0,            , , 0]
+    , ["Miasmus", Race.Formless, Elements.Poison3, Size.Large, 85, 32545, 90, 59, 90, 95, 40, 1680, 2200, 15, 40, 21427, 15002, , 0, 0, , , 0]
     // ! Add skills
-    , ["Moon Rabbit",     Race.Brute,    Elements.Holy1,    Size.Medium,  74, 11585, 51, 69, 70,  90, 65, 720,    915,    20,  24,  7180,    6095,   , 0,         0,            , , 0]
+    , ["Moon Rabbit", Race.Brute, Elements.Holy1, Size.Medium, 74, 11585, 51, 69, 70, 90, 65, 720, 915, 20, 24, 7180, 6095, , 0, 0, , , 0]
     // ! Add skills
-    , ["Onigiring",     Race.Formless,    Elements.Poison2,    Size.Small,  72, 9999, 42, 61, 1,  82, 1, 490,    618,    21,  29,  6505,    5114,   , 0,         0,            , , 0]
+    , ["Onigiring", Race.Formless, Elements.Poison2, Size.Small, 72, 9999, 42, 61, 1, 82, 1, 490, 618, 21, 29, 6505, 5114, , 0, 0, , , 0]
     // ! Add skills
-    , ["Pill Bug",     Race.Insect,    Elements.Earth2,    Size.Medium,  40, 4105, 5, 45, 5,  65, 50, 275,    345,    10,  10,  1557,    1301,   , 0,         0,            , , 0]
+    , ["Pill Bug", Race.Insect, Elements.Earth2, Size.Medium, 40, 4105, 5, 45, 5, 65, 50, 275, 345, 10, 10, 1557, 1301, , 0, 0, , , 0]
     // ! Add skills
-    , ["Protoring",     Race.Plant,    Elements.Earth1,    Size.Medium,  38, 3640, 16, 51, 40,  60, 15, 215,    285,    5,  10,  1210,    1008,   , 0,         0,            , , 0]
+    , ["Protoring", Race.Plant, Elements.Earth1, Size.Medium, 38, 3640, 16, 51, 40, 60, 15, 215, 285, 5, 10, 1210, 1008, , 0, 0, , , 0]
     // ! Add skills
-    , ["Puck",     Race.Dragon,    Elements.Holy1,    Size.Medium,  55, 8816, 52, 62, 40,  90, 65, 603,   689,    27,  15,  3958,   3001,   , 0,         0,            , , 0]
+    , ["Puck", Race.Dragon, Elements.Holy1, Size.Medium, 55, 8816, 52, 62, 40, 90, 65, 603, 689, 27, 15, 3958, 3001, , 0, 0, , , 0]
     // ! Add skills
-    , ["Roper",     Race.Plant,    Elements.Earth2,    Size.Medium,  81, 29500, 40, 51, 85,  126, 50, 1350,   1650,    15,  30,  15002,   10959,   , 0,         0,            , , 0]
+    , ["Roper", Race.Plant, Elements.Earth2, Size.Medium, 81, 29500, 40, 51, 85, 126, 50, 1350, 1650, 15, 30, 15002, 10959, , 0, 0, , , 0]
     // ! Add skills
-    , ["Shade of Payon",     Race.Formless,    Elements.Ghost3,    Size.Large,  55, 10122, 40, 79, 92,  81, 25, 625,   795,    25,  28,  4519,   3810,   , 0,         0,            , , 0]
+    , ["Shade of Payon", Race.Formless, Elements.Ghost3, Size.Large, 55, 10122, 40, 79, 92, 81, 25, 625, 795, 25, 28, 4519, 3810, , 0, 0, , , 0]
     // ! Add skills
-    , ["Spectring",     Race.Demon,    Elements.Ghost1,    Size.Medium,  59, 7955, 35, 68, 120,  90, 15, 602,  825,    25,  20,  4052,   3100,   , 0,         0,            , , 0]
+    , ["Spectring", Race.Demon, Elements.Ghost1, Size.Medium, 59, 7955, 35, 68, 120, 90, 15, 602, 825, 25, 20, 4052, 3100, , 0, 0, , , 0]
     // ! Add skills
-    , ["The Grovekeeper",     Race.Undead,    Elements.Neutral1,    Size.Large,  73, 63455, 60, 25, 75,  90, 1, 195,  329,    45,  45,  0,   0,   , 0,         0,            , , 0]
+    , ["The Grovekeeper", Race.Undead, Elements.Neutral1, Size.Large, 73, 63455, 60, 25, 75, 90, 1, 195, 329, 45, 45, 0, 0, , 0, 0, , , 0]
     // ! Add skills
-    , ["Tomb Crawler",     Race.Insect,    Elements.Earth2,    Size.Small,  40, 3250, 10, 28, 1,  63, 1, 262,  312,    23,  12,  1302,   959,   , 0,         0,            , , 0]
+    , ["Tomb Crawler", Race.Insect, Elements.Earth2, Size.Small, 40, 3250, 10, 28, 1, 63, 1, 262, 312, 23, 12, 1302, 959, , 0, 0, , , 0]
     // ! Add skills
-    , ["Twinorc",     Race.DemiHuman,    Elements.Shadow2,    Size.Medium,  80, 27800, 80, 50, 25,  81, 20, 1230,  1540,    27,  35,  14625,   7709,   , 0,         0,            , , 0]
+    , ["Twinorc", Race.DemiHuman, Elements.Shadow2, Size.Medium, 80, 27800, 80, 50, 25, 81, 20, 1230, 1540, 27, 35, 14625, 7709, , 0, 0, , , 0]
     // ! Add skills
-    , ["Wolpertinger",     Race.Brute,    Elements.Neutral3,    Size.Medium,  69, 9250, 45, 62, 80,  80, 1, 785,  890,    18,  27,  6955,   5215,   , 0,         0,            , , 0]
+    , ["Wolpertinger", Race.Brute, Elements.Neutral3, Size.Medium, 69, 9250, 45, 62, 80, 80, 1, 785, 890, 18, 27, 6955, 5215, , 0, 0, , , 0]
     // ! Add skills
-    , ["Yser",     Race.Dragon,    Elements.Wind1,    Size.Medium,  43, 4794, 30, 48, 65,  68, 50, 334,  415,    29,  16,  2712,   2090,   , 0,         0,            , , 0]
+    , ["Yser", Race.Dragon, Elements.Wind1, Size.Medium, 43, 4794, 30, 48, 65, 68, 50, 334, 415, 29, 16, 2712, 2090, , 0, 0, , , 0]
     // ! Add skills
-    , ["Lady Huo",     Race.Formless,    Elements.Holy1,    Size.Large,  87, 482500, 85, 102, 165,  130, 80, 2750,  3590,    42,  45,  157000,   120800,   , 1,         0,            , , 0]
-    
-    
+    , ["Lady Huo", Race.Formless, Elements.Holy1, Size.Large, 87, 482500, 85, 102, 165, 130, 80, 2750, 3590, 42, 45, 157000, 120800, , 1, 0, , , 0]
+
+
     // * Summer event mobs
     // ! Add skills
-    , ["Naiad",     Race.Formless,    Elements.Water4,    Size.Medium,  55, 9115, 30, 68, 72,  73, 50, 401,  686,    10,  20,  3194,   2760,   , 0,         0,            , , 0]
+    , ["Naiad", Race.Formless, Elements.Water4, Size.Medium, 55, 9115, 30, 68, 72, 73, 50, 401, 686, 10, 20, 3194, 2760, , 0, 0, , , 0]
     // ! Add skills
-    , ["Selkie",     Race.Formless,    Elements.Water2,    Size.Medium,  52, 8352, 25, 61, 65,  81, 50, 505,  721,    22,  10,  3612,   2899,   , 0,         0,            , , 0]
+    , ["Selkie", Race.Formless, Elements.Water2, Size.Medium, 52, 8352, 25, 61, 65, 81, 50, 505, 721, 22, 10, 3612, 2899, , 0, 0, , , 0]
     // ! Add skills
-    , ["Bombo",     Race.Plant,    Elements.Fire2,    Size.Small,  48, 6522, 29, 55, 20,  70, 32, 401,  621,    8,  7,  3055,   2221,   , 0,         0,            , , 0]
+    , ["Bombo", Race.Plant, Elements.Fire2, Size.Small, 48, 6522, 29, 55, 20, 70, 32, 401, 621, 8, 7, 3055, 2221, , 0, 0, , , 0]
     // ! Add skills
-    , ["Needlefish",     Race.Fish,    Elements.Fire1,    Size.Small,  50, 7005, 1, 60, 75,  72, 42, 500,  785,    19,  20,  3261,   3005,   , 0,         0,            , , 0]
+    , ["Needlefish", Race.Fish, Elements.Fire1, Size.Small, 50, 7005, 1, 60, 75, 72, 42, 500, 785, 19, 20, 3261, 3005, , 0, 0, , , 0]
     // ! Add skills
-    , ["Abzu",     Race.Formless,    Elements.Water1,    Size.Medium,  61, 26585, 35, 71, 80,  75, 66, 940,  1550,    26,  22,  12800,   9090,   , 0,         0,            , , 0]
+    , ["Abzu", Race.Formless, Elements.Water1, Size.Medium, 61, 26585, 35, 71, 80, 75, 66, 940, 1550, 26, 22, 12800, 9090, , 0, 0, , , 0]
+
+    // * Powered by the Ashes
+    // ! Add skills
+    , ["Rekenber Soldier", Race.DemiHuman, Elements.Neutral1, Size.Medium, 51, 7200, 20, 50, 20, 85, 35, 350, 351, 20, 12, 2916, 2364, , 0, 0, , , 0]
+    // ! Add skills
+    , ["Rekenber Guard", Race.DemiHuman, Elements.Neutral1, Size.Medium, 45, 4400, 1, 50, 1, 50, 35, 200, 201, 4, 12, 2208, 1824, , 0, 0, , , 0]
+    // ! Add skills
+    , ["Rekenber Mercenary", Race.DemiHuman, Elements.Neutral1, Size.Medium, 35, 4700, 15, 44, 10, 50, 35, 250, 251, 2, 8, 2496, 1524, , 0, 0, , , 0]
+    // ! Add skills
+    , ["Rekenber General", Race.DemiHuman, Elements.Neutral1, Size.Medium, 50, 41700, 30, 55, 15, 70, 1, 600, 750, 20, 15, 39000, 21000, , 0, 0, , , 0]
+    // ! Add skills
+    , ["Magma Familiar", Race.Formless, Elements.Fire2, Size.Small, 59, 11900, 1, 50, 65, 58, 35, 350, 450, 10, 15, 4500, 2520, , 0, 0, , , 0]
+    // ! Add skills
+    , ["Magmawhip", Race.Dragon, Elements.Fire2, Size.Small, 66, 14100, 20, 57, 58, 70, 35, 500, 600, 15, 12, 5304, 3516, , 0, 0, , , 0]
+    // ! Add skills
+    , ["Living Magma", Race.Formless, Elements.Fire3, Size.Large, 72, 18300, 40, 1, 70, 71, 35, 600, 800, 20, 25, 6552, 3924, , 0, 0, , , 0]
+    // ! Add skills
+    , ["Ignis", Race.Formless, Elements.Fire3, Size.Large, 80, 83200, 50, 35, 60, 74, 1, 1000, 1450, 25, 40, 67560, 28200, , 0, 0, , , 0]
+    // ! Add skills
+    , ["WELDER", Race.Formless, Elements.Wind3, Size.Large, 75, 21800, 50, 70, 70, 80, 50, 700, 1000, 25, 20, 15480, 8640, , 0, 0, , , 0]
+    // ! Add skills
+    , ["CORE", Race.Formless, Elements.Fire2, Size.Small, 68, 15800, 1, 78, 70, 70, 1, 650, 850, 10, 40, 9900, 8040, , 0, 0, , , 0]
+    // ! Add skills
+    , ["SCOUT", Race.Demon, Elements.Fire2, Size.Small, 71, 18000, 40, 70, 70, 75, 35, 600, 800, 30, 10, 12000, 11040, , 0, 0, , , 0]
+    // ! Add skills
+    , ["FUEL", Race.Formless, Elements.Fire3, Size.Small, 72, 20900, 50, 50, 99, 70, 50, 650, 1050, 20, 30, 16440, 11760, , 0, 0, , , 0]
+    // ! Add skills
+    , ["DRILL", Race.Formless, Elements.Fire3, Size.Large, 76, 31100, 40, 70, 40, 90, 50, 810, 1250, 10, 25, 16440, 11760, , 0, 0, , , 0]
+    // ! Add skills
+    , ["MAID", Race.Formless, Elements.Ghost3, Size.Medium, 81, 156200, 90, 80, 90, 70, 1, 1950, 3100, 25, 25, 82920, 52080, , 0, 0, , , 0]
 ];
 //,[ ID, "name", race, element, size, lvl, hp, vit, agi, int, dex, luk, min atk, max atk, def, mdef, baseexp, jobexp, ? , 0 = non boss / 1 = boss, 0 = melee / 1 = long-range ]
 

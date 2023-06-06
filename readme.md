@@ -16,33 +16,17 @@ npm install
 npm run dev
 ```
 
-## Pending modifications
-!!! This list is incomplete
+## Wanna help?
+You can do any item below and submit a PR
+
+--- 
 ### Class rebalance (wiki page from top to bottom)
 
-- Knight
-    - ~~Bowling bash new damage formula~~
-
-- Crusader
-    - ~~Spear quicken new formula~~
-
 - Acolyte
-    - ~~Demon bane new stats~~
     - Holy light new formula and cast time (can't seem to find this calculation at a first glance)
 
 - Priest
     - ~~Battle mastery new formula~~ and add aspd +12% if skill is lvl 10 (don't know how to apply it correctly, maybe at the same time as spear quicken calculation ?)
-    - ~~Turn undead new damage on failure formula~~
-    - ~~Remove slow poison skill~~
-
-- Monk
-    - ~~Dodge new flee formula~~
-    - ~~Mental strength new formula~~
-    - ~~Iron fists new formula~~
-    - ~~Iron fist extra aspd increase~~
-    - ~~Raging quadruple blow damage increase by 30%~~
-    - ~~Raging thrust damage increase~~ (and 15% attack buff ?)
-    - ~~Throw spirit sphere new formula~~
 
 - Hunter
     - ~~Blast mine new formula~~
@@ -54,8 +38,6 @@ npm run dev
 - Bard/Dancer
     - ~~Musical lesson increase attack by 5~~ and add 1% aspd per lvl
     - ~~Dancing lesson increase attack by 5~~ and add 1% aspd per lvl
-    - ~~Throw arrow new formula~~
-    - ~~Musical strike new formula~~
 
 - Wizard
     - Add sense to skills and calculate it's 2% reduction
@@ -65,10 +47,6 @@ npm run dev
     - ~~Advanced book new formula~~ and +1% matk per lvl
     - Investigate auto spell new changes and how to implement them in the battle calculation
 
-- Thief
-    - ~~Double attack increased chance~~
-    - Envenom new formula (can't seem to find this calculation at a first glance)
-
 - Assassin
     - ~~Right hand mastery increase values~~
     - ~~Left hand mastery increase values~~ (damage needs to be tested and compared to rocalc)
@@ -76,15 +54,7 @@ npm run dev
 
 - Rogue
     - Strip skills
-    - ~~Sword mastery now has double attack chance~~
     - Back stab cast delay
-    - ~~Raid new formula~~
-
-- Blacksmith
-    - ~~Skin tempering new formula~~
-
-- Alchemist
-    - ~~Axe mastery +5 atk~~ and +0.8% aspd per lvl
 
 - Super novice
     - Extra HP and SP calculations (need to code this)
@@ -92,11 +62,4 @@ npm run dev
 ### Add new items, monsters and areas
 - This includes new cards mechanics, which will be the most difficult thing
 
-### Project files
-
-This are some tasks anyone can do despite not knowing about RO at all
-
-- Modify every file to typescript, this is done by adding global variables to global.d.ts and adding "global" to every variable in the file, later modify the index.html
-- Create enums for whatever is necessary (weapon types, skills, races, elements, ...)
-- Create typings, for example for global variables
-- Rewrite some parts of the code and add comments for better understanding
+---
