@@ -1881,7 +1881,7 @@ m_Item = [
     // * Custom item Fancy Shoes
     , [1363, 63, 1, 0, 0, 1, 30, 0, "Fancy Shoes", 0, "", 19, 2, 13, 100, 0]
     // * Custom item Heavy Gunner Armor
-    , [1364, 63, 1, 0, 0, 1, 30, 0, "Heavy Gunner Armor", 0, "", 0]
+    , [1364, 60, 86, 7, 0, 1, 400, 80, "Heavy Gunner Armor", 0, "", 19, 5, 13, 150, 57, 2, 0]
     // * Custom item Magma Whip
     , [1365, 15, 0, 150, 4, 0, 110, 65, "Magma Whip", 0, "", 5, 4, 5207, 10, 5292, 10, 20, 3, 0]
     // * Custom item Magma Guitar
