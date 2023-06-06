@@ -2139,7 +2139,7 @@ function ActiveSkillSetPlus() {
         for (j = 0,
             n = k; 999 != w_ASSP0[j]; n++,
             j++)
-            5040 == w_ASSP9[j] ? c.A_ActiveSkill.options[n] = new Option(m_Skill[w_ASSP0[j]][2] + " (Yggdrasil Leaf)", w_ASSP9[j]) : w_ASSP9[j] >= 5e3 ? c.A_ActiveSkill.options[n] = new Option(m_Skill[w_ASSP0[j]][2] + " (Scroll Skill)", w_ASSP9[j]) : w_ASSP9[j] >= 3e3 ? c.A_ActiveSkill.options[n] = new Option(m_Skill[w_ASSP0[j]][2] + " (Adquired Skill)", w_ASSP9[j]) : c.A_ActiveSkill.options[n] = new Option(m_Skill[w_ASSP0[j]][2] + " (Auto-Casted Skill)", w_ASSP9[j])
+            5040 == w_ASSP9[j] ? c.A_ActiveSkill.options[n] = new Option(m_Skill[w_ASSP0[j]][2] + " (Yggdrasil Leaf)", w_ASSP9[j]) : w_ASSP9[j] >= 5e3 ? c.A_ActiveSkill.options[n] = new Option(m_Skill[w_ASSP0[j]][2] + " (Scroll Skill)", w_ASSP9[j]) : w_ASSP9[j] >= 3e3 ? c.A_ActiveSkill.options[n] = new Option(m_Skill[w_ASSP0[j]][2] + " (Acquired Skill)", w_ASSP9[j]) : c.A_ActiveSkill.options[n] = new Option(m_Skill[w_ASSP0[j]][2] + " (Auto-Casted Skill)", w_ASSP9[j])
     }
     for (n = 0; 20 > n; n++)
         w_ASSP0bk[n] = w_ASSP0[n];
