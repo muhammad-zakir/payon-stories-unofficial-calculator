@@ -586,7 +586,7 @@ m_Card = [
     , [560, 6, "Kalec", "[Refine Rate 9~10] MaxHP +10% and MaxSP +10%", 4, 2, 0]
     , [561, 6, "King Poring", "Grants the Blacksmith skill Greed", 0]
     , [562, 5, "Kodama", "When your HP is brought below 35% you will heal for 30% of your health, 45s cooldown", 0]
-    , [563, 7, "Lady Huo", "When dealing magic damage you have a 10% chance to enter <b>Clearcasting</b> status for the next spell (reduces casting time by 50% and the spell is uninterruptible)<br><b>Card not active yet</b>", 4, 1, 0]
+    , [563, 7, "Lady Huo", "When dealing magic damage you have a 10% chance to enter <b>Clearcasting</b> status for the next spell (reduces casting time by 50% and the spell is uninterruptible)", 4, 1, 0]
     , [564, 4, "Logi", "MaxHP +5% and MaxSP +5% <br> When being attacked there is a 2% chance to <b>Curse</b> all enemies in a 11x11 area around the user", 198, 7, 0]
     , [565, 7, "Miasmus", "", 150, 100, 220, 49, 0]
     , [566, 2, "Moon Rabbit", "On WoE castle this effect is only 20%", 94, 50, 0]

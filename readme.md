@@ -59,7 +59,28 @@ You can do any item below and submit a PR
 - Super novice
     - Extra HP and SP calculations (need to code this)
 
-### Add new items, monsters and areas
-- This includes new cards mechanics, which will be the most difficult thing
+### Items
+- Guardan's Skull: Missing +1 DEF every 2 refines
+- Momoe's Hairband: Missing 20% DMG to turtles
+- Poring Dagger: Missing ASPD increase, haven't found how much it increases yet.
+- Staff of the Scholar: Missing MDEF ignore
+### Mobs
+- Almost every custom mob has missing skills
 
+### Cards
+- Bonechewer: Create brutality status
+- CORE
+- Corruptor: Add corrupting drain damage
+- DRILL
+- FUEL
+- Indigrant Soul
+- Living Magma
+- Logi: Missing 5% HP and SP
+- MAID
+- Puck
+- Rekenber General: Missing neutral damage and MDEF modifications per refine
+- Rekenber Mercenary: Add Bash proc
+- Shade of payon: If transcended, damage is +25%
+- Twinorc
+- WELDER
 ---
