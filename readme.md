@@ -69,18 +69,15 @@ You can do any item below and submit a PR
 
 ### Cards
 - Bonechewer: Create brutality status
-- CORE
 - Corruptor: Add corrupting drain damage
 - DRILL
-- FUEL
 - Indigrant Soul
-- Living Magma
+- Living Magma: Extra MATK on Fire element
 - Logi: Missing 5% HP and SP
-- MAID
 - Puck
 - Rekenber General: Missing neutral damage and MDEF modifications per refine
 - Rekenber Mercenary: Add Bash proc
 - Shade of payon: If transcended, damage is +25%
 - Twinorc
-- WELDER
+- WELDER: Cast time reduction
 ---

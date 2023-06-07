@@ -893,6 +893,8 @@ function StAllCalc() {
         n_A_Buf7[28] ? n_A_FLEE += 33 : n_A_Buf7[46] && (n_A_FLEE += 30),
         TimeItemNumSearch(1) && (n_A_FLEE += 30 * TimeItemNumSearch(1)),
         SU_STR >= 90 && (n_A_FLEE += 10 * EquipNumSearch(442)),
+        // WELDER card extra flee if agi <= 80
+        SU_AGI <= 80 && (n_A_FLEE += 20 * CardNumSearch(585)),
         n_A_Buf2[9] && 0 == SkillSearch(273) && (n_A_FLEE += Math.round(n_A_Buf2[9] / 2)),
         2 == n_A_JobClass() && 295 == n_A_card[12] && (n_A_FLEE += 20),
         n_A_HEAD_REFINE >= 6 && 1555 == n_A_Equip[2] && (n_A_FLEE += 2),
@@ -1084,7 +1086,12 @@ function StAllCalc() {
                 n_A_MATK[0] = Math.floor(n_A_MATK[0] * S / 100),
                 n_A_MATK[2] = Math.floor(n_A_MATK[2] * S / 100)),
             SkillSearch(276) && (n_A_MATK[0] = Math.floor(n_A_MATK[0] * (1 + .05 * SkillSearch(276))),
-                n_A_MATK[2] = Math.floor(n_A_MATK[2] * (1 + .05 * SkillSearch(276))));
+                n_A_MATK[2] = Math.floor(n_A_MATK[2] * (1 + .05 * SkillSearch(276)))),
+
+                // WELDER extra MATK, this is weird but looks ok
+            SU_INT <= 80 && (n_A_MATK[0] += Math.floor(n_A_MATK[0] * 0.1 * CardNumSearch(585))),
+            SU_INT <= 80 && (n_A_MATK[1] += Math.floor(n_A_MATK[1] * 0.1 * CardNumSearch(585))),
+            SU_INT <= 80 && (n_A_MATK[2] += Math.floor(n_A_MATK[2] * 0.1 * CardNumSearch(585)));
     else {
         n_A_StatMATK = n_A_INT + Math.floor(n_A_INT / 2) + Math.floor(n_A_DEX / 5) + Math.floor(n_A_LUK / 3) + Math.floor(n_A_BaseLV / 4);
         var E = 0;

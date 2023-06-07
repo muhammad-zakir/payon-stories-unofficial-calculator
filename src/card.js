@@ -1,5 +1,25 @@
-//m_Card = [ id, position, name, description, ?, ... ]
+let SlotPostion = {
+    Weapon: 1,
+    Headgear: 2,
+    Shield: 3,
+    Armor: 4,
+    Garment: 5,
+    Footgear: 6,
+    Accesory: 7
+};
 
+let ExtraEffects = {
+    INT: 4,
+    Flee: 9,
+    MaxHP: 15,
+    MaxSP: 16,
+    RaceResistance: 50,
+    ElementResistance: 60,
+    CastingTime: 73,
+    IncreaseSkillDamage: 5000,
+};
+
+//m_Card = [ id, position, name, description, ?, ... ]
 m_Card = [
     [0, 0, "(No Card)", 0, 0]
     , [1, 1, "* All Race +20%", 0, 30, 20, 31, 20, 32, 20, 33, 20, 34, 20, 35, 20, 36, 20, 37, 20, 38, 20, 39, 20, 0]
@@ -579,7 +599,7 @@ m_Card = [
     , [553, 5, "Doughring", "Chance of obtaining <b>[Food item]</b>", 9, 7, 0]
     , [554, 7, "Flame Beetle", "Has 20% chance to reduce the zeny cost of <b>Mammonite skill</b> to zero", 0]
     , [555, 6, "Frigid Lich", "", 2, 1, 221, 173, 0]
-    , [556, 3, "Ghost Shroom", "", 9, 10, 68, 20, 0]
+    , [556, 3, "Ghost Shroom", "", ExtraEffects.Flee, 10, 68, 20, 0]
     , [557, 2, "Gyokuto", "", 7104, 20, 0]
     , [558, 4, "Jabberwock", "", 75, -100, 76, -100, 0]
     , [559, 1, "Jelring", "", 10001, 30, 0]
@@ -601,22 +621,23 @@ m_Card = [
     , [575, 1, "Wolpertinger", "", 5112, 15, 5106, 15, 0]
     , [576, 6, "Yser", "", 8, 5, 5171, 30, 5169, 30, 0]
 
-    , [577, 4, "Rekenber Soldier", "<b>[Missing implementation]</b> If coumpounded on Mercenary's Bodysuit, <b>Range +2</b> on all auto attacks as long as w Bow or Spear is not equipped. Does not add range to skills.", 8, 5, 5171, 30, 5169, 30, 0]
-    , [578, 7, "Rekenber Guard", 0, 220, 50, 0]
-    , [579, 2, "Rekenber Mercenary", "Add a 5% chance of casting Lv. 1 <b>Bash</b> while performing a physical melee auto attack. <br> [Knight] If the user has mastered the skill at Lv. 10, you will instead cast Level 10 <b>Bash</b>.", 0]
-    , [580, 5, "Rekenber General", "<b>[Missing implementation]</b><br> Provides an additional 1% Neutral damage and -1 MDEF reduction per refine.", 60, 20, 0]
-    , [581, 2, "Magma Familiar", "Increases movement speed while using performance skills (Bard/Dancer). Does not stack with Soul Linker's Bard/Dancer Link skill.", 5, 1, 0]
-    , [582, 4, "Magmawhip", "Drain <b>100 SP</b> as the armor is unequipped. <br>[Swordman, Merchant, Thief, Acolyte Classes] Gain <b>5 SP</b> each time a monster is killed.", 0]
-    , [583, 6, "Living Magma", "<b>[Missing implementation]</b>", 4, 1, 0]
-    , [584, 2, "Ignis", "You cannot cast Fire Walk while another instance of this skill is still active. Fire Walk has a 12 seconds cooldown and cannot be copied by Plagiarism.", 220, 51, 0]
-    , [585, 4, "WELDER", "<b>[Missing implementation]</b>", 0]
-    , [586, 3, "CORE", "<b>[Missing implementation]</b>", 0]
-    , [587, 2, "SCOUT", "Gain 3 Spirit Spheres each time a monster is killed using Throw Spirit Sphere.", 1, 1, 0]
-    , [588, 6, "FUEL", "<b>[Missing implementation]</b>", 0]
-    , [589, 1, "DRILL", "<b>[Missing implementation]</b>", 0]
-    , [590, 5, "MAID", "<b>[Missing implementation]</b>", 0]
+    , [577, SlotPostion.Armor, "Rekenber Soldier", "<b>[Missing implementation]</b> If coumpounded on Mercenary's Bodysuit, <b>Range +2</b> on all auto attacks as long as w Bow or Spear is not equipped. Does not add range to skills.", 8, 5, 5171, 30, 5169, 30, 0]
+    , [578, SlotPostion.Accesory, "Rekenber Guard", 0, 220, 50, 0]
+    , [579, SlotPostion.Headgear, "Rekenber Mercenary", "Add a 5% chance of casting Lv. 1 <b>Bash</b> while performing a physical melee auto attack. <br> [Knight] If the user has mastered the skill at Lv. 10, you will instead cast Level 10 <b>Bash</b>.", 0]
+    , [580, SlotPostion.Garment, "Rekenber General", "<b>[Missing implementation]</b><br> Provides an additional 1% Neutral damage and -1 MDEF reduction per refine.", 60, 20, 0]
+    , [581, SlotPostion.Headgear, "Magma Familiar", "Increases movement speed while using performance skills (Bard/Dancer). Does not stack with Soul Linker's Bard/Dancer Link skill.", 5, 1, 0]
+    , [582, SlotPostion.Armor, "Magmawhip", "Drain <b>100 SP</b> as the armor is unequipped. <br>[Swordman, Merchant, Thief, Acolyte Classes] Gain <b>5 SP</b> each time a monster is killed.", 0]
+    , [583, SlotPostion.Footgear, "Living Magma", "<b>[Missing implementation]</b>Deal extra MATK on Fire element", ExtraEffects.INT, 1, 10013, 10, ExtraEffects.ElementResistance + 3, -25, 0]
+    , [584, SlotPostion.Headgear, "Ignis", "You cannot cast Fire Walk while another instance of this skill is still active. Fire Walk has a 12 seconds cooldown and cannot be copied by Plagiarism.", 220, 51, 0]
+    , [585, SlotPostion.Garment, "WELDER", "[Base AGI <= 80] Flee +20<BR>[Base INT <= 80] MATK +10%<BR><b>[Missing implementation]</b>[Base DEX <= 80] Cast Time -10%", 0]
+    , [586, SlotPostion.Shield, "CORE", 0, ExtraEffects.RaceResistance + Race.Formless, 20, ExtraEffects.ElementResistance + 3, 20, 0]
+    , [587, SlotPostion.Headgear, "SCOUT", "Gain 3 Spirit Spheres each time a monster is killed using Throw Spirit Sphere.", 1, 1, 0]
+    , [588, SlotPostion.Footgear, "FUEL", 0, ExtraEffects.Flee, 5, ExtraEffects.IncreaseSkillDamage + Skill.Demonstration, 30, ExtraEffects.IncreaseSkillDamage + Skill.AcidTerror, 30, 0]
+    , [589, SlotPostion.Weapon, "DRILL", "<b>[Missing implementation]</b>", 0]
+    , [590, SlotPostion.Garment, "MAID", 0, ExtraEffects.CastingTime, -20, ExtraEffects.MaxHP, -25, ExtraEffects.MaxSP, -25, 0]
 
 ];
+//m_Card = [ id, position, name, description, extra effects, 0]
 
 CardNum = m_Card.length - 1;
 
@@ -625,8 +646,8 @@ m_CardSort = [	//cards renewal comentadas
     [0, 106, 1, 2, 3, 156, 31, 25, 522, 11, 112, 107, 547, 223, 356, 463, 524, 305, 45, 355, 528, 544, 361, 217, 548, 465, 521, 163, 15, 265, 160, 499, 325, 520, 259, 279, 311, 169, 28, 20, 329, 427, 42, 552, 519, 47, 21, 32, 589, 343, 5, 462, 215, 19, 244, 158, 4, 359, 525, 110, 8, 17, 253, 263, 14, 286, 288, 287, 39, 277, 518, 167, 498, 6, 159, 46, 13, 255, 235, 559, 26, 289, 290, 164, 168, 382,/*548,*/219, 7, 165, 37, 23, 398, 35, 166, 157, 36,/*549,*/30, 328, 40, 380, 517, 466, 516, 345, 252, 27, 353, 12, 360, 44, 515, 171, 33,/*547,*/170, 111, 390, 22, 109, 16, 108, 254, 43, 428, 29, 9, 34, 162, 41, 366, 313, 18, 464, 526, 532, 233, 296, 323, 574, 24, 363, 161, 10, 575, 514, 38, 326, 319, "NULL"],
     [0, 153,/*550,*/221, 332, 474, 179, 298, 339, 114, 273, 320, 510, 51, 342, 540, 511, 545, 49, 337, 284, 176, 116, 303, 213, 117, 543, 274, 557, 424, 175, 584, 234, 472, 177, 357, 473, 397, 387, 178, 581, 118, 426, 115, 374, 566, 119, 376, 50, 52,/*551,*/347, 120, 512, 509, 579, 513, 383, 587, 180, 113, 309, 174, 471, 425, 48, 239, 238, "NULL"],
     [0, 154, 155, 231, 537, 55, 245, 54, 122, 502, 222, 124, 58, 503, 586, 504, 506, 173, 505, 538, 307, 241, 470, 556, 126, 348, 467, 62, 61, 507, 127, 63, 123, 272, 125, 469, 375, 57, 358, 368, 569, 59, 468, 60, 121, 310, 396, 508, 539, 172, 56, 53, 249, 306, "NULL"],
-    [0, 476, 194, 282, 191, 136, 224, 232, 225, 190, 135, 69, 281, 500, 137,/*557,*/364, 479,/*561,*/264, 280,/*552,*/128, 275, 321, 330, 422, 198, 214, 134, 334, 477, 187, 501, 139, 199, 349, 301, 138, 302, 475, 283, 276,/*567,*/530, 531, 421, 558, 261, 268, 299, 478, 564, 220, 582, 285, 75, 184,/*565,*/196, 529, 527, 533, 344, 197, 185, 140,/*555,*/133, 73, 367, 65, 183, 64, 71, 420, 192, 577, 186, 68, 72, 384, 132, 293, 70,/*559,*/308, 195, 333, 317,/*563,*/74, 291, 66, 131, 392, 67, 189, 182, 181, 585, 240, 331, 193, "NULL"],
-    [0, 405,/*564,*/404, 78,/*558,560,*/549, 327, 402, 79, 394, 553, 341, 340, 80, 243,/*556,*/141,/*562,*/267, 346, 83, 86, 82, 258, 482, 401, 562, /*553,*/483, 590, 84, 81, 372, 87, 271, 400, 403, 85, 352,/*554,*/77, 580, 480, 481, 338,/*566,*/294, 369, 295, 76, 393, "NULL"],
+    [0, 476, 194, 282, 191, 136, 224, 232, 225, 190, 135, 69, 281, 500, 137,/*557,*/364, 479,/*561,*/264, 280,/*552,*/128, 275, 321, 330, 422, 198, 214, 134, 334, 477, 187, 501, 139, 199, 349, 301, 138, 302, 475, 283, 276,/*567,*/530, 531, 421, 558, 261, 268, 299, 478, 564, 220, 582, 285, 75, 184,/*565,*/196, 529, 527, 533, 344, 197, 185, 140,/*555,*/133, 73, 367, 65, 183, 64, 71, 420, 192, 577, 186, 68, 72, 384, 132, 293, 70,/*559,*/308, 195, 333, 317,/*563,*/74, 291, 66, 131, 392, 67, 189, 182, 181, 240, 331, 193, "NULL"],
+    [0, 405,/*564,*/404, 78,/*558,560,*/549, 327, 402, 79, 394, 553, 341, 340, 80, 243,/*556,*/141,/*562,*/267, 346, 83, 86, 82, 258, 482, 401, 562, /*553,*/483, 590, 84, 81, 372, 87, 271, 400, 403, 85, 352,/*554,*/77, 580, 480, 481, 338,/*566,*/294, 369, 295, 585, 76, 393, "NULL"],
     [0, 229, 227, 228, 246, 266, 88, 269, 551, 322, 95, 94, 242, 486, 588, 560, 561, 304, 555, 362, 257, 423, 407, 408, 278, 523, 484, 399, 409, 583, 89, 90, 381, 351, 377, 379, 129, 406, 388, 570, 300, 91, 572, 92, 391, 576, 93, 318, 485, "NULL"],
     [0, 546, 230, 412, 188, 416, 142, 411, 365, 350, 370, 550, 270, 147, 395, 417, 324, 414, 554, 262, 490, 256, 489, 542, 335, 410, 418, 354, 495, 389, 151, 419, 216, 492, 493, 226, 152, 546, 103, 97, 563, 218, 101, 371, 144, 565, 378, 104, 149, 567, 250, 130, 248, 247, 105, 150, 415, 143, 251, 148, 568, 212, 494, 578, 386, 316, 541, 297, 571, 260, 488, 315, 146, 487, 96, 314, 491, 312, 336, 98, 292, 573, 236, 145, 413, 237, 99, 385, 102, 100, "NULL"]
 ];

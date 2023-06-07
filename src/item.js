@@ -2243,6 +2243,10 @@ function Item_Setumei(nC1, nC2) {
     if (10001 == nC1)
         //		CBIstr += "Increase ATK based damage against [Orc] race monsters by "+ wIS + nC2 +"%<BR>";
         CBIstr += "Deal" + wIS + nC2 + "% ATK based damage against [Poring] race monsters.<BR><b>[Does not work against boss monsters]</b>";
+
+    if (10010 <= nC1 && nC1 <= 10019)
+        //		CBIstr += "Increases MATK based damage against ["+ v_Element[nC1-10010] +"] element monsters by "+ nC2 +"%<BR>";
+        CBIstr += "Deal" + wIS + nC2 + "% MATK based damage against [" + v_Element[nC1 - 10010] + "] element monsters.<BR>";
 }
 
 w_SE = [[737, 436, 475, "NULL"]
