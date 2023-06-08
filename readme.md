@@ -70,9 +70,8 @@ You can do any item below and submit a PR
 ### Cards
 - Bonechewer: Create brutality status
 - Corruptor: Add corrupting drain damage
-- Indigrant Soul
+- Indigrant Soul: Decreases after-cast delay of Soul Strike and Napalm Beat by 10%
 - Living Magma: Extra MATK on Fire element
-- Logi: Missing 5% HP and SP
 - Puck
 - Rekenber General: Missing neutral damage and MDEF modifications per refine
 - Rekenber Mercenary: Add Bash proc

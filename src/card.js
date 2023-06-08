@@ -9,6 +9,7 @@ let SlotPostion = {
 };
 
 let ExtraEffects = {
+    VIT: 3,
     INT: 4,
     Flee: 9,
     MaxHP: 15,
@@ -607,7 +608,7 @@ m_Card = [
     , [561, 6, "King Poring", "Grants the Blacksmith skill Greed", 0]
     , [562, 5, "Kodama", "When your HP is brought below 35% you will heal for 30% of your health, 45s cooldown", 0]
     , [563, 7, "Lady Huo", "When dealing magic damage you have a 10% chance to enter <b>Clearcasting</b> status for the next spell (reduces casting time by 50% and the spell is uninterruptible)", 4, 1, 0]
-    , [564, 4, "Logi", "MaxHP +5% and MaxSP +5% <br> When being attacked there is a 2% chance to <b>Curse</b> all enemies in a 11x11 area around the user", 198, 7, 0]
+    , [564, SlotPostion.Armor, "Logi", "When being attacked there is a 2% chance to <b>Curse</b> all enemies in a 11x11 area around the user", 198, 7, ExtraEffects.MaxHP, 5, ExtraEffects.MaxSP, 5, 0]
     , [565, 7, "Miasmus", "", 150, 100, 220, 49, 0]
     , [566, 2, "Moon Rabbit", "On WoE castle this effect is only 20%", 94, 50, 0]
     , [567, 7, "Onigiring", "Poring type monsters have a 3% chance to drop <b>Delicious Onigiri</b>", 0]
@@ -635,6 +636,7 @@ m_Card = [
     , [588, SlotPostion.Footgear, "FUEL", 0, ExtraEffects.Flee, 5, ExtraEffects.IncreaseSkillDamage + Skill.Demonstration, 30, ExtraEffects.IncreaseSkillDamage + Skill.AcidTerror, 30, 0]
     , [589, SlotPostion.Weapon, "DRILL", "Increases the damage of <b>Pierce skill by 25%</b> and the SP cost of Pierce by 4.<br> If compounded to Lv. 3 or Lv. 4 weapon, increases the damage of <b>Pierce by an additional 15%</b>. Multiple intances of this card will stack.", 0]
     , [590, SlotPostion.Garment, "MAID", 0, ExtraEffects.CastingTime, -20, ExtraEffects.MaxHP, -25, ExtraEffects.MaxSP, -25, 0]
+    , [591, SlotPostion.Headgear, "Indigrant Soul", "<b>[Missing implementation]</b> Decreases after-cast delay of Soul Strike and Napalm Beat by 10%", ExtraEffects.VIT, 1, ExtraEffects.IncreaseSkillDamage + Skill.SoulStrike, 20, ExtraEffects.IncreaseSkillDamage + Skill.NapalmBeat, 20, 0]
 
 ];
 //m_Card = [ id, position, name, description, extra effects, 0]
@@ -644,7 +646,7 @@ CardNum = m_Card.length - 1;
 m_CardSort = [	//cards renewal comentadas
     [0, 201, 202, 203, 204, 106, 1, 2, 3, 156, 31, 25, 522, 11, 112, 107, 547, 223, 356, 463, 524, 305, 45, 355, 528, 544, 361, 217, 548, 465, 521, 163, 15, 265, 160, 499, 325, 520, 259, 279, 311, 169, 28, 20, 329, 427, 42, 552, 519, 47, 21, 32, 589, 343, 5, 462, 215, 19, 244, 158, 4, 359, 525, 110, 8, 17, 253, 263, 14, 286, 288, 287, 39, 277, 518, 167, 498, 6, 159, 46, 13, 255, 235, 559, 26, 289, 290, 164, 168, 382,/*548,*/219, 7, 165, 37, 23, 398, 35, 166, 157, 36,/*549,*/30, 328, 40, 380, 517, 466, 516, 345, 252, 27, 353, 12, 360, 44, 515, 171, 33,/*547,*/170, 111, 390, 22, 109, 16, 108, 254, 43, 428, 29, 9, 34, 162, 41, 366, 313, 18, 464, 526, 532, 233, 296, 323, 574, 24, 363, 161, 10, 575, 514, 38, 326, 319, "NULL"],
     [0, 106, 1, 2, 3, 156, 31, 25, 522, 11, 112, 107, 547, 223, 356, 463, 524, 305, 45, 355, 528, 544, 361, 217, 548, 465, 521, 163, 15, 265, 160, 499, 325, 520, 259, 279, 311, 169, 28, 20, 329, 427, 42, 552, 519, 47, 21, 32, 589, 343, 5, 462, 215, 19, 244, 158, 4, 359, 525, 110, 8, 17, 253, 263, 14, 286, 288, 287, 39, 277, 518, 167, 498, 6, 159, 46, 13, 255, 235, 559, 26, 289, 290, 164, 168, 382,/*548,*/219, 7, 165, 37, 23, 398, 35, 166, 157, 36,/*549,*/30, 328, 40, 380, 517, 466, 516, 345, 252, 27, 353, 12, 360, 44, 515, 171, 33,/*547,*/170, 111, 390, 22, 109, 16, 108, 254, 43, 428, 29, 9, 34, 162, 41, 366, 313, 18, 464, 526, 532, 233, 296, 323, 574, 24, 363, 161, 10, 575, 514, 38, 326, 319, "NULL"],
-    [0, 153,/*550,*/221, 332, 474, 179, 298, 339, 114, 273, 320, 510, 51, 342, 540, 511, 545, 49, 337, 284, 176, 116, 303, 213, 117, 543, 274, 557, 424, 175, 584, 234, 472, 177, 357, 473, 397, 387, 178, 581, 118, 426, 115, 374, 566, 119, 376, 50, 52,/*551,*/347, 120, 512, 509, 579, 513, 383, 587, 180, 113, 309, 174, 471, 425, 48, 239, 238, "NULL"],
+    [0, 153,/*550,*/221, 332, 474, 179, 298, 339, 114, 273, 320, 510, 51, 342, 540, 511, 545, 49, 337, 284, 176, 116, 303, 213, 117, 543, 274, 557, 424, 175, 584, 234, 591, 472, 177, 357, 473, 397, 387, 178, 581, 118, 426, 115, 374, 566, 119, 376, 50, 52,/*551,*/347, 120, 512, 509, 579, 513, 383, 587, 180, 113, 309, 174, 471, 425, 48, 239, 238, "NULL"],
     [0, 154, 155, 231, 537, 55, 245, 54, 122, 502, 222, 124, 58, 503, 586, 504, 506, 173, 505, 538, 307, 241, 470, 556, 126, 348, 467, 62, 61, 507, 127, 63, 123, 272, 125, 469, 375, 57, 358, 368, 569, 59, 468, 60, 121, 310, 396, 508, 539, 172, 56, 53, 249, 306, "NULL"],
     [0, 476, 194, 282, 191, 136, 224, 232, 225, 190, 135, 69, 281, 500, 137,/*557,*/364, 479,/*561,*/264, 280,/*552,*/128, 275, 321, 330, 422, 198, 214, 134, 334, 477, 187, 501, 139, 199, 349, 301, 138, 302, 475, 283, 276,/*567,*/530, 531, 421, 558, 261, 268, 299, 478, 564, 220, 582, 285, 75, 184,/*565,*/196, 529, 527, 533, 344, 197, 185, 140,/*555,*/133, 73, 367, 65, 183, 64, 71, 420, 192, 577, 186, 68, 72, 384, 132, 293, 70,/*559,*/308, 195, 333, 317,/*563,*/74, 291, 66, 131, 392, 67, 189, 182, 181, 240, 331, 193, "NULL"],
     [0, 405,/*564,*/404, 78,/*558,560,*/549, 327, 402, 79, 394, 553, 341, 340, 80, 243,/*556,*/141,/*562,*/267, 346, 83, 86, 82, 258, 482, 401, 562, /*553,*/483, 590, 84, 81, 372, 87, 271, 400, 403, 85, 352,/*554,*/77, 580, 480, 481, 338,/*566,*/294, 369, 295, 585, 76, 393, "NULL"],

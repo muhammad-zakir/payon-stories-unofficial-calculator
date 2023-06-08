@@ -1,4 +1,6 @@
 const Skill = {
+    NapalmBeat: 46,
+    SoulStrike: 47,
     Pierce: 70,
     SpearStab: 71,
     BowlingBash: 76,
