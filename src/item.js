@@ -1883,9 +1883,9 @@ m_Item = [
     // * Custom item Heavy Gunner Armor
     , [1364, 60, 86, 7, 0, 1, 400, 80, "Heavy Gunner Armor", 0, "", 19, 5, 13, 150, 57, 2, 0]
     // * Custom item Magma Whip
-    , [1365, 15, 0, 150, 4, 0, 110, 65, "Magma Whip", 0, "", 5, 4, 5207, 10, 5292, 10, 20, 3, 0]
+    , [1365, 15, 0, 150, 4, 1, 110, 65, "Magma Whip", 0, "", 5, 4, 5207, 10, 5292, 10, 20, 3, 0]
     // * Custom item Magma Guitar
-    , [1366, 14, 0, 150, 4, 0, 110, 65, "Magma Guitar", 0, "", 5, 4, 5199, 15, 5292, 10, 0]
+    , [1366, 14, 0, 150, 4, 1, 110, 65, "Magma Guitar", 0, "", 5, 4, 5199, 15, 5292, 10, 0]
     // * Custom item Mercenary Bodysuit
     , [1367, 60, 0, 2, 0, 1, 60, 0, "Mercenary Bodysuit", 0, "", 2, 1, 0]
     // * Custom item Ruby Pumps
