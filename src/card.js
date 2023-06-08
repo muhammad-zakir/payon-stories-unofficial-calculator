@@ -633,7 +633,7 @@ m_Card = [
     , [586, SlotPostion.Shield, "CORE", 0, ExtraEffects.RaceResistance + Race.Formless, 20, ExtraEffects.ElementResistance + 3, 20, 0]
     , [587, SlotPostion.Headgear, "SCOUT", "Gain 3 Spirit Spheres each time a monster is killed using Throw Spirit Sphere.", 1, 1, 0]
     , [588, SlotPostion.Footgear, "FUEL", 0, ExtraEffects.Flee, 5, ExtraEffects.IncreaseSkillDamage + Skill.Demonstration, 30, ExtraEffects.IncreaseSkillDamage + Skill.AcidTerror, 30, 0]
-    , [589, SlotPostion.Weapon, "DRILL", "<b>[Missing implementation]</b>", 0]
+    , [589, SlotPostion.Weapon, "DRILL", "Increases the damage of <b>Pierce skill by 25%</b> and the SP cost of Pierce by 4.<br> If compounded to Lv. 3 or Lv. 4 weapon, increases the damage of <b>Pierce by an additional 15%</b>. Multiple intances of this card will stack.", 0]
     , [590, SlotPostion.Garment, "MAID", 0, ExtraEffects.CastingTime, -20, ExtraEffects.MaxHP, -25, ExtraEffects.MaxSP, -25, 0]
 
 ];

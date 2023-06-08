@@ -70,7 +70,6 @@ You can do any item below and submit a PR
 ### Cards
 - Bonechewer: Create brutality status
 - Corruptor: Add corrupting drain damage
-- DRILL
 - Indigrant Soul
 - Living Magma: Extra MATK on Fire element
 - Logi: Missing 5% HP and SP
