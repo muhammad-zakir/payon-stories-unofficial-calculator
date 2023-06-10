@@ -2241,7 +2241,6 @@ function Item_Setumei(nC1, nC2) {
 
     // * Jelring card
     if (10001 == nC1)
-        //		CBIstr += "Increase ATK based damage against [Orc] race monsters by "+ wIS + nC2 +"%<BR>";
         CBIstr += "Deal" + wIS + nC2 + "% ATK based damage against [Poring] race monsters.<BR><b>[Does not work against boss monsters]</b>";
 
     if (10010 <= nC1 && nC1 <= 10019)

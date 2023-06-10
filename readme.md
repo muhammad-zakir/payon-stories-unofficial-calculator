@@ -74,5 +74,4 @@ You can do any item below and submit a PR
 - Rekenber Mercenary: Add Bash proc
 - Shade of payon: If transcended, damage is +25%
 - Twinorc
-- WELDER: Cast time reduction
 ---
