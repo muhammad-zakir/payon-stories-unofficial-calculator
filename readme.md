@@ -64,7 +64,6 @@ You can do any item below and submit a PR
 ### Items
 - Momoe's Hairband: Missing 20% DMG to turtles
 - Poring Dagger: Missing ASPD increase, haven't found how much it increases yet.
-- Staff of the Scholar: Missing MDEF ignore
 
 ### Cards
 - Corruptor: Add corrupting drain damage

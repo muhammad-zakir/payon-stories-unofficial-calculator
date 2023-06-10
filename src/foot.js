@@ -1507,7 +1507,10 @@ function StAllCalc() {
         (1076 == n_A_Equip[0] || 1077 == n_A_Equip[0] || 1080 == n_A_Equip[0] || 1081 == n_A_Equip[0] || 1086 == n_A_Equip[0] || 1088 <= n_A_Equip[0] && n_A_Equip[0] <= 1090 || 1092 == n_A_Equip[0] || 1093 == n_A_Equip[0] || 1097 <= n_A_Equip[0] && n_A_Equip[0] <= 1103) && n_A_Weapon_refine >= 6 && (n_tok[307] += 5),
         1082 != n_A_Equip[0] && 1087 != n_A_Equip[0] && 1094 != n_A_Equip[0] && 1096 != n_A_Equip[0] || n_A_Weapon_refine >= 6 && (n_tok[307] += 5),
         645 == n_A_Equip[0] && (n_tok[295] += 10 + n_A_Weapon_refine),
+        // * MDEF ignoring of Necromancer card
         9 == n_A_WeaponType && (n_tok[295] += 2 * CardNumSearch(466)),
+        // * Staff of the Scholar MDEF ignore
+        n_tok[295] += 15 * CardNumSearch(1369),
         1 == selectedMonster[19] && (n_tok[297] += 30 * CardNumSearch(425)),
         936 == n_A_Equip[0] && (n_tok[295] += 1 * n_A_Weapon_refine),
         1 == selectedMonster[19] && 1228 == n_A_Equip[2] && n_A_HEAD_REFINE >= 6 && (n_tok[297] += n_A_HEAD_REFINE - 5),

@@ -1891,7 +1891,7 @@ m_Item = [
     // * Custom item Ruby Pumps
     , [1368, 63, 0, 2, 0, 0, 15, 0, "Ruby Pumps", 0, "", 10, 3, 0]
     // * Custom item Staff of the Scholar
-    , [1369, 60, 0, 2, 0, 1, 60, 0, "Staff of the Scholar", 0, "[Missing MDEF ignore]", 4, 4, 89, 15, 20, 3, 0]
+    , [1369, 60, 0, 2, 0, 1, 60, 0, "Staff of the Scholar", 0, "Ignores 15% of the enemy's MDEF", 4, 4, 89, 15, 20, 3, 0]
 ];
 
 //[ id, display location, job that can use, atk/def, level of weapon, slots, weight, level required to use, "name of item", ?, "description", effect1, effect2, ..., 0 =? ]
