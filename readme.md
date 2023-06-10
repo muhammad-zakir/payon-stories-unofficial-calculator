@@ -62,7 +62,6 @@ You can do any item below and submit a PR
 ### Mobs
 - Almost every custom mob has missing skills
 ### Items
-- Guardan's Skull: Missing +1 DEF every 2 refines
 - Momoe's Hairband: Missing 20% DMG to turtles
 - Poring Dagger: Missing ASPD increase, haven't found how much it increases yet.
 - Staff of the Scholar: Missing MDEF ignore

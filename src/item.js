@@ -1843,7 +1843,7 @@ m_Item = [
     // * Custom item Guardian's Robe https://oathro.com/wiki/index.php/Guardian%27s_Robe
     , [1344, 60, 201, 5, 0, 1, 65, 80, "Guardian's Robe", 0, "", 4, 1, 19, 3, 0]
     // * Custom item Guardian's Skull https://oathro.com/wiki/index.php/Guardian%27s_Skull
-    , [1345, 50, 1, 1, 0, 0, 95, 80, "Guardian's Skull", 0, "[Missing +1 DEF every 2 refines]", 1, 1, 5, 1, 0]
+    , [1345, 50, 1, 1, 0, 0, 95, 80, "Guardian's Skull", 0, "", 1, 1, 5, 1, 0]
     // * Custom item Magic Sprite Hat https://oathro.com/wiki/index.php/Magic_Sprite_Hat
     , [1346, 50, 0, 4, 0, 0, 40, 40, "Magic Sprite Hat", 0, "", 1, 1, 2, 1, 76, 5, 0]
     // * Custom item Momoe's Hairband https://oathro.com/wiki/index.php/Momoe%27s_Hairband

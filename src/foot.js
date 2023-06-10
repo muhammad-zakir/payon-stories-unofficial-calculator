@@ -703,6 +703,8 @@ function StAllCalc() {
         942 == n_A_Equip[0] && (n_A_DEF += Math.floor(n_A_Weapon_refine / 2)),
         1350 == n_A_Equip[2] && (n_A_DEF -= n_A_HEAD_REFINE),
         EquipNumSearch(1026) && (n_A_DEF -= 5),
+        // * Guardian's skull extra def
+        EquipNumSearch(1345) && (n_A_DEF += Math.floor(n_A_HEAD_REFINE / 2)),
         EquipNumSearch(764) && (SRV ? n_A_DEF -= n_A_HEAD_REFINE + n_A_LEFT_REFINE : n_A_DEFplus -= n_A_HEAD_REFINE + n_A_LEFT_REFINE),
         EquipNumSearch(742) && 1 == n_A_JobClass() && (n_A_DEF += 6),
         986 != n_A_Equip[6] || 1 != n_A_JobClass() && 2 != n_A_JobClass() && 6 != n_A_JobClass() || (n_A_DEF += 3),
@@ -803,6 +805,7 @@ function StAllCalc() {
         213 == n_A_card[18] && (n_A_MDEF += 5),
         EquipNumSearch(764) && (n_A_MDEF += n_A_HEAD_REFINE + n_A_LEFT_REFINE),
         1169 == n_A_Equip[0] && (n_A_MDEF += n_A_Weapon_refine),
+        // * Frus extra MDEF on mage
         199 == n_A_card[11] && 5 == n_A_JobClass() && (n_A_MDEF += 3),
         (EquipNumSearch(809) || 1350 == n_A_Equip[2]) && (n_A_MDEF += n_A_HEAD_REFINE),
         n_A_HEAD_REFINE <= 5 && 213 == n_A_card[8] && (n_A_MDEF += 5),
