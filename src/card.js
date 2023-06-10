@@ -592,7 +592,7 @@ m_Card = [
     // , [567, 4, "Gypsi Trentini (aRO)", "<b>[Base VIT >= 110]</b> FLEE +20<BR>Enables use of [Fortune's kiss] Lv 10 (this skill can only be used when a whip or an instrument is equipped).", 9, 20, 0]
     , [546, 7, "Abomring", "Small chance of obtaining <b>[Box of Bounce]</b> when killing monsters", 0]
     , [547, 1, "Assassin Fly", "Provides 2% Leech on physical damage done to enemies", 8, 5, 0]
-    , [548, 1, "Bonechewer", "<b>[Missing implementation]</b><br>Has a 5% chance to enter Brutality status with each normal attack (melee and ranged)", 0]
+    , [548, 1, "Bonechewer", "Has a 5% chance to enter Brutality status with each normal attack (melee and ranged)", 0]
     , [549, 5, "Cave Viper", "", 3, 1, 65, 20, 0]
     , [550, 7, "Conductring", "", 5056, 15, 7056, 15, 0]
     , [551, 6, "Corruptor", "<b>[Missing implementation]</b>", 0]

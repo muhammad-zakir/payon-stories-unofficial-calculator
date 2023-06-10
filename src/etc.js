@@ -485,7 +485,7 @@ m_PET = [[0, "(No Pet)", 0, 0]
 m_PET_SORT = [0, 1, 10, 27, 36, 20, 49, 50, 8, 21, 24, 25, 51, 22, 30, 23, 4, 58, 11, 53, 9, 54, 19, 28, 3, 60, 55, 2, 44, 47, 45, 39, 37, 57, 41, 38, 40, 26, 52, 6, 32, 29, 33, 34, 35, 42, 46, 7, 13, 17, 18, 16, 15, 31, 12, 56, 48, 5, 43, 14, 59];
 
 m_TempEffect = [
-	[0, "Temporary Card/Item Effects", "none", 0, 0, 0]
+	[0, "Temporary Card/Item Effects", "none", 0, 0, 0] // TODO: This one gets sorted by name but should be the first on the list
 	, [1, "Isilla Card", "Cast Time -50%, FLEE +30", 2, 472, 0]
 	, [2, "Ice Titan Card", "DEF +10", 2, 484, 18, 10, 0]
 	, [3, "Atroce Card", "ASPD +100%", 2, 463, 12, 100, 0]
@@ -523,7 +523,7 @@ m_TempEffect = [
 	, [35, "Lord Knight Card", "Berserk", 2, 178, 0]
 	, [36, "Soldier Shotgun", "ATK +80", 1, 928, 17, 80, 0]
 	, [37, "Weihna", "Physical Damage +10%", 1, 1157, 80, 10, 0]
-	, [38, "Bonechewer Card", "CRIT +5, Critical Damage +50%", 2, 548, 12, 100, 0]
+	, [38, "Bonechewer Card", "CRIT +5, Critical Damage +50%", 2, 548, 0]
 	// , [38, "Ruber", "Bash / Bowling Bash Damage +20%", 1, 1158, 5006, 20, 5076, 20, 0]
 	// , [39, "Chronos", "MATK +12%", 1, 1172, 89, 12, 0]
 	// , [40, "Nemesis", "ATK +50", 1, 820, 17, 50, 0]
@@ -556,8 +556,8 @@ m_TempEffect = [
 
 m_TempEffect_SORT = JSON.parse(JSON.stringify(m_TempEffect))
 	.sort((a, b) => {
-		if (a[1] < b[1]) { return -1; }
-		if (a[1] > b[1]) { return 1; }
+		if (a[1] < b[1])  return -1;
+		if (a[1] > b[1]) return 1;
 		return 0;
 	})
 	.map((m) => m[0]);

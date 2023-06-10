@@ -59,16 +59,15 @@ You can do any item below and submit a PR
 - Super novice
     - Extra HP and SP calculations (need to code this)
 
+### Mobs
+- Almost every custom mob has missing skills
 ### Items
 - Guardan's Skull: Missing +1 DEF every 2 refines
 - Momoe's Hairband: Missing 20% DMG to turtles
 - Poring Dagger: Missing ASPD increase, haven't found how much it increases yet.
 - Staff of the Scholar: Missing MDEF ignore
-### Mobs
-- Almost every custom mob has missing skills
 
 ### Cards
-- Bonechewer: Create brutality status
 - Corruptor: Add corrupting drain damage
 - Indigrant Soul: Decreases after-cast delay of Soul Strike and Napalm Beat by 10%
 - Living Magma: Extra MATK on Fire element

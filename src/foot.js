@@ -994,6 +994,12 @@ function StAllCalc() {
         n_A_CRI = Math.round(10 * n_A_CRI) / 10,
         n_A_Buf6[9] && (n_A_CRI = 0),
 
+        // * Brutality status
+        n_A_Buf8[8] === 38 && (n_A_CRI += 5),
+        n_A_Buf8[9] === 38 && (n_A_CRI += 5),
+        n_A_Buf8[10] === 38 && (n_A_CRI += 5),
+        n_A_Buf8[11] === 38 && (n_A_CRI += 5),
+
         // * 2HQ Gives 0.8 extra crit per lvl
         SkillSearch(74) && n_A_WeaponType === 3 && (n_A_CRI += SkillSearch(74) * 0.8),
 
@@ -1385,7 +1391,17 @@ function StAllCalc() {
         SkillSearch(234) && (n_tok[59] += 4 * SkillSearch(234)),
         SkillSearch(234) && (n_tok[39] += 4 * SkillSearch(234)),
         n_A_Buf7[45] && (n_tok[100] += 20),
+
+        // * Extra crit damage applied on Angra mantis card
         2 == n_A_JobClass() && (n_tok[70] += CardNumSearch(550) * Math.floor(n_A_HEAD_REFINE / 2)),
+
+        // * Brutality status extra crit damage
+        // ? Check in-game numbers, calc damage looks so big
+        n_A_Buf8[8] === 38 && (n_tok[70] += 50),
+        n_A_Buf8[9] === 38 && (n_tok[70] += 50),
+        n_A_Buf8[10] === 38 && (n_tok[70] += 50),
+        n_A_Buf8[11] === 38 && (n_tok[70] += 50),
+
         624 == n_A_Equip[0] && (n_tok[191] += n_A_Weapon_refine),
         1089 == n_A_Equip[0] && (n_tok[70] += 2 * n_A_Weapon_refine),
         1718 == n_A_Equip[6] && (n_tok[25] += 2 * n_A_BODY_REFINE),
