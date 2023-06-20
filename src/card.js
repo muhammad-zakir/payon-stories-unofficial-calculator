@@ -622,7 +622,7 @@ m_Card = [
     , [575, 1, "Wolpertinger", "", 5112, 15, 5106, 15, 0]
     , [576, 6, "Yser", "", 8, 5, 5171, 30, 5169, 30, 0]
 
-    , [577, SlotPostion.Armor, "Rekenber Soldier", "<b>[Missing implementation]</b> If coumpounded on Mercenary's Bodysuit, <b>Range +2</b> on all auto attacks as long as w Bow or Spear is not equipped. Does not add range to skills.", 8, 5, 5171, 30, 5169, 30, 0]
+    , [577, SlotPostion.Armor, "Rekenber Soldier", "If coumpounded on Mercenary's Bodysuit, <b>Range +2</b> on all auto attacks as long as w Bow or Spear is not equipped. Does not add range to skills.", 0]
     , [578, SlotPostion.Accesory, "Rekenber Guard", 0, 220, 50, 0]
     , [579, SlotPostion.Headgear, "Rekenber Mercenary", "Add a 5% chance of casting Lv. 1 <b>Bash</b> while performing a physical melee auto attack. <br> [Knight] If the user has mastered the skill at Lv. 10, you will instead cast Level 10 <b>Bash</b>.", 0]
     , [580, SlotPostion.Garment, "Rekenber General", "<b>[Missing implementation]</b><br> Provides an additional 1% Neutral damage and -1 MDEF reduction per refine.", 60, 20, 0]
