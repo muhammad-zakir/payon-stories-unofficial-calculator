@@ -293,7 +293,7 @@ m_Card = [
     , [268, 4, "Killer Mantis", "When receiving ATK based damage, 6% chance to cause [Bleeding] status effect on your attacker.", 0]
     , [269, 6, "Christmas Cookie", 0, 128, 10, 58, -20, 0]
     , [270, 7, "Cookie", 0, 6, 2, 5037, 10, 5387, 10, 0]
-    , [271, 5, "Ninetails", "[Refine Rate 9~10] FLEE +20", 2, 2, 0]
+    , [271, 5, "Ninetails", "[Refine Rate 8~10] FLEE +20", 2, 2, 0]
     , [272, 3, "Mi Gao", "-50% damage from [Guardian] type monsters.<BR>(does not work on WoE:SE Guardians as of Nov. 2008)", 3063, 50, 3064, 50, 3065, 50, 0]
     , [273, 2, "Cramp", "1% chance to obtain 1 to 500 zeny when killing a monster.", 0]
     , [274, 2, "Grand Peco", 0, 221, 66, 0]

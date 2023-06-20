@@ -912,7 +912,7 @@ function StAllCalc() {
         n_A_HEAD_REFINE >= 7 && 1481 == n_A_Equip[2] && (n_A_FLEE += 10),
         n_A_HEAD_REFINE >= 7 && 1550 == n_A_Equip[2] && (n_A_FLEE += 10),
         n_A_HEAD_REFINE >= 9 && 1285 == n_A_Equip[2] && (n_A_FLEE += 5),
-        n_A_SHOULDER_REFINE >= 9 && 271 == n_A_card[12] && (n_A_FLEE += 20),
+        n_A_SHOULDER_REFINE >= 8 && 271 == n_A_card[12] && (n_A_FLEE += 20),
         n_A_SHOULDER_REFINE <= 4 && 401 == n_A_card[12] && (n_A_FLEE += 10),
         n_A_SHOULDER_REFINE >= 9 && 403 == n_A_card[12] && (n_A_FLEE += 5),
         2 == n_A_Buf6[0] && n_A_Buf6[1] >= 1 && 4 == n_A_Bodyelement && (n_A_FLEE += 3 * n_A_Buf6[1]),
