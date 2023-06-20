@@ -812,7 +812,8 @@ function StAllCalc() {
         n_A_LEFT_REFINE <= 5 && 222 == n_A_card[10] && (n_A_MDEF += 3),
         n_A_BODY_REFINE <= 5 && 283 == n_A_card[11] && (n_A_MDEF += 5),
         n_A_LEFT_REFINE >= 9 && 310 == n_A_card[10] && (n_A_MDEF += 5),
-        n_A_SHOES_REFINE <= 5 && 381 == n_A_card[13] && (n_A_MDEF += 7),
+        // * Megalith card 26th March patch
+        n_A_SHOES_REFINE <= 5 && 381 == n_A_card[13] && (n_A_MDEF += 10),
         n_A_HEAD_REFINE >= 6 && 1593 == n_A_Equip[2] && (n_A_MDEF += n_A_HEAD_REFINE - 5),
         n_A_HEAD_REFINE >= 7 && 1277 == n_A_Equip[2] && (n_A_MDEF += 1),
         n_A_HEAD_REFINE >= 7 && 1281 == n_A_Equip[2] && (n_A_MDEF += 7),
