@@ -4493,7 +4493,8 @@ function ApplyModifiers(_) {
     return _ = Math.floor(tPlusDamCut(_)),
     e = 0,
     // Freezer card extra Bash damage calc
-    6 == n_A_ActiveSkill && n_A_SHOES_REFINE >= 9 && CardNumSearch(362) && (e += 10),
+    // * Freezer card 26 march update
+    6 == n_A_ActiveSkill && n_A_SHOES_REFINE >= 7 && CardNumSearch(362) && (e += 10),
     70 == n_A_ActiveSkill && CardNumSearch(589) && (e += n_A_WeaponLV >= 3 ? 40 * CardNumSearch(589) : 25 * CardNumSearch(589)),
     76 == n_A_ActiveSkill && (2 != n_A_WeaponType && 3 != n_A_WeaponType || (e += 25 * CardNumSearch(464))),
     41 == n_A_ActiveSkill && 10 == n_A_WeaponType && (e += 50 * CardNumSearch(465)),
