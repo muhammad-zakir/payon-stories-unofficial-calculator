@@ -366,7 +366,7 @@ function BattleCalc999() {
                 388 == n_A_ActiveSkill && 1 == PvP && (n_WoE ? wbairitu *= 1.25 : wbairitu *= 2),
                 EquipNumSearch(1783) && (wbairitu *= 1.5),
                 n_Delay[3] = 2;
-            else if (111 == n_A_ActiveSkill)
+            else if (111 == n_A_ActiveSkill) 
                 n_Delay[0] = 1,
                 not_use_card = 1,
                 n_A_Weapon_element = 1;
@@ -1105,11 +1105,18 @@ function BattleCalc999() {
             w_HIT_HYOUJI = 100,
             CastAndDelay(),
             BattleCalc998()
-        } else if (106 == n_A_ActiveSkill || 112 == n_A_ActiveSkill || 113 == n_A_ActiveSkill) {
+        } else if (111 == n_A_ActiveSkill || 106 == n_A_ActiveSkill || 112 == n_A_ActiveSkill || 113 == n_A_ActiveSkill) {
             n_PerHIT_DMG = 0;
             n_Delay[0] = 1;
 
             // * Hunter traps new damage formula
+
+            // Freezing trap
+            if (n_A_ActiveSkill === 111) {
+                n_A_Weapon_element = 1;
+                w_DMG[2] += 650;
+            }
+
             // Land mine
             if (n_A_ActiveSkill === 106) {
                 n_A_Weapon_element = 2;

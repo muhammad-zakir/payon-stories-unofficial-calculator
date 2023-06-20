@@ -1190,7 +1190,7 @@ function StAllCalc() {
         // * Iron fists +1% aspd per lvl
         (0 == n_A_WeaponType || 13 == n_A_WeaponType) && SkillSearch(183) && (S += SkillSearch(183)),
 
-        // * Mace mastery +10% aspd at lvl 10 with maces
+        // * Mace mastery +12% aspd at lvl 10 with maces
         8 == n_A_WeaponType && SkillSearch(89) == 10 && (S += 12),
 
         // * Musical lesson +1% aspd per lvl 

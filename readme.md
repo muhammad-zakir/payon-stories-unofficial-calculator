@@ -26,7 +26,7 @@ You can do any item below and submit a PR
     - Holy light new formula and cast time (can't seem to find this calculation at a first glance)
 
 - Priest
-    - ~~Battle mastery new formula~~ and add aspd +12% if skill is lvl 10 (don't know how to apply it correctly, maybe at the same time as spear quicken calculation ?)
+    - Add Holy Strike [https://wiki.payonstories.com/index.php?title=Holy_Strike](https://wiki.payonstories.com/index.php?title=Holy_Strike)
 
 - Hunter
     - ~~Blast mine new formula~~
@@ -34,10 +34,6 @@ You can do any item below and submit a PR
     - Freezing trap new formula (can't seem to find this calculation at a first glance)
     - ~~Claymore trap new formula~~
     - ! These trap's damage can be increased by some cards, investigate how to implement this correctly
-
-- Bard/Dancer
-    - ~~Musical lesson increase attack by 5~~ and add 1% aspd per lvl
-    - ~~Dancing lesson increase attack by 5~~ and add 1% aspd per lvl
 
 - Wizard
     - Add sense to skills and calculate it's 2% reduction
