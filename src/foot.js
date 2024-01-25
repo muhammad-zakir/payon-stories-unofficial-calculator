@@ -1299,8 +1299,8 @@ function StAllCalc() {
         n_A_HEAD_REFINE >= 9 && 1289 == n_A_Equip[2] && (S -= 2),
         // Mage set -15 casting time
         5 == n_A_JobClass() && CardNumSearch(454) && (S -= 15),
-        // * WELDER card -15% casting time when dex <= 80
-        n_A_DEX <= 80 && CardNumSearch(585) && (S -= 15),
+        // * WELDER card -10% casting time when dex <= 80
+        SU_DEX <= 80 && CardNumSearch(585) && (S -= 10),
         18 != n_A_JOB && 32 != n_A_JOB || !CardNumSearch(460) || (S -= 15),
         177 == n_A_card[8] && (S -= n_A_HEAD_REFINE),
         0 != n_A_Buf3[2] && (SRV ? (S -= S / 100 * ((3 * n_A_Buf3[2] + n_A_Buf3[32] + Math.floor(n_A_Buf3[22] / 10)) / 100) * 100,

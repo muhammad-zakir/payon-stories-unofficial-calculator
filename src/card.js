@@ -630,7 +630,7 @@ m_Card = [
     , [582, SlotPostion.Armor, "Magmawhip", "Drain <b>100 SP</b> as the armor is unequipped. <br>[Swordman, Merchant, Thief, Acolyte Classes] Gain <b>5 SP</b> each time a monster is killed.", 0]
     , [583, SlotPostion.Footgear, "Living Magma", "<b>[Missing implementation]</b>Deal extra MATK on Fire element", ExtraEffects.INT, 1, 10013, 10, ExtraEffects.ElementResistance + 3, -25, 0]
     , [584, SlotPostion.Headgear, "Ignis", "You cannot cast Fire Walk while another instance of this skill is still active. Fire Walk has a 12 seconds cooldown and cannot be copied by Plagiarism.", 220, 51, 0]
-    , [585, SlotPostion.Garment, "WELDER", "[Base AGI <= 80] Flee +20<BR>[Base INT <= 80] MATK +10%<BR><b>[Missing implementation]</b>[Base DEX <= 80] Cast Time -10%", 0]
+    , [585, SlotPostion.Garment, "WELDER", "[Base AGI <= 80] Flee +20<BR>[Base INT <= 80] MATK +10%<BR><b></b>[Base DEX <= 80] Cast Time -10%", 0]
     , [586, SlotPostion.Shield, "CORE", 0, ExtraEffects.RaceResistance + Race.Formless, 20, ExtraEffects.ElementResistance + 3, 20, 0]
     , [587, SlotPostion.Headgear, "SCOUT", "Gain 3 Spirit Spheres each time a monster is killed using Throw Spirit Sphere.", 1, 1, 0]
     , [588, SlotPostion.Footgear, "FUEL", 0, ExtraEffects.Flee, 5, ExtraEffects.IncreaseSkillDamage + Skill.Demonstration, 30, ExtraEffects.IncreaseSkillDamage + Skill.AcidTerror, 30, 0]
