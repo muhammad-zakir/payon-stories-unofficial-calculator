@@ -960,7 +960,7 @@ function StAllCalc() {
         n_A_LUCKY = Math.round(10 * n_A_LUCKY) / 10,
         n_A_LUCKY < 0 && (n_A_LUCKY = 0),
         myInnerHtml("A_LUCKY", n_A_LUCKY, 0),
-        n_A_CRI = 1 + .3 * n_A_LUK,
+        n_A_CRI = 1 + .33 * n_A_LUK,
         S = 0,
         S += n_tok[10] + n_A_Buf9[39],
         S += n_tok[110 + selectedMonster[2]],
