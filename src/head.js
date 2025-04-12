@@ -4454,6 +4454,13 @@ function BattleCalc2(_) {
     _ += 3 * n_A_Buf2[12],
     _ += 3 * SkillSearch(416),
     0 != n_A_WeaponType && 1 == w999_AB && (_ += 20 * SkillSearch(254)),
+    /*
+        Katar Mastery rebalancing.
+        This if statement checks if the weapon type is a katar (8) and then add 0.5% critical chance per every Katar Mastery's skill level.
+            Changes:
+            - Added 0.5% critical chance per every Katar Mastery's skill level
+    */
+    n_A_WeaponType == 8 && (n_tok[70] += 0.5 * SkillSearch(89)),
     0 == wBCEDPch && (
         17 == n_A_ActiveSkill ? (_ = Math.floor(_ * (100 + 15 * n_A_ActiveSkillLV) / 100)) : // Envenom's damage calculation, rebalanced from (Damage + [15 × Skill Level]) to (Damage * (100 + 15 * Skill Level) / 100)
         307 == n_A_ActiveSkill ? (_ += 15 * n_A_ActiveSkillLV) :
@@ -4494,7 +4501,11 @@ function ApplyModifiers(_) {
         1 == selectedMonster[19] && (e += n_tok[26]);
         e += n_tok[80];
         _ = Math.floor(_ * (100 + e) / 100);
-        1 == wCriTyuu && 401 != n_A_ActiveSkill && (_ = Math.floor(_ * (100 + n_tok[70]) / 100));
+        1 == wCriTyuu && 401 != n_A_ActiveSkill && (
+            _ = Math.floor(_ * (100 + n_tok[70] + 
+                (8 == n_A_WeaponType && SkillSearch(89) == 10 ? 50 : 0) // Katar Mastery's rebalancing, +50% critical damage at Katar Master's (89) Maximum Skill Level (10)
+            ) / 100)
+        );
         (108 <= selectedMonster[0] && selectedMonster[0] <= 115 || 319 == selectedMonster[0]) && (_ = Math.floor(_ * (100 + n_tok[81]) / 100)),
         116 <= selectedMonster[0] && selectedMonster[0] <= 120 && (_ = Math.floor(_ * (100 + n_tok[82]) / 100)),
         (49 <= selectedMonster[0] && selectedMonster[0] <= 52 || 55 == selectedMonster[0] || 221 == selectedMonster[0]) && (_ = Math.floor(_ * (100 + n_tok[83]) / 100)),
