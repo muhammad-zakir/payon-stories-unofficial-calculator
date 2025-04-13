@@ -646,7 +646,26 @@ function BattleCalc999() {
             w_HIT_HYOUJI = 100,
             CastAndDelay(),
             BattleCalc998()
-        } else if (17 == n_A_ActiveSkill || 86 == n_A_ActiveSkill && (selectedMonster[3] < 50 || 60 <= selectedMonster[3])) {
+        } else if (n_A_ActiveSkill === 17 && (selectedMonster[3] < 50 || 60 <= selectedMonster[3])) {
+            /*
+                This if statement checks if the skill's value is 17 (Envenom) and whether the monster is a non Demi Human type or not.
+                Envenom's damage calculation processes, rebalanced.
+                    Changes:
+                    - Removed hard-coded element value override, so now the damage's element should be the same as the weapon's element instead of switching it to poison
+            */
+            ATKbai02(wbairitu, 0),
+            wINV = Math.floor(BattleCalc2(0) * element[selectedMonster[3]][5]),
+            n_PerHIT_DMG = wINV;
+            for (var _ = 0; 2 >= _; _++)
+                w_DMG[_] = BattleCalc(n_A_DMG[_], _),
+                w_DMG[_] = Math.floor(w_DMG[_] * element[selectedMonster[3]][5]),
+                Last_DMG_A[_] = Last_DMG_B[_] = w_DMG[_] + EDP_DMG(_),
+                InnStr[_] += Last_DMG_A[_];
+            w_DMG[1] = (w_DMG[1] * w_HIT + wINV * (100 - w_HIT)) / 100,
+            EDPplus(1),
+            CastAndDelay(),
+            BattleCalc998()
+        } else if (86 == n_A_ActiveSkill && (selectedMonster[3] < 50 || 60 <= selectedMonster[3])) {
             ATKbai02(wbairitu, 0),
             n_A_Weapon_element = 5,
             wINV = Math.floor(BattleCalc2(0) * element[selectedMonster[3]][5]),
@@ -4435,8 +4454,18 @@ function BattleCalc2(_) {
     _ += 3 * n_A_Buf2[12],
     _ += 3 * SkillSearch(416),
     0 != n_A_WeaponType && 1 == w999_AB && (_ += 20 * SkillSearch(254)),
-    0 == wBCEDPch && (17 != n_A_ActiveSkill && 307 != n_A_ActiveSkill || (_ += 15 * n_A_ActiveSkillLV),
-    86 == n_A_ActiveSkill && (selectedMonster[3] < 50 || 60 <= selectedMonster[3]) && (_ += 75)),
+    /*
+        Katar Mastery rebalancing.
+        This if statement checks if the weapon type is a katar (8) and then add 0.5% critical chance per every Katar Mastery's skill level.
+            Changes:
+            - Added 0.5% critical chance per every Katar Mastery's skill level
+    */
+    n_A_WeaponType == 8 && (n_tok[70] += 0.5 * SkillSearch(89)),
+    0 == wBCEDPch && (
+        17 == n_A_ActiveSkill ? (_ = Math.floor(_ * (100 + 15 * n_A_ActiveSkillLV) / 100)) : // Envenom's damage calculation, rebalanced from (Damage + [15 × Skill Level]) to (Damage * (100 + 15 * Skill Level) / 100)
+        307 == n_A_ActiveSkill ? (_ += 15 * n_A_ActiveSkillLV) :
+        86 == n_A_ActiveSkill && (selectedMonster[3] < 50 || 60 <= selectedMonster[3]) && (_ += 75)
+    ),
     423 == n_A_ActiveSkill && (_ += Math.floor(n_A_MATK[w_MagiclBulet] * mdefReduction(selectedMonster[15]) - n_B_MDEF2)),
     437 == n_A_ActiveSkill && (_ += 50 * n_A_ActiveSkillLV),
     106 == m_Card[n_A_card[0]][0] && 106 == m_Card[n_A_card[1]][0] && 106 == m_Card[n_A_card[2]][0])
@@ -4472,7 +4501,11 @@ function ApplyModifiers(_) {
         1 == selectedMonster[19] && (e += n_tok[26]);
         e += n_tok[80];
         _ = Math.floor(_ * (100 + e) / 100);
-        1 == wCriTyuu && 401 != n_A_ActiveSkill && (_ = Math.floor(_ * (100 + n_tok[70]) / 100));
+        1 == wCriTyuu && 401 != n_A_ActiveSkill && (
+            _ = Math.floor(_ * (100 + n_tok[70] + 
+                (8 == n_A_WeaponType && SkillSearch(89) == 10 ? 50 : 0) // Katar Mastery's rebalancing, +50% critical damage at Katar Master's (89) Maximum Skill Level (10)
+            ) / 100)
+        );
         (108 <= selectedMonster[0] && selectedMonster[0] <= 115 || 319 == selectedMonster[0]) && (_ = Math.floor(_ * (100 + n_tok[81]) / 100)),
         116 <= selectedMonster[0] && selectedMonster[0] <= 120 && (_ = Math.floor(_ * (100 + n_tok[82]) / 100)),
         (49 <= selectedMonster[0] && selectedMonster[0] <= 52 || 55 == selectedMonster[0] || 221 == selectedMonster[0]) && (_ = Math.floor(_ * (100 + n_tok[83]) / 100)),
