@@ -4775,7 +4775,20 @@ function defReduction(_) {
     return 50 > SRV ? (100 - _) / 100 : (4e3 + _) / (4e3 + 10 * _)
 }
 function mdefReduction(_) {
-    return 50 > SRV ? (100 - _) / 100 : (1e3 + _) / (1e3 + 10 * _)
+    // Soul Strike (skill ID 47) should have magic penetration scaling with level
+    // At level 10 it should have 50% magic penetration (5% per level)
+    if(n_A_ActiveSkill == 47) {
+        // Calculate magic penetration based on skill level (5% per level)
+        var magicPen = 0.05 * n_A_ActiveSkillLV;
+        
+        // Adjust MDEF by reducing it according to penetration percentage
+        var adjustedMDEF = _ * (1 - magicPen);
+        
+        return 50 > SRV ? (100 - adjustedMDEF) / 100 : (1e3 + adjustedMDEF) / (1e3 + 10 * adjustedMDEF);
+    }
+    
+    // Original logic for other skills
+    return 50 > SRV ? (100 - _) / 100 : (1e3 + _) / (1e3 + 10 * _);
 }
 n_A_WeaponLV = 0,
 n_A_Weapon2LV = 0,
