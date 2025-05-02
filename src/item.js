@@ -1892,7 +1892,7 @@ m_Item = [
     // * Custom item Ruby Pumps
     , [1368, 63, 0, 2, 0, 0, 15, 0, "Ruby Pumps", 0, "", 10, 3, 0]
     // * Custom item Staff of the Scholar
-    , [1369, 50, 0, 2, 0, 1, 60, 0, "Staff of the Scholar", 0, "Ignores 15% of the enemy's MDEF", 4, 4, 89, 15, 20, 3, 0]
+    , [1369, 9, 0, 2, 0, 1, 60, 0, "Staff of the Scholar", 0, "Ignores 15% of the enemy's MDEF", 4, 4, 89, 15, 20, 3, 0]
     // * Custom item Frozen pick
     , [1370, 1, 1, 52, 4, 0, 60, 36, "Frozen pick", 0, "[Missing properly increasing the damage at +8]", 9, -20, 18, -10, 23, 1, 0]
 ];
