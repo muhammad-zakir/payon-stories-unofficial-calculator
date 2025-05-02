@@ -672,7 +672,7 @@ m_Monster = [
     // ! Add skills and check race & element
     , ["Demonic Tutor", Race.Demon, Elements.Shadow2, Size.Large, 74, 41585, 12, 75, 70, 80, 34, 175, 295, 5, 70, 0, 0, , 0, 0, , , 0]
     // ! Add skills
-    , ["Dory", Race.Fish, Elements.Water3, Size.Small, 58, 9615, 30, 72, 72, 82, 50, 465, 712, 15, 18, 3385, 2989, , 0, 0, , , 0]
+    , ["Dory", Race.Fish, Elements.Undead3, Size.Small, 58, 9615, 30, 72, 72, 82, 50, 465, 712, 15, 18, 3385, 2989, , 0, 0, , , 0]
     , ["Doughring", Race.Formless, Elements.Neutral1, Size.Medium, 25, 1204, 28, 18, 15, 30, 20, 75, 100, 10, 15, 265, 222, , 0, 0, , , 0]
     // ! Add skills
     , ["Flame Beetle", Race.Insect, Elements.Fire1, Size.Medium, 45, 3685, 15, 35, 40, 75, 30, 318, 382, 24, 16, 1631, 1004, , 0, 0, , , 0]
